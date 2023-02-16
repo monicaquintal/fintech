@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://github.com/monicaquintal" target="_blank"><img align="left" height="145" src="https://cdn-icons-png.flaticon.com/512/1055/1055666.png" /></a>
+<a href="https://github.com/monicaquintal" target="_blank"><img align="left" height="160" src="https://cdn-icons-png.flaticon.com/512/1055/1055666.png" /></a>
 <h1>Startup Fintech</h1>
 <h3>ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</h3>
 <p>1 ANO • 2023/1</p>
