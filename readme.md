@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://github.com/monicaquintal" target="_blank"><img align="left" height="130" src="https://cdn-icons-png.flaticon.com/512/1055/1055666.png" /></a>
+<a href="https://github.com/monicaquintal" target="_blank"><img align="left" height="145" src="https://cdn-icons-png.flaticon.com/512/1055/1055666.png" /></a>
 <h1>Startup Fintech</h1>
 <h3>ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</h3>
 <p>1 ANO • 2023/1</p>
@@ -37,7 +37,7 @@ Para dar suporte à interface web desenvolvida, será preciso construir uma API 
 ### Etapas
 
 Fase | Duração | Conteúdo
------|---------|----------
+:-----:|:---------:|----------
 Primeira fase | Aprox. 30 dias | Formalizar projeto e escopo, com Gestão  Ágil  de  Projetos (como Framework  Scrum). Preparação da infraestrutura para o desenvolvimento, e Lógica de Programação com linguagem Python.
 Segunda fase | Aprox. 30 dias | Continuar a formalização do projeto por meio de artefatos (como documentação de casos de uso e construção dos primeiros algoritmos). Calcular tempo e custo do projeto e montar cronograma (Kanban). O protótipo do Fintech deverá ser idealizado, e desenhar as telas da solução.
 Terceira fase | Aprox. 30 dias | Algoritmos, modelagem e documentação do banco de dados relacional.
