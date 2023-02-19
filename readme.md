@@ -11,8 +11,8 @@
 <a href="#fase01"><h2>📚 FASE 1 - DEVELOPMENT ENVIRONMENT (de 15/02 até 21/03)</h2></a>
 
 <a href="#fase1cap01">Capítulo 01: Precisamos falar sobre finanças.</a><br>
-<a href="#fase1cap02">Capítulo 2: Mas como um Software é criado?</a><br>
-<a href="#fase1cap03">Capítulo 03</a><br>
+<a href="#fase1cap02">Capítulo 02: Mas como um Software é criado?</a><br>
+<a href="#fase1cap03">Capítulo 03: Por onde começamos?</a><br>
 <a href="#fase1cap04">Capítulo 04</a><br>
 <a href="#fase1cap05">Capítulo 05</a><br>
 <a href="#fase1cap06">Capítulo 06</a><br>
@@ -90,7 +90,7 @@ Sétima fase | ? | Integração da solução, unindo camadas view e model e torn
 
 ### Conceitos 💡:
 
-1. `Software` é um subsistema de um sistema computacional. São os programas de computadores. Muitos entendem softwar ecomo um programa de computador escrito numa linguagem específica, a fim de produzir a função e o desempenho esperados. É um conjunto composto de instruções de computador, estruturas de dados e documentos.
+1. `Software` é um subsistema de um sistema computacional. São os programas de computadores. Muitos entendem software como um programa de computador escrito numa linguagem específica, a fim de produzir a função e o desempenho esperados. É um conjunto composto de instruções de computador, estruturas de dados e documentos.
 
 2. `Sistema` é um conjunto de informações e procedimentos que interagem entre si para que os objetivos sejam alcançados.
 
@@ -155,12 +155,88 @@ Podem ser classificados quanto a:
 
 Detalhando:
 
-- Software de Sistema: conjunto de instruções que transforma o hardware num sistema com o qual o usuário pode interagir e fazer funcionar os seus programas, como MAC, Linux e Windows.
-- Software de Aplicativo: programas que permitem aos usuários executar determinadas tarefas. Exemplos: Word, Paint, Excel e calculadora.
-- Software como Serviço: um modelo de compartilhamento de software, no qual é liberado apenas o acesso ao serviço oferecido, licenciado para uso por meio da internet; não é vendido nem instalado localmente. Exemplos: Google Docs e PDF Converter.
-- Software de Gestão: auxilia na gestão empresarial; tem como objetivo otimizar a rotina da empresa,fornecendo uma informatização inteligente dos processos, como controle financeiro, compras e estoque. Exemplo: ERP.
-- Software Livre: está disponível e é distribuído livremente; pode ser executado, adaptado, modificado e redistribuído de acordo  com a necessidade de cada usuário. Ao redistribuir a nova versão, pode ser gratuito ou não.
-- Software Aberto: código é acessível a qualquer pessoa; pode ser executado, modificado, estudado e distribuído gratuitamente. Sua filosofia é voltada para a colaboração entre usuários.
-- Software Proprietário: pertence a um fabricante, que detém seus direitos de uso, edição e redistribuição. O usuário deve pagar por uma licença e só pode utilizar o software em um contexto restrito. Exemplo: Office, Photoshop e Winzip.
+- `Software de Sistema`: conjunto de instruções que transforma o hardware num sistema com o qual o usuário pode interagir e fazer funcionar os seus programas, como MAC, Linux e Windows.
+- `Software de Aplicativo`: programas que permitem aos usuários executar determinadas tarefas. Exemplos: Word, Paint, Excel e calculadora.
+- `Software como Serviço`: um modelo de compartilhamento de software, no qual é liberado apenas o acesso ao serviço oferecido, licenciado para uso por meio da internet; não é vendido nem instalado localmente. Exemplos: Google Docs e PDF Converter.
+- `Software de Gestão`: auxilia na gestão empresarial; tem como objetivo otimizar a rotina da empresa,fornecendo uma informatização inteligente dos processos, como controle financeiro, compras e estoque. Exemplo: ERP.
+- `Software Livre`: está disponível e é distribuído livremente; pode ser executado, adaptado, modificado e redistribuído de acordo  com a necessidade de cada usuário. Ao redistribuir a nova versão, pode ser gratuito ou não.
+- `Software Aberto`: código é acessível a qualquer pessoa; pode ser executado, modificado, estudado e distribuído gratuitamente. Sua filosofia é voltada para a colaboração entre usuários.
+- `Software Proprietário`: pertence a um fabricante, que detém seus direitos de uso, edição e redistribuição. O usuário deve pagar por uma licença e só pode utilizar o software em um contexto restrito. Exemplo: Office, Photoshop e Winzip.
 
-págs 12 e 27
+### Crise do software:
+
+Desde o primeiro computador até os dias de hoje, as técnicas para o desenvolvimento de software têm evoluído a fim de suprir as necessidades das partes interessadas. É essencial compreender o que o cliente quer e quais são suas necessidades, antes de começar a desenvolver.
+
+As falhas VÃO acontecer durante o processo de desenvolvimento de softwre, e destacam-se entre elas:
+
+- falha de comunicação: cliente e equipe dev precisam se comunicar para mapear corretamente os requisitos.
+- falta de apoio: gerência precisa atender as demandas do projeto, para que a entrega final seja feita como previsto.
+- baixa colaboração: responsabilidade e engajamento são fatores de sucesso.
+- envolvimento superficial: stakeholders são fontes importantes de informações/decisões.
+- inexperiência: de um gerente de projeto pode resultar em escolhas que comprometerão prazos, custos e qualidade.
+- falta de qualificação: conhecimento e domínio são fundamentais.
+
+Podemos citar também como possíveis causas da crise do software: 
+
+- alteração nos requisitos; 
+- mudanças nas legislações, normas ou processos aos quais a empresa esteja subordinada;  
+- metodologia de desenvolvimento.  
+
+Um `requisito` representa uma característica do sistema ou a descrição de algo que o sistema deve executar para satisfazer as necessidades das partes interessadas.
+
+### Origem da engenharia de software:
+
+Em 2001,o Kent Beck e dezesseis outros desenvolvedores, produtores e consumidores de software, conhecidos como Aliança Ágil, assinaram o `Manifesto para o Desenvolvimento Ágil de Software`,cujo objetivo era apontar novas direções na execução de projetos. A base para a elaboração desse manifesto considera que os requisitos não são estáveis durante todo o projeto, e as mudanças ocorrerão em qualquer cenário, por isso as execuções sequenciais das fases de um projeto não são tão previsíveis como gostaríamos que fossem.
+
+4 fundamentos básicos:
+- Indivíduos e interações, em vez de processos e ferramentas.
+- Software funcionando, em vez de documentação abrangente.
+- Colaboração do cliente, em vez de negociação de contratos.
+- Resposta às modificações, em vez de seguir um plano.
+
+>Foco no time, cliente fazendo parte do projeto, entregas durante o ciclo do projeto e mudanças são bem-vindas em qualquer momento do projeto!
+
+### Áreas de conhecimento da Engenharia de Software:
+
+1. Requisitos de software: o Analista de Requisitos faz o mapeamento das necessidades do cliente.
+2. Engenharia de software: o Arquiteto de Soluções define uma arquitetura para o software (antes da etapa de desenvolvimento).
+3. Construção de software: Analistas de UX/UI e desenvolvedores realizam a construção do produto chamado "Software".
+4. Teste de software: Analistas de Testes (QAs) atuam com técnicas e ferramentas em busca de falhas e defeitos.
+5. Manutenção de software: Analistas de Requisitos, Arquitetos, Analistas de UX/UI, Desenvolvedores e Analistas de Testes atuam em correções e melhorias no software já implantado.
+6. Gerência de configuração e mudança: os mesmos profissionais acima trabalham na integridade dos itens de configuração do projeto (especificações, códigos, planos de testes, etc).
+7. Gerência de Engenharia de software: Gerentes de Sistemas e de Projetos conduzem atividades de gerenciamento para garantir organização e disciplina nas etapas do projeto.
+8. Processo de Engenharia de software: o Analista de Processos determina os processos que envolvem artefatos, pessoas e recursos para garantir as entregas.
+9. Ferramentas e métodos de Engenharia de software: Analistas de Requisitos, Arquitetos, Analistas de UX/UI, Desenvolvedores, Analistas de Testes e Gerentes utilizam ferramentas para execução de tarefas, orientando-se pela ordem indicada nos métodos.
+10. Qualidade de software: Analistas de Testes e Analistas de Qualidade realizam verificações e validações durante todas as etapas do projeto, garantindo qualidade dos processos e do software entregue.
+
+Independentemente da área de conhecimento, a engenharia de softwaretem elementos fundamentais, tais como: métodos, ferramentas e processos:
+
+- `processos`: representam as ações realizadas, ou seja, a aplicação de métodos e ferramentas para se obter um resultado específico, e definemba sequência de métodos executados e quais ferramentas serão disponibilizadas.
+- `métodos`: maneiras de fazer, quais roteiros serão seguidos. Ex: atividades de planejamento, levantamento de requisitos, design,  definição da arquitetura de software, execução dos testes, entre outros.
+- `ferramentas`: meio automatizado para a realização das tarefas; permitemque as atividades sejam executadas de forma mais eficiente e eficaz. Exemplo: softwarede modelagem de dados ou softwares para implementação do software.
+
+### Importante:
+
+> Todo software é construído com base em um modelo de processo, também conhecido como `ciclo de vida`, que compreende um conjunto de etapas que envolvem métodos, ferramentas e procedimentos para a obtenção do produto ou serviço de software desejado.
+
+No manifesto ágil, considera-se que os requisitos não são estáveis durante todo o projeto, que as mudanças vão ocorrer em qualquer cenário e que as execuções sequenciais das fases de um projeto não são tão previsíveis como gostaríamos que fossem! A base detodos os frameworks ágeis é composta de: ***foco no time, cliente fazendo parte do projeto, entregas durante o ciclo do projeto e mudanças bem-vindas em qualquer momento do projeto***!
+
+<div align="center">
+<img width="80%" src="./assets/ciclodevida.png" /><br>
+<em>Ciclo de vida do processo de desenvolvimento de software.</em>
+</div>
+
+### Teste de Proficiência:
+
+1. O principal fator que contribui para o fracasso no desenvolvimento de software são erros na fase de identificação dos problemas, conhecida como análise de requisitos. Como o Manifesto Ágil se relaciona com esse fator?
+> A base para elaboração do Manifesto Ágil considera que os requisitos para desenvolvimento de software não são estáveis, corroborando estudos que indicam problemas nos requisitos como principal causa de fracassos.
+
+2. Há vários ipos de software, desenvolvidos no contexto histórico da evolução do hardware e software. Indique a opção que contém exemplo de um software de sistema, um software como serviço e um software proprietário.
+> Linux, Google Slides, Adobe Suite.
+
+3. Softwares podem ser definidos como "programas de computador", escritos em uma linguagem específica a fim de produzir a função e desempenho esperados. O qe é engenharia de software?
+> É um conjunto de métodos, ferramentas e procedimentos para desenvolvimento de software com objetivo de atender expectativas e necessidades dos stakeholders e entregar com qualidade.
+
+<div id="fase1cap03" align="center">
+<h2>Capítulo 3: Por onde começamos?</h2>
+</div>
