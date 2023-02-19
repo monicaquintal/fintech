@@ -23,7 +23,7 @@
 </div>
 
 <div id="fase01" align="center">
-<h2>FASE 1 - DEVELOPMENT ENVIRONMENT (de 15/02 até 21/03)</h2>
+<h2>FASE 1 - DEVELOPMENT ENVIRONMENT</h2>
 </div>
 
 <div id="fase1cap01" align="center">
@@ -88,7 +88,7 @@ Sétima fase | ? | Integração da solução, unindo camadas view e model e torn
 <h2>Capítulo 2: Mas como um Software é criado?</h2>
 </div>
 
-### Conceitos 💡:
+## Conceitos 💡:
 
 1. `Software` é um subsistema de um sistema computacional. São os programas de computadores. Muitos entendem software como um programa de computador escrito numa linguagem específica, a fim de produzir a função e o desempenho esperados. É um conjunto composto de instruções de computador, estruturas de dados e documentos.
 
@@ -103,7 +103,7 @@ Consiste num conjunto de métodos, ferramentas e procedimentos que têm por obje
 - Gerenciamento do processo de desenvolvimento.
 - Custos e prazos admissíveis.
 
-### Evolução do hardware e do software (contexto histórico):
+## Evolução do hardware e do software (contexto histórico):
 
 1. Século XVII: calculadora que soma e subtrai, adicionadas operações de multiplicar e dividir à máquina.
 2. Século XVIII: tear automatizado, no qual os cartões perfurados controlam o movimento da máquina.
@@ -139,7 +139,9 @@ Consiste num conjunto de métodos, ferramentas e procedimentos que têm por obje
 32. 2016: Fórum Econômico Mundial, em Davos, cujo tema é a 4ª Revolução Industrial. Discute-se a forma de produzir e/ou consumir a informação digital e como se preparar para a era digital.
 33. 2019: Google chega à supremacia quântica, lançando um computador quântico capaz de realizar em apenas alguns minutos cálculos que antes levariam anos.
 
-### Tipos de software:
+## Tipos de software:
+
+### Classificação:
 
 Podem ser classificados quanto a:
 
@@ -153,7 +155,7 @@ Podem ser classificados quanto a:
     - livre/aberto: permite acesso e alterações no código, de modo gratuito, com colaboração.
     - proprietário: uso restrito, acesso pago e detalhes pertencem ao fabricante.
 
-Detalhando:
+### Detalhando:
 
 - `Software de Sistema`: conjunto de instruções que transforma o hardware num sistema com o qual o usuário pode interagir e fazer funcionar os seus programas, como MAC, Linux e Windows.
 - `Software de Aplicativo`: programas que permitem aos usuários executar determinadas tarefas. Exemplos: Word, Paint, Excel e calculadora.
@@ -184,7 +186,7 @@ Podemos citar também como possíveis causas da crise do software:
 
 Um `requisito` representa uma característica do sistema ou a descrição de algo que o sistema deve executar para satisfazer as necessidades das partes interessadas.
 
-### Origem da engenharia de software:
+## Origem da engenharia de software:
 
 Em 2001,o Kent Beck e dezesseis outros desenvolvedores, produtores e consumidores de software, conhecidos como Aliança Ágil, assinaram o `Manifesto para o Desenvolvimento Ágil de Software`,cujo objetivo era apontar novas direções na execução de projetos. A base para a elaboração desse manifesto considera que os requisitos não são estáveis durante todo o projeto, e as mudanças ocorrerão em qualquer cenário, por isso as execuções sequenciais das fases de um projeto não são tão previsíveis como gostaríamos que fossem.
 
@@ -196,7 +198,7 @@ Em 2001,o Kent Beck e dezesseis outros desenvolvedores, produtores e consumidore
 
 >Foco no time, cliente fazendo parte do projeto, entregas durante o ciclo do projeto e mudanças são bem-vindas em qualquer momento do projeto!
 
-### Áreas de conhecimento da Engenharia de Software:
+## Áreas de conhecimento da Engenharia de Software:
 
 1. Requisitos de software: o Analista de Requisitos faz o mapeamento das necessidades do cliente.
 2. Engenharia de software: o Arquiteto de Soluções define uma arquitetura para o software (antes da etapa de desenvolvimento).
@@ -208,6 +210,8 @@ Em 2001,o Kent Beck e dezesseis outros desenvolvedores, produtores e consumidore
 8. Processo de Engenharia de software: o Analista de Processos determina os processos que envolvem artefatos, pessoas e recursos para garantir as entregas.
 9. Ferramentas e métodos de Engenharia de software: Analistas de Requisitos, Arquitetos, Analistas de UX/UI, Desenvolvedores, Analistas de Testes e Gerentes utilizam ferramentas para execução de tarefas, orientando-se pela ordem indicada nos métodos.
 10. Qualidade de software: Analistas de Testes e Analistas de Qualidade realizam verificações e validações durante todas as etapas do projeto, garantindo qualidade dos processos e do software entregue.
+
+### Elementos fundamentais:
 
 Independentemente da área de conhecimento, a engenharia de softwaretem elementos fundamentais, tais como: métodos, ferramentas e processos:
 
@@ -226,7 +230,7 @@ No manifesto ágil, considera-se que os requisitos não são estáveis durante t
 <em>Ciclo de vida do processo de desenvolvimento de software.</em>
 </div>
 
-### Teste de Proficiência:
+## Teste de Proficiência:
 
 1. O principal fator que contribui para o fracasso no desenvolvimento de software são erros na fase de identificação dos problemas, conhecida como análise de requisitos. Como o Manifesto Ágil se relaciona com esse fator?
 > A base para elaboração do Manifesto Ágil considera que os requisitos para desenvolvimento de software não são estáveis, corroborando estudos que indicam problemas nos requisitos como principal causa de fracassos.
@@ -240,3 +244,88 @@ No manifesto ágil, considera-se que os requisitos não são estáveis durante t
 <div id="fase1cap03" align="center">
 <h2>Capítulo 3: Por onde começamos?</h2>
 </div>
+
+## O que é um Projeto?
+
+### Definição:
+
+- É um empreendimento temporário com objetivo de criar um produto ou serviço exclusivo.
+
+- É uma sequência de atividades únicas, complexas e conectadas entre si, com meta ou propósito conhecido que deverá ser completado em um tempo específico, dentro de um orçamento estabelecido e em conformidade com as especificações.
+
+### Características:
+
+- **Duração limitada**: deve ter começo, meio e fim definidos; seu meio pode sofrer mudanças e seu fim é previsto, e, como toda previsão, talvez não se torne realidade!
+
+- **Exclusivo**: produto final deve ser diferente de similares.
+
+- **Progressivamente elaborado**: “proceder por etapas” (incrementado ao longo do tempo).
+
+- **Propósito e objetivos bem definidos**: deve ter  uma meta (produzir um produto/serviço exclusivo),   mas deve ter metas intermediárias ou pode ter objetivos secundários.
+
+- **Interdependentes**: projetos interagem uns com os  outros, podendo ser uma parte de um projeto maior. Em outros casos, o produto terá um ciclo de vida em uma  linha de montagem, gerando diversas unidades, ou seja, o projeto acaba e se torna operação.
+
+- **Conflito**: geralmente compartilham com outras áreas (operacionais) ou outros projetos, recursos (pessoas ou equipamentos) que nem sempre estarão  disponíveis no momento necessário. Além disso, o bem  mais precioso dos projetos são as pessoas, que têm defeitos, limitações e egos diferentes.
+
+- **Sequência de atividades**: um número de atividades ou tarefas conectadas que devem ser completadas em certa ordem e que, ao final, atingem algum objetivo.
+
+### Projetos versus operações:
+
+Enquanto projetos criam um negócio, o objetivo das operações é mantê-lo funcionando da melhor forma possível!
+
+O projeto gera um primeiro exemplar de um produto, geralmente chamado de protótipo, enquanto a operação gera o segundo exemplar em diante, ou seja, uma linha de montagem, tornando-os interdependentes.
+
+<div align="center">
+<img width="80%" src="./assets/projeto-versus-operacao.png" /><br>
+<em>Diferenças entre projeto e operação.</em>
+</div>
+
+## Conceitos importantes:
+
+### A) Partes interessadas (Stakeholders):
+
+Partes interessadas são todas as pessoas afetadas pelo projeto, de forma positiva ou negativa (patrocinadores, proprietários, financiadores, governo, vizinhos, clientes, funcionários, fornecedores, incorporadores, gerentes, terceiros,entre outros).
+
+### B) Gerenciamento de projetos:
+
+Para que os projetos terminem no prazo estabelecido, de acordo com gastos previstos e contendo tudo que foi acertado, precisam ser  bem gerenciados; precisam de um bom planejamento e de uma execução bem controlada.
+
+A `gerência de projetos` é constituída de uma série de ferramentas e técnicas utilizadas para descrever, organizar e monitorar o andamento das atividades do projeto. Seus benefícios incluem:
+
+- Propósito bem definido e especificado.
+- Escopo delineado com clareza.
+- Controle independente, protegendo-o de flutuações operacionais.
+- Medições mais fáceis.
+- Alocações de recursos humanos mais flexíveis.
+- Promove motivação e moral da equipe.
+- Favorece a capacitação profissional dos recursos humanos.
+- Facilita a discrição e a segurança (quando o projeto as requer).
+- Mobilidade – projetos podem ser executados fora do ambiente da empresa.
+
+## Gerente de projetos:
+
+### Quem é?
+
+Sua especialidade é a ***resolução de problemas***, viabilizando o projeto. Embora possa ter habilidades técnicas, não é um pré-requisito: ele contará com especialistas na equipe para quando a necessidade técnica surgir.
+
+### Habilidades necessárias a um gerente de projetos:
+
+- **Liderança**: enquanto gerentes buscam resultados e viabilização do projeto de acordo com as exigências, o líder expressa sua visão, busca o consenso quanto às metas estratégicas, direciona, inspira e motiva sua equipe.
+
+- **Comunicação**: as formas oral e escrita de comunicação constituem o alicerce para um projeto bem-sucedido. Também deve assegurar  que as informações sejam explícitas, claras e completas em todas as atividades de comunicação do projeto.
+
+- **Elaboração de orçamentos**: deve possuir conhecimentos básicos de finanças e contabilidade, pois precisa estabelecer (realizando estimativas de custos) e controlar o orçamento.
+
+- **Planejamento**: importante para que o projeto saia no prazo, dentro do orçamento e de acordo com as especificações, deve-se  estabelecer como serão as atividades, e é essencial definir quem fará o que e quando!
+
+- **Aptidões organizacionais**: manter a organização e fazer um bom gerenciamento de tempo.
+
+- **Negociação e influência**: são necessárias competências de negociação para definição do escopo, orçamentos, alocação de negócios  compartilhados etc. É necessário conhecer muito bemas estruturas formais e informais de todas as organizações relacionadas ao projeto. Poder e política são técnicas usadas na influência.
+
+- **Resolução de conflitos**: identificar sintomas de problemas, identificá-los e, quando necessário, tomar decisões e implementar soluções.
+
+- **Formação e motivação de equipes**: o gerente de projeto define o espírito da equipe e a ajudará em tarefas da sua formação,  tornando-a funcional, além de ser reponsável pela motivação.
+
+## Ativos de processos organizacionais:
+
+pág 12
