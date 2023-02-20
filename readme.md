@@ -235,7 +235,7 @@ No manifesto ágil, considera-se que os requisitos não são estáveis durante t
 1. O principal fator que contribui para o fracasso no desenvolvimento de software são erros na fase de identificação dos problemas, conhecida como análise de requisitos. Como o Manifesto Ágil se relaciona com esse fator?
 > A base para elaboração do Manifesto Ágil considera que os requisitos para desenvolvimento de software não são estáveis, corroborando estudos que indicam problemas nos requisitos como principal causa de fracassos.
 
-2. Há vários ipos de software, desenvolvidos no contexto histórico da evolução do hardware e software. Indique a opção que contém exemplo de um software de sistema, um software como serviço e um software proprietário.
+2. Há vários tipos de software, desenvolvidos no contexto histórico da evolução do hardware e software. Indique a opção que contém exemplo de um software de sistema, um software como serviço e um software proprietário.
 > Linux, Google Slides, Adobe Suite.
 
 3. Softwares podem ser definidos como "programas de computador", escritos em uma linguagem específica a fim de produzir a função e desempenho esperados. O qe é engenharia de software?
@@ -328,4 +328,104 @@ Sua especialidade é a ***resolução de problemas***, viabilizando o projeto. E
 
 ## Ativos de processos organizacionais:
 
-pág 12
+Qualquer conhecimento, prática ou artefato de todas as organizações envolvidas que possam ser úteis para executar ou administrar o projeto (planos, processos, políticas, procedimentos e quaisquer bases de conhecimento).
+
+### Categorias:
+
+a) Processos e procedimentos:
+
+- Padrões, políticas (de segurança, por exemplo), ciclos de vida padrão para os produtos ou projetos e políticas e procedimentos de qualidade, como auditorias de processos, listas de verificação, metas, entre outros.
+- Diretrizes  padronizadas e critérios de medição de desempenho e de avaliação de propostas.
+- Modelos, como de risco, EAP/WBS e diagrama de redes para cronogramas.
+- Procedimentos de controles financeiros: relatórios de horas, análises de gastos, entre outros.
+- Procedimentos de controle de mudanças de projeto.
+- Diretrizes de encerramento de projeto: auditorias finais do projeto, avaliações, validações e critérios de aceitação de produto.
+
+b) Base de conhecimento:
+
+- Arquivos de projetos anteriores: linhas de base para escopo, custo, cronograma e qualidade, cronogramas de projeto e registro de riscos com suas ações de respostas planejadas.
+- Bancos de dados de gerenciamento de configuração contendo as linhas de base de todos os padrões, políticas e procedimentos necessários para oficializar um projeto na empresa.
+- Bases de conhecimento de informações históricas e lições aprendidas: bancos de dados de medição de processos que podem ser usados  para coletar e disponibilizar dados de medição de processos e produtos.
+- Bancos de dados financeiros contendo informações, como: custos homem/hora, custos incorridos, orçamentos e outros dados financeiros.
+
+## Fatores ambientais da empresa:
+
+Condições pertinentes à empresa que influenciam ou restringem o projeto de alguma maneira. Alteram as opções de gerenciamento, influenciando de maneira positiva ou negativa, como:
+- Cultura, estrutura e governança organizacional.
+- Distribuições geográficas e infraestrutura das instalações da empresa.
+- Normas governamentais ou do setor em questão.
+- Recursos humanos existentes, com suas habilidades e conhecimentos.
+- Administração de pessoal.
+- Condições de mercado.
+- Sistemas de autorização de trabalho da empresa.
+- Clima político.
+- Tolerância a risco das partes interessadas.
+- Canais de comunicação estabelecidos.
+- Bancos de dados comerciais que podem ser usados para estimativa de custos ou estudo de riscos.
+- Sistema de informações do gerenciamento de projetos: software para cronograma, sistema de gerenciamento de configuração, coleta e distribuição de informações, como uma intranet etc.
+
+## Processos de gerenciamento de projetos:
+
+`Processo`: conjunto de atividades que, cumpridas na ordem apropriada, atingem um objetivo predefinido. Um projeto tem entradas (artefatos necessários à sua execução), técnicas e ferramentas que são aplicadas na execução e, como resultado, temos como saída os artefato(s) que era(m)o(s) seu(s) respectivo(s) objetivo(s)!
+
+### Classificação:
+
+- Processos de gerenciamento de projetos: focados em gerenciamento, utilizados para conduzir o projeto da maneira eficaz. Será o estudado em aula, pois são **considerados “boa prática”** (a aplicação desses processos pode aumentar as chances de sucesso de um projeto).
+- Processos orientados a produtos: definidos pelo ciclo de vida do projeto, variando de acordo com a área de aplicação.
+
+### Grupos de processos de gerenciamento de projeto:
+
+Os processos de gerenciamento de projetos são agrupados em cinco categorias:
+
+- Grupos de processos de iniciação: devem ser executados na definição de um novo projeto.
+- Grupos de processos de planejamento: processos necessários para definir o escopo do projeto, refinar os projetos e determinar as ações necessárias para atingir as metas.
+- Grupos de processos de execução: necessários para executar o trabalho definido e satisfazer as especificações do projeto.
+- Grupos de processos de monitoramento e controle: exigidos para acompanhar e controlar o progresso e o desempenho do projeto.
+- Grupos de processos de encerramento: necessários para finalizar o projeto ou fase de projeto.
+
+Raramente são distintos ou ocorrem uma única vez: tratam-se de atividades sobrepostas e podem ocorrer ao longo de todo o projeto.
+
+Há, ainda, um `ciclo  PDCA` definido para o gerenciamento de projetos, que compreende os atos de Planejar (Plan), Fazer (Do), Verificar (Check) e Agir (Act), repetindo diversas vezes durante a execução, dependendo do ciclo de vida. O grupo de processos de monitoramento e controle permeia os projetos do início ao fim.
+
+## Conceitos Ágeis Modernos:
+
+Há quatro `princípios básicos`:
+
+1. Torne as pessoas sensacionais: inclua as pessoas que usam, produzem, compram, vendem e financiam os produtos e serviços.
+2. Faça da segurança um pré-requisito: preze a construção de um produto seguro (proteção do tempo, informações, saúde, reputação, relacionamentos e investimentos das pessoas.
+3. Erre rápido e aprenda rápido: aprender com o erro e não tornar a repeti-lo. 
+4. Entregue valor a todo instante: entregas parciais são um dos pilares da agilidade, e o produto deve ter valor para o cliente.
+
+A `gestão ágil de projetos` surgiu com a criação dos processos ágeis de desenvolvimento de software. O principal ***objetivo*** é permitir o controle das atividades de construção que utilizam técnicas ágeis para gerar informações gerenciais sobre o andamento e a evolução do projeto!
+
+Processos ágeis possuem ***três características principais***:
+- Requisitos de um projeto ágil são instáveis por natureza. São incluídos e excluídos requisitos à medida que o projeto evolui,  adequando-o às necessidades imediatas.
+- Há uma interposição das fases de projeto e de implementação fazendo com que a arquitetura e os requisitos técnicos sejam tratados à medida que são criados.
+- As fases de desenvolvimento do projeto não são sequenciais como de costume - ocorrem de acordo com as condições do projeto!
+
+***Duas técnicas se destacam para gestão de projetos ágeis***: definição da estratégia e a construção incremental do software,  contendo  as  funcionalidades e construídas com a qualidade esperada e o feedback constante do cliente em todas as etapas, proporcionando agilidade na resolução de pendências e na avaliação dos requisitos.
+
+No mercado, destacam-se dois métodos de gestão de projetos ágeis: ***método Extreme Project Management (XPM)*** e ***SCRUM***, processo da indústria automobilística adaptado à construção de software.
+
+## Gestão de projetos com SCRUM:
+
+### O que é SCRUM?
+
+- É um dos frameworks mais utilizados para projetos ágeis.
+- Faz uso de um processo incremental e iterativo que produz partes do projeto de forma constante, contendo funções definidas e priorizadas pelo cliente, que faz o aceite de cada entrega produzida em períodos de 1 a 4 semanas (o padrão mais comum de mercado é 2 semanas).
+- Fundamentado nas questões ágeis do cliente como parte da equipe, incrementos em período de tempo fixo e aberto às solicitações de mudanças, sendo adaptativo em relação ao ambiente e colaborativo com as partes interessadas.
+
+### Valores:
+
+Está fundamentado em cinco valores:
+- Compromisso (em apoiar uns aos outros e buscar atingir os objetivos).
+- Foco (em fazer o melhor possível para atingir as metas).
+- Abertura (para falar e ouvir membros do time e stakeholders).
+- Respeito (entre pessoas, reconhecendo que cada membro do time é capaz e independente).
+- Coragem (para fazer a coisa certa e trabalhar em problemas difíceis).
+
+### Papéis:
+
+- `Scrum Master (SM)`: líder do processo de gerenciamento de projetos, apoiando tanto gerentes de projeto quanto membros do time de desenvolvimento e áreas de desenvolvimento de produto. Pode incluir também a gestão de projetos e do time, porém este nem sempre é o caso. Suas funções básicas são: proteger relacionamento com o cliente, resolver problemas que ocorrem durante o projeto, manter a equipe focada na execução do sprint e garantir o uso correto das regras SCRUM.
+
+página 23
