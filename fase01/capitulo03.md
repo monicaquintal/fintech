@@ -182,6 +182,8 @@ Está fundamentado em cinco valores:
 - Respeito (entre pessoas, reconhecendo que cada membro do time é capaz e independente).
 - Coragem (para fazer a coisa certa e trabalhar em problemas difíceis).
 
+> Para mais informações, acessar [este](www.scrum.org) ou [este](www.scrumalliance.org) links!
+
 ### Papéis:
 
 - `Scrum Master (SM)`: líder do processo de gerenciamento de projetos, apoiando tanto gerentes de projeto quanto membros do time de desenvolvimento e áreas de desenvolvimento de produto. Pode incluir também a gestão de projetos e do time, porém este nem sempre é o caso. Suas funções básicas são: proteger relacionamento com o cliente, resolver problemas que ocorrem durante o projeto, manter a equipe focada na execução do sprint e garantir o uso correto das regras SCRUM.
@@ -258,10 +260,142 @@ i. `Versão`:
 
 ## Análise da abordagem tradicional e ágil
 
-PÁGINA 26
+Método tradicional | Método ágil
+--------------------|------------------------
+Processo sequencial e dirigido à qualidade dos artefatos | Foco na rapidez de adequação às mudanças
+Falta de flexibilidade em se adaptar à nova realidade | Capacidade de adequação às situações voláteis do ambiente (porém possui  informalidade implícita)
 
+> Processos de gerenciamento ágeis envolvem uma série de quebras de paradigmas: equipe e cliente precisam ser treinados para haver uma melhor compreensão e efetividade.
 
+<div align="center">
+<img width="80%" src="../assets/caracteristicas-gerenciamento-agil.png" /><br>
+<em>Características do gerenciamento ágil.</em>
+</div>
 
+## Análise comparativa: Gerenciamento Tradicional x Gerenciamento Ágil
+
+PMBOK® (2012): guia de melhores práticas de gerenciamento de projetos. Os processos de gerenciamento de projetos são divididos em nove áreas de conhecimento que organizam a aplicação das técnicas e ferramentas necessárias: escopo, prazo, custo, qualidade, riscos, comunicação, recursos humanos, aquisição e integração.
+
+Área do processo | Gerenciamento Tradicional | Gerenciamento Ágil
+-----------------|---------------------------|-----------------------
+Escopo | Bem definido nas fases iniciais, e definido por EAP (Estrutura analítica de projeto) | Escopo definido em alto nível e requisitos priorizados e definidos de forma iterativa; requer maior controle de gold plating
+Tempo | Cronograma detalhado para realização de todo o projeto | Uso de controles (como Kanban) e entregas incrementais de 2-4 semanas
+Custo | Monitoração das alterações para que não afete o custo | Requer maior controle considerando a rapidez nas alterações
+Qualidade | Processos de verificação e validação e plano de testes | Programação em pares, testes incrementais
+Riscos | Análise de riscos durante todo o ciclo de vida do projeto | Gestão de impedimentos no projeto
+Comunicação | Documentado e formal | Implícita, interpessoal e colaborativa
+RH | Papéis claros e bem definidos | Confiança nos membros e ambiente colaborativo
+Aquisição | Controle por contrato e escopo bem definido e documentado | Presença do cliente, volatilidade de requisitos e pouca documentação
+Integração | Plano de projeto detalhado e controle total pelo gerente | Plano do projeto evolutivo, gerente como facilitador
+Partes envolvidas | Processo formal, controlado e atuação pontual | Fazem parte do projeto, interação constante!
+
+Obs: gold plating é um termo que define a aceitação de solicitações do cliente sem análise ou processo formal, incorporadas ao projeto, sem custos e sem prazo adicional.
+
+### Diferenças e similaridades entre abordagens:
+
+1. Gestão do escopo:
+
+a) Modelo tradicional:
+
+- definição do escopo detalhado no início do projeto.
+- toda informação levantada é detalhada na documentação.
+
+b) Gerenciamento ágil:
+
+- definir escopo em alto nível para entender o trabalho (visão de produto).
+- requisitos priorizados.
+- toda a equipe participa da definição, incluindo o cliente.
+- há maior possibilidade de gold  plating, devido documentação mínima elaborada e pela interação próxima entre o cliente e a equipe (aumentar monitoração sobre novos requisitos a fim de evitá-lo).
+
+2. Gestão de tempo:
+
+a) Modelo tradicional:
+
+- cronograma DETALHADO de todas as atividades.
+- considerando o andamento do projeto, trata-se de uma projeção, estando sujeito à perda de prazo ou inseguranças.
+
+b) Gerenciamento ágil:
+
+- cronograma orientado ao produto.
+- planejado de acordo com a prioridade funcional.
+- iterações com duração de 1 a 4 semanas.
+
+3. Gestão de custos:
+
+a) Modelo tradicional:
+
+- aterações são críticas e afetam todo o projeto.
+- ênfase em controlar, monitorar e documentar essas mudanças.
+- foco em controlar os custos contra o planejamento inicial.
+
+b) Gerenciamento ágil:
+
+- alterações são parte do projeto e incorporadas dentro da iteração mais apropriada e de comum acordo com o cliente.
+- favorece a flexibilidade em atender ao cliente, porém o custo final pode sofrer grandes variações.
+
+4. Gestão da qualidade:
+
+Ambos os métodos consideram a qualidade essencial, e os padrões a serem seguidos devem ser estabelecidos no início do projeto. A diferença entre eles está na forma de garantir e controlar a qualidade (vide tabela acima).
+
+5. Gestão de riscos:
+
+A identificação, análise e respostas aos riscos do projeto são comuns às duas formas de gerenciamento de projetos.
+
+Nos métodos ágeis, existe a atividade de tratamento e remoção de impedimentos que, de certa forma, pode ser comparada com a análise de riscos. O objetivo dessa remoção de impedimento é evitar que a equipe pare ou que fatores externos inflenciem nas atividades de desenvolvimento do software!
+
+6. Gestão da comunicação:
+
+Vide tabela; independe do método aplicado,decisões e assuntos críticos devem ser documentados e publicados a todos os envolvidos.
+
+7. Gestão de Recursos Humanos:
+
+As premiações e as comemorações pela realização de um projeto são fatores motivacionais comuns aos métodos tradicional e ágil.
+
+8. Gestão da aquisição
+
+9. Gestão da integração
+
+10. Gestão das partes envolvidas:
+
+Para as organizações conservadoras, existe ainda a possibilidade de mesclar as características de ambos os métodos, permitindo uma avaliação gradativa dos pontos fortes e das principais restrições das duas abordagens.
+
+## FAST TEST
+
+### 1. O framework SCRUM é um dos mais utilizados para projetos ágeis. Ele tem uma definição clara de papéis, cerimônias e artefatos. Selecione a alterntiva que descreve corretamente todas as responsabilidades do Product Owner.
+
+> O Product Owner é o representante do cliente no projeto. É quem elabora o Product Backlog e o prioriza. Além disso, participa da definição do Sprint Backlog, da Sprint Review e decide se uma versão será lançada.
+
+### 2. Existem muitas diferenças entre o gerenciamento tradicional e a gestão ágil. Selecione a alternativa que melhor descreve as diferenças entre esses métodos na área do processo de definição do escopo.
+
+> No gerenciamento tradicional, o escopo é definido nas fases iniciais e formalizado por meio de EAP, enquanto na gestão ágil é definido em alto nível e detalhado tecnicamente à medida em que vai sendo priorizado.
+
+### 3. Fatores ambientais são condições da empresa que influenciam ou restringem projetos de alguma maneira, aumentando ou diminuindo opções de gerenciamento. Selecione a alternativa que NÃO É um fator ambiental mas que pode impactar um projeto:
+
+> Metodologia de gerenciamento de projetos, escolhida livremente pelo gerente de projetos.
+
+### 4. De acordo com o PMBOK (2013), um projeto pode ser definido como um empreendimento temporário com o objetivo de criar um produto ou serviço exclusivo. Selecione a alternativa que exemplifica corretamente um projeto:
+
+> Desenvolvimento de uma versão de um software que contém uma nova funcionalidade.
+
+A análise de requisitos é uma fase do gerenciamento de projetos, e não corresponde a um projeto em si porque não cria um produto ou serviço. Apenas ajuda a habilitar que alguém crie o produto ou serviço no futuro.
+
+### 5. A gestão ágil de projetos tem três características principais que a diferenciam da gestão de projetos tradicional. Selecione a alternativa que melhor descreve essas três características:
+
+> Requisitos instáveis, permitindo ao cliente alterá-los à medida que o projeto evolui. Além disso, arquitetura e requisitos não são detalhados no início, mas definidos à medida que o projeto evolui. Assim, as fases do projeto não são necessariamente sequenciais.
+
+### 6. Existem muitas diferenças entre o gerenciamento tradicional e a gestão ágil, porém há também áreas de processo nas quais ambos os métodos convergem. Selecione a alternativa que identifica quais são essas áreas de processo que convergem:
+
+> Gestão de qualidade e de riscos são áreas nas quais as metodologias de gestão convergem. Apesar de haver diferenças nas formas de controle e gestão, elas obedecem aos mesmos princípios.
+
+### 7. O framework SCRUM é um dos mais utilizados para projetos ágeis. Ele tem uma definição clara de papéis, cerimônias e artefatos. Selecione a alternativa que descreve corretamente todas as responsabilidades do Scrum Master:
+
+> O Scrum Master é o líder do processo de gerenciamento de projetos, apoiando o time de desenvolvimento e PO em suas tarefas. Além disso, resolve problemas e conflitos e garante o uso das regras do SCRUM.
+
+O Scrum Master é o faciltador entre a equipe e o cliente, ajudando a definir os processos em conjunto com o time, solucionando problemas e aplicando as regras do SCRUM. Dúvidas técnicas são de responsabilidade do próprio time.
+
+### 8. O gerente de projetos é um profissional generalista, porém proficiente na resolução de problemas para viabilizar um projeto. Selecione a alternativa que descreve corretamente habilidades de um gerente de projetos:
+
+> Viabilização de projeto de acordo com as exigências dos stakeholders, comunicando as ações necessárias a todos os envolvidos e solucionando conflitos por meio de negociação, influência e tomada de decisão.
 
 
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
