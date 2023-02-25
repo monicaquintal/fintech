@@ -295,5 +295,68 @@ As entregas ocorrem a cada uma ou quatro semanas, permitindo um rápido feedback
 
 Importante: cerimônias são as reuniões que acontecem durante o ciclo Scrum de desenvolvimento, como as reuniões de planejamento, reuniões diárias, de revisões e de lições aprendidas.
 
-página 39
+## Desenvolvimento iterativo e incremental
 
+- construção em vários ciclos de entregas constantes de produtos, permitindo identificação de problemas nas fases iniciais e tomadas de ações, para corrigir o curso do desenvolvimento no tempo adequado e de maneira eficiente!
+- no  Scrum, uma iteração = um  Sprint (ciclo de análise, desenvolvimento, teste e entrega, com duração específica).
+
+<div align="center">
+<img width="80%" src="../assets/desenv-iterativo.png" /><br>
+<em>Desenvolvimento iterativo.</em>
+</div>
+
+- no modelo iterativo, a primeira iteração  reúne os requisitos principais do produto,que são validados pelo cliente.
+- um plano é desenvolvido para a próxima  iteração, para satisfazer as necessidades do cliente. 
+- esse processo é repetido após cada iteração até que o produto completo seja produzido. 
+
+> O modelo iterativo objetiva a elaboração de um produto a cada iteração!
+
+***Vantagens:***
+
+- flexibilidade em ambientes de projeto nos quais há indefinições de requisitos iniciais e a determinação do foco nos pontos mais críticos do projeto.
+- detecção rápida de inconsistências entre requisitos e a implementação.
+- produção de resultados a cada iteração.
+- identificação de melhorias contínuas no processo.
+
+> Não é obrigatório que, ao fim de cada iteração, o software produzido já seja colocado em produção. Porém, a melhor  prática é realizar entregas frequentes  para que os usuários já possam ter o benefício de usar o software e validá-lo na prática.
+
+## Desenvolvimento timebox
+
+- ***auxilia a manter o foco nas principais características do produto, evidencia o senso de restrição de tempo à equipe do projeto e reduz o tempo de construção***!
+- ***ponto central***: enquadrar principais requisitos (definidos pelo cliente e pela equipe do projeto) ao tempo disponível, enquanto demais requisitos são incorporados em outros timeboxes com menor prioridade.   
+- requer utilização conjunta com a prática de prototipação.
+- ***condições de sucesso dessa prática***:
+  - data final estabelecida para cada timebox não seja alterada.
+  - cliente esteja de acordo com os requisitos definidos.
+  - limitação rígida do escopo seja atendida.
+
+<div align="center">
+<img width="80%" src="../assets/timebox.png" /><br>
+<em>Desenvolvimento timebox.</em>
+</div>
+
+> No Scrum, o Sprint representa tanto as iterações quanto define o seu timebox, pois tem duração fixa e determina quando deve haver planejamento, desenvolvimento e entrega de um incremento!
+
+## FAST TEST
+
+### 1. Considere os seguintes requisitos de uma funcionalidade de software: permitir anexar arquivos; usuário precisa estar logado para anexar arquivos. Qual destes requisitos é funcional e qual é regra de negócio?
+
+> Permitir anexar arquivos é requisito funcional, e necessidade do usuário estar logado para acessar funcionalidade é regra de negócio.
+
+### 2. Qual é o papel responsável por planejar projetos de implantação de sistemas e acompanhar as necessidades do negócio e dos clientes?
+
+> Coordenador e/ou gerente.
+
+### 3. De acordo com boas práticas de gestão ágil (XP), durante o levantamento de requisitos, o que precisa ser identificado inicialmente?
+
+> Business value, ou seja, o que pode agregar valor ao usuário/cliente no primeiro momento.
+
+### 4. Quais são os componentes de um SI?
+
+> Pessoas, organizações ou procedimentos, tecnologia.
+
+### 5. Selecione a alternativa que melhor descreve um modelo de desenvolvimento iterativo e incremental de um projeto de software:
+
+> Usuário recebe novas versões do produto a cada período. Cada nova versão tem novas funcionalidades, ou melhora funcionalidades já existentes.
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
