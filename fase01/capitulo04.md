@@ -203,10 +203,97 @@ a) `Coordenador` e `Gerente`:
 
 ## Implementação
 
--  traduz por meio de códigos de programação a modelagem do sistema.
+- fase de desenvolvimento.
+- traduz por meio de códigos de programação a modelagem do sistema.
 - é o transporte da lógica de funcionamento do sistema para um código de programação.
 
 ## Testes
 
-- garantirá qualidade do produto.
-- a `verificação` consiste em um conjunto de atividades que asseguram que o produto será  construído de maneira correta.
+- garantirão qualidade do produto.
+- objetivo é assegurar que o software cumpra com as especificações e atenda à necessidade e à realidade do usuário.
+- `verificação` consiste em um conjunto de atividades que asseguram que o produto será  construído de maneira correta.
+- `validação` é o conjunto de atividades que garantem que o produto correto está sendo construído.
+- testes são realizados com base no documento de casos de testes, que, por sua vez, utilizam a documentação dos casos de uso desenvolvidos na fase de análise.
+- os principais artefatos são os relatórios de testes, com evidências de erros ou que não foram detectados.
+- podem ser divididos em:
+  - `Teste de Função/Teste Unitário` (verificação da menor unidade do projeto; previne contra bugs quando os códigos foram mal escritos).
+  - `Teste de Funcionalidade`.
+  - `Teste de Módulos`.
+  - `Teste de Integração`.
+
+> Alguns testes são funcionais e operacionais. Os testes operacionais podem ser Alfa (quando ocorrem no ambiente do desenvolvedor) e Beta (quando ocorrem no ambiente do usuário).
+
+Os testes funcionais podem ser de ***caixa branca*** e de ***caixa preta***. 
+  - teste caixa branca: os casos de teste devem ser gerados de maneira que, ao serem executados conforme o fluxo, passem por todos os comandos existentes.
+  - teste caixa preta: os casos de testes gerados a partir da entrada de dados visa ao resultado com base nessas entradas.
+
+## Implantação
+
+- fase em que o sistema irá para ambiente de produção.
+- fase em que a equipe de infraestrutura instala o sistema no ambiente real do usuário, onde ele executa suas atividades rotineiras!
+- um artefato criado é o manual do usuário!
+
+## Manutenção:
+
+- com a utilização do sistema, surgem novas  necessidades ou detecta-se alguns bugs!
+
+<div align="center">
+
+# Modelos de desenvolvimento
+
+</div>
+
+## A) Modelo Cascata ou Clássico:
+
+- somente ao final do projeto o sistema será implantado, não existem versões disponibilizadas ao usuário antes da entrega final do projeto!
+- define que é possível ter todos os requisitos especificados antes das demais fases do projeto.
+- é um dos primeiros modelos de desenvolvimento.
+- a espera por um resultado final acabou se tornando inviável!
+
+<div align="center">
+<img width="80%" src="../assets/modelo-cascata.png" /><br>
+<em>Modelo de desenvolvimento cascata ou clássico.</em>
+</div>
+
+## B) Modelo Iterativo e Incremental:
+
+- a cada nova entrega, é realizado um incremento do software, ou seja, adquire novas funcionalidades (repetição das etapas em ciclos diferentes e incrementais).
+- modelo mais utilizado no mercado, devido necessidade do usuário-cliente de receber porções do software antes de sua entrega por completo.
+
+<div align="center">
+<img width="80%" src="../assets/modelo-ii.png" /><br>
+<em>Modelo Iterativo e Incremental.</em>
+</div>
+
+Vantagens:
+- permite flexibilidade em ambientes de projeto onde existem indefinições de requisitos iniciais e a determinação do foco nos pontos mais críticos do projeto.
+- detecção com agilidade de inconsistências entre os requisitos e a implementação.
+- produção de resultados tangíveis a cada iteração.
+- identificação de melhorias contínuas no processo.
+
+> No primeiro ciclo, pode ser entregue o “Business Value” ao usuário-cliente, a funcionalidade que mais agregue valor ao seu negócio!
+
+<div align="center">
+
+# Práticas ágeis
+
+</div>
+
+No Scrum, as necessidades determinam as prioridades do desenvolvimento  de  um  sistema, e devem ser levantadas pelo Product Owner em conjunto com stakeholders.
+
+Além disso, equipes se auto-organizam para definir a melhor maneira de entregar as funcionalidades de maior prioridade. 
+
+As entregas ocorrem a cada uma ou quatro semanas, permitindo um rápido feedback e decidindo se deve ser liberado ou se precisa continuar a ser aprimorado por mais um ciclo, chamado de Sprint.
+
+## Características do framework
+
+- requisitos formam o Product Backlog (lista do que precisa ser feito no projeto ou produto).
+- evolui em ciclos curtos e de duração fixa chamados de Sprints, cujos conceitos de sustentação são o desenvolvimento iterativo-incremental e o timebox (duração fixa).
+- cada equipe utiliza a técnica de desenvolvimento que melhor se adapta ao cenário do projeto.
+- equipes se auto-organizam. 
+- processo de melhoria contínua.
+
+Importante: cerimônias são as reuniões que acontecem durante o ciclo Scrum de desenvolvimento, como as reuniões de planejamento, reuniões diárias, de revisões e de lições aprendidas.
+
+página 39
+
