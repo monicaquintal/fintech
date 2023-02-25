@@ -138,6 +138,75 @@ a) `Coordenador` e `Gerente`:
 - a principal ideia é que o Coordenador consiga escalar o trabalho do Gerente. 
 - dependendo da organização, o Gerente possui algumas funções a mais às quais o Coordenador pode não ter acesso.
 
+<div align="center">
+
 # Etapas do processo de Desenvolvimento
 
+</div>
+
 ## Levantamento de requisitos:
+
+- levantamento de dados, onde identificamos as **necessidades e/ou problemas dos usuários**.
+- requer **clareza e objetividade** (pode causar maior prazo e custo e falta de credibilidade na equipe, caso algum entendimento seja diferente da necessidade).
+- **fontes de informações**: documentação, usuários do sistema, stakeholders e  especificações  de sistemas.
+- interação com os usuários e stakeholders ocorre através de entrevista, observações, brainstorming e workshop, podendo ser usados cenários e protótipos para auxiliar na obtenção de requisitos.
+- **"Business value"**: analistas devem verificar o que pode agregar valor ao usuário/cliente no primeiro momento.
+
+### Perfis de usuário:
+
+1. `Estratégico`: visa à informação não estruturada, o entendimento do analista na visão de resultados.
+
+2. `Tático`: informação é semi estruturada e visa ao resultado entre os níveis operacional e estratégico.
+
+3. `Operacional`: conhece e executa as rotinas do processo de negócio.
+
+> O usuário é chamado `Key-User`. Ele carrega conhecimento sobre o processo e as regras de negócio e desenvolve as atividades operacionais.
+
+### Artefatos essenciais:
+(que contribuem para o entendimento e os esclarecimentos do processo de negócio)
+
+***A) Especificação de processo de negócio:***
+- coletada com participação central do usuário.
+- normalmente é realizada em processos de levantamento de dados (por analistas de negócios ou Product Owners).
+- a partir de documentos e mapas de fluxo de processo sde negócio, podem surgir definições sobre a concepção e a rotina do processo.
+- exemplo: diagrama de atividades da Linguagem de Modelagem Unificada (UML), e entendimento por meio de notação visual.
+- `requisitos funcionais` representam as  funcionalidades do sistema - é o resultado esperado para o usuário, o **principal artefato da fase de levantamento de requisitos!**
+
+***B) Regras de negócio:***
+
+- definem a estrutura e controlam a operação das empresas.
+- representam procedimentos, restrições,normas, cláusulas, critérios, políticas, ou seja, “como” executar o processo de negócio.
+-  representam a relação da informação para a execução do processo de negócio e determina mas condições para que os fatos sejam válidos.
+- estão relacionadas  aos requisitos  funcionais!
+- a notação para definição de Regra de Negócio é `RN`, e requisito funcional, `RF`.
+
+***C) Requisitos que definem as funcionalidades do sistema:***
+
+- um Sistema de Gerenciamento de Regras de Negócios (BRMS) permite que políticas  organizacionais e decisões operacionais  associadas a essas  políticas sejam implementadas, monitoradas e mantidas separadamente do código principal de um ap.
+- BRMS possibilita definir e manter as decisões que orientam o comportamento  de sistemas, reduzindo a quantidade de tempo e esforço necessários para atualizar os sistemas de produção e aumentar a capacidade da organização de responder às mudanças no ambiente de negócios!
+
+## Análise
+
+- pode ser subdividida em: análise de domínio (ou análise de negócio) e análise da aplicação.
+- modela os objetos do mundo real como uma venda que possui um cliente, e o(s) produto(s), que são objetos de negócio, portanto de domínio.
+- a modelagem das classes de domínio define a aderência do sistema em relação  à necessidade do usuário.
+- diagrama e documentação de casos de uso e diagrama de classe de domínio.
+- a validação e a verificação dos modelos  construídos asseguram que as necessidades do usuário sejam atendidas.
+- nessa fase ocorrem as modelagens do sistema e do BD (a princípio devemos desenvolver a modelagem das classes e,posteriormente, a do banco de dado).
+
+## Projeto
+
+- na teoria, há duas atividades: projeto  de  arquitetura (de alto nível) e projeto detalhado (de baixo nível).
+- um dos artefatos é o projeto de arquitetura que, na teoria, é desenvolvido pelo arquiteto de software (ou analista ou programador sênior).
+- projeto da arquitetura visa distribuir as classes de objetos relacionados do sistema   em subsistemas e componentes, distribuindo   esses componentes pelos recursos de hardware disponíveis.
+- outro artefato são as interfaces gráficas ou propriamente as telas do sistema!
+
+## Implementação
+
+-  traduz por meio de códigos de programação a modelagem do sistema.
+- é o transporte da lógica de funcionamento do sistema para um código de programação.
+
+## Testes
+
+- garantirá qualidade do produto.
+- a `verificação` consiste em um conjunto de atividades que asseguram que o produto será  construído de maneira correta.
