@@ -55,7 +55,7 @@
 ***Portanto***, é necessário definir quais atividades deverão ser executadas ao longo do projeto, além de quando, como e quem as executará!
 
 <div align="center">
-<img width="80%" src="../assets/etapas-desenv-software.png" /><br>
+<img width="80%" src="../assets/imagens-fase01/etapas-desenv-software.png" /><br>
 <em>Etapas do processo de desenvolvimento de software.</em>
 </div>
 
@@ -116,7 +116,7 @@ c) `SysAdmin (Administrador de Sistemas)`:
 - função-chave para disseminação da cultura DevOps na empresa.
 
 d) `Analista de Dados (AD)` / `Administrador de Banco de Dados (DBA)`:
-- DBA: responsável por gerenciar,  instalar, configurar, atualizar e monitorar BD.
+- DBA: responsável por gerenciar, instalar, configurar, atualizar e monitorar BD.
 - AD: responsável por coletar, compilar, analisar e interpretar os dados do banco.
 - ***DBA atua mais no nível de hardware e software; e o AD, no nível de dados e negócio***.
 
@@ -130,9 +130,9 @@ a) `Coordenador` e `Gerente`:
   - coordenar e gerenciar atividades das equipes de TI;
   - avaliar e identificar soluções tecnológicas para otimizar os processos;
   - planejar projetos de implantação de sistemas;
-  - acompanhar necessidades do negócio  e dos clientes.
+  - acompanhar necessidades do negócio e dos clientes.
 - com relação às pessoas:
-  - realizar acompanhamento e evolução dos  profissionais;
+  - realizar acompanhamento e evolução dos profissionais;
   - manter a motivação; 
   - realizar feedbacks constantes e mentorias.
 - a principal ideia é que o Coordenador consiga escalar o trabalho do Gerente. 
@@ -148,7 +148,7 @@ a) `Coordenador` e `Gerente`:
 
 - levantamento de dados, onde identificamos as **necessidades e/ou problemas dos usuários**.
 - requer **clareza e objetividade** (pode causar maior prazo e custo e falta de credibilidade na equipe, caso algum entendimento seja diferente da necessidade).
-- **fontes de informações**: documentação, usuários do sistema, stakeholders e  especificações  de sistemas.
+- **fontes de informações**: documentação, usuários do sistema, stakeholders e especificações de sistemas.
 - interação com os usuários e stakeholders ocorre através de entrevista, observações, brainstorming e workshop, podendo ser usados cenários e protótipos para auxiliar na obtenção de requisitos.
 - **"Business value"**: analistas devem verificar o que pode agregar valor ao usuário/cliente no primeiro momento.
 
@@ -170,35 +170,35 @@ a) `Coordenador` e `Gerente`:
 - normalmente é realizada em processos de levantamento de dados (por analistas de negócios ou Product Owners).
 - a partir de documentos e mapas de fluxo de processo sde negócio, podem surgir definições sobre a concepção e a rotina do processo.
 - exemplo: diagrama de atividades da Linguagem de Modelagem Unificada (UML), e entendimento por meio de notação visual.
-- `requisitos funcionais` representam as  funcionalidades do sistema - é o resultado esperado para o usuário, o **principal artefato da fase de levantamento de requisitos!**
+- `requisitos funcionais` representam as funcionalidades do sistema - é o resultado esperado para o usuário, o **principal artefato da fase de levantamento de requisitos!**
 
 ***B) Regras de negócio:***
 
 - definem a estrutura e controlam a operação das empresas.
 - representam procedimentos, restrições,normas, cláusulas, critérios, políticas, ou seja, “como” executar o processo de negócio.
--  representam a relação da informação para a execução do processo de negócio e determina mas condições para que os fatos sejam válidos.
-- estão relacionadas  aos requisitos  funcionais!
+- representam a relação da informação para a execução do processo de negócio e determina mas condições para que os fatos sejam válidos.
+- estão relacionadas aos requisitos funcionais!
 - a notação para definição de Regra de Negócio é `RN`, e requisito funcional, `RF`.
 
 ***C) Requisitos que definem as funcionalidades do sistema:***
 
-- um Sistema de Gerenciamento de Regras de Negócios (BRMS) permite que políticas  organizacionais e decisões operacionais  associadas a essas  políticas sejam implementadas, monitoradas e mantidas separadamente do código principal de um ap.
-- BRMS possibilita definir e manter as decisões que orientam o comportamento  de sistemas, reduzindo a quantidade de tempo e esforço necessários para atualizar os sistemas de produção e aumentar a capacidade da organização de responder às mudanças no ambiente de negócios!
+- um Sistema de Gerenciamento de Regras de Negócios (BRMS) permite que políticas organizacionais e decisões operacionais associadas a essas políticas sejam implementadas, monitoradas e mantidas separadamente do código principal de um ap.
+- BRMS possibilita definir e manter as decisões que orientam o comportamento de sistemas, reduzindo a quantidade de tempo e esforço necessários para atualizar os sistemas de produção e aumentar a capacidade da organização de responder às mudanças no ambiente de negócios!
 
 ## Análise
 
 - pode ser subdividida em: análise de domínio (ou análise de negócio) e análise da aplicação.
 - modela os objetos do mundo real como uma venda que possui um cliente, e o(s) produto(s), que são objetos de negócio, portanto de domínio.
-- a modelagem das classes de domínio define a aderência do sistema em relação  à necessidade do usuário.
+- a modelagem das classes de domínio define a aderência do sistema em relação à necessidade do usuário.
 - diagrama e documentação de casos de uso e diagrama de classe de domínio.
-- a validação e a verificação dos modelos  construídos asseguram que as necessidades do usuário sejam atendidas.
+- a validação e a verificação dos modelos construídos asseguram que as necessidades do usuário sejam atendidas.
 - nessa fase ocorrem as modelagens do sistema e do BD (a princípio devemos desenvolver a modelagem das classes e,posteriormente, a do banco de dado).
 
 ## Projeto
 
-- na teoria, há duas atividades: projeto  de  arquitetura (de alto nível) e projeto detalhado (de baixo nível).
+- na teoria, há duas atividades: projeto de arquitetura (de alto nível) e projeto detalhado (de baixo nível).
 - um dos artefatos é o projeto de arquitetura que, na teoria, é desenvolvido pelo arquiteto de software (ou analista ou programador sênior).
-- projeto da arquitetura visa distribuir as classes de objetos relacionados do sistema   em subsistemas e componentes, distribuindo   esses componentes pelos recursos de hardware disponíveis.
+- projeto da arquitetura visa distribuir as classes de objetos relacionados do sistema em subsistemas e componentes, distribuindo esses componentes pelos recursos de hardware disponíveis.
 - outro artefato são as interfaces gráficas ou propriamente as telas do sistema!
 
 ## Implementação
@@ -211,7 +211,7 @@ a) `Coordenador` e `Gerente`:
 
 - garantirão qualidade do produto.
 - objetivo é assegurar que o software cumpra com as especificações e atenda à necessidade e à realidade do usuário.
-- `verificação` consiste em um conjunto de atividades que asseguram que o produto será  construído de maneira correta.
+- `verificação` consiste em um conjunto de atividades que asseguram que o produto será construído de maneira correta.
 - `validação` é o conjunto de atividades que garantem que o produto correto está sendo construído.
 - testes são realizados com base no documento de casos de testes, que, por sua vez, utilizam a documentação dos casos de uso desenvolvidos na fase de análise.
 - os principais artefatos são os relatórios de testes, com evidências de erros ou que não foram detectados.
@@ -235,7 +235,7 @@ Os testes funcionais podem ser de ***caixa branca*** e de ***caixa preta***.
 
 ## Manutenção:
 
-- com a utilização do sistema, surgem novas  necessidades ou detecta-se alguns bugs!
+- com a utilização do sistema, surgem novas necessidades ou detecta-se alguns bugs!
 
 <div align="center">
 
@@ -251,7 +251,7 @@ Os testes funcionais podem ser de ***caixa branca*** e de ***caixa preta***.
 - a espera por um resultado final acabou se tornando inviável!
 
 <div align="center">
-<img width="80%" src="../assets/modelo-cascata.png" /><br>
+<img width="80%" src="../assets/imagens-fase01/modelo-cascata.png" /><br>
 <em>Modelo de desenvolvimento cascata ou clássico.</em>
 </div>
 
@@ -261,7 +261,7 @@ Os testes funcionais podem ser de ***caixa branca*** e de ***caixa preta***.
 - modelo mais utilizado no mercado, devido necessidade do usuário-cliente de receber porções do software antes de sua entrega por completo.
 
 <div align="center">
-<img width="80%" src="../assets/modelo-ii.png" /><br>
+<img width="80%" src="../assets/imagens-fase01/modelo-ii.png" /><br>
 <em>Modelo Iterativo e Incremental.</em>
 </div>
 
@@ -279,7 +279,7 @@ Vantagens:
 
 </div>
 
-No Scrum, as necessidades determinam as prioridades do desenvolvimento  de  um  sistema, e devem ser levantadas pelo Product Owner em conjunto com stakeholders.
+No Scrum, as necessidades determinam as prioridades do desenvolvimento de um sistema, e devem ser levantadas pelo Product Owner em conjunto com stakeholders.
 
 Além disso, equipes se auto-organizam para definir a melhor maneira de entregar as funcionalidades de maior prioridade. 
 
@@ -298,15 +298,15 @@ Importante: cerimônias são as reuniões que acontecem durante o ciclo Scrum de
 ## Desenvolvimento iterativo e incremental
 
 - construção em vários ciclos de entregas constantes de produtos, permitindo identificação de problemas nas fases iniciais e tomadas de ações, para corrigir o curso do desenvolvimento no tempo adequado e de maneira eficiente!
-- no  Scrum, uma iteração = um  Sprint (ciclo de análise, desenvolvimento, teste e entrega, com duração específica).
+- no Scrum, uma iteração = um Sprint (ciclo de análise, desenvolvimento, teste e entrega, com duração específica).
 
 <div align="center">
-<img width="80%" src="../assets/desenv-iterativo.png" /><br>
+<img width="80%" src="../assets/imagens-fase01/desenv-iterativo.png" /><br>
 <em>Desenvolvimento iterativo.</em>
 </div>
 
-- no modelo iterativo, a primeira iteração  reúne os requisitos principais do produto,que são validados pelo cliente.
-- um plano é desenvolvido para a próxima  iteração, para satisfazer as necessidades do cliente. 
+- no modelo iterativo, a primeira iteração reúne os requisitos principais do produto,que são validados pelo cliente.
+- um plano é desenvolvido para a próxima iteração, para satisfazer as necessidades do cliente. 
 - esse processo é repetido após cada iteração até que o produto completo seja produzido. 
 
 > O modelo iterativo objetiva a elaboração de um produto a cada iteração!
@@ -318,12 +318,12 @@ Importante: cerimônias são as reuniões que acontecem durante o ciclo Scrum de
 - produção de resultados a cada iteração.
 - identificação de melhorias contínuas no processo.
 
-> Não é obrigatório que, ao fim de cada iteração, o software produzido já seja colocado em produção. Porém, a melhor  prática é realizar entregas frequentes  para que os usuários já possam ter o benefício de usar o software e validá-lo na prática.
+> Não é obrigatório que, ao fim de cada iteração, o software produzido já seja colocado em produção. Porém, a melhor prática é realizar entregas frequentes para que os usuários já possam ter o benefício de usar o software e validá-lo na prática.
 
 ## Desenvolvimento timebox
 
 - ***auxilia a manter o foco nas principais características do produto, evidencia o senso de restrição de tempo à equipe do projeto e reduz o tempo de construção***!
-- ***ponto central***: enquadrar principais requisitos (definidos pelo cliente e pela equipe do projeto) ao tempo disponível, enquanto demais requisitos são incorporados em outros timeboxes com menor prioridade.   
+- ***ponto central***: enquadrar principais requisitos (definidos pelo cliente e pela equipe do projeto) ao tempo disponível, enquanto demais requisitos são incorporados em outros timeboxes com menor prioridade. 
 - requer utilização conjunta com a prática de prototipação.
 - ***condições de sucesso dessa prática***:
   - data final estabelecida para cada timebox não seja alterada.
@@ -331,7 +331,7 @@ Importante: cerimônias são as reuniões que acontecem durante o ciclo Scrum de
   - limitação rígida do escopo seja atendida.
 
 <div align="center">
-<img width="80%" src="../assets/timebox.png" /><br>
+<img width="80%" src="../assets/imagens-fase01/timebox.png" /><br>
 <em>Desenvolvimento timebox.</em>
 </div>
 

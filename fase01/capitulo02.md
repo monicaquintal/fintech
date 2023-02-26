@@ -141,7 +141,7 @@ Independentemente da área de conhecimento, a engenharia de softwaretem elemento
 No manifesto ágil, considera-se que os requisitos não são estáveis durante todo o projeto, que as mudanças vão ocorrer em qualquer cenário e que as execuções sequenciais das fases de um projeto não são tão previsíveis como gostaríamos que fossem! A base detodos os frameworks ágeis é composta de: ***foco no time, cliente fazendo parte do projeto, entregas durante o ciclo do projeto e mudanças bem-vindas em qualquer momento do projeto***!
 
 <div align="center">
-<img width="80%" src="../assets/ciclodevida.png" /><br>
+<img width="80%" src="../assets/imagens-fase01/ciclodevida.png" /><br>
 <em>Ciclo de vida do processo de desenvolvimento de software.</em>
 </div>
 

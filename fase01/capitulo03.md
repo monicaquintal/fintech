@@ -34,7 +34,7 @@ Enquanto projetos criam um negócio, o objetivo das operações é mantê-lo fun
 O projeto gera um primeiro exemplar de um produto, geralmente chamado de protótipo, enquanto a operação gera o segundo exemplar em diante, ou seja, uma linha de montagem, tornando-os interdependentes.
 
 <div align="center">
-<img width="80%" src="../assets/projeto-versus-operacao.png" /><br>
+<img width="80%" src="../assets/imagens-fase01/projeto-versus-operacao.png" /><br>
 <em>Diferenças entre projeto e operação.</em>
 </div>
 
@@ -195,7 +195,7 @@ Está fundamentado em cinco valores:
 ### Características do SCRUM:
 
 <div align="center">
-<img width="80%" src="../assets/gestao-scrum.png" /><br>
+<img width="80%" src="../assets/imagens-fase01/gestao-scrum.png" /><br>
 <em>Processo de gestão com SCRUM.</em>
 </div>
 
@@ -268,7 +268,7 @@ Falta de flexibilidade em se adaptar à nova realidade | Capacidade de adequaç�
 > Processos de gerenciamento ágeis envolvem uma série de quebras de paradigmas: equipe e cliente precisam ser treinados para haver uma melhor compreensão e efetividade.
 
 <div align="center">
-<img width="80%" src="../assets/caracteristicas-gerenciamento-agil.png" /><br>
+<img width="80%" src="../assets/imagens-fase01/caracteristicas-gerenciamento-agil.png" /><br>
 <em>Características do gerenciamento ágil.</em>
 </div>
 
