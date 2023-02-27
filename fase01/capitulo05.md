@@ -148,7 +148,7 @@ Um projeto SCRUM começa a partir de um documento apresentado pelo Product Owner
 - junta informações fornecidas pelos principais clientes, usuários, patrocinadores, entre outros.
 
 <div align="center">
-<img width="80%" src="../assets/imagens-fase01/visao.png" /><br>
+<img width="50%" src="../assets/imagens-fase01/visao.png" /><br>
 <em>Documento visão.</em>
 </div>
 
@@ -174,6 +174,11 @@ Por não ser um documento detalhado, pode ser completado por outros documentos, 
 Não é um documento estático, vai existir durante todo o ciclo de vida do projeto.
 
 > `Cartões de histórias` não fazem parte do framework SCRUM, mas é a técnica mais utilizada para descrever o Product Backlog!
+
+Formato:
+~~~
+"COMO UM <<papel>>, EU GOSTARIA DE <<funcionalidade>> PARA <<beneficio>>
+~~~
 
 A montagem do Product Backlog comumente é uma lista de histórias representando cada item que precisa ser realizado no projeto!
 
@@ -251,8 +256,102 @@ Passo a passo para jogar o Planning Poker:
 ## D) Planejamento de releases
 
 - plano de muito alto nível para determinar o tempo total do projeto, o ciclo de versões que serão geradas e definir quais funcionalidades serão construídas, sua prioridade e quando serão feitas.
-- o objetivo é proporcionar o entendimento claro do projeto, sua estratégia de entrega e, com isso, a melhoria da comunicação entre todos os envolvidos.
+- o objetivo é proporcionar o **entendimento claro do projeto, sua estratégia de entrega e, com isso, a melhoria da comunicação entre todos os envolvidos**.
 
 > A primeira atividade do planejamento de um release é determinar sua `META` a ser definida pelo Product Owner com a ajuda do Scrum Master. Seu objetivo deve estar alinhado com as necessidades do negócio. A meta serve para guiar o time na realização das atividades e no cumprimento dos Sprints planejados.
 
-PÁGINA 32
+Para criar um Plano de Releases, seguir os passos:
+- Determinar a meta (objetivo) do release.
+- Ter o Product Backlog priorizado e estimado.
+- Definir o tamanho do Sprint (de 1 a 4 semanas).
+- Estimar a velocidade do time.
+- Estabelecer quantos Sprints e quais histórias são necessários para cumprir a meta do release.
+
+O Plano de Releases **não é um plano estático** (pode ser alterado durante todo o ciclo do projeto)!
+
+Planejamento de releases:
+
+### 1. Orientado ao escopo:
+
+O Product Backlog priorizado e estimado é dividido de acordo com a meta do release.Lista as histórias necessárias para atingir a sua meta e define quantos sprints são precisos para cumprir o release. 
+
+> A definição do número de Sprints é feita considerando o tamanho das histórias (soma) e a velocidade do time. 
+
+### 2. Orientado ao prazo:
+
+O Product Owner determina o tempo em que deseja que um release seja entregue e dividem-se as histórias em Sprints para se enquadrarem no prazo definido.
+
+## E) Cálculo da velocidade
+
+Para estabelecer quantos pontos de histórias o time é capaz de realizar durante um Sprint, precisamos fazer o cálculo da velocidade do time.
+
+***Importante considerar:***
+- Quando começa a usar Scrum, há um ciclo natural de aprendizado do time e de todos os envolvidos.
+- Não espere que um Scrum team vá começar a trabalhar com o mais alto desempenho possível desde o início.
+- A estrutura e o conhecimento do time melhoram à medida que executam os Sprints.
+
+Todo time passa pelas etapas (Modelo de Tuckman):
+
+1. Formação
+2. Conflito
+3. Acordo
+4. Desempenho
+5. Dispersão
+
+Um time Scrum demora cerca de 3 a 4 Sprints para entrar em ritmo de desempenho e produzir o seu melhor.
+
+### Calculando a velocidade:
+
+1. Definir o percentual de dedicação de cada membro do time durante o Sprint (**fator de foco**).
+
+~~~
+Fator de Foco = n°. de pontos produzidos / Capacidade de produção do time (*)
+~~~
+
+(*) Em que:
+Número de pontos produzidos = quantos pontos foram produzidos no Sprint.
+Capacidade de produção do time = Somatória do número de dias de cada membro do time durante o Sprint.
+
+> Quando NÃO se tem histórico ou algum Sprint executado pelo time, o fator de foco inicial pode variar entre 50% e 70% para um novo time SCRUM. O Scrum Master deve avaliar. Sugerido é usar o `fator de foco inicial em 60%`.
+
+2. Para calcular a velocidade:
+
+~~~
+Velocidade = Capacidade de produção do time x Fator de foco
+~~~
+
+<hr>
+
+## FAST TEST
+
+### 1. Imagine que um time está estimando histórias usando plannig poker. Todo o time vota secretamente e quando revelados os votos, há apenas um membro do time que apresentou divergência do restante. O que acontece neste caso?
+
+> Em caso de divergência, a história é rediscutida e uma nova rodada de votação acontece.
+
+### 2. O planejamento de releases é um plano de alto nível para proporcionar um entendimento do projeto, sua estratégia de entrega e previsão de data de entrega de funcionalidades. Como o plano de release atende esses objetivos?
+
+As releases são mapeadas a partir de um Product Backlog priorizado e estimado. A velocidade do time é calculada a partir de fator de foco e capacidade produtiva.
+
+> Mapeando o projeto em releases e estabelecendo metas para cada uma delas. Com base na velocidade do time se poderá calcular uma previsão de tempo de entrega de cada release.
+
+### 3. O Product Backlog é uma lista de todas as coisas que precisam ser feitas dentro do projeto, elaborada a partir da Visão do Produto. Selecione a alternativa correta sobre Product Backlog:
+
+> O proprietário do Product Backlog é o Product Owner, porém Scrum Master e Time podem contribuir. O Product Backlog não é um documento detalhado, e também não é estático, mudando ao longo do projeto.
+
+### 4. Selecione a alternativa que corresponde à velocidade de um time com fator de foco de 75% e capacidade de produção total de 40d/h:
+
+> 30 pontos por Sprint.
+
+### 5. O SCRUM tem três pilares básicos, e cada um deles contribui em alguma medida para entregas de qualidade. Porém, um dos pilares se relaciona diretamente com a garantia de qualidade. Que pilar é esse?
+
+> O Pilar Inspeção preconiza que tudo o que é produzido deve ser inspecionado, garantindo a aderência ao que foi solicitado.
+
+### 6. O framework SCRUM aproxima o cliente do desenvolvimento do projeto, tornando o projeto "de todos", e não só do time. Em quais processos e/ou artefatos SCRUM o cliente tem participação?
+
+> Cliente é representado no time pelo Product Owner. O Product Owner elabora o Product Backlog com o cliente, e ambos participam da Reunião de Revisão (Sprint Review).
+
+### 7. No framework SCRUM os papéis são bem definidos e reduzidos, minimizando conflitos e aumentando o grau de comunicação entre todos os envolvidos. Selecione a alternativa que descreve corretamente todos os papéis do framework SCRUM:
+
+> O Product Owner é o representante do cliente no projeto; o Scrum Master é o papel que garante eficiência de trabalho do time; o Time de desenvolvimento executa os trabalhos.
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
