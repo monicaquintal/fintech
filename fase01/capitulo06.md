@@ -3,3 +3,6 @@
 <h2>Capítulo 06: Desvendando a cabeça do usuário.</h2>
 </div>
 <br>
+
+## Importância do levantamento de requisitos
+

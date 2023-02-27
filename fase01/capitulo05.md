@@ -354,4 +354,36 @@ As releases são mapeadas a partir de um Product Backlog priorizado e estimado. 
 
 > O Product Owner é o representante do cliente no projeto; o Scrum Master é o papel que garante eficiência de trabalho do time; o Time de desenvolvimento executa os trabalhos.
 
+<hr>
+
+## Atividade:
+
+"Chegou a hora de colocar as mãos na massa, vamos lá? 
+
+Você já teve, até o momento, um briefing de alto nível com as informações essenciais a respeito do projeto Fintech. Aprendemos durante a fase quais são as necessidades e as dores que o nosso projeto busca atender. No Capítulo 5, vimos que existe um documento denominado Documento Visão, que dá origem ao Product Backlog. 
+
+Observamos no mercado que, durante a fase inicial de um projeto, muitas vezes os requisitos de uma iniciativa ainda não estão claros nem transparentes para os usuários, clientes, patrocinadores e time do projeto. O Documento Visão pode guiar o time para um alinhamento de expectativas e para um contexto que gere poucos ruídos, fazendo com que o time desenvolva um produto que, de fato, gere valor. E é isso o que queremos, não é mesmo? 
+
+Chegou a sua hora! Concentre-se, pegue uma xícara de café e faça um exercício comigo a partir de sua experiência. Quantos projetos você já viu despenderem esforços infrutíferos por falta de orientação? Todos os membros do seu time estão andando na mesma direção ou têm consciência das reais motivações do projeto com as quais vocês trabalharam/trabalham? 
+
+A visão do produto é crucial para o sucesso de qualquer iniciativa e fornece insumos para uma tomada de decisão mais embasada e fiel às necessidades dos usuários. Além disso, traz inspiração e motivação para o desenvolvimento de um time guiado por um só objetivo! 
+
+A partir do modelo proposto por Moore (Elevator Pitch), desenvolva uma declaração de visão para o projeto Fintech, seguindo a estrutura abaixo: 
+
+~~~
+Para (clientes-alvo). 
+
+Que estão insatisfeitos com (a atual alternativa de mercado). 
+
+Nosso produto (nome do produto) é uma (proposta do nosso produto). 
+
+Que fornece (capacidade-chave de resolução de problemas). 
+
+Ao contrário de (a melhor alternativa do produto). 
+
+Nosso produto (proposta de valor, nosso diferencial). 
+~~~
+
+Compartilhe seu documento com outras pessoas, colete feedbacks que enriqueçam sua declaração, melhore seu documento evolutivamente e faça o upload em formato PDF na Plataforma FIAP ON. Ah, se restarem dúvidas, procure o @ do seu tutor no Teams!"
+
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
