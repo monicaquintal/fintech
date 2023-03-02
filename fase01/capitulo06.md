@@ -27,7 +27,7 @@ Alguns fatores devem ser levados em consideração:
 
 Que usuários e desenvolvedores tenham a mesma visão do problema a ser resolvido. Os desenvolvedores, juntamente com os clientes, tentam levantar e definir as necessidades dos futuros usuários do sistema a ser desenvolvido (requisitos).
 
-### 2. Questões a serem levantadas...
+### 3. Questões a serem levantadas...
 
 Algumas questões são levantadas:
 - Quais pessoas devem ser entrevistadas?
@@ -40,7 +40,7 @@ Algumas questões são levantadas:
 
 É necessário avaliar quem é a parte interessada dentro da estrutura organizacional, seja operacional, tático ou estratégico.
 
-### 3. Possíveis problemas
+### 4. Possíveis problemas
 
 Alguns problemas no levantamento de requisitos:
 - Problemas de escopo: fronteiras do sistema mal definidas ou clientes/usuários especificam detalhes técnicos desnecessários.
@@ -58,6 +58,8 @@ Alguns problemas no levantamento de requisitos:
 - Cenários.
 - História de usuários (user stories).
 - Casos de uso (use cases).
+
+---
 
 ### 1. Brainstorming:
 
@@ -159,7 +161,7 @@ b) Ações do planejamento:
 
 ***Quais tipos de questões podem ser elaborados?***
 
-A) QUESTÕES SUJBETIVAS:
+### A) QUESTÕES SUJBETIVAS:
 
 As “questões subjetivas” geram respostas “abertas”, dão uma visão global.
 
@@ -171,6 +173,31 @@ Informações abrangentes | Podem levantar muitas informações irrelevantes
 Entrevistado fica mais descontraído e espontâneo | O analista pode perder controle da entrevista
 &#45; | Respostas muito longas podem ser perdidas durante a entrevista
 
-B) QUESTÕES OBJETIVAS:
+### B) QUESTÕES OBJETIVAS:
 
 As “questões objetivas” geram respostas “direcionadas” a um resultado específico.
+
+***Vantagens e desvantagens:***
+
+Vantagens | Desvantagens
+----------|-------------
+Vai direto ao resultado esperado | As respostas podem ser relacionadas a outro processo, mas para o entrevistado pode parecer que é óbvio
+Permite o controle da entrevista | Geram somente dados quantitativos
+Geram dados significativos para o sistema | &#45;
+Facilitam identificação de regras, normas e políticas do negócio | &#45;
+
+B) CONFIABILIDADE:
+
+Tópico | Questões subjetivas | Questões objetivas
+-------|---------------------|--------------------
+Confiabilidade das informações | Baixa | Alta
+Uso eficiente do tempo | Baixo | Alto
+Precisão das informações | Baixa | Alta
+Amplitude | Alta | Baixa
+Habilidade requerida do analista | Alta | Baixa 
+Profundidade | Alta | Baixa
+
+> Complementar a entrevista com perguntas objetivas elaboradas a partir da resposta de uma pergunta subjetiva é uma ótima maneira de aumentar a confiabilidade das informações!
+
+### Estrutura da entrevista
+
