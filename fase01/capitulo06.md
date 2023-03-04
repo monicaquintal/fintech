@@ -60,8 +60,10 @@ Alguns problemas no levantamento de requisitos:
 - Casos de uso (use cases).
 
 ---
+<div align="center">
 
-### 1. Brainstorming:
+### 1. `Brainstorming`:
+</div>
 
 ***O que é?***
 
@@ -96,8 +98,10 @@ Pessoas que ocupam papéis diferentes no negócio contribuem com suas ideias | M
 &#45; | Processo de definição das melhores ideias pode ser longo
 
 ---
+<div align="center">
 
-### 2. Workshop:
+### 2. `Workshop`:
+</div>
 
 ***O que é?***
 
@@ -120,8 +124,10 @@ Reunião de objetivos comuns rm relação ao sistema | Mais difícil chegar a um
 Pode ser usada como complemento de técnica ou como validação de requisitos | Pode haver divergências
 
 ---
+<div align="center">
 
-### 3. Entrevista informal:
+### 3. `Entrevista informal`:
+</div>
 
 ***O que é?***
 
@@ -186,7 +192,7 @@ Permite o controle da entrevista | Geram somente dados quantitativos
 Geram dados significativos para o sistema | &#45;
 Facilitam identificação de regras, normas e políticas do negócio | &#45;
 
-B) CONFIABILIDADE:
+### C) CONFIABILIDADE:
 
 Tópico | Questões subjetivas | Questões objetivas
 -------|---------------------|--------------------
@@ -201,3 +207,66 @@ Profundidade | Alta | Baixa
 
 ### Estrutura da entrevista
 
+a. Abordagem dedutiva: a entrevista começa com questões subjetivas e, conforme o andamento, passa-se para as questões objetivas.
+b. Abordagem indutiva: começa com questões objetivas e, conforme o andamento, passa-se para as questões subjetivas.
+c. Entrevista não estruturada: questões elaboradas aleatoriamente, conforme necessidade do analista.
+
+### Cuidados ao elaborar as questões para entrevista
+
+- Evite questões indiscretas que estejam relacionadas a situações específicas da empresa ou que relacionem opiniões do entrevistado.
+- Evite elaborar muitas questões em uma só, separe as questões por assunto.
+
+### Como documentar a entrevista?
+
+1. Anotações: no formato de palavras-chave, diagramas ou símbolos.
+- vantagens:
+    - analista se concentra na fala da parte interessada.
+    - histórico da entrevista.
+    - pode utilizar símbolos para facilitar o entendimento.
+- desvantagens:
+    - pode ser difícil compreender o raciocínio da parte interessada.
+
+2. Gravação: acordar antecipadamente com os envolvidos.
+- vantagens:
+    - todos envolvidos no projeto podem escutar.
+    - registro mais rápido.
+- desvantagens:
+    - constranger o usuário.
+    - posteriormente será necessário transcrever.
+    - partre interessada pode abordar questões não pertinentes.
+
+### Concluindo a entrevista:
+
+- Fazer um relatório da entrevista e registrar em uma ata (com data da ocorrência e assuntos abordados). 
+- Registrar solicitações da parte interessada.
+- Identificar necessidades pontualmente. 
+- Enviar para a parte interessada e solicitar a confirmação sobre o que foi falado.
+
+### Em resumo... 
+
+Vantagens | Desvantagens
+----------|-------------
+Respostas e validação imediatas para dúvidas | Pode consumir muito tempo
+Planejamento pode contribuir para esclarecer levantamento de requisitos | Podem ocorrer desvios de assunto
+Questões planejadas podem ser alteradas no andamento | A parte interessada pode ter dificuldades para se concentrar
+Questões desnecessárias podem ser identificadas e eliminadas | Difícil comparar respostas
+Questões podem ser criadas | &#45;
+Ordem das questões pode ser alterada | &#45;
+Analista pode ser facilitador motivacional | &#45;
+
+Portanto, para que a entrevista seja bem sucedida:
+
+- bom planejamento;
+- identificar a parte interessada (usuário-chave) com expertise;
+- deixar claro o objetivo;
+- ser ético;
+- identificar fatos e necessidades objetivamente;
+- não utilizar muito tempo nas reuniões;
+- saber ouvir;
+- mostrar comprometimento em relação à expectativa da parte interessada;
+- evitar terminologias técnicas;
+- quando não entender determinado assunto, questionar e solicitar esclarecimentos;
+- expor o entendimento para a parte interessada e perguntar se está de acordo;
+- registrar tudo que foi falado e solicitar a validação da parte interessada.
+
+PÁGINA 20
