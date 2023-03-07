@@ -337,6 +337,8 @@ Maior comprometimento dos envolvidos | Requer recursos visuais
 Esclarecimento e trabalho em equipe | Requer espaço físico estruturado
 Histórico das reuniões | &#45;
 
+---
+
 <div align="center">
 
 ### 5. `Questionário`
@@ -372,7 +374,7 @@ Gera dados estatísticos | Não é possível verificar se a parte interessada es
 ***Passo 2:*** identificar atividades/tarefas que o usuário realiza ao utilizá-lo, de modo que atenda aos objetivos selecionados.
 - Devemos realizar o mapeamento para cada tipo de usuário, chamados **personas**.
 - A sequência de atividades é conhecida também como **jornada do usuário**.
-- Os passos são descritos com verbos no infinitivo.
+- Os passos são descritos com verbos no infinitivo.<br>
 ***Passo 3:*** Uma vez traçada a jornada, explorar os detalhes sobre cada atividade, fornecendo informações a respeito do que deve ser construído para atender a cada passo.
 - `Mínimo produto viável (MVP)`: quais são as funcionalidades mínimas necessárias para gerar o maior valor possível no menor tempo possível.
     - não é o produto mais simples possível a ser entregue!!!
@@ -408,3 +410,25 @@ Caso: empresa que deseja criar a primeira versão de seu comércio eletrônico a
 <em>Exemplo de Story map.</em>
 </div>
 
+---
+
+## FAST TEST
+
+### 1. Qual é a vantagem do levantamento de requisitos por Workshop em comparação com Brainstorming? 
+Tanto Workshop quanto Brainstorm podem ser usados para discussões técnicas ou de negócio. Não é a técnica de levantamento de requisitos que determina o assunto a ser discutido.
+> Workshops funcionam a partir da apresentação de um requisito, software ou solução, e a discussão é direcionada pelo que foi apresentado. Brainstorming direciona a discussão apenas definindo um propósito, o que pode dar abertura a ideias pouco úteis.
+
+### 2. (QUESTÃO ANULADA) Qual é a vantagem do levantamento de requisitos por Brainstorming e comparação com Workshop?
+> Brainstorming tem por objetivo produzir uma grande quantidade de ideias voltadas ao propósito do levantamento de dados. O Workshop produz menor quantidade de ideias e tem foco mais restritivo.
+
+### 3. Quais são as vantagens de levantamento de requisitos por entrevista informal em relação a outras técnicas de levantamento de requisitos?
+> Entrevista informal permite validação imediata de dúvidas objetivas do entrevistador e tem flexibilidade para ouvir percepções subjetivas dos entrevistados.
+
+### 4. Qual é a relação entre o Product Backlog e as técnicas do Story Map e jornada do usuário?
+O Story Map e a jornada do usuário são técnicas de levantamento de requisitos que, após análise, ajudarão a compor a lista e itens a serem desenvolvidas em projeto denominado Product Backlog.
+> O Story Map e a jornada do usuário permitem a visualização do que o software deve fazer da perspectiva do usuário, e ao separarem cada etapa, ajudam na identificação de tarefas e na montagem do Product Backlog.
+
+### 5. Quais são as vantagens da entrevista formal JAD em comparação com outras técnicas de levantamento de requisitos?
+> Entrevistas formais JAD tem excelente padrão de documentação, alto comprometimento dos envolvidos, permite colaboração de todos os stakeholders e favorece o consenso.
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
