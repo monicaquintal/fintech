@@ -207,8 +207,8 @@ Profundidade | Alta | Baixa
 
 ### Estrutura da entrevista
 
-a. Abordagem dedutiva: a entrevista começa com questões subjetivas e, conforme o andamento, passa-se para as questões objetivas.
-b. Abordagem indutiva: começa com questões objetivas e, conforme o andamento, passa-se para as questões subjetivas.
+a. Abordagem dedutiva: a entrevista começa com questões subjetivas e, conforme o andamento, passa-se para as questões objetivas.<br>
+b. Abordagem indutiva: começa com questões objetivas e, conforme o andamento, passa-se para as questões subjetivas.<br>
 c. Entrevista não estruturada: questões elaboradas aleatoriamente, conforme necessidade do analista.
 
 ### Cuidados ao elaborar as questões para entrevista
@@ -269,4 +269,142 @@ Portanto, para que a entrevista seja bem sucedida:
 - expor o entendimento para a parte interessada e perguntar se está de acordo;
 - registrar tudo que foi falado e solicitar a validação da parte interessada.
 
-PÁGINA 20
+---
+
+<div align="center">
+
+### 4. `Entrevista formal –JAD (Joint Application Design)`
+
+</div>
+
+- técnica que relaciona formalidade e visão compartilhada em suas ações.
+- objetivo: levantamento de requisitos em grupo,envolvendo partes interessadas e analistas.
+
+***É uma sessão formal que:***
+- tem como objetivo identificar problemas e soluções;
+- tem uma agenda organizada e estruturada;
+- tem uma equipe definida com papéis e responsabilidades;
+- analisa o processo de negócio top down (começa com aspectos gerais e depois considera os detalhes);
+- utiliza workshop na condução das sessões;
+- utiliza documentação padrão;
+- todos os participantes têm a mesma importância;
+- a decisão é do grupo por consenso;
+- cada participante tem seu momento de falar;
+- utiliza recursos visuais.
+
+***Pessoas envolvidas:***
+- Patrocinador (sponsor): executivo do negócio, determina as estratégias/diretrizes. Não participa obrigatoriamente de todas as sessões.
+- Partes interessadas (stakeholders) ou usuários que devem ser especialistas.
+- Líder da sessão.
+- Engenheiro de requisitos ou documentador: registra todas as decisões em uma documentação padrão.
+- Escriba: anota as discussões em uma ferramenta que facilite a visualização das decisões.
+- Observador(es): não podem fazer intervenções.
+
+***Fasessintetizadas de uma sessão JAD:***
+
+a) Adaptação ou planejamento:
+
+- Definir o objetivo do projeto.
+- Escolher e preparar participantes.
+- Definir os documentos e as ferramentas padrões.
+- Definir quantas sessões e qual a finalidade de cada uma.
+- Identificar as diretrizes do patrocinador (sponsor).
+- Analistas devem familiarizar-se com a área de negócio.
+- Preparar a agenda da sessão.
+
+b) Sessão (reunião):
+
+- Preparar o ambiente físico com equipamentos e materiais necessários.
+- Todos devem ser apresentados(participantes e agenda)
+- Gerar os documentos conforme padrão inicial.
+- Realizar a reunião para identificar os requisitos.
+- Ao finalizar a sessão,identificar se os resultados foram satisfatórios em relação os objetivos iniciais.
+
+c) Finalização:
+- Rever o documento que foi construído durante a sessão.
+- Verificar se as informações estão completas e de acordo com os objetivos.
+- Especificar o documento de requisitos.
+- Preparar a pasta JAD para uso nas próximas sessões.
+- Elaborar as avaliações dos participantes referentes à sessão.
+
+***Em resumo...***
+
+Vantagens | Desvantagens
+----------|-------------
+Qualidade e padrão de documentação | Envolver um grupo de pessoas
+Organização das reuniões | Processo burocrático
+Maior comprometimento dos envolvidos | Requer recursos visuais
+Esclarecimento e trabalho em equipe | Requer espaço físico estruturado
+Histórico das reuniões | &#45;
+
+<div align="center">
+
+### 5. `Questionário`
+
+</div>
+
+***Recomendações***:
+
+- Criar um roteiro com as orientações para preenchimento.
+- As questões devem ser ordenadas conforme o objetivo que se pretende atingir.
+- Questões relacionadas ao mesmo propósito devem estar agrupadas. 
+- A estrutura do questionário deve seguir os mesmos conceitos relacionados às perguntas subjetivas e objetivas utilizadas no planejamento. 
+- Vocabulário deve ser simples e de acordo com os envolvidos.
+- As questões objetivas geram resultados quantitativos e estatísticos.
+- As questões subjetivas, quando respondidas porum grupo muito grande de usuários, tornam-se difíceis de analisar, e a consolidação das respostas é muito difícil.
+- Pensar em perguntas cuja elaboração das respostas leve menos tempo.
+- Ao concluir recebimento dos questionários,devem ser feitas as consolidações das informações; validar as respostas.
+
+Vantagens | Desvantagens
+----------|-------------
+Resultados rápidos | Não é possível observar as expectativas das partes interessadas
+Não requer espaço físico | Respostas podem ser geradas sem conscientização
+Podem ser utilizados questionários on-line | Falta de interação com a parte interessada
+Gera dados estatísticos | Não é possível verificar se a parte interessada está segura em suas respostas
+
+### `Mapeamento do produto`
+
+`Analista de negócios`: faz levantamento e detalhamento de requisitos. No SCRUM, costuma ser o PO.
+
+`Story mapping`: técnica de mapeamento de funcionalidades de um produto de forma colaborativa.
+
+***Passo 1:*** definir os objetivos do usuário final do produto.<br>
+***Passo 2:*** identificar atividades/tarefas que o usuário realiza ao utilizá-lo, de modo que atenda aos objetivos selecionados.
+- Devemos realizar o mapeamento para cada tipo de usuário, chamados **personas**.
+- A sequência de atividades é conhecida também como **jornada do usuário**.
+- Os passos são descritos com verbos no infinitivo.
+***Passo 3:*** Uma vez traçada a jornada, explorar os detalhes sobre cada atividade, fornecendo informações a respeito do que deve ser construído para atender a cada passo.
+- `Mínimo produto viável (MVP)`: quais são as funcionalidades mínimas necessárias para gerar o maior valor possível no menor tempo possível.
+    - não é o produto mais simples possível a ser entregue!!!
+    - **é a menor versão de um produto entregue, a qual atinge com sucesso os resultados desejados**!!!
+
+Exemplo:
+
+~~~
+Caso: empresa que deseja criar a primeira versão de seu comércio eletrônico a fim de vender produtos pela internet.
+
+1. Objetivos do usuário:
+- localizar produto.
+- comprar produto.
+
+2. Identificar atividades/tarefas:
+  a) com objetivo de visualizar o produto:
+    - acessar o site.
+    - navegar pela vitrine de produtos.
+    - buscar um produto.
+    - visualizar detalhes do produto.
+  b) com objetivo de comprar o produto:
+    - adicionar ao carrinho.
+    - efetuar pagamento.
+
+3. Mapear as funcionalidades necessárias para atender a cada passo. Exemplos:
+- para acessar o site: login com user e senha, cadastro simples, homepage com vitrine, etc.
+- para navegar pela vitrine: listagem de produtos, filtros por tipo e marca.
+(exemplos na imagem abaixo)
+~~~
+
+<div align="center">
+<img width="70%" src="../assets/imagens-fase01/story-map.png" /><br>
+<em>Exemplo de Story map.</em>
+</div>
+
