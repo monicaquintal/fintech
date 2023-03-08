@@ -387,3 +387,5 @@ Nosso produto (proposta de valor, nosso diferencial).
 Compartilhe seu documento com outras pessoas, colete feedbacks que enriqueçam sua declaração, melhore seu documento evolutivamente e faça o upload em formato PDF na Plataforma FIAP ON. Ah, se restarem dúvidas, procure o @ do seu tutor no Teams!"
 
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
+
+TE AMOO
