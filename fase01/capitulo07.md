@@ -120,5 +120,78 @@ Tamanho do Sprint | Timebox da Reunião
 - mostra o trabalho realizado por dia contra a taxa projetada de conclusão para a versão atual do projeto. 
 - pode acompanhar a evolução do projeto, do release ou do Sprint.
 - é um gráfico que contém as informações do Total de Pontos a Serem Executados X Quantidade de Sprints, sendo a linha de velocidade opcional.
+- normalmente, o Sprint Burndown representa Esforço X Duração (+ comum) ou Número de Atividades X Duração.
+- o gráfico deve ser atualizado ao final do dia, de acordo com a evolução do quadro Kanban.
 
-PÁGINA 21
+--- 
+
+## Revisão do Sprint
+
+- todos podem participar.
+- objetivo: avaliação do resultado do Sprint, feita pelo PO e convidados (stakeholders).
+- como resultado, deve ser apresentado o produto funcionando, conforme as especificações.
+- é um timebox:
+  - 4 horas para Sprint de 4 semanas.
+  - 3 horas para Sprint de 3 semanas.
+  - 2 horas para Sprint de 2 semanas.
+
+### Resultados da Revisão
+
+Além da avaliação, são realizados:
+
+- Retornar as funcionalidades não terminadas ao Product Backlog e repriorizá-las.
+- Remover do Product Backlog as funcionalidades finalizadas.
+- Trabalhar com o Scrum Master para reformular a equipe, caso necessário.
+- Repriorização do Product Backlog.
+- Solicitar fechamento de um Release com as funcionalidades demonstradas, sozinhas ou com o incremento de Sprints anteriores.
+- Autorizar ou não o próximo Sprint.
+- Acrescentar ao Product Backlog novos itens com base no feedback obtido durante a Revisão.
+
+### Retrospectiva
+
+- participação do time Scrum e Scrum Master como facilitador.
+- reflexões:
+  - O que correu bem durante o Sprint?
+  - O que não correu bem durante o Sprint?
+  - Quais melhorias poderiam ser feitas para o próximo Sprint?
+- timebox:
+  - 3 horas para Sprint de 4 semanas.
+  - 2 horas para Sprint de 3 semanas.
+  - 1,5 hora para Sprintde 2 semanas.
+
+--- 
+
+## Dicas
+
+- em um cenário de vários times trabalhando ao mesmo tempo, cada time terá seu Scrum Master e seu Product Owner.
+- problemas comuns:
+  - Conflitos de liderança.
+  - Falhas de comunicação.
+  - Planejamento descentralizado.
+  - Duplicação de esforço e retrabalho.
+  - Problemas com a integração dos produtos.
+  - Dependências entre as atividades.
+  - Difícil controle de mudanças.
+- para evitá-los:
+  - Dividir o escopo do projeto em incrementos mais independentes possíveis entre si, limitando as dependências entre os times;
+  - Criar papéis para a centralização de decisões no nível do Scrum Master e do Product Owner;
+  - Criar um Product Backlog único e compartilhado entre todos os times;
+  - Criar pontos de controle para a unificação de releases e publicação de uma nova versão;
+  - Fazer reuniões diárias conjuntas;
+  - Criar uma reunião de Scrum de Scrums para o acompanhamento das atividades, verificação de dependências e centralização das mudanças.
+
+--- 
+
+## Importante
+
+1. Para mais detalhes sobre SCRUM, acessar [este link](www.scrum.org).
+
+2. Algumas ferramentas gratuitas:
+- [ScrumHalf](http://myscrumhalf.com/?lang=pt): facilita o uso do Scrum; tem quadro Kanban virtual e propicia a colaboração e acompanhamento da equipe. Simples de dar manutenção e priorizar o Product Backlog, gera o Burn Down Chart, entre outros.
+- [Trello](https://trello.com/): automatiza o quadro Kanban.
+
+---
+
+Esse capítulo não possui FAST TEST.
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
