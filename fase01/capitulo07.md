@@ -192,6 +192,28 @@ Além da avaliação, são realizados:
 
 ---
 
-Esse capítulo não possui FAST TEST.
+## FAST TEST
+
+### 1. A reunião diária tem o objetivo de melhorar a comunicação do time e permitir-lhe tomar ações corretivas na execução dos trabalhos. Selecione a alternativa INCORRETA sobre a reunião diária:
+
+> A reunião diária precisa obrigatoriamente ser feita de pé, para manter todos em estadp de alerta e com atenção focada na resposta das 3 perguntas essenciais.
+
+### 2. A Revisão do Sprint (Sprint Review) tem como principal objetivo a avaliação d resultado da Sprint pelo Product Owner e Stakeholders. Selecione a alternativa INCORRETA sobre a Revisão do Sprint:
+
+> O Sprint Review não é obrigatório no framework SCRUM, e pode ser ignorado se ao fim so Sprint o time não for lançar algo em produção.
+
+### 3. O conceito de Ready (DoR - Definition of Ready) auxilia o time a verificar se uma história selecionada para um Sprint tem informações suficientes para começar a ser construída. Selecione a alternativa INCORRETA sobre DoR:
+
+> Cada membro do time, de acordo com suas capacidades pessoais, define os requisitos necessários que devem compor o DoR de suas gtarefas.
+
+### 4. O Planejamento do Sprint é a reunião onde se define o que será trabalhado pelo time durante o Sprint. Selecione a alternativa que contém apenas afirmações verdadeiras sobre o Planejamento do SPrint.
+
+> A primeira atividade da reunião é definir a meta do Sprint; o time todo define sua capacidade para o Sprint, ou seja, quantos itens do Product Backlog irá se comprometer a desenvolver e entregar.
+
+### 5. Um Sprint é um ciclo determinado por um timebox, e representa uma iteração para construção de um produto. Selecione a alternativa que contém apenas informações verdadeiras sobre o Sprint.
+
+> Sprints precisam de uma meta definida para começarem; ao final do sprint, o time deve apresentar o que foi desenvolvido na reunião de Sprint Review.
+
+---
 
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
