@@ -11,7 +11,13 @@
 3. Instalação do Eclipse.
 4. Instalação do Apache Tomcat.
 5. Integração entre Eclipse e Apache Tomcat.
-6. 
+6. Instalação do Oracle SQL Developer Data Modeler.
+7. Instalação do Oracle SQL Developer.
+8. Instalação do Python.
+9. Instalação do Postman.
+10. Instalação do VSCODE.
+11. Instalação do NodeJS.
 
-PÁGINA 9
-PRÓXIMO A INSTALAR: SQL
+---
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
