@@ -71,6 +71,24 @@ nome = input("Por favor, digite seu nome: ")
 print(nome + "é um programador incrível!")
 ~~~
 
+### Comando type()
+
+Exibe os tipos das variáveis indicadas.
+
+Exemplo:
+
+~~~python
+valor1 = input("Por favor, digite o primeiro valor: ")
+valor2 = input("Por favor, digite o segundo valor: ")
+
+soma = valor1 + valor2
+print("A soma entre os valores é " + soma)
+print(type(valor1))
+print(type(valor2))
+
+# nesse caso, a execução do script indica que as variáveis estão sendo tratadas como strings!
+~~~
+
 ## Etapa 2: Instalando PyCharm
 
 IDEs (Integrated Development Environment): 
@@ -300,7 +318,7 @@ print(cidade_p1 is cidade_p3)
 
 Operador | Função | Precedência
 :---------:|--------|-------------
-&lpar;&rpar; | Parênteses | Maior prioridade
+&lpar; &rpar; | Parênteses | Maior prioridade
 &#42;&#42; | Exponenciação | &#45;
 &#43;x, &#45;x | Sinal | &#45;
 &#42;, /, //, % | Multiplicação, divisão, divisão inteira e módulo | &#45;
@@ -308,13 +326,117 @@ Operador | Função | Precedência
 &lt;, &lt;=, &gt;, &gt;= | Relacionais | &#45;
 ==, != | Igual e diferente | &#45;
 is, is not | Identidade | &#45;
-in, not in | Associeção | &#45;
+in, not in | Associação | &#45;
 not | não | &#45;
 and | e | &#45;
 or | ou | &#45;
-=, +=, -=, *=. /=, %- | Atribuição | Menor prioridade
+=, +=, -=, *=. /=, %= | Atribuição | Menor prioridade
 
+### Convertendo tipos de variáveis
 
+Tipos básicos | Descrição | Exemplo
+---------------|----------|---------
+int | Números inteiros | 1, 2, 100
+float | Números reais (ponto flutuante) | 1.5, 2.07, 50.29
+complex | Números complexos | 4j, 5+2j, 15j
+bool | Valores lógicos | True, False, 1, 0
+string | Textos | "a", "texto", "10"
 
-páginas 10/15 e 
-29/36
+--- 
+
+<div align="center">
+
+## Exercícios
+
+</div>
+
+## Calculadora
+
+### Requisitos funcionais:
+- receber dois valores do usuário;
+- realizar as 4 operações básicas: soma, subtração, divisão e multiplicação.
+
+### Fluxograma:
+
+<div align="center">
+<img src="../assets/imagens-fase01/fluxograma-calculadora.png" /><br>
+<em>Fluxograma para o algoritmo da calculadora.</em>
+</div>
+
+### Algoritmo:
+
+~~~
+Algoritmo "Soma"
+Variáveis
+  valor1, valor2, soma, divisao, subtracao, multiplicacao: real
+Início
+  Escreva "Digite o primeiro valor"
+  Leia valor1
+  Escreva "Digite o segundo valor"
+  Leia valor2
+  soma = valor1 + valor2
+  Escreva "A soma é ", soma
+  subtracao = valor1 -valor2
+  Escreva "A subtração é ", subtracao
+  divisao = valor1 / valor2
+  Escreva "A divisão é ", divisao
+  multiplicacao = valor1 * valor2
+  Escreva "A multiplicação é ", multiplicacao
+Fim
+~~~
+
+### Código:
+
+~~~python
+valor1 = input("Digite o primeiro número: ")
+valor2 = input("Digite o segundo número: ")
+
+# print(type(valor1))
+# print(type(valor2))
+# indicam que as variáveis são strings
+# portanto, convertê-las para float:
+
+soma = float(valor1) + float(valor2)
+print("A soma entre os dois valores é igual a {}".format(soma))
+# .format() é um recurso do Python que permite escrever um texto,
+# indicando os locais onde serão incluídos valores de variáveis!
+
+subtracao = float(valor1) - float(valor2)
+print("A subtração entre os dois valores é igual a {}".format(subtracao))
+
+multiplicacao = float(valor1) * float(valor2)
+print("A multiplicação entre os dois valores é igual a {}".format(multiplicacao))
+
+divisao = float(valor1) / float(valor2)
+print("A divisão entre os dois valores é igual a {}".format(divisao))
+~~~
+
+> diretório fase01 > projetos > calculadora, arquivo calculadora.py
+
+--- 
+
+## O Patinete Elétrico
+
+### Objetivo:
+
+Criar um algoritmo que calcule a velocidade média, a partir de duas informações: a distância que o patinete percorreu e o tempo que demorou.
+
+### Código:
+
+~~~python
+print("Este programa calcula a velocidade média de um patinete elético!")
+
+distancia = input("Informe a distância percorrida pelo patinete (em metros): ")
+tempo = input("Quantos minutos demorou para percorrer essa distância? ")
+
+velocidade_media = float(distancia) / float(tempo)
+
+# print("O patinete atingiu uma velocidade média de {} m/min".format(velocidade_media))
+
+# para limitar a quantidade de casas decimais da variável velocidade_media:
+# para exibir 2 casas, indicar {0:.2f}, para exibir 1 casa {0:.1f}, etc
+
+print("O patinete atingiu uma velocidade de {0:.2f} m/min".format(velocidade_media))
+~~~
+
+> diretório fase01 > projetos > patineteEletrico, arquivo patinete.py
