@@ -440,3 +440,26 @@ print("O patinete atingiu uma velocidade de {0:.2f} m/min".format(velocidade_med
 ~~~
 
 > diretório fase01 > projetos > patineteEletrico, arquivo patinete.py
+
+--- 
+
+## FAST TEST
+
+### 1. Qual é a diferença entre a execução da linguagem compilada e a linguagem interpretada?
+> A linguagem compilada gera um executável que está em linguagem de máquina e precisa ser gerado de acordo com a arquitetura em que quisermos rodar o software. A linguagem interpretada não altera o código-fonte e necessita de um interpretador instalado para que possa executar o software.
+
+### 2. A palavra "algoritmo" é muito utilizada no meio tecnológico. Assinale a alternativa que melhor define a palavra "algoritmo".
+> Algoritmo é qualquer sequência de instruções para atingir um objetivo, por exemplo: Cálculo do Máximo Divisor Comum.
+
+### 3. Assinale a alternativa que define Operadores Relacionais.
+> Operadores relacionais são utilizados quando precisamos realizar comparações.
+
+### 4. As linguagens de programação possuem algumas palavras reservadas. Selecione a alternativa que define melhor o conceito.
+> Palavras reservadas são palavras que possuem algum significado dentro de uma linguagem de programação. Por exemplo, comandos.
+
+### 5. Assinale a alternativa que define Operadores de Associação.
+> Os operadores de associação são utilizados para verificar se um objeto está contido em uma sequència.
+
+---
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
