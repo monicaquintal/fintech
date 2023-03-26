@@ -28,7 +28,7 @@
 
 <h2>📚 FASE 2 - PROTOTYPING (de 22/03 até 25/04)</h2>
 
-[Capítulo 01: E que comecem os preparativos!]()<br>
+[Capítulo 01: E que comecem os preparativos!](./fase02/capitulo01.md)<br>
 [Capítulo 02: ]()<br>
 [Capítulo 03: ]()<br>
 [Capítulo 04: ]()<br>
