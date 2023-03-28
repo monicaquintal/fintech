@@ -70,3 +70,75 @@ Estrutura que permite realizar um teste lógico e executar alguma ação, depend
 3. `Desvio condicional encadeado`: dependendo do resultado de uma condição, permite a realização de um segundo teste.
 
 ## If simples em Python
+
+### Exemplo:
+
+"A FIAP está propondo a formação de um time de Esportes para representar a instituição e, para isso, realizará um campeonato interno no qual os alunos podem se inscrever. Porém, há uma condição: só podem ser inscritos alunos que são maiores de idade."
+
+1. Algoritmo:
+
+~~~
+variáveis
+  idade: inteiro
+  rm: alfanumérico
+início
+  Escreva “Por favor, digite seu RM”
+  Leia rm
+  Escreva “Por favor, digite sua idade”
+  Leia idade
+  Se idade >=18 então
+    Escreva “Sua participação foi autorizada, aluno de RM”, rm
+      Escreva “Mais instruções serão enviadas ao seu e-mail cadastrado na FIAP!”
+  Fim_se
+Fim
+~~~
+
+2. Sintaxe da estrutura condicional simples em Python:
+
+~~~python
+if <condição>:
+  <ação a ser realizada se a condição for verdadeira>
+~~~
+
+3. Estrutura condicional simples em Python: arquivo [exemplo_if_simples.py](./scripts/scripts-cap02/exemplo_if_simples.py).
+
+Há ainda um segundo exemplo, que pode ser conferido [aqui](./scripts/scripts-cap02/exemplo_if_simples_2.py)
+
+---
+
+## If composto em Python
+
+### Exemplo:
+
+Considerando o exemplo anterior, podemos exibir também uma mensagem para os alunos menores de idade.
+
+1. Algoritmo:
+
+~~~
+variáveis
+  idade: inteiro
+  rm: alfanumérico
+início
+  Escreva “Por favor, digite seu RM”
+  Leia rm
+  Escreva “Por favor, digite sua idade”
+  Leia idade
+  Se idade >=18 então
+    Escreva “Sua participação foi autorizada, aluno de RM”, rm
+      Escreva “Mais instruções serão enviadas ao seu e-mail cadastrado na FIAP!”
+  Senão
+    Escreva “Sua participação não foi autorizada por causa da sua idade”
+  Fim_se
+Fim
+~~~
+
+2. Sintaxe do desvio condicional composto em Python:
+
+~~~python
+if <condição>:
+  <ação a ser realizada se a condição for verdadeira>
+else:
+  <ação a ser realizada se a condição for falsa>
+~~~
+
+3. Desvio condicional composto em Python: arquivo [exemplo_if_composto.py](./scripts/scripts-cap02/exemplo_if_composto.py).
