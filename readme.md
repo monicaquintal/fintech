@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://github.com/monicaquintal" target="_blank"><img align="right" height="100" src="https://cdn-icons-png.flaticon.com/512/1055/1055666.png" /></a>
+<a href="https://github.com/monicaquintal" target="_blank"><img align="right" height="150px" src="https://cdn-icons-png.flaticon.com/512/1055/1055666.png" /></a>
 <h1>ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</h1>
 <h2>Startup Fintech</h2>
 <p>1°. ANO - 2023/1</p>
@@ -29,7 +29,7 @@
 <h2>📚 FASE 2 - PROTOTYPING (de 22/03 até 25/04)</h2>
 
 [Capítulo 01: E que comecem os preparativos!](./fase02/capitulo01.md)<br>
-[Capítulo 02: ]()<br>
+[Capítulo 02: Quando a máquina começa a tomar decisões.](./fase02/capitulo02.md)<br>
 [Capítulo 03: ]()<br>
 [Capítulo 04: ]()<br>
 [Capítulo 05: ]()<br>
