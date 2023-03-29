@@ -1,8 +1,9 @@
 rm = input("Insira seu RM: ")
-idade = input("Insira sua idade: ")
+idade = input("Digite sua idade: ")
+nome = input("Digite seu nome: ")
 
 if int(idade) >= 18:
-    print("Sua participação foi autorizada, aluno de RM {}!".format(rm))
+    print("{}, sua participação foi autorizada, seu RM é {}.".format(nome, rm))
     print("Mais informações serão enviadas para seu e-mail cadastrado!")
 else:
-    print("Sua participação não foi autorizada por causa da sua idade")
+    print("{}, sua participação não foi autorizada devido à sua idade.".format(nome))

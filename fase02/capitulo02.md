@@ -142,3 +142,114 @@ else:
 ~~~
 
 3. Desvio condicional composto em Python: arquivo [exemplo_if_composto.py](./scripts/scripts-cap02/exemplo_if_composto.py).
+
+---
+
+## If encadeado em Python
+
+Consiste na aplicação de um if dentro de outro.
+
+### Exemplo:
+
+Dado o elevado número de alunos com menos de 18 anos interessados em se inscrever no campeonato, a FIAP resolveu abrir vagas para aqueles que possuam autorização escrita dos responsáveis. Portanto:
+
+1. Pseudocódigo:
+
+~~~
+variáveis
+  idade: inteiro
+  rm: alfanumérico
+  autorizado: caractere
+início
+  Escreva “Por favor, digite seu nome”
+  Leia rm
+  Escreva “Por favor, digite sua idade”
+  Leia idade
+  Se idade >=18 então
+    Escreva “Sua participação foi autorizada, aluno de RM”, rm
+    Escreva “Mais instruções serão enviadas ao seu e-mail cadastrado na FIAP!”
+  Senão
+    Escreva “Você possui autorização dos responsáveis para participar? S – SIM ou N – NÃO”
+      Leia autorizado
+      Se autorizado = “S” então
+        Escreva “Sua participação foi autorizada, aluno de RM”, rm
+        Escreva “Mais instruções serão enviadas ao email dos seus responsáveis”
+      Senão
+        Escreva “Sua participação não foi autorizada por causa da sua idade”
+      Fim_se
+  Fim_se
+Fim
+~~~
+
+2. O script contendo a codificação em Python, utilizando if encadeado, encontra-se no arquivo [exemplo_if_encadeado.py](./scripts/scripts-cap02/exemplo_if_encadeado.py).
+
+---
+
+## Python e o poder do `elif`
+
+Utilizado caso seja necessário testar uma série de condições em sequência.
+
+O elif serve como substituto do bloco else, quando queremos realizar uma nova verificação de condição dentro do senão. 
+
+### Exemplo:
+
+Uma operadora de celular concede bônus em consumo da franquia de internet, dependendo da pontuação dos clientes: 
+- clientes que fizerem mais de 1000 pontos recebem 3GB adicionais em sua franquia.
+- clientes que fizerem mais de 500 pontos recebem 1,5GB adicionais em sua franquia.
+- clientes que fizerem mais de 200 pontos recebem 500MB adicionais em sua franquia. 
+- Os demais não recebem nada.
+
+A aplicação do elif na codificação Python pode ser verificada no arquivo [exemplo_elif.py](./scripts/scripts-cap02/exemplo_elif.py).
+
+---
+
+
+<div align="center">
+
+## Operando a lógica
+
+</div>
+
+## Operador lógico `OR`
+
+É a conexão entre dois testes lógicos, e retornará verdadeiro caso qualquer um dos testes seja verdadeiro.
+
+<div align="center">
+
+A | B | A or B
+--|---|--------
+False | False | False
+False | True | True
+True | False | True
+True | True | True
+
+</div>
+
+## Operador lógico `AND`
+
+É a conexão entre dois testes lógicos, e retornará verdadeiro apenas se ambos os testes retornarem verdadeiro!
+
+<div align="center">
+
+A | B | A or B
+--|---|--------
+False | False | False
+False | True | False
+True | False | False
+True | True | True
+
+</div>
+
+## Importante:
+
+O Python tem uma característica especial que não está presente na maior parte das outras linguagens de programação. Ele permite a avaliação de condições em cadeia. 
+
+---
+
+<div align="center">
+
+## Hora da prática:
+
+</div>
+
+página 24
