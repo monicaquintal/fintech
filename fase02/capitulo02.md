@@ -258,7 +258,7 @@ O Python tem uma característica especial que não está presente na maior parte
 
 ### Solução:
 
-A resolução, utilizando if simples, pode ser conferida [aqui](./scripts/exemplo1.py).
+A resolução, utilizando if simples, pode ser conferida [aqui](./scripts/scripts-cap02/exemplo1.py).
 
 ## Exemplo 2:
 
@@ -266,7 +266,7 @@ A resolução, utilizando if simples, pode ser conferida [aqui](./scripts/exempl
 
 ### Solução:
 
-A resolução, utilizando if composto, pode ser conferida [aqui](./scripts/exemplo2.py).
+A resolução, utilizando if composto, pode ser conferida [aqui](./scripts/scripts-cap02/exemplo2.py).
 
 ## Exemplo 3:
 
@@ -274,7 +274,7 @@ Transporte-se no tempo e volte para a época de escola! Lembra do dia em que apr
 
 ### Solução:
 
-A resolução pode ser conferida [aqui](./scripts/exemplo3.py).
+A resolução pode ser conferida [aqui](./scripts/scripts-cap02/exemplo1.py).
 
 ### Observação:
 
@@ -303,7 +303,7 @@ Idoso | 50 a 60
 
 </div>
 
-Resolucão [aqui](./scripts/exercicio1.py).
+Resolucão [aqui](./scripts/scripts-cap02/exercicio1.py).
 
 ## Exercício 2:
 
@@ -327,13 +327,13 @@ Primeira classe | 2 viajantes = 10%
 
 O programa deverá exibir o valor BRUTO DA VIAGEM (o mesmo que foi digitado), o VALOR DO DESCONTO, o VALOR LÍQUIDO DA VIAGEM (valor bruto menos os descontos) e o VALOR MÉDIO POR VIAJANTE!
 
-Resolucão [aqui](./scripts/exercicio2.py).
+Resolucão [aqui](./scripts/scripts-cap02/exercicio2.py).
 
 ## Exercício 3:
 
 Os colaboradores da sua equipe foram sorteados para ganhar um console de última geração, cada um, em razão do bom desempenho que tiveram nos últimos projetos. Por uma questão de logística, porém, a empresa pede que todos os cinco membros da equipe recebam o mesmo aparelho. Crie um algoritmo em que o usuário possa digitar o voto de cada um dos 5 membros da equipe e, ao final, exiba qual foi o console escolhido e com quantos votos. As opções são: PLAYSTATION, XBOX e NINTENDO.
 
-Resolucão [aqui](./scripts/exercicio3.py).
+Resolucão [aqui](./scripts/scripts-cap02/exercicio3.py).
 
 ---
 
