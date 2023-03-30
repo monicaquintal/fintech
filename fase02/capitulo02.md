@@ -334,3 +334,27 @@ Resolucão [aqui](./scripts/exercicio2.py).
 Os colaboradores da sua equipe foram sorteados para ganhar um console de última geração, cada um, em razão do bom desempenho que tiveram nos últimos projetos. Por uma questão de logística, porém, a empresa pede que todos os cinco membros da equipe recebam o mesmo aparelho. Crie um algoritmo em que o usuário possa digitar o voto de cada um dos 5 membros da equipe e, ao final, exiba qual foi o console escolhido e com quantos votos. As opções são: PLAYSTATION, XBOX e NINTENDO.
 
 Resolucão [aqui](./scripts/exercicio3.py).
+
+---
+
+<div align="center">
+
+## FAST TEST
+
+</div>
+
+### QUESTÃO 1: Assinale a alternativa que apresenta corretamente a condicional da estrutura if para verificar se um número é ímpar no Python:
+> if numero % 2 == 0:
+
+### QUESTÃO 2: Selecione a alternativa que apresenta uma expressão que retorne True para uma nota válida. Considere como válidos os valores de 0 a 10, inclusive.
+> nota >= 0 and nota <= 10
+
+### QUESTÃO 3: No Python, podemos utilizar os operadores lógicos para combinar expressões e realizar os testes lógicos. Escolha a alternativa correta conforme as expressões lógicas a seguir:
+> True or False = True.
+
+### QUESTÃO 4: Pense em um código com estruturas condicionais para apresentar o resultado de uma partida ("Vitória do Time 1", "Vitória do Time 2" ou "Empate") a partir dos gols de cada time. Qual das alternativas apresenta a melhor solução?
+> Utilização de estruturas com ifs encadeados.
+
+---
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
