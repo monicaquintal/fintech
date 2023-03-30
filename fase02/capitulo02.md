@@ -231,7 +231,7 @@ True | True | True
 
 <div align="center">
 
-A | B | A or B
+A | B | A and B
 --|---|--------
 False | False | False
 False | True | False
@@ -252,4 +252,85 @@ O Python tem uma característica especial que não está presente na maior parte
 
 </div>
 
-página 24
+## Exemplo 1:
+
+"O doutor Henry Jones Junior estabeleceu uma regra com seus alunos da disciplina de Arqueologia: todos os que obtiverem nota maior do que 8,5 na sua prova semestral serão convidados para uma visita de campo na América do Sul. Nosso programa deve solicitar o e-mail e a nota do aluno, exibindo a mensagem “ENVIANDO CONVITE” caso a nota do aluno satisfaça a condição proposta."
+
+### Solução:
+
+A resolução, utilizando if simples, pode ser conferida [aqui](./scripts/exemplo1.py).
+
+## Exemplo 2:
+
+"A loja virtual FIAP Wear, que vende roupas personalizadas da instituição, disponibilizou no mês do seu aniversário o cupom NIVER10,que concede 10% de desconto no valor total de uma compra feita no site. Caso o cliente digite o cupom corretamente, deverá ser informado do valor final da compra já com o desconto aplicado. Caso digite o cupom de maneira incorreta, deverá ser informado do valor da compra sem o desconto."
+
+### Solução:
+
+A resolução, utilizando if composto, pode ser conferida [aqui](./scripts/exemplo2.py).
+
+## Exemplo 3:
+
+Transporte-se no tempo e volte para a época de escola! Lembra do dia em que aprendeu a encontrar o valor de X nas equações de 2º grau? Aquelas que tinham uma carinha parecida com Ax² + Bx + C = 0? Vamos criar um programa no qual o usuário só tenha que escrever os valores de A, B e C, e o programa vai se encarregar de fazer os cálculos.
+
+### Solução:
+
+A resolução pode ser conferida [aqui](./scripts/exemplo3.py).
+
+### Observação:
+
+cada linguagem de programação possui sua função própria para realizar a operação de raiz quadrada. No caso do Python, precisamos importar a classe math, e depois usar a função math.sqrt. Para importar a classe math, escrevemos na primeira linha do nosso script: import math. Para calcular a raiz de algum valor depois de importarmos a classe math, devemos escrever math.sqrt(valor).
+
+---
+
+<div align="center">
+
+## Hora de treinar:
+
+</div>
+
+## Exercício 1:
+
+"Verificar se os batimentos cardíacos por minuto se encontram na faixa adequada. Para isso, você deve solicitar ao usuário que informe o seu número de BATIMENTOS POR MINUTO (BPM) e a IDADE. A partir disso,o script deve verificar e exibir uma mensagem informando se os batimentos do usuário encontram-se DENTRO da faixa adequada, ACIMA da faixa adequada ou ABAIXO da faixa adequada, de acordo com o site Tua Saúde.
+
+<div align="center">
+
+Idade | BPM
+-------|-----
+Até 2 anos | 120 a 140
+De 8 a 17 anos | 80 a 100
+Adulto sedentário | 70 a 80
+Idoso | 50 a 60
+
+</div>
+
+Resolucão [aqui](./scripts/exercicio1.py).
+
+## Exercício 2:
+
+Uma agência de viagens está propondo uma estratégia para alavancar as vendas após os impactos da pandemia do coronavírus. A empresa ofertará descontos progressivos na compra de pacotes, dependendo do número de viajantes que estão no mesmo grupo e moram na mesma residência. Para ajudar a tornar esse projeto real, você deve criar um algoritmo que receba o VALOR BRUTO do pacote, a CATEGORIA DOS ASSENTOS no voo e a QUANTIDADE DE VIAJANTES que moram em uma mesma casa e calcule os descontos de acordo com a tabela abaixo:
+
+<div align="center">
+
+Categoria | Descontos
+-------|-----
+Econômica | 2 viajantes = 3%
+&#32; | 3 viajantes = 4%
+&#32; | 4 viajantes ou mais = 5%
+Executiva | 2 viajantes = 5%
+&#32; | 3 viajantes = 7%
+&#32; | 4 viajantes ou mais = 8%
+Primeira classe | 2 viajantes = 10%
+&#32; | 3 viajantes = 15%
+&#32; | 4 viajantes ou mais = 20%
+
+</div>
+
+O programa deverá exibir o valor BRUTO DA VIAGEM (o mesmo que foi digitado), o VALOR DO DESCONTO, o VALOR LÍQUIDO DA VIAGEM (valor bruto menos os descontos) e o VALOR MÉDIO POR VIAJANTE!
+
+Resolucão [aqui](./scripts/exercicio2.py).
+
+## Exercício 3:
+
+Os colaboradores da sua equipe foram sorteados para ganhar um console de última geração, cada um, em razão do bom desempenho que tiveram nos últimos projetos. Por uma questão de logística, porém, a empresa pede que todos os cinco membros da equipe recebam o mesmo aparelho. Crie um algoritmo em que o usuário possa digitar o voto de cada um dos 5 membros da equipe e, ao final, exiba qual foi o console escolhido e com quantos votos. As opções são: PLAYSTATION, XBOX e NINTENDO.
+
+Resolucão [aqui](./scripts/exercicio3.py).
