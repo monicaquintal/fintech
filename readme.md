@@ -6,13 +6,10 @@
 <p>FIAP</p>
 </div>
 
-<div align="center">
-<h1>AGILE SOFTWARE DESIGN</h1>
-</div>
-
 <div align="justify">
 
 <h2>📚 FASE 1 - DEVELOPMENT ENVIRONMENT (de 15/02 até 21/03)</h2>
+<h3>AGILE SOFTWARE DESIGN</h3>
 
 [Capítulo 01: Precisamos falar sobre finanças.](./fase01/capitulo01.md)<br>
 [Capítulo 02: Mas como um Software é criado?](./fase01/capitulo02.md)<br>
@@ -27,10 +24,13 @@
 </div>
 
 <h2>📚 FASE 2 - PROTOTYPING (de 22/03 até 25/04)</h2>
+<h3>AGILE SOFTWARE DESIGN</h3>
+<h3>COMPUTATIONAL THINKING USING PYTHON</h3>
+<h3>RESPONSIVE WEB DEVELOPMENT</h3>
 
 [Capítulo 01: E que comecem os preparativos!](./fase02/capitulo01.md)<br>
 [Capítulo 02: Quando a máquina começa a tomar decisões.](./fase02/capitulo02.md)<br>
-[Capítulo 03: ]()<br>
+[Capítulo 03: Andar em círculos não é necessariamente ruim...](./fase02/capitulo03.md)<br>
 [Capítulo 04: ]()<br>
 [Capítulo 05: ]()<br>
 [Capítulo 06: ]()<br>
