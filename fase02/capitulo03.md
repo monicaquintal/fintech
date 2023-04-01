@@ -160,3 +160,52 @@ Os exemplos podem ser verificados [aqui](./scripts/scripts-cap03/exemplo_for.py)
 
 </div>
 
+## Exemplo 1: Tabuada (utilizando while)
+
+> arquivo [tabuada.py](./scripts/scripts-cap03/tabuada.py)
+
+## Exemplo 2: Criando menu (`loop while`)
+
+Criar uma estrutura de menus, na qual o usuário possa escolher se pretende continuar executando o programa ou se quer finalizar o ciclo.
+
+Lógica: enquanto o usuário não pressionar uma determinada opção, o menu continua sendo exibido.
+
+> arquivo [menu_while.py](./scripts/scripts-cap03/menu_while.py)
+
+## Exemplo 3: Média de Pesos
+
+No caminhão de uma empresa de transportes, cabem 10 caixas de iguais dimensões. O peso dessas caixas, porém, pode variar dependendo do seu conteúdo.
+
+Como alguns caminhões têm se desgastado mais do que outros, criar um algoritmo que calcule o peso total das caixas que serão colocadas em um caminhão e que exiba o peso médio das caixas.
+
+> arquivo [media_de_pesos_for.py](./scripts/scripts-cap03/media_de_pesos_for.py)
+
+---
+
+<div align="center">
+
+## Hora de treinar
+
+</div>
+
+1. Você deve elaborar um algoritmo implementado em Python em que o usuário informe quantos alimentos consumiu naquele dia e depois possa informar o número de calorias de cada um dos alimentos. Como não estudamos listas neste capítulo, você não deve se preocupar em armazenar todas as calorias digitadas, mas deve exibir o total de calorias no final.
+
+> arquivo [exercicio1.py](./scripts/scripts-cap03/exercicio1.py)
+
+2. Observandoo mercado de educação infantil, você e sua equipe decidem criar um aplicativo por meio do qualas crianças aprendam a controlar os seus gastos. 
+
+Como forma de validar um protótipo, foi solicitado que você crie um script simples, em que o usuário deve informar QUANTAS TRANSAÇÕES financeiras realizou ao longo de um dia e, na sequência, deve informar o VALOR DE CADA UMA das transações que realizou.
+
+Seu programa deverá exibir, ao final, o valor total gasto pelo usuário, bem como a média do valor de cada transação.
+
+> arquivo [exercicio2.py](./scripts/scripts-cap03/exercicio2.py)
+
+3. Uma grande empresa de jogos deseja tornar seus games mais desafiadores. Por isso ela contratou você para desenvolver um algoritmo que será aplicado futuramente em diversos outros games: o algoritmo da sorte de Fibonacci.
+
+A ideia dessa empresa, é claro, é fazer com que seja mais difícil os jogadores terem sucesso nas ações que realizam nos games. Por isso o seu algoritmo deverá funcionar da seguinte forma: o usuário deve digitar um valor numérico inteiro e o algoritmo deverá verificar se esse valor encontra-se na sequência de Fibonacci. Caso o número esteja na sequência, o algoritmo deve exibir a mensagem “Ação bem-sucedida!”,e caso não esteja, deve exibir a mensagem “A ação falhou...”.
+
+A sequência de Fibonacci é muito simples e possui uma lógica de fácil compreensão: ela se inicia em 1 e cada novo elemento da sequência é a soma dos dois elementos anteriores. Portanto: 1, 1, 2, 3, 5, 8, 13, 21, e assim por diante. Logo, se o usuário digitar o número 55 o programa deverá informar que a ação foi bem-sucedida, afinal 55 está entre os números da sequência.
+
+Mas, se o usuário digitar o número 6, por exemplo, a ação não será bem-sucedida, pois o número 6 não está na sequência.
+
+> arquivo [exercicio3.py](./scripts/scripts-cap03/exercicio3.py)
