@@ -150,6 +150,8 @@ for x in range(1,10,2):
   print(x)
 ~~~
 
+Os exemplos podem ser verificados [aqui](./scripts/scripts-cap03/exemplo_for.py).
+
 ---
 
 <div align="center">
