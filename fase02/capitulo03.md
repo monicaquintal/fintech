@@ -209,3 +209,28 @@ A sequência de Fibonacci é muito simples e possui uma lógica de fácil compre
 Mas, se o usuário digitar o número 6, por exemplo, a ação não será bem-sucedida, pois o número 6 não está na sequência.
 
 > arquivo [exercicio3.py](./scripts/scripts-cap03/exercicio3.py)
+
+---
+
+<div align="center">
+
+## FAST TEST
+
+</div>
+
+### Questão 1: É uma estrutura de repetição muito útil quando se sabe de antemão quantas vezes a repetição deverá ser executada. Esse laço utiliza a função range para o controle do loop. Estamos falando do:
+
+> for.
+
+### Questão 2: Escolha a alternativa com o código correto para apresentar os números pares de 0 a 10l, inclusive em tela (0 2 4 6 10). Este comando terá o seguinte comando dentro da estrutura: print(x, end=" ").
+
+> for x in range(0,11,2).
+
+### Questão 3: Selecione a alternativa que apresenta corretamente a condição de uma estrutura de repetição que será finalizada apenas quando uma nota for válida (nota de 0 a 10): repete enquanto a nota for inválida.
+
+> while nota &gt; 10 or nota &lt; 0:
+
+### Questão 4: Qual é a estrutura de repetição recomendada no Python quando não temos um número definido de repetições e nem mesmo um limite?
+
+> while.
+
