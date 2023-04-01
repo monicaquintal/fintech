@@ -104,4 +104,57 @@ A cada volta, podemos fazer o incremento da variável i (i = i + 1), aumentando 
 
 > Algumas linguagens de programação suportam notações como "`i++`" ou "`i+=1`" para a operação de incremento na variável contadora.
 
-PÁGINA 9
+---
+
+## Para (for)
+
+Usada quando estamos diante de um problema que exige um ***número determinado de repetições***.
+
+Determinamos um ponto inicial e um ponto final para a repetição, e a própria estrutura se encarregará de controlar o número de voltas.
+
+1. Pseoducódigo:
+
+~~~
+para <contadora> de <valor inicial> até <valor final> passo <incremento> faça
+  //instruções que serão repetidas
+fim_para
+~~~
+
+### Importante:
+
+Para uma repetição de 10 vezes em linguagem Python, podemos fazer uso de uma função chamada `range()` , que **definirá um intervalo de valores para a nossa variável contadora assumir**. Exemplo:
+
+~~~python 
+# a variável contadora deverá assumir valores no intervalo entre 0 e 9
+# “para a variável x no intervalo entre 0 e 9, faça:”
+for x in range(10):
+  #para cada um desses valores, vamos printar o valor da variável
+  print(x)
+~~~
+
+É possível **alterar a função range**, com a inclusão de outro argumento. Se escrevermos range(1,15), por exemplo, o valor inicial da variável será 1 e o valor final da variável contadora será 14.
+
+~~~python
+# a variável contadora deverá assumir valores no intervalo entre 1 e 14
+for x in range(1,15):
+    # para cada um desses valores, vamos printar o valor da variável
+    print(x)
+~~~
+
+Podemos, ainda, **controlar o incremento** da variável contadora, incluindo mais um argumento na função range. Se escrevermos range(1,10,2), avariável assumirá o valor inicial como sendo 1, o valor final como sendo 9, e a cada volta ela somará 2. Portanto terá os valores: 1, 3, 5, 7 e 9.
+
+~~~python
+# a variável contadora deverá assumir valores no intervalo entre 1 e 9 com incremento 2
+for x in range(1,10,2):
+  # para cada um desses valores, vamos printar o valor da variável
+  print(x)
+~~~
+
+---
+
+<div align="center">
+
+## Praticando
+
+</div>
+
