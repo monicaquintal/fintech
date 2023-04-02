@@ -226,11 +226,67 @@ Mas, se o usuário digitar o número 6, por exemplo, a ação não será bem-suc
 
 > for x in range(0,11,2).
 
+~~~python
+for x in range (0,11,2):
+  print(x)
+~~~
+
 ### Questão 3: Selecione a alternativa que apresenta corretamente a condição de uma estrutura de repetição que será finalizada apenas quando uma nota for válida (nota de 0 a 10): repete enquanto a nota for inválida.
 
 > while nota &gt; 10 or nota &lt; 0:
+
+~~~python
+nota = int(input("Informe a nota"))
+while nota < 0 or nota > 10:
+  print("Nota inválida")
+  nota=int(input("Informe a nota"))
+print("Nota válida")
+~~~
 
 ### Questão 4: Qual é a estrutura de repetição recomendada no Python quando não temos um número definido de repetições e nem mesmo um limite?
 
 > while.
 
+--- 
+<div align = "center">
+
+## ATIVIDADE: QUANDO A MÁQUINA COMEÇA A TOMAR DECISÕES E ANDAR EM CIRCULOS
+
+</div>
+
+1. Você foi procurado por um aluno do curso de Produção Multimídia do FIAP ON para desenvolver um trabalho em parceria: um serviço em que as pessoas possam usar um estúdio profissional para gravar seus vídeos para o YouTube com máxima qualidade. O serviço ganha dinheiro por meio de um sistema de assinaturas e de um bônus calculado por uma porcentagem sobre o faturamento que o canal do cliente obteve ao longo do ano.
+
+Sua tarefa é criar um algoritmo que receba o tipo de assinatura do cliente, o faturamento anual dele e que calcule e exiba qual o valor do bônus que o cliente deve pagar a vocês. A tabela abaixo mostra a porcentagem de acordo com cada nível de assinatura:
+
+Nível | Porcentagem sobre o faturamento
+------|------------------------------
+Basic | 30%
+Silver | 20%
+Gold | 10%
+Platinum | 5%
+
+> arquivo [exercicio_para_nota_1.py](./scripts/scripts-cap03/exercicio_para_nota_1.py)
+
+2. Os alunos da sua turma fizeram uma votação para escolher qual dia da semana é o melhor para a realização das lives. Desenvolva um programa em que o usuário informe a quantidade de votos que cada um dos 5 dias da semana (segunda-feira, terça-feira, quarta-feira, quinta-feira e sexta-feira) obtiveram, verifique e exiba qual dia foi o escolhido.
+
+> arquivo [exercicio_para_nota_2.py](./scripts/scripts-cap03/exercicio_para_nota_2.py)
+
+3. Muitos professores preferem adotar modelos diferentes de provas quando dão aulas para turmas muito grandes. Por essa razão, a escola de inglês JoWell Sant’ana, em que todas as turmas são compostas por 50 alunos, solicitou que você criasse um sistema capaz de atender ao seguinte requisito: o professor deve digitar primeiro as notas dos 25 alunos que têm número ímpar na chamada (1, 3, 5..., 47, 49) e depois as notas dos 25 alunos que têm número par (2, 4, 6..., 48, 50). O sistema deve calcular e exibir a média de cada uma das metades da sala e informar, ao final, qual delas teve a maior nota.
+
+Há ainda um pedido especial do mantenedor: para que os professores não se confundam, ao digitar cada uma das notas, deve ser exibida uma mensagem no seguinte padrão:
+
+VOCÊ ESTÁ DIGITANDO AS NOTAS DOS ALUNOS PARES (ou ímpares, quando for o caso).
+
+POR FAVOR, INSIRA A NOTA DO ALUNO DE NÚMERO x.
+
+> arquivo [exercicio_para_nota_3.py](./scripts/scripts-cap03/exercicio_para_nota_3.py)
+
+4. Um grande cliente seu sofreu um ataque hacker: o servidor foi sequestrado por um software malicioso que criptografou todos os discos e pede a digitação de uma senha para a liberação da máquina. E é claro que os criminosos exigem um pagamento para informar a senha.
+
+Ao analisar o código do programa deles, porém, você descobre que a senha é composta pela palavra “LIBERDADE” seguida do fatorial dos minutos que a máquina estiver marcando no momento da digitação da senha (se a máquina estiver marcando 5 minutos, a senha será LIBERDADE120). Crie um programa que receba do usuário os minutos atuais e exiba na tela a senha necessária para desbloqueio. ATENÇÃO: seu programa não pode utilizar funções prontas para o cálculo do fatorial. Ele deve obrigatoriamente utilizar loop.
+
+> arquivo [exercicio_para_nota_4.py](./scripts/scripts-cap03/exercicio_para_nota_4.py)
+
+## Importante:
+
+Cada um dos exercícios deve estar em um script em Python, nomeados como: RM?????_EX01.py, RM?????_EX02.py e RM?????_EX03.py, sendo que as interrogações devem ser substituídas pelo número do seu RM.
