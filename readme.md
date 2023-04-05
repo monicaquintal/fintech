@@ -24,14 +24,35 @@
 </div>
 
 <h2>📚 FASE 2 - PROTOTYPING (de 22/03 até 25/04)</h2>
-<h3>AGILE SOFTWARE DESIGN</h3>
-<h3>COMPUTATIONAL THINKING USING PYTHON</h3>
-<h3>RESPONSIVE WEB DEVELOPMENT</h3>
+<details>
+<summary>AGILE SOFTWARE DESIGN</summary>
+
+[Capítulo 05: ]()<br>
+[Capítulo 06: ]()<br>
+[Capítulo 09: ]()
+</details>
+<br>
+<details>
+<summary>COMPUTATIONAL THINKING USING PYTHON</summary>
 
 [Capítulo 01: E que comecem os preparativos!](./fase02/capitulo01.md)<br>
 [Capítulo 02: Quando a máquina começa a tomar decisões.](./fase02/capitulo02.md)<br>
 [Capítulo 03: Andar em círculos não é necessariamente ruim...](./fase02/capitulo03.md)<br>
-[Capítulo 04: ]()<br>
+[Capítulo 04: Quem tem o nome na lista?](./fase02/capitulo04.md)<br>
+</details>
+<br>
+<details>
+<summary>RESPONSIVE WEB DEVELOPMENT</summary>
+
+[Capítulo 07: ]()<br>
+[Capítulo 08: ]()<br>
+</details>
+<br>
+
+[Capítulo 01: E que comecem os preparativos!](./fase02/capitulo01.md)<br>
+[Capítulo 02: Quando a máquina começa a tomar decisões.](./fase02/capitulo02.md)<br>
+[Capítulo 03: Andar em círculos não é necessariamente ruim...](./fase02/capitulo03.md)<br>
+[Capítulo 04: Quem tem o nome na lista?](./fase02/capitulo04.md)<br>
 [Capítulo 05: ]()<br>
 [Capítulo 06: ]()<br>
 [Capítulo 07: ]()<br>
