@@ -95,6 +95,8 @@ lista.remove("item")
 
 ## Outros métodos importantes:
 
+> arquivos [outros_metodos.py](./scripts/scripts-cap04/outros_metodos.py) e [media_notas.py](./scripts/scripts-cap04/media_notas.py).
+
 ### 1. `count()`:
 - retorna a quantidade de vezes que um elemento aparece na lista.
 
@@ -104,4 +106,26 @@ lista.remove("item")
 ### 3. `reverse()`:
 - inverte a ordem dos elementos de uma lista.
 
-PÁGINAS 13 / 6
+Há, ainda, algumas ***funções*** importantes, como:
+
+### 1. len:
+- retorna o tamanho de um objeto.
+
+### 2. sum:
+- realiza a soma dos elementos presentes em um objeto.
+
+---
+
+## Funções
+
+> arquivo [velocidade_media.py](./scripts/scripts-cap04/velocidade_media.py).
+
+- podem ser consideradas “microprogramas”, que têm uma única função específica e podem ser convocadas quando necessárias.
+- para indicar ao Python que uma nova função está sendo criada, utilizar a ***palavra reservada*** `def`, seguida do nome da função.
+- uma função só entra em funcionamento quando ela é convocada.
+
+~~~python
+def nomeDaFuncao():
+~~~
+
+paginas 7 e 16
