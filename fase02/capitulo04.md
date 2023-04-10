@@ -136,7 +136,7 @@ def nomeDaFuncao():
 - ***solicitar valores (inputs) fora da função e passar para ela por meio de `argumentos ou parâmetros`***.
   - são informações que existem antes de a função ser executada.
 
-> arquivo [somar.py](./scripts/somar.py).
+> arquivo [somar.py](./scripts-cap04/somar.py).
 
 - quando a função tiver o objetivo de retornar um dado, utilizar o comando `return` (ao invés de "print").
   - o comando return faz com que uma função seja encerrada e um determinado valor seja devolvido para o local onde ocorreu a chamada da função.
@@ -153,7 +153,7 @@ def nomeDaFuncao():
 
 ## Aplicando
 
-> scripts [calc.py](./scripts/calc.py) (que contém apenas as funções necessárias para as quatro operações básicas) e [teste.py](./scripts/teste.py) (utilizado para testar o uso de módulos), ambos criados dentro de um mesmo projeto.
+> scripts [calc.py](./scripts-cap04/calc.py) (que contém apenas as funções necessárias para as quatro operações básicas) e [teste.py](./scripts-cap04/teste.py) (utilizado para testar o uso de módulos), ambos criados dentro de um mesmo projeto.
 
 - para utilizar um módulo que foi criado, usar o comando `import`, que indica o arquivo ao qual queremos incorporar funções e estruturas.
 - é possível, inclusive, importar funções específicas, como:
@@ -168,7 +168,7 @@ from calc import somar, subtrair
 from calc import *
 ~~~
 
-> Outro exemplo em [calculadora.py](./scripts/calculadora.py) e [funcoes_calculadora.py](./scripts/funcoes_calculadora.py).
+> Outro exemplo em [calculadora.py](./scripts-cap04/calculadora.py) e [funcoes_calculadora.py](./scripts-cap04/funcoes_calculadora.py).
 
 ---
 
