@@ -120,7 +120,7 @@ Há, ainda, algumas ***funções*** importantes, como:
 
 > arquivo [velocidade_media.py](./scripts/scripts-cap04/velocidade_media.py).
 
-- podem ser consideradas “microprogramas”, que têm uma única função específica e podem ser convocadas quando necessárias.
+- consideradas “microprogramas”, que têm uma função específica, e podem ser convocadas quando necessárias.
 - para indicar ao Python que uma nova função está sendo criada, utilizar a ***palavra reservada*** `def`, seguida do nome da função.
 - uma função só entra em funcionamento quando ela é convocada.
 
@@ -128,4 +128,5 @@ Há, ainda, algumas ***funções*** importantes, como:
 def nomeDaFuncao():
 ~~~
 
-paginas 7 e 16
+- não é uma boa prática fazer com que a função solicite valores durante seu funcionamento.
+- ***solicitar valores (inputs) fora da função e passar para ela por meio de `argumentos ou parâmetros`***.
