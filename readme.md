@@ -27,7 +27,7 @@
 <details>
 <summary>AGILE SOFTWARE DESIGN</summary>
 
-[Capítulo 05: ]()<br>
+[Capítulo 05: Entendendo o ponto de vista do usuário.](./fase02/capitulo05.md)<br>
 [Capítulo 06: ]()<br>
 [Capítulo 09: ]()
 </details>
@@ -53,7 +53,7 @@
 [Capítulo 02: Quando a máquina começa a tomar decisões.](./fase02/capitulo02.md)<br>
 [Capítulo 03: Andar em círculos não é necessariamente ruim...](./fase02/capitulo03.md)<br>
 [Capítulo 04: Quem tem o nome na lista?](./fase02/capitulo04.md)<br>
-[Capítulo 05: ]()<br>
+[Capítulo 05: Entendendo o ponto de vista do usuário.](./fase02/capitulo05.md)<br>
 [Capítulo 06: ]()<br>
 [Capítulo 07: ]()<br>
 [Capítulo 08: ]()<br>
