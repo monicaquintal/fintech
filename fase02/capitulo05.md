@@ -62,5 +62,52 @@
 - representa uma sequência de passos que descrevem uma interação entre um usuário e um sistema, detalhando o caminho do ponto inicial até o ponto final de um fluxo de eventos.
 - fluxos:
   - pode envolver o Fluxo Principal e os Fluxos Alternativos ou de Exceção em qualquer combinação. Contudo, ***sempre começa pelo Fluxo Principal***!
-  - fluxos alternativos são as “opções” de ações que um ator pode realizar.
-  - fluxos de exceção são indicações de como um dos atores (cliente ou sistema) reagirá caso encontre uma situação excepcional.
+  - **fluxo principal** trata-se do caminho perfeiro, onde o ator consegue obter exatamente o resultado esperado.
+  - **fluxos alternativos** são as “opções” de ações que um ator pode realizar.
+  - **fluxos de exceção** são indicações de como um dos atores (cliente ou sistema) reagirá caso encontre uma situação excepcional.
+- exemplo:
+
+Item | Valor
+------|-------------
+Caso de Uso | UC01 - Comprar cerveja
+Sumário | Permite que o usuário efetue a compra de cerveja
+Ator | Cliente
+Precondição | Ter estoque disponível
+Pós-condição | Registrar a compra e o pagamento
+Fluxo principal | FP01 - O cliente seleciona a cerveja que deseja comprar. FP02 - O cliente informa a quantidade desejada. FP03 - O sistema verifica se há estoque disponível. FP04 - O sistema calcula o valor total da compra.
+Fluxo(s) alternativo(s) | FAO01 - O cliente pode alterar a quantidade desejada. O sistgema retorna ao FP03.
+Fluxo(s) de exceção | FE01 - O sistema exibe a mensagem "cerveja indisponível". Encerra o caso de uso.
+
+### 2. Caso de Uso:
+
+- o caso de uso especifica uma sequência de ações realizadas pelo sistema que produzem um resultado perceptível e de valor para o ator.
+- caso de serviço interrompido: é uma história que descreve um serviço interrompido.
+- portanto, caso de uso descreve uma sequência completa de interações, ou seja, como se relacionarão as funcionalidades umas com as outras e como serão utilizadas pelo usuário (ator) durante o funcionamento do sistema.
+  - para descrever essa interação, utiliza-se uma metodologia que serve para padronizar a descrição da funcionalidade.
+  - o desenvolvedor utilizará o caso de uso para implementar o sistema, ou o analista validará o desenvolvimento ou fará os testes, e entenderão a funcionalidade de uma maneira única!
+- o caso de uso não representa um passo ou uma etapa em uma funcionalidade do sistema; é a especificação detalhada de uma das funcionalidades!
+- como identificá-los:
+  - O que o ator pode fazer ao utilizar o sistema?
+  - O ator precisa registrar, consultar, alterar ou excluir dados ou informações do sistema?
+  - O ator será notificado sobre eventos do sistema?
+  - O ator precisa informar o sistema sobre algum evento?
+  - Há comunicação com outros dispositivos?
+  - Há comunicação com outros sistemas?
+
+### 3. Ator:
+
+- interage com o sistema, dando estímulos necessários para que ocorra troca de informações com as funcionalidades.
+- externon ao sistema, ficam fora da fronteira.
+
+### 4. Relacionamento:
+
+- comunicação: indica qual caso de uso o ator vai interagir (linha sólida).
+- inclusão: apenas casos de uso (linha tracejada, a ponta da seta aponta o caso de uso incluido), relação de obrigação.
+- extensão: apenas em casos de uso, indica condição (linha tracejada, apontada para o caso de uso que solicita a extensão).
+- generalização: ocorre somente entre atores OU entre casos de uso. Associa características semelhantes, e permite concentrar-se às diferenças.
+
+### 5. Fronteira:
+
+- delimita o limite do nosso sistema, compreendendo todos os seus casos de uso.
+
+PÁGINAS 8 / 12
