@@ -86,7 +86,7 @@ Fluxo(s) de exceção | FE01 - O sistema exibe a mensagem "cerveja indisponível
   - para descrever essa interação, utiliza-se uma metodologia que serve para padronizar a descrição da funcionalidade.
   - o desenvolvedor utilizará o caso de uso para implementar o sistema, ou o analista validará o desenvolvimento ou fará os testes, e entenderão a funcionalidade de uma maneira única!
 - o caso de uso não representa um passo ou uma etapa em uma funcionalidade do sistema; é a especificação detalhada de uma das funcionalidades!
-- como identificá-los:
+- ***como identificá-los***:
   - O que o ator pode fazer ao utilizar o sistema?
   - O ator precisa registrar, consultar, alterar ou excluir dados ou informações do sistema?
   - O ator será notificado sobre eventos do sistema?
@@ -96,18 +96,58 @@ Fluxo(s) de exceção | FE01 - O sistema exibe a mensagem "cerveja indisponível
 
 ### 3. Ator:
 
+- corresponde a um papel representado por algo ou alguém, sendo qualquer elemento externo ao sistema (humano, hardware, dispositivo ou sistema externo que interage com o sistema em questão).
+- é quem interagirá (trocará informações) com o sistema.
+- sua representação é feita por um boneco e um rótulo com o nome.
+  - quando o ator é humano: identificar com o nome do papel que executa, como funcionário, usuário, cliente ou atendente.
+  - para representar um sistema, um módulo ou componente de outro sistema (externo ao que está sendo documentado; a equipe desconhece seu escopo e é alheia a qualquer responsabilidade), utiliza-se um ator sistêmico.
+    - o sistema documentado é usuário desse sistema externo ou serve a ele, e o sistema externo torna-se, portanto, usuário dele.
+    - no diagrama, deve possuir seu nome de fato (se o ator é o sistema “legado”, esse deve ser o seu nome).
 - interage com o sistema, dando estímulos necessários para que ocorra troca de informações com as funcionalidades.
-- externon ao sistema, ficam fora da fronteira.
+- externo ao sistema, ficam fora da fronteira.
+- ***como identificar os atores:***
+  - Quem usa o sistema?
+  - Quem inicializa o sistema?
+  - Quem fornece os dados?
+  - Quem remove os dados?
+  - Quem usa as informações?
 
-### 4. Relacionamento:
-
-- comunicação: indica qual caso de uso o ator vai interagir (linha sólida).
-- inclusão: apenas casos de uso (linha tracejada, a ponta da seta aponta o caso de uso incluido), relação de obrigação.
-- extensão: apenas em casos de uso, indica condição (linha tracejada, apontada para o caso de uso que solicita a extensão).
-- generalização: ocorre somente entre atores OU entre casos de uso. Associa características semelhantes, e permite concentrar-se às diferenças.
-
-### 5. Fronteira:
+### 4. Fronteira:
 
 - delimita o limite do nosso sistema, compreendendo todos os seus casos de uso.
+- constitui-se dos casos de uso que compõem o sistema, ou seja, é o limite do sistema.
+- representada por um retângulo.
+- a sigla UC no canto superior do retângulo identifica que cada um deles é um caso de uso (user case) diferente.
 
-PÁGINAS 8 / 12
+### 5. Relacionamento:
+
+- a estruturação do modelo de caso de uso envolve a utilização dos seguintes tipos de relacionamento:
+  - comunicação: indica qual caso de uso o ator vai interagir (linha sólida).
+  - inclusão: apenas casos de uso (linha tracejada, a ponta da seta aponta o caso de uso incluido), relação de obrigação.
+  - extensão: apenas em casos de uso, indica condição (linha tracejada, apontada para o caso de uso que solicita a extensão).
+  - generalização: ocorre somente entre atores OU entre casos de uso. Associa características semelhantes, e permite concentrar-se às diferenças.
+- no modelo de caso de uso, pode haver relacionamentos entre:
+  - o ator e o caso de uso;
+  - atores (um ator e outro ator);
+  - casos de uso (um caso de uso e outro caso de uso).
+<br>
+
+***a. Associação por comunicação:*** 
+<br>
+
+- o relacionamento mais utilizado de um ator para com um caso de uso é a associação por comunicação (o ator executa a funcionalidade especificada no caso de uso).
+- também conhecido como associação por comunicação.
+- indica com qual caso de uso um determinado ator troca informações. 
+- um ator pode interagir com mais de um caso de uso do sistema.
+- é representada por uma linha sólida:
+  - se a linha sólida contém a cabeça de flecha: somente o elemento que está no fim da flecha pode iniciar a comunicação.
+  - caso a linha sólida não tenha a cabeça de flecha, então, quaisquer dos dois elementos, o caso de uso ou o ator, podem iniciar a interação.
+<br>
+
+***b. Associação por inclusão:*** 
+<br>
+
+- conecta o caso de uso base ao caso de uso incluído.
+- esse tipo de relacionamento existe somente entre casos de uso.
+- identifica um processo obrigatório (o caso de uso incluído será executado sempre que o caso de uso base for executado).
+- o caso de uso base pode ter sua execução dependente do resultado do caso de uso incluído.
