@@ -142,6 +142,13 @@ Fluxo(s) de exceção | FE01 - O sistema exibe a mensagem "cerveja indisponível
 - é representada por uma linha sólida:
   - se a linha sólida contém a cabeça de flecha: somente o elemento que está no fim da flecha pode iniciar a comunicação.
   - caso a linha sólida não tenha a cabeça de flecha, então, quaisquer dos dois elementos, o caso de uso ou o ator, podem iniciar a interação.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase02/associacao-comunicacao.png" width="30%"><br>
+<em>Associação por comunicação.</em>
+</div>
+
 <br>
 
 ***b. Associação por inclusão:*** 
@@ -151,3 +158,61 @@ Fluxo(s) de exceção | FE01 - O sistema exibe a mensagem "cerveja indisponível
 - esse tipo de relacionamento existe somente entre casos de uso.
 - identifica um processo obrigatório (o caso de uso incluído será executado sempre que o caso de uso base for executado).
 - o caso de uso base pode ter sua execução dependente do resultado do caso de uso incluído.
+- quando dois ou mais casos de uso incluam uma sequência comum de interações, descrevê-la em outro caso de uso (vários casos de uso do sistema poderão incluir o comportamento desse caso de uso comum). 
+  - abstém a repetição da descrição de uma mesma sequência de interações e 
+  - transforma a descrição dos casos de uso mais simples e de manutenção mais facilitada.
+- representadas por uma linha tracejada e a seta aponta para o caso de uso incluído e o estereótipo `<<INCLUDE>>`.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase02/associacao-inclusao.png" width="30%"><br>
+<em>Associação por inclusão.</em>
+</div>
+
+<br>
+
+***c. Associação por extensão:*** 
+<br>
+
+- identifica um processo que pode ou não ser executado.
+- ocorre em uma situação específica, na qual uma condição é satisfeita.
+- esse relacionamento só aconteceentre casos de uso.
+- utilizado para modelar situações em que diferentes sequências de interações podem ser inseridas em um mesmo caso de uso.
+- não há como existir um relacionamento de associação de comunicação entre um ator solicitante e um caso de uso estendido.
+- representadas por uma linha tracejada e a seta aponta para o caso de uso que utiliza o caso de uso estendido e o estereótipo `<<EXTEND>>`.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase02/associacao-extensao.png" width="30%"><br>
+<em>Associação por extensão.</em>
+</div>
+
+<br>
+
+***d. Associação por generalização:*** 
+<br>
+
+- permite que um caso de uso ou ator herde características de outro mais genérico, chamado de caso de uso ou ator-base.
+- objetivo: indicar que dois ou mais casos de uso ou atores têm comportamentos semelhantes.
+- o caso de uso abstrato é utilizado apenas para capturar a natureza semelhante entre os casos de usos filho, conhecidos como concretos.
+- relaciona dois ou mais casos de uso com características semelhantes, apresentando pequenas diferenças entre si.
+  - define-se um caso de uso geral e casos de uso que são especializações dele.
+  - evita-se a redação das partes genéricas em mais de um caso de uso e
+  - a redação dos casos de uso especializados se concentra nas diferenças.
+- pode existir entre dois casos de uso ou entre dois atores.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase02/associacao-generalizacao.png" width="30%"><br>
+<em>Associação por generalização.</em>
+</div>
+
+<br>
+
+---
+
+<div align="center">
+<h2>Diagrama de Caso de Uso</h2>
+</div>
+
+9 / 22
