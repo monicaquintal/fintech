@@ -215,4 +215,3 @@ Fluxo(s) de exceção | FE01 - O sistema exibe a mensagem "cerveja indisponível
 <h2>Diagrama de Caso de Uso</h2>
 </div>
 
-9 / 22
