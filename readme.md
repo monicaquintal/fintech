@@ -45,7 +45,7 @@
 <summary>RESPONSIVE WEB DEVELOPMENT</summary>
 
 [Capítulo 07: A experiência do usuário é um assunto sério!](./fase02/capitulo07.md)<br>
-[Capítulo 08: ]()<br>
+[Capítulo 08: Quem vê interface, vê coração.](./fase02/capitulo08.md)<br>
 </details>
 <br>
 
@@ -56,6 +56,6 @@
 [Capítulo 05: Entendendo o ponto de vista do usuário.](./fase02/capitulo05.md)<br>
 [Capítulo 06: Infelizmente, diagramas não são o suficiente...](./fase02/capitulo06.md)<br>
 [Capítulo 07: A experiência do usuário é um assunto sério!](./fase02/capitulo07.md)<br>
-[Capítulo 08: ]()<br>
+[Capítulo 08: Quem vê interface, vê coração.](./fase02/capitulo08.md)<br>
 [Capítulo 09: ]()<br>
 </div>
