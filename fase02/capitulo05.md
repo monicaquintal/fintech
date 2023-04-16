@@ -309,9 +309,73 @@ Dar baixa no pedido de compra | Funcionário | Dar baixa no pedido de compra ap�
 
 <br>
 <div align="center">
-<img src="../assets/imagens-fase02/dcu-exemplo.png" width="50%"><br>
+<img src="../assets/imagens-fase02/dcu-exemplo.png" width="40%"><br>
 <em>Diagrama de Caso de Uso.</em>
 </div>
 
 <br>
 
+---
+
+## Exercício proposto
+
+Considere a especificação sobre os caixas eletrônicos de uma instituição financeira descrita a seguir.<br>
+A população enfrenta grandes filas nos bancos. Isso ainda ocorre porque os usuários do nosso sistema financeiro não conhecem totalmente as funções dos caixas eletrônicos que evitariam as filas no caixa do banco. Porém, o que exatamente os usuários podem fazer nos caixas eletrônicos?<br>
+O usuário insere o cartão, o sistema lê e faz a validação dos dados: agência, número da conta e tipo de operação do usuário. Se o cartão for inválido, o sistema exibe a mensagem “Cartão Inválido”, caso contrário, deve ativar as funções do caixa eletrônico. O sistema exibe as funções: Pagamento, Saque, Saldo, Depósito e Investimento.<br>
+O usuário seleciona a função desejada, o sistema solicita a senha. O usuário informa a senha, o sistema valida a senha. Se for inválida, o sistema exibe a mensagem “Senha Inválida”; se for válida, solicita o valor do saque, por exemplo.<br>
+O usuário informa o valor do saque, o sistema valida se há saldo suficiente na conta. Caso não tenha saldo, o sistema exibe a mensagem “Saldo Insuficiente”. Se tiver saldo, o sistema valida o valor do limite diário para saque. Se o valor estiver dentro do limite, registra o valor do saque e atualiza o saldo. No momento do registro do saque, instancia o objeto saque; senão, o sistema exibe a mensagem "Valor Excede o Limite".<br>
+<br>
+Pede-se: 
+
+1. Listar o(s) ator(es)desse cenário.
+
+- usuário.
+
+2. Listar os requisitos funcionais.
+
+<div align="center">
+
+Caso de uso | Ator | Objetivo
+-----------|-------|------------
+Ativar as funções do caixa eletrônico | Usuário | Acessar as funções do caixa eletrônico
+Ler os dados do cartão | Ator secundário: ação executada pelo sistema, desencadeada pelo usuário | Validar os dados do cartão
+Validar a senha | Ator secundário: ação executada pelo sistema, desencadeada pelo usuário | Validar a senha do usuário
+Sacar | Usuário | Registrar o valor do saque
+Consultar o saldo da conta | Ator secundário: ação executada pelo sistema, desencadeada pelo usuário | Consultar se há saldo suficiente para registrar o saque
+Validar o valor do saque | Ator secundário: ação executada pelo sistema, desencadeada pelo usuário | Validar se o valor do saque está dentro do limite diário para saque
+Atualizar o saldo da conta | Ator secundário: ação executada pelo sistema, desencadeada pelo usuário | Atualizar o saldo da conta
+
+</div>
+
+3. Elaborar o Diagrama de Caso de Uso
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase02/dcu-exercicio.png" width="40%"><br>
+<em>Diagrama de Caso de Uso.</em>
+</div>
+
+<br>
+
+---
+
+## FAST TEST
+
+### 1. Selecione a alternativa correta sobre relacionamentos do tipo associação por comunicação:
+> Associação por comunicação indica caso no qual um ator troca informações. É representada por uma linha sólida no Diagrama.
+
+### 2. Selecione a alternativa correta sobre relacionamentos do tipo associação por inclusão:
+> Associação por inclusão pressupõe que exista um caso de uso base. O caso base inclui o caso específico, por isso a associação entre eles.
+
+### 3. Selecione a alternativa INCORRETA sobre a elaboração do Diagrama de Caso de Uso:
+> O Diagrama de Caso de Uso é usado apenas na fase de implementação de projeto de desenvolvimento de software,
+
+### 4. Selecione a alternativa correta sobre os casos de uso:
+> Caso de uso representa uma especificação detalhada de uma funcionalidade do sistema, ou seja, como o sistema executa a tarefa solicitada pelo ator.
+
+### 5. Selecione a alternativa correta sobre os atores do Diagrama de Caso de Uso:
+> Ator é um papel representado por algo ou alguém, sendo qualquer elemento externo ao sistema.
+
+--- 
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
