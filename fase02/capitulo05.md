@@ -215,3 +215,103 @@ Fluxo(s) de exceção | FE01 - O sistema exibe a mensagem "cerveja indisponível
 <h2>Diagrama de Caso de Uso</h2>
 </div>
 
+O Diagrama de Caso de Uso apresenta o comportamento externo do sistema, como os casos de uso interagem entre si e com os atores; como as funcionalidades se relacionarão umas com as outras; e como serão utilizadas pelo usuário durante o funcionamento do sistema.
+
+## Construção do DCU
+
+- pode ser elaborado na fase de planejamento e análise com o auxílio de ferramentas específicas para modelagem UML, como o "Astah".
+- porém, também auxilia nas demais fases: projeto, implementação e testes.
+
+## Passos para elaborar o DCU
+
+1. Identifique o(s) ator(es).
+2. Identifique o(s) caso(s) de uso.
+3. Identifique o(s) relacionamento(s) entre o(s) ator(es) e o(s) caso(s) de uso.
+4. Identifique o(s) relacionamento(s) entre o(s) caso(s) de uso, se houver.
+5. Identifique o(s) relacionamento(s) entre o(s) ator(es), se houver.
+
+## Descrição do Caso de Uso
+
+***Documentação de caso de uso***: além da modelagem gráfica, o Diagrama de Caso de Uso deve apresentar a especificação de detalhamento do Diagrama de Caso de Uso!
+
+--- 
+
+## Estudo de caso
+
+***Cenário:*** e-commerce de cerveja.
+
+Um cliente entra no site da loja Amantes das Cervejas e pesquisa os tipos de cerveja desejadas; seleciona o fabricante e/ou o nome da cerveja, ou a faixa de preço. O sistema deve exibir os dados da pesquisa em até 3 segundos.<br>
+Para efetuar o pedido, o cliente seleciona a cerveja e informa a quantidade desejada. O sistema calcula o preço total.<br>
+Para finalizar a compra, o cliente preenche o cadastro, caso não o possua. Preenche o campo “Dados do cliente”, informando nome, endereço de entrega, telefone e CPF. <br>
+Os dados devem ser armazenados em banco de dados Oracle 11g.<br>
+O cliente efetua o pagamento. Para isso, seleciona a forma de pagamento. Se for por cartão de crédito, o cliente informa os dados do cartão: número, data de validade, nome, nome da operadora do cartão de crédito e o código de segurança. O sistema deve solicitar a autorização do pagamento para a operadora do cartão de crédito. Se o pagamento for por boleto, o sistema emite o boleto.<br>
+O funcionário, gerente do setor financeiro, efetua o login com a senha de administrador e consulta os pagamentos. Se confirmar o pagamento, emite a nota fiscal.<br>
+O funcionário separa e envia os produtos para a transportadora que fará a entrega. Ao encaminhá-los, o funcionário registra o envio do pedido para entrega, informa o status do pedido, por exemplo, “enviado para entrega”.<br>
+Ao receber os produtos, o cliente assina a nota de entrega, que possui um QR code que identifica o pedido efetuado pelo cliente. Por meio do QR code, o funcionário efetua a baixa do pedido caso haja a assinatura do cliente e a data de entrega.<br>
+
+***Pede-se:*** elaborar o Diagrama de Caso de Uso.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase02/prototipo-e-commerce.png" width="50%"><br>
+<em>Protótipo de e-commercede cerveja.</em>
+</div>
+
+<br>
+
+> Para elaborar o Diagrama de Caso de Uso, seguir os cinco passos descritos na seção “Construção do Diagrama de Caso de Uso”.
+
+### Passo 1: Identificar o(s) ator(es)!
+
+- o ator representa o papel que os usuários, o sistema externo, o hardware ou o(s) dispositivo(s) desempenham, a medida que interagem com o sistema.
+- **nesse caso**, os atores são: 
+  - cliente, 
+  - gerente, 
+  - funcionário e 
+  - operadora de cartão de crédito.
+
+### Passo 2: Identificar o(s) caso(s) de uso.
+
+- o caso de uso representa a especificação detalhada de uma das funcionalidades do sistema, ou seja, executa a tarefa solicitada pelo ator, demonstrando todos os passos necessários para a conclusão do processo.
+- são eles:
+
+<div align="center">
+
+Caso de uso | Ator | Objetivo
+------------|------|---------
+Pesquisar tipo de cerveja | Cliente | Pesquisar os tipos de cerveja desejados
+Efetuar compra | Cliente | Registrar o pedido de compra
+Calcular o valor da compra | Ação executada pelo sistema, desencadeada pelo usuário | Ativar o sistema para calcular o preço total da compra quando o cliente seleciona a cerveja e informa a quantidade
+Cadastrar cliente | Cliente | Efetuar o cadastro dos dados do cliente na base de dados
+Registrar o pagamento | Cliente | Registrar o pagamento da compra
+Solicitar a autorização do pagamento | Sistema e sistema externo da operadora do cartão de crédito | Solicitar a autorização do pagamento para a operadora do cartão de crédito quando o cliente informa os dados do cartão
+Emitir o boleto | Ação executada pelo sistema, desencadeada pelo usuário | Ativar o sistema para emitir o boleto quando o cliente seleciona a forma de pagamento "boleto"
+Efetuar login | Gerente financeiro | Validar a senha para efetuar login
+Consultar pagamento | Gerente financeiro | Consultar os pagamentos
+Emitir nota fiscal | Gerente financeiro | Emitir o boleto após o gerente financeiro consultar o registro do pagamento
+Registrar pedido para entrega | Funcionário | Registrar o pedido de entrega afim de atualizar o status do pedido
+Dar baixa no pedido de compra | Funcionário | Dar baixa no pedido de compra após a confirmação de entrega
+
+</div>
+
+### Passo 3: Identificar o(s) relacionamento(s) envolvidos nesse cenário
+
+- o relacionamento indica quem solicita, quem realizae como será executada uma funcionalidade.
+- **nesse exemplo**, deve-se analisar se todo ator tem, no mínimo, uma associação com um caso de uso; e se todo caso de uso interage com algum ator ou com outro caso de uso.
+
+### Passo 4: Identificar o(s) relacionamento(s) entre o(s) caso(s) de uso, se houver.
+
+- verificar se existe a necessidade do relacionamento de inclusão, extensão ou generalização.
+
+### Passo 4: Identificar o(s) relacionamento(s) entre o(s) ator(es), se houver.
+
+- deve-se verificar se existe a necessidade do relacionamento generalização entre os atores.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase02/dcu-exemplo.png" width="50%"><br>
+<em>Diagrama de Caso de Uso.</em>
+</div>
+
+<br>
+
