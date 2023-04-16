@@ -47,7 +47,7 @@
 
 <br>
 <div align="center">
-<img src="../assets/imagens-fase02/modelo-tabular.png" width="40%"><br>
+<img src="../assets/imagens-fase02/modelo-tabular.png" width="60%"><br>
 <em>Exemplo de aplicação do modelo tabular de documentação de caso de uso.</em>
 </div>
 
@@ -63,7 +63,7 @@
 
 <br>
 <div align="center">
-<img src="../assets/imagens-fase02/lista-objetivo.png" width="40%"><br>
+<img src="../assets/imagens-fase02/lista-objetivo.png" width="60%"><br>
 <em>Lista por objetivo.</em>
 </div>
 
@@ -217,7 +217,7 @@ O passageiro realiza o pagamento ao atendente no balcão da companhia. O atenden
 
 <br>
 <div align="center">
-<img src="../assets/imagens-fase02/fluxo-principal-consultar-passagem.png" width="40%"><br>
+<img src="../assets/imagens-fase02/fluxo-principal-consultar-passagem.png" width="50%"><br>
 <em>Fluxo Principal – Consultar passagem.</em>
 </div>
 
