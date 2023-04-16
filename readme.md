@@ -44,7 +44,7 @@
 <details>
 <summary>RESPONSIVE WEB DEVELOPMENT</summary>
 
-[Capítulo 07: ]()<br>
+[Capítulo 07: A experiência do usuário é um assunto sério!](./fase02/capitulo07.md)<br>
 [Capítulo 08: ]()<br>
 </details>
 <br>
@@ -55,7 +55,7 @@
 [Capítulo 04: Quem tem o nome na lista?](./fase02/capitulo04.md)<br>
 [Capítulo 05: Entendendo o ponto de vista do usuário.](./fase02/capitulo05.md)<br>
 [Capítulo 06: Infelizmente, diagramas não são o suficiente...](./fase02/capitulo06.md)<br>
-[Capítulo 07: ]()<br>
+[Capítulo 07: A experiência do usuário é um assunto sério!](./fase02/capitulo07.md)<br>
 [Capítulo 08: ]()<br>
 [Capítulo 09: ]()<br>
 </div>
