@@ -83,3 +83,93 @@
 
 </div>
 
+- utilizado [Figma](https://www.figma.com/).
+  - on-line e possibilita compartilhamento com outros usuários.
+- abordagem responsiva.
+
+## Criar um novo arquivo
+
+1. Criar uma conta grátis no Figma.
+2. Tela inicial > menu lateral > clicar no ícone de adicionar um novo arquivo **ou** botão de mais junto à Drafts **ou** no botão “New design file”.
+3. Clicar no título do arquivo ("Untitled" ou "Sem título") > renomear para "Fintech".
+
+## Estrutura da ferramenta
+
+1. Na barra superior, à esquerda, há o acesso ao menu do site, ferramentas para criar e inserir elementos às suas telas e a possibilidade de inserir comentários nas telas já criadas (interessante ao lidarmos com um projeto em equipe ou para fazer anotações pessoais).
+
+2. No lado direito do cabeçalho, podemos ver quem está visualizando o arquivo naquele momento e compartilhar o arquivo completo ou uma tela específica com alguém. Consegue também ver suas criações em forma de protótipo ao clicar no ícone "Play" da barra e, por fim, alterar o zoom da tela.
+
+3. Na coluna esquerda aparecem listadas as camadas e componentes criados. No centro ficam as telas do app ou site, e a coluna da direita demonstra os atributos que você pode alterar nos elementos, assim como configurações de prototipação e o inspetor de códigos CSS, criados automaticamente pelo Figma.
+
+## Inserir um frame
+
+1. Na barra de ferramentas, selecionar a opção de inserir um frame.
+2. Na coluna da direita, vão aparecer diversas opções de tamanhos de tela, referentes a dispositivos existentes no mercado.
+3. Selecione o tamanho do iPhone SE, que possui 320 pixels de largura.
+4. Para renomear o frame, basta clicar sobre o item na lista de layers (camadas) da coluna esquerda.
+
+## Inserir e ajustar elementos
+
+1. Clique no ícone quadrado da barra superior de ferramentas. Ali, você encontra várias opções de elementos para inserir em sua tela.
+2. Selecione a opção de retângulo e crie um no seu frame. 
+3. Com o retângulo selecionado, na coluna da direita aparecerão atributos que você pode alterar no elemento. 
+    - Para certificar-se de que o tamanho ficará exatamente como queremos, insira no campo W (de width, ou largura) o número 320. Já no campo H (de height, ou altura, em inglês), insira 64.
+4. Nos campos X e Y você consegue alterar a posição do elemento em seus eixos horizontal e vertical.
+    - No campo X, insira o número 0.
+5. Com a tecla SHIFT do seu teclado pressionada, arraste o retângulo até a parte inferior do frame.
+6. Selecione a ferramenta que possui a letra T como ícone, clique em qualquer lugar do seu frame e digite "Adicionar Serviço".
+    - Nas configurações que aparecerão na coluna da direita, altere o tamanhodo texto para 20 pontos e deixe-o centralizado.
+    - Arraste o texto para cima do retângulo, de forma que ele fique centralizado tanto vertical quanto horizontalmente. 
+    - Atenção: verifique se a camada do texto está em cima da camada do retângulo, na lista de layers da coluna esquerda. Caso contrário, o texto vai desaparecer da tela.
+7. Se quiser ter certeza de que os elementos estão alinhados, selecione as duas camadas na coluna esquerda e clique nas opções de alinhamento localizadas na coluna da direita.
+
+## Componentes
+
+- é a possibilidade de criar um  elemento padrão a ser replicado em locais diferentes e de forma inteligente: se alterar em um lugar, todas as áreas que contêm aquele componente sofrerão a mesma alteração!
+
+1. Selecione as duas layers criadas: o texto "Adicionar Serviço" e o retângulo. 
+2. Em seguida, navegue até o ícone do menu principal, acesse o submenu Object e clique em Create Component.
+    - o componente vai ficar listado sempre na coluna esquerda, na aba "Assets" (ativos, em inglês). 
+    - para todas as próximas telas que quiser que tenham o botão de adição de serviço, basta arrastar o item da lista e inseri-lo onde deseja!
+
+---
+
+<div align="center">
+
+## Criar a tela
+
+</div>
+
+## Ícone de informação
+
+1. Criar uma coluna de ação para a tela, com ícone de informação.
+2. Criar específicos para cada ícone e inseri-los no componente principal das ações (um dentro do outro).
+
+## Componentes replicados
+
+- quanto aos componentes, é possível replicá-los e evitar retrabalho em caso de alterações, além de editar conteúdos e estilo de itens replicados, como texto, cor e estilo de texto.
+- se fizer uma alteração em um componente inserido a partir do original, essa mudança ficará visível apenas onde a fizer. Mas, se o ajuste ocorrer no elemento original, a alteração será replicada em todos os demais.
+
+## Elementos responsivos
+
+- ferramenta Constraints, ou restrições, em inglês.
+- funciona com base em eixos de posição, considerando vertical e horizontal. 
+  - você define limites de posicionamento para aquele elemento e por onde seu eixo deverá se guiar. 
+  - opera com os mesmos princípios do atributo Position, da linguagem CSS.
+
+---
+
+## FAST TEST
+
+### 1. Selecione a alternativa que contém a definição de "Design Responsivo":
+> Essa forma é a mais fluida, pois o conteúso responde ao tamanho de tela atual. Os elementos da interface se moverão para se encaixarem dinamicamente ao formato escolhido.
+
+### 2. Sobre o conceito de "mobile-first", selecione a afirmação correta:
+> Os designers começam pelo layout mobile para depois aumentarem para resoluções maiores.
+
+### 3. Esta afirmação "Nossa mente vê os pontos conectados" se refere a qual lei?
+> Lei de continuidade.
+
+---
+
+***rever a partir do tópico "criar a tela"*** (página 27)
