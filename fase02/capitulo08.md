@@ -172,4 +172,14 @@
 
 ---
 
-***rever a partir do tópico "criar a tela"*** (página 27)
+## Atividade para nota:
+
+"Muito bem, fizemos a primeira tela juntos, agora é sua vez! Com toda sua criatividade e respeitando as boas práticas do design de interface, crie as demais telas da Fintech e envie para nós na área de atividades!<br>
+Mas atenção para as regras:<br>
+- Envie suas telas em um formato .pdf
+- Você deverá criar no mínimo 4 telas e no máximo 6.
+- Utilize a sua criatividade e os recursos que você aprendeu da ferramenta."
+
+---
+
+***rever a partir do tópico "criar a tela"*** (páginas 9 / 27)
