@@ -180,6 +180,8 @@ Mas atenção para as regras:<br>
 - Você deverá criar no mínimo 4 telas e no máximo 6.
 - Utilize a sua criatividade e os recursos que você aprendeu da ferramenta."
 
+> Minha resolução para a atividade pode ser visualizada [aqui](https://www.figma.com/file/aqY65Gf6OafWQ0t3Ctmaut/Fintech?node-id=0%3A1&t=hiZK35mYFXi6CQQe-1).
+
 ---
 
 ***rever a partir do tópico "criar a tela"*** (páginas 9 / 27)
