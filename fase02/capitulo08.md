@@ -158,6 +158,12 @@
 - funciona com base em eixos de posição, considerando vertical e horizontal. 
   - você define limites de posicionamento para aquele elemento e por onde seu eixo deverá se guiar. 
   - opera com os mesmos princípios do atributo Position, da linguagem CSS.
+- principais resoluções:
+  - 480 x 730, 780 x 1024, 1280 x 720, 1600 x 1000.
+
+## Visualizando no protótipo
+
+- selecionar o frame desejado e clicar no ícone de “Play”, o botão ”Present”, localizado no canto superior direto do cabeçalho.
 
 ---
 
