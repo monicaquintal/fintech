@@ -140,10 +140,12 @@
 
 </div>
 
+> O modelo estudado pode ser visualizado [aqui](https://www.figma.com/file/A5ohuwoYD8WDboz2j0APsy/Capitulo08?node-id=0-1&t=Gzxsyw6PFaJMLwBj-0).
+
 ## Ícone de informação
 
-1. Criar uma coluna de ação para a tela, com ícone de informação.
-2. Criar específicos para cada ícone e inseri-los no componente principal das ações (um dentro do outro).
+1. Criar uma coluna de ação para a tela, com ícone de informação e texto "INFO".
+2. É possível criar específicos para cada ícone e inseri-los no componente principal das ações (um dentro do outro).
 
 ## Componentes replicados
 
@@ -184,4 +186,4 @@ Mas atenção para as regras:<br>
 
 ---
 
-***rever a partir do tópico "criar a tela"*** (páginas 9 / 27)
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
