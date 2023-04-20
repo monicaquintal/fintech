@@ -35,22 +35,25 @@
   - artefato que faz parte do plano de projeto.
   - nele são formalizadas políticas, procedimentos e documentos que serão usados para realizar o planejamento e controle das despesas do projeto.
 
-    - entradas: 
+    - `entradas`: 
       - plano de gerenciamento do projeto.
       - termo de abertura do projeto.
       - fatores ambientais da empresa.
       - ativos de processos organizacionais.
 
-    - ferramentas e técnicas:
+    - `ferramentas e técnicas`:
       - opinião especializada.
       - técnicas de facilitação.
       - reuniões.
 
-    - saídas:
+    - `saídas`:
       - plano de gerenciamento do projeto.
 
 - o plano de gerenciamento dos custos pode conter:
-  - Unidades de medida: quais são as unidades utilizadas nas medições? Recursos humanos trabalharão em horas, serão pagos em reais? Todas essas definições facilitam e formalizamas conversões monetárias.
-  - Nível de precisão: estabelece se os custos reais e estimativas de atividades são arredondados para cima ou para baixo.
-  - Nível de exatidão: estabeleceo nível de exatidão dos custos do projeto. O orçamento pode variar em qual faixa?
+  - ***Unidades de medida:*** quais são as unidades utilizadas nas medições? Recursos humanos trabalharão em horas, serão pagos em reais? Todas essas definições facilitam e formalizamas conversões monetárias.
+  - ***Nível de precisão:*** estabelece se os custos reais e estimativas de atividades são arredondados para cima ou para baixo.
+  - ***Nível de exatidão:*** estabeleceo nível de exatidão dos custos do projeto. O orçamento pode variar em qual faixa?
     - Essa faixa de variação, por mais apertada que seja, deve existir, pois é impossível realizar um orçamento com 100% de exatidão.
+  - ***Associações com procedimentos organizacionais:*** há um componente na EAP usado para a contabilidade de custos do projeto, chamado conta de controle. Cada uma dessas contas recebe um código único ou número(s) de conta(s) que se conecta(m) diretamente ao sistema de contabilidade da organização executora.
+  - ***Limites de controle:*** são estabelecidas margens de monitoramento antes que qualquer ação corretiva seja necessária e, caso os limites sejam ultrapassados, quais seriam as medidas.
+  - ***Regras para medição do desempenho:*** todas as regras que são aplicadas usando a Técnica de Gerenciamento do Valor Agregado (Earned Value Managementou EVM) são estabelecidas.
