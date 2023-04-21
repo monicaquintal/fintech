@@ -103,5 +103,21 @@
 
 - processo de agregação de custos estimados das atividades do projeto ou pacotes de trabalho, além de eventuais custos de aquisição de produtos/serviços, para se estabelecer uma linha de base dos custos a ser autorizada pelo patrocinador.
 - o desempenho dos custos do projeto, determinando se está acima ou abaixo do orçamento, será medido em relação à última linha de base aprovada.
-  - essa linha de base não inclui as reservas abaixo, que deverão ser analisadas e estabelecidas nesse processo:
-    - 
+  - essa linha de base não inclui as reservas abaixo, que deverão ser analisadas e estabelecidas no processo:
+    - ***Reservas de Contingência:*** destinada às mudanças causadas por riscos identificados no planejamento do projeto que ocorrem durante sua execução.
+    - ***Reservas Gerenciais:*** outra reserva financeira destinada às mudanças não planejadas no escopo e custos do projeto. Em geral, o uso dessa reserva é condicionado à aprovação por parte do patrocinado.
+- portanto, há três reservas financeiras em um projeto: reserva de projeto, reserva de contingência e reserva gerencial.
+
+- processo:
+  - `entradas`: 
+    - plano de gerenciamento dos custos.
+    - linha de base do escopo.
+    - estimativa dos custos das atividades.
+    - base das estimativas.
+    - cronograma do projeto. 
+    - calendário dos recursos.
+    - registro dos riscos.
+    - acordos.
+    - ativos de processos organizacionais.
+  
+  PÁGINA 13
