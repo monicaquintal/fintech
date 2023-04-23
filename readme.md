@@ -9,7 +9,10 @@
 <div align="justify">
 
 <h2>📚 FASE 1 - DEVELOPMENT ENVIRONMENT (de 15/02 até 21/03)</h2>
-<h3>AGILE SOFTWARE DESIGN</h3>
+
+<details>
+<summary>AGILE SOFTWARE DESIGN</summary>
+<br>
 
 [Capítulo 01: Precisamos falar sobre finanças.](./fase01/capitulo01.md)<br>
 [Capítulo 02: Mas como um Software é criado?](./fase01/capitulo02.md)<br>
@@ -21,41 +24,40 @@
 [Capítulo 08: Mãos à obra!](./fase01/capitulo08.md)<br>
 [Capítulo 09: Materializando o projeto.](./fase01/capitulo09.md)<br>
 [Capítulo 10: Vamos aprender a programar?](./fase01/capitulo10.md)
+
+</details>
 </div>
+<br>
 
 <h2>📚 FASE 2 - PROTOTYPING (de 22/03 até 25/04)</h2>
+
+<details>
+<summary>COMPUTATIONAL THINKING USING PYTHON</summary>
+<br>
+
+[Capítulo 01: E que comecem os preparativos!](./fase02/capitulo01.md)<br>
+[Capítulo 02: Quando a máquina começa a tomar decisões.](./fase02/capitulo02.md)<br>
+[Capítulo 03: Andar em círculos não é necessariamente ruim...](./fase02/capitulo03.md)<br>
+[Capítulo 04: Quem tem o nome na lista?](./fase02/capitulo04.md)<br>
+</details>
+<br>
+
 <details>
 <summary>AGILE SOFTWARE DESIGN</summary>
+<br>
 
 [Capítulo 05: Entendendo o ponto de vista do usuário.](./fase02/capitulo05.md)<br>
 [Capítulo 06: Infelizmente, diagramas não são o suficiente...](./fase02/capitulo06.md)<br>
 [Capítulo 09: Quanto vale o show?](./fase02/capitulo09.md)
 </details>
 <br>
-<details>
-<summary>COMPUTATIONAL THINKING USING PYTHON</summary>
 
-[Capítulo 01: E que comecem os preparativos!](./fase02/capitulo01.md)<br>
-[Capítulo 02: Quando a máquina começa a tomar decisões.](./fase02/capitulo02.md)<br>
-[Capítulo 03: Andar em círculos não é necessariamente ruim...](./fase02/capitulo03.md)<br>
-[Capítulo 04: Quem tem o nome na lista?](./fase02/capitulo04.md)<br>
-</details>
-<br>
 <details>
 <summary>RESPONSIVE WEB DEVELOPMENT</summary>
+<br>
 
 [Capítulo 07: A experiência do usuário é um assunto sério!](./fase02/capitulo07.md)<br>
 [Capítulo 08: Quem vê interface, vê coração.](./fase02/capitulo08.md)<br>
 </details>
 <br>
 
-[Capítulo 01: E que comecem os preparativos!](./fase02/capitulo01.md)<br>
-[Capítulo 02: Quando a máquina começa a tomar decisões.](./fase02/capitulo02.md)<br>
-[Capítulo 03: Andar em círculos não é necessariamente ruim...](./fase02/capitulo03.md)<br>
-[Capítulo 04: Quem tem o nome na lista?](./fase02/capitulo04.md)<br>
-[Capítulo 05: Entendendo o ponto de vista do usuário.](./fase02/capitulo05.md)<br>
-[Capítulo 06: Infelizmente, diagramas não são o suficiente...](./fase02/capitulo06.md)<br>
-[Capítulo 07: A experiência do usuário é um assunto sério!](./fase02/capitulo07.md)<br>
-[Capítulo 08: Quem vê interface, vê coração.](./fase02/capitulo08.md)<br>
-[Capítulo 09: Quanto vale o show?](./fase02/capitulo09.md)<br>
-</div>
