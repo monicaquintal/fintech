@@ -27,7 +27,6 @@
 
 </details>
 </div>
-<br>
 
 <h2>📚 FASE 2 - PROTOTYPING (de 22/03 até 25/04)</h2>
 
