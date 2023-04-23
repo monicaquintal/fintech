@@ -17,6 +17,8 @@
   - dentro do orçamento (Custos).
 - não existe a possibilidade de modificar um deles sem impactar os outros dois!
 
+---
+
 ## Gerenciamento de custo
 
 - contém os processos necessários para planejar e estimar custos de cada atividade, gerando um orçamento.
@@ -120,4 +122,227 @@
     - acordos.
     - ativos de processos organizacionais.
   
-  PÁGINA 13
+  - `ferramentas e técnicas`:
+    - agregação de custos.
+    - análise de reservas.
+    - opinião especializada.
+    - relações históricas.
+    - reconciliação dos limites de recursos financeiros.
+  
+  - `saídas`:
+    - linha de base dos custos.
+    - requisitos de recursos financeiros do projeto.
+    - base de estimativas.
+    - atualizações nos documentos do projeto.
+  
+### 4. Controlar os gastos
+
+- monitorar o progresso do projeto, registrando os custos reais, bem como qualquer aumento de orçamento aprovado por um controle integrado de mudanças.
+- são atividades do controle de custos:
+  - medidas que mantenham os excessos de custos não previstos dentro de limites aceitáveis.
+  - monitorar o desempenho do trabalho em relação aos recursos financeiros gastos. 
+  - informar as partes interessadas sobre mudanças aprovadas e seus custos.
+  - impedir que mudanças não aprovadas sejam indevidamente incluídas no escopo, fazendo uso dos recursos.
+  - assegurar que as solicitações de mudanças sejam feitas de forma oportuna.
+
+- `entradas`:
+  - plano de gerenciamento do projeto.
+  - requisitos de recursos financeiros do projeto.
+  - dados de desempenho do trabalho.
+  - ativos de processos organizacionais.
+- `ferramentas e técnicas`:
+  - gerenciamento do valor agregado.
+  - previsão.
+  - índice de desempenho para término (IDPT).
+  - análise de desempenho.
+  - software de gerenciamento de projetos.
+  - análise de reservas.
+- `saídas`:
+  - informações sobre o desempenho do trabalho.
+  - previsões de custos.
+  - solicitações de mudança.
+  - atualizações no plano de gerenciamento do projeto.
+  - atualizações nos documentos do projeto.
+  - atualizações nos ativos de processos organizacionais.
+
+---
+
+## Análise de valor agregado
+
+- forma simples e eficaz de medir desempenho em qualquer projeto.
+- utiliza uma métrica padrão.
+- ajuda a avaliar a magnitude das variações de escopo, sendo capaz de identificar variações de prazos e custos separadamente.
+
+### A técnica “converte tempo em dinheiro”, utilizando-se de `três valores`:
+
+  - ***Valor planejado*** (Planned Value, ou PV): 
+    - valor planejado a ser gasto com o trabalho até a data usada como referência.
+
+  - ***Custo real*** (Real Cost, ou RC): 
+    - valor gasto com o trabalho até a data usada como referência. 
+    - se a atividade estiver em andamento, ele deixa de ser zero, transformando-se em custo.
+
+  - ***Valor agregado*** (Earned Value, ou EV):
+    - valor agregado ao projeto; quanto o trabalho realizado realmente rendeu.
+
+<details>
+<summary><strong>Exemplo da aplicação aqui!</strong></summary>
+Um pedreiro tem como tarefa erguer um muro, e para essa atividade foram estimadas 16 horas de duração, dividida em dois dias úteis de 8 horas cada. Se considerarmos, para efeito do exercício, uma remuneração de 10 reais por hora, teremos um valor planejado de 160 reais no total.<br>
+Se imaginar que o pedreiro ao final do primeiro dia trabalhou não 8,mas 10 horas, concluindo apenas 40% do muro, teremos:<br>
+
+- Valor planejado:
+  - 8 horas planejadas x 10 reais/h = 80 reais.
+- Custo real:
+  - 10 horas trabalhadas x 10 reais/h = 100 reais.
+- Valor agregado: 
+  - Se 8 horas correspondem à metade de 16 horas, em um trabalho linear teríamos 50% da tarefa concluída, certo? Então poderemos calcular o valor agregado ao usando regra de 3:
+    - 8h---------------50%
+    - Xh---------------40%
+    - X = 6,4 horas
+  - Portanto, Valor Agregado: 6,4 horas x 10 reais/h = 64 reais, ou seja, o trabalho “rendeu” ou “valeu” apenas 64 reais.
+</details>
+<br>
+
+### Esses três valores podem gerar variações importantes utilizando algumas `fórmulas matemáticas`:
+
+- ***Variação de Custo*** (Cost Variance, ou CV):
+  - variação absoluta entre o progresso realizado (percentual evoluído) e o custo incorrido.
+  - CV(Variação de Custo) = EV(Valor Agregado) – RC(Custo Real)
+    - CV negativo: custo está acimado planejado (gastos estão acima do orçamento).
+    - CV positivo: custo está abaixo do esperado.
+
+- ***Variação de Prazo*** (Schedule Variance, ou SV):
+  - variação absoluta entre o progresso realizado (percentual evoluído) e o progresso planejado.
+  - SV(Variação de Prazo) = EV(Valor Agregado) – PV(Valor planejado).
+    - SV negativo: atividade está atrasada.
+    - SV positivo: atividade adiantada.
+
+<details>
+<summary><strong>Continuando o exemplo acima!</strong></summary>
+
+- ***Variação de Custo***:
+  - CV = EV – RC
+  - CV = 64 – 100 = -36
+  - Conclusão: acima do orçamento
+
+- ***Variação de Prazo***:
+  - SV = EV – PV
+  - SV = 64 – 80 = -16 
+  - Conclusão: atrasado.
+
+</details>
+<br>
+
+### A maioria dos gerentes prefere trabalhar com índices e ferramentas (inclui-se o Microsoft Project), cujas fórmulas e análise são ligeiramente diferentes:
+
+- ***Índice de Desempenho de Custo*** (Cost Performance Index ou CPI):
+  - no Microsoft Project em Português/Brasil, o índice é conhecido como IDC.
+  - fórmula: CPI = EV / RC. 
+    - CPI = 1, significa que o custo está rigorosamente dentro do previsto na linha de base. 
+    - Se CPI &lt; 1, a atividade está com o orçamento estourado.
+    - Se CPI &gt; 1, está gastando menos.
+
+- ***Índice de Desempenho de Prazo*** (Schedule Performance Index ou SPI):
+  - no Microsoft Project em Português/Brasil, o índice é conhecido como IDA – Índice de Desempenho de Agendamento.
+  - fórmula: SPI = EV / PV. 
+    - Caso o SPI seja igual a 1, o prazo está dentro da linha de base, ou seja, não estamos nem adiantados, nem atrasados. 
+    - Se o índice for abaixo de 1, a atividade está atrasada.
+    - Se for acima de 1, adiantada.
+
+<details>
+<summary><strong>Continuando o exemplo acima!</strong></summary>
+
+- ***Índice de Desempenho de Custo***:
+  - CPI = EV /RC
+  - CPI = 64 / 100 = 0,64 => (CPI < 1)
+  - Conclusão: acima do orçamento.
+
+- ***Índice de Desempenho de Prazo***:
+  - SPI = EV / PV
+  - SPI = 64 / 80 = 0,8 => (SPI < 1)
+  - Conclusão: atrasado.
+
+</details>
+<br>
+
+--- 
+
+<div align="center">
+<h2>TRABALHO COM METODOLOGIAS ÁGEIS, COMO CONTROLO MEUS CUSTOS?</h2>
+</div>
+
+Exemplos de métricas que permeiam o desenvolvimento de produtos e podem auxiliar o time a controlar gastos de pequenos incrementos de produto,medindo como estão andando os objetivos e metas da sua organização:
+
+## 1. Return Of Investiment (ROI)
+
+- retorno sobre investimento.
+- é uma métrica de performance financeira.
+- expressa a relação entre o valor investido em um negócio e o valor obtido em retorno.
+- utilizada para qualificar se um investimento vale a pena ou não financeiramente.
+- expresso em porcentagem.
+- fórmula:
+  - ROI = ((Receita - Investimento) / Investimento) * 100
+
+## 2. Net Promoter Score (NPS)
+
+- metodologia de pesquisa de satisfação dos clientes.
+- um dos mais importantes indicadores de desempenho.
+- objetivo: avaliar o quão recomendada é uma empresa, negócio ou serviço através de uma única pergunta: 
+  - “De 0 a 10, o quanto você indicaria a nossa EMPRESA para um amigo ou familiar?”
+- quanto mais alto for o NPS, mais satisfeitos estarão os clientes e, consequentemente, contribuirão para o crescimento do negócio ($).
+
+- após a realização da pergunta, é preciso dividir os entrevistados em três categorias de acordo com as notas:
+  - Promotores: 
+    - notas 9 ou 10.
+    - são clientes entusiastas que continuarão comprando e recomendando seu produto ou negócio para outras pessoas, contribuindo com o crescimento do seu negócio.
+  - Neutros:
+    - notas 7 ou 8.
+    - são clientes relativamente satisfeitos que compram com certa frequência, mas estão vulneráveis à concorrência.
+  - Detratores:
+    - notas de 0 a 6.
+    - são clientes insatisfeitos e que podem danificar a sua marca e impactar no crescimento do seu negócio.
+- para calcular o NPS, subtrair a porcentagem de detratores da porcentagem de promotores, calculando, assim, uma pontuação entre -100 e 100.
+
+- de acordo com a porcentagem obtida no NPS, podemos classificar a empresa em quatro níveis, que indicam o quão bem ela está em relação à satisfação dos seus clientes:
+  - Crítico: -100 a 0.
+  - Aperfeiçoamento: 1 a 30.
+  - Qualidade: 31 a 70.
+  - Excelência: 71 a 100.
+
+- além de perguntar a pontuação no NPS, podemos incluir perguntas condicionadas à resposta do entrevistador, para assim colher feedback e conseguir tomar ações:
+  - 0 a 3: Pode nos dizer o que aconteceu?
+  - 4 a 6: Como podemos melhorar?
+  - 7 e 8: Como teremos 10?
+  - 9 e 10: Obrigado! Pode nos dizer o que mais gostou?
+
+## 3. Churn
+
+- mede a fidelização dos clientes a partir do lançamento de nossos incrementos no mercado.
+- é uma métrica que diz a porcentagem de clientes que abandonaram o negócio.
+- fórmula: 
+  - Taxa de Churn = (nº de clientes que cancelaram o serviço no mês) / (nº de clientes no início do mês)
+- um dos principais motivos que levam ao churn é a insatisfação do cliente, que não vê valor no negócio ou opta pela concorrência.
+- algumas ações podem ser tomadas para diminuição do churn:
+  - alinhamento de expectativas;
+  - entrega de valor esperado pelo cliente;
+  - boas experiências;
+  - atenção os feedbacks;
+  - correção rápida de eventuais problemas e erros.
+- é muito importante medir o churn para reduzi-lo ao máximo, pois dependendo do modelo de negócio, especialmente aqueles que dependem de assinaturas, pode sofrer um impacto direto nas receitas da organização!
+
+---
+
+## FAST TEST
+
+### 1. Segundo PMBOK (2013), em gerenciamento de custos, há processos necessários para planejar e estimar custos de cada atividade. Selecione a alternativa que cita todos esses processos.
+> Planejar o gerenciamento de custos, estimar custos, determinar orçamento, controlar custos.
+
+### 2. No processo de estimativa de custos, há um importante item que contempla uma análise para decidir se um determinado pacote será desenvolvido, comprado pronto ou terceirizado. Como essa análise se chama?
+> Make or Buy.
+
+### 3. De acordo com a metodologia NPS (Net Promoter Score), selecione a alternativa correta:
+> Notas de clientes considerados promotores ocorrem entre 9 e 10, enquanto dos considerados neutros ocorrem entre 7 e 8.
+
+---
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
