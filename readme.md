@@ -26,7 +26,6 @@
 [Capítulo 10: Vamos aprender a programar?](./fase01/capitulo10.md)
 
 </details>
-</div>
 
 <h2>📚 FASE 2 - PROTOTYPING (de 22/03 até 25/04)</h2>
 
@@ -59,3 +58,26 @@
 [Capítulo 08: Quem vê interface, vê coração.](./fase02/capitulo08.md)<br>
 </details>
 <br>
+
+<h2>📚 FASE 3 - MODELING (de 26/04 até 23/05)</h2>
+
+<details>
+<summary>BUILDING RELATIONAL DATABASE</summary>
+
+[Capítulo 1: Capítulo 1: O app começa a tomar forma!](./fase03/capitulo01.md)
+[Capítulo 2:]()
+[Capítulo 3:]()
+[Capítulo 4:]()
+[Capítulo 5:]()
+[Capítulo 6:]()
+[Capítulo 7:]()
+
+</details>
+
+<details>
+<summary>COMPUTATIONAL THINKING USING PYTHON</summary>
+
+[Capítulo 8:]()
+[Capítulo 9:]()
+
+</details>
