@@ -12,7 +12,6 @@
 
 <details>
 <summary>AGILE SOFTWARE DESIGN</summary>
-<br>
 
 [Capítulo 01: Precisamos falar sobre finanças.](./fase01/capitulo01.md)<br>
 [Capítulo 02: Mas como um Software é criado?](./fase01/capitulo02.md)<br>
@@ -26,33 +25,29 @@
 [Capítulo 10: Vamos aprender a programar?](./fase01/capitulo10.md)
 
 </details>
+<br>
 
 <h2>📚 FASE 2 - PROTOTYPING (de 22/03 até 25/04)</h2>
 
 <details>
 <summary>COMPUTATIONAL THINKING USING PYTHON</summary>
-<br>
 
 [Capítulo 01: E que comecem os preparativos!](./fase02/capitulo01.md)<br>
 [Capítulo 02: Quando a máquina começa a tomar decisões.](./fase02/capitulo02.md)<br>
 [Capítulo 03: Andar em círculos não é necessariamente ruim...](./fase02/capitulo03.md)<br>
-[Capítulo 04: Quem tem o nome na lista?](./fase02/capitulo04.md)<br>
+[Capítulo 04: Quem tem o nome na lista?](./fase02/capitulo04.md)
 </details>
-<br>
 
 <details>
 <summary>AGILE SOFTWARE DESIGN</summary>
-<br>
 
 [Capítulo 05: Entendendo o ponto de vista do usuário.](./fase02/capitulo05.md)<br>
 [Capítulo 06: Infelizmente, diagramas não são o suficiente...](./fase02/capitulo06.md)<br>
 [Capítulo 09: Quanto vale o show?](./fase02/capitulo09.md)
 </details>
-<br>
 
 <details>
 <summary>RESPONSIVE WEB DEVELOPMENT</summary>
-<br>
 
 [Capítulo 07: A experiência do usuário é um assunto sério!](./fase02/capitulo07.md)<br>
 [Capítulo 08: Quem vê interface, vê coração.](./fase02/capitulo08.md)<br>
@@ -64,20 +59,19 @@
 <details>
 <summary>BUILDING RELATIONAL DATABASE</summary>
 
-[Capítulo 1: Capítulo 1: O app começa a tomar forma!](./fase03/capitulo01.md)
-[Capítulo 2:]()
-[Capítulo 3:]()
-[Capítulo 4:]()
-[Capítulo 5:]()
-[Capítulo 6:]()
+[Capítulo 1: O app começa a tomar forma!](./fase03/capitulo01.md)<br>
+[Capítulo 2: Onde guardar as informações geradas?](./fase03/capitulo02.md)<br>
+[Capítulo 3:]()<br>
+[Capítulo 4:]()<br>
+[Capítulo 5:]()<br>
+[Capítulo 6:]()<br>
 [Capítulo 7:]()
-
 </details>
 
 <details>
 <summary>COMPUTATIONAL THINKING USING PYTHON</summary>
 
-[Capítulo 8:]()
+[Capítulo 8:]()<br>
 [Capítulo 9:]()
 
 </details>
