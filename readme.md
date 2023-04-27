@@ -59,19 +59,19 @@
 <details>
 <summary>BUILDING RELATIONAL DATABASE</summary>
 
-[Capítulo 1: O app começa a tomar forma!](./fase03/capitulo01.md)<br>
-[Capítulo 2: Onde guardar as informações geradas?](./fase03/capitulo02.md)<br>
-[Capítulo 3:]()<br>
-[Capítulo 4:]()<br>
-[Capítulo 5:]()<br>
-[Capítulo 6:]()<br>
-[Capítulo 7:]()
+[Capítulo 01: O app começa a tomar forma!](./fase03/capitulo01.md)<br>
+[Capítulo 02: Onde guardar as informações geradas?](./fase03/capitulo02.md)<br>
+[Capítulo 03:]()<br>
+[Capítulo 04:]()<br>
+[Capítulo 05:]()<br>
+[Capítulo 06:]()<br>
+[Capítulo 07:]()
 </details>
 
 <details>
 <summary>COMPUTATIONAL THINKING USING PYTHON</summary>
 
-[Capítulo 8:]()<br>
-[Capítulo 9:]()
+[Capítulo 08:]()<br>
+[Capítulo 09:]()
 
 </details>
