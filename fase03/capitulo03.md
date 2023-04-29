@@ -64,6 +64,7 @@ O ciclo de vida de um banco de dados é composto pelas fases de:
 ## 3. Tipos de modelos de dados
 
 ### A) Modelo conceitual:
+
 - primeira etapa do projeto.
 - representa a realidade (contexto de negócio) de uma visão global e genérica dos dados e seus relacionamentos.
 - **objetivo:** 
@@ -78,5 +79,39 @@ O ciclo de vida de um banco de dados é composto pelas fases de:
 - apresenta, por meio de uma visão global, as principais necessidades de armazenamento dentro de um contexto de negócio, ou seja, sem detalhamento e seus relacionamentos!
 - a técnica de modelagem conceitual mais difundida é a ***Entidade-Relacionamento (ER)***.
   - O modelo conceitual é representado por um diagrama, **denominado Diagrama Entidade-Relacionamento (DER)**.
+- é uma macrodefinição/descrição de alto nível, que retrata a realidade de um processo de negócio. O foco é a representação de uma realidade de forma simples e de fácil compreensão.
+- exemplo:
 
-  págs 8 e 9
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo1-er.png" width="50%"><br>
+<em>Exemplo de modelo conceitual usando a técnica de Entidade-Relacionamento, que retrata necessidade de armazenar dados dos médicos e consultas realizadas.</em>
+</div>
+<br>
+
+### B) Modelo lógico de dados:
+
+- logo após o modelo conceitual.
+- nível de detalhamento maior.
+- descreve as estruturas que serão armazenadas no banco de dados, resultando numa representação gráfica dos dados de maneira lógica.
+- nomeia componentes e ações que exercem de um para o outro, mas sem características específicas de um SGBD.
+- ***objetivo:***
+  - descrição dos elementos (como o detalhamento de atributos, chaves de identificação, integridade referencial e a normalização).
+- exemplo:
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo1-ml.png" width="50%"><br>
+<em>Exemplo de modelo lógico de dados.</em>
+</div>
+<br>
+
+- sobre o exemplo acima:
+  - é possível identificar entidades, atributos, relacionamentos e restrições, como a obrigatoriedade de atributos, representada com os asteriscos vermelhos.
+  - há detalhamento das entidades “MÉDICO” e “CONSULTA”, pelo detalhamento dos atributos (matrícula do médico, CRM, nome, código da consulta, data e hora da consulta) e da ação entre as entidades.
+  - o padrão de relacionamento, conhecido vulgarmente como “pédegalinha”,indica que um médico poderá realizar várias consultas (quando o relacionamento é “lido” da esquerda para a direita, ou seja, da entidade MÉDICO para a entidade CONSULTA). Ao mesmo tempo, uma consulta deverá ser realizada por um único médico (quando a “leitura” é feita da direita para esquerda, da entidade CONSULTA para a entidade MÉDICO). 
+  - para elaboração, foi utilizada a `ferramenta Oracle SQL Developer Data Modeler`, com a notação de Barker.
+
+### C) Modelo físico de dados (ou modelo relacional):
+
+- 
