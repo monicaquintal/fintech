@@ -236,6 +236,63 @@ O ciclo de vida de um banco de dados é composto pelas fases de:
 ### ***a) Tupla:***
 
 - é uma estrutura de atributos relacionados e interdependentes que residem em uma entidade.
+- é a linha de registro!
 - uma ocorrência também é conhecida como instância, tupla ou registro. No Projeto Lógico, equivale a uma instância ou ocorrência da entidade. No Projeto Físico, equivale a um registro ou linha da tabela.
 
 ### ***b) Identificação-Chave:***
+
+- identificam a entidade de maneira única, garantindo que as informações não se repitam.
+- exemplos: RG, CPF, CNH, carteira profissional, conta bancária.
+- quando um atributo tem característica de determinante em uma estrutura de armazenamento, podemos dizer que é “candidato” a ser escolhido. Esse atributo identificará cada ocorrência da entidade de forma única,conhecida como **Chave Primária**!
+
+### ***c) Chave Primária:***
+
+- atributo que identifica uma única ocorrência dentro de uma entidade, ou seja, o atributo “identificador ou determinante” que foi classificado anteriormente!
+- geralmente,são utilizados campos numéricos como Chave Primária de uma entidade.
+- toda entidade deve conter uma Chave Primária.
+- pode ser formada por um ou mais atributos, a fim de garantir a unicidade das ocorrências de uma entidade!
+
+### ***d) Chave Estrangeira:***
+
+- é o atributo que estabelece a relação entre duas entidades.
+- faz referência a um atributo Chave Primária, que normalmente pertence a outra entidade.
+- seu **objetivo** é assegurar a integridade referencial entre os elementos associados. 
+- a integridade referencial garante que as ocorrências de uma entidade que se relaciona com outra entidade farão citação a uma Chave Primária existente, ou seja, cadastrada!
+
+## 4. Tipos de Entidade
+
+### A) ***Entidade FORTE*** (Primária ou Principal): 
+
+- entidades de dados que possuem alto grau de independência com relação à existência e identificação.
+- não têm dependência com nenhuma outra entidade para formar seu conceito.
+- normalmente são entidades fundamentais, cujo objetivo é manter as transações de negócio da empresa!
+- exemplos: banco, pedido, nota fiscal, aluno, funcionário.
+
+### B) ***Entidade FRACA*** (ou Dependente):
+
+- são entidades vinculadas à existência de uma entidade principal, não existem por si sós, estãoc ondicionadasa outra única entidade, da qual elas dependem!
+- por defifição, é uma entidade subordinada em que a Chave Primária é formada pela Chave Estrangeira – proveniente da relação com a Entidade Forte – associada a um atributo da própria Entidade Fraca!
+- exemplos: dependente, item de pedido, agência, nota aluno.
+
+> a Entidade Fraca no modelo lógico ***não possui Chave Primária***. 
+
+### C) ***Entidade Associativa***:
+
+- não existem em um “Modelo Entidade-Relacionamento” por si sós, estão subordinadas à existência de duas ou mais entidades.
+- exemplos: Voo, Acidente, Casamento, Registro de Chamado.
+
+---
+
+## Dicas para identificar entidades:
+
+1. Examine os substantivos. Eles são objetos de significado próprio.
+2. Dê um nome a cada entidade.
+3. Há informação relevante a respeito da entidade,necessária às operações da empresa?
+4. Cada ocorrência da entidade tem um identificador único (chave)?
+5. Escreva uma descrição da suposta entidade (CD é o produto básico de venda da empresa. Exemplos de CDs).
+6. Faça um diagrama com, pelo menos, alguns de seus atributos!
+
+--- 
+
+## FAST TEST
+
