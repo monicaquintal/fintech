@@ -38,7 +38,7 @@ Máxima | MAX = 1 -> atributo monovalorado<br>MAX = N -> atributo multivalorado
 
 </div>
 
-- exemplos:
+Exemplos:<br>
 
 a) Nome do aluno (todo aluno possui um e apenas um nome):
   - Cardinalidade mínima = 1 ⟶ atributo mandatório (obrigatório).
@@ -53,3 +53,85 @@ c) Nota (nem todos os alunos realizam avaliação na data marcada, podendo ter n
   - Cardinalidade máxima = 1 → atributo monovalorado.
 
 ## 1.2 Decomposição de atributos
+
+- atributos compostos: 
+  - possuem muitos dados agrupados para formar a informação.
+  - exemplos: telefone (DDI + DDD + telefone + ramal + nome) e endereço (tipo logradouro, nome, número, complemento, bairro, cep, cidade, estado).
+- o nível de decomposição de um atributo depende dos requerimentos do negócio.
+  - alguns atributos nunca são decompostos, como data e hora.
+
+## 1.3 Convenção de nomenclatura para atributos e entidades
+
+- é considerado boa prática utilizar uma nomenclatura padronizada para os atributos e entidades.
+- normalmente, cada empresa cria um padrão a ser seguido. 
+- neste caso, será utilizada a padronização considerando o SGBD Oracle.
+
+### 1.3.1 Nomenclatura de tabelas e campos
+
+- bancos de dados modernos permitem tamanhos maiores, porém convencionou-se (padrão SQL-ANSI) tamanho máximo do nome da tabela (por enquanto, conhecido como entidade) e do nome de um campo (no momento, conhecido como atributo) em, `no máximo, 30 caracteres`.
+
+### 1.3.2 Caracteres permitidos
+
+- letras.
+- números.
+- underline (_).
+- cifrão ($) e cerquilha (#).
+
+Embora números sejam permitidos, não podem iniciar o nome da entidade ou atributo, que geralmente começa com uma letra.
+
+### 1.3.3 Padrão recomendado
+
+<div align="center">
+
+Tabela (Entidade) | Campos (atributos)
+------------------|--------------------
+SINGULAR | SINGULAR
+Primeiro caractere deve ser uma letra | Primeiro caractere deve ser uma letra
+***Letras maiúsculas*** | ***Letras minúsculas***
+
+</div>
+
+### 1.3.3.1 Nomenclatura para nomes de TABELAS (ENTIDADES)
+
+- inicializar o nome com a letra `T`.
+- utilizar 3 caracteres como prefixo para indicar a sigla do sistema.
+- nome atribuído à tabela.
+- utilize o underline (_) como separador.
+- nomes compostos separar com o underline (_).
+
+Exemplo de convenção de nomes de Tabelas (Entidades):
+- Entidade: Funcionário
+- Sistema: Sistema de Controle de Implantação de Projetos – Sigla: SIP
+- Exemplo: T_SIP_FUNCIONARIO
+  - T → Indica tabela
+  - SIP → Nome do sistema
+  - FUNCIONARIO → Nome da tabela
+
+### 1.3.3.2 Nomenclatura para nomes de CAMPOS(ATRIBUTOS)
+
+- utilizar 2 ou 3 caracteres como prefixo para indicar o significado da coluna.
+- utilizar o underline (_) como separador.
+- nome atribuído à coluna (sufixo).
+- nomes compostos separar com o underline (_).
+
+Exemplo de convenção de nomes de Campos (Atributos):
+- Entidade: Funcionario
+- Exemplo: nr_matricula
+  - nr → indica o prefixo do nome
+  - matricula → indica o nome da coluna
+
+<div align="center">
+
+T_SIP_FUNCIONARIO atributos | Nome dos atributos (convenção)
+----------------------------|-------------------
+matrícula funcionario | nr_matricula
+nome | nm_nome
+data nascimento | dt_nascimento
+data admissão | dt_admissao
+endereço | ds_endereco
+salário | vl_salario
+código departamento | cd_departamento
+
+</div>
+
+### 1.3.3.3 Lista de prefixos comumente utilizados
