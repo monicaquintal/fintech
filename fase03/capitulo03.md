@@ -296,3 +296,21 @@ O ciclo de vida de um banco de dados é composto pelas fases de:
 
 ## FAST TEST
 
+### 1. Podemos afirmar que um atributo determinante garante a unicidade da informação?
+> Sim, pois ele garante que o dado seja único e não exista duplicidade.
+
+### 2. Assinale a alternativa que descreva quais são os ciclos de vida de um banco de dados.
+> Requisitos de Informação,  Projeto Lógico, Projeto Físico e Implementação.
+
+### 3. Qual das alternativas a seguir nomeia um atributo identificador ou determinante?
+> Chave primária.
+
+### 4. Escolha a alternativa que descreva qual é a sigla que representa um conjunto de técnicas e passos para projetar um banco de dados baseado nos relacionamentos entre elementos de dados.
+> MER.
+
+### 5. Quais são as informações que qualificam uma entidade?
+> Atributos.
+
+---
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
