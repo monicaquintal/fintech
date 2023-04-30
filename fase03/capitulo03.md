@@ -114,4 +114,128 @@ O ciclo de vida de um banco de dados é composto pelas fases de:
 
 ### C) Modelo físico de dados (ou modelo relacional):
 
-- 
+- derivado do modelo lógico.
+- última etapa do projeto de banco de dados.
+- são detalhados os componentes de estrutura física do banco de dados, como tabelas, campos, tipos de dados, índices, nomenclaturas, exigências (restrições) relativas a conteúdo, domínio dos campos, etc.
+- **utiliza-se o SGB** (como Oracle, SQL Server, DB2, MySQL, PostgreSQL, etc).
+- após a concepção do modelo físico, um **SCRIPT**, composto por comandos SQL do tipo DDL (Data Definition Language ou Linguagem de Definição de Dados), é gerado.T
+  - trata-se de comandos específicos para a criação das estruturas necessárias ao armazenado de dados, como as tabelas!
+- exemplo:
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo1-mf.png" width="50%"><br>
+<em>Exemplo de modelo físico de dados.</em>
+</div>
+<br>
+
+- no exemplo acima:
+  - utilizado o SGCB Oracle Database 11g.
+  - o exemplo detalha entidades MÉDICO e CONSULTA, considerando tipos de dados necessários para armazenar o conteúdo de cada atributo descrito no modelo lógico. Entre eles, a identificação, as Chaves Primárias e Estrangeiras, restrições do tipo NOT NULL/NULL, UNIQUE e demais detalhes físicos.
+
+---
+
+<div align="center">
+<h2>Abordagem Relacional</h2>
+</div>
+
+> Um banco de dados relacional (ou base de dados relacional) é um sistema de armazenamento de dados, baseado nos relacionamentos entre elementos de dados, buscando uma normalização (não redundância) dos dados!
+
+## 1. Modelo Entidade x Relacionamento (MER):
+
+- a abordagem ER é considerada padrão para a modelagem de dados!
+- o modelo ER unifica as visões de um modelo relacional.
+- seu **objetivo** é desenvolver um modelo que represente as necessidades do negócio!
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo1-der.png" width="50%"><br>
+<em>Exemplo de Diagrama Entidade-Relacionamento (DER).</em>
+</div>
+<br>
+
+## 2. Entidade:
+
+- representa uma necessidade de armazenamento.
+- é um objeto ou elemento que existe no mundo real, com uma identificação distinta e um significado próprio.
+- sua existência pode ser:
+  - ***física e tangível***, como pessoas, casa, relógio, computadores, funcionários.O
+  - ou ***conceitual e intangível***, como serviços, disciplina escolar, consulta médica.
+    - ou seja, a entidade pode ser um evento ou fenômeno!
+
+### ***Como identificar uma entidade?***
+
+- focar no problema em pauta e perguntar-se: "Quais são as ‘coisas’ nesse problema?".
+- a maioria delas cairá em uma das seguintes categorias:
+
+  - `Coisas tangíveis`:
+    - são os objetos mais fáceis de serem achados.
+    - exemplos: livro, avião, veículo...
+
+  - `Funções`:
+    - exemplos: médico, paciente, cliente, empregado, supervisor, proprietário, ...
+    - funções podem possuir atributos específicos: um médico, por exemplo, possui seu número CRM, que pode ser pertinente no sistema computacional.
+
+  - `Incidentes`:
+    - objetos-incidentes são usados para representar uma ocorrência ou um fato, algo que acontece em um determinado período.
+    - exemplos: voo, acidente, chamada.
+
+  - `Interações`:
+    - objetos-interações geralmente possuem uma qualidade de "transação" ou de "contrato".
+    - referem-se a dois ou mais objetos do modelo.
+    - exemplos: compra, casamento.
+
+### ***Como representar uma entidade?***
+
+- em um Diagrama de Modelagem de Dados, podemos representar uma ENTIDADE por meiode um retângulo com o nome dela.
+- recomendado que o nome da entidade seja representado por uma palavra no singular, com letras maiúsculas.
+- não são utilizados acentos ou caracteres especiais, exceto o underline“_”, para separar as palavras, ou seja, **o nome da entidade precisa ser um termo único**.
+
+## 3. Atributos:
+
+- são informações que qualificam e caracterizam uma entidade.
+- são tão inerentes a uma entidade que, para serem consideradas únicas,precisam possuir no mínimo dois atributos.
+- uma entidade com um único atributo normalmente é agregada a outra entidade!
+- é recomendado que o nome do atributo seja representado por uma palavra no singular, com letras minúsculas.
+- não são utilizados acentos ou caracteres especiais, exceto o underline“_”, para separar as palavras, ou seja, usar um termo único.
+
+### ***Análise de um atributo:***
+
+- durante o refinamento do modelo de dados, analisar o atributo em relação ao conteúdo que será armazenado. 
+- **quanto ao conteúdo armazenado**, podem-se classificar os atributos de acordo com seus **tipos**:
+
+  - `atributo simples`:
+    - guarda em si um único valor indivisível.
+    - exemplos: nome, código, descrição do produto, data de emissão, data e hora da consulta.
+
+  - `atributo composto`:
+    - resultado da soma de vários atributos.
+    - exemplos: telefone (DDI + DDD + prefixo + sufixo), endereço (tipo logradouro + logradouro + numero + complemento + CEP + bairro + cidade + estado).
+
+  - `atributo multivalorado`:
+    - pode ter várias ocorrências, ou seja, valores associados a ele.
+    - exemplo: telefone (uma única pessoa pode ter telefones: residencial, comercial, celular e de recados).
+    - no modelo relacional será preciso decompor esse atributo em tabelas (entidades) e campos (atributos).
+    - para cada Atributo Multivalorado, criar uma tabela contendo:
+      - como Chave Estrangeira, a Chave Primária da tabela que representa o conjunto de entidades que têm o Atributo Multivalorado.
+      - o valor do atributo.
+    - a Chave Primária da nova tabela é a combinação da Chave Estrangeira e do valor do atributo.
+
+  - `atributo determinante`: 
+    - sua característica é garantir a unicidade de cada ocorrência da entidade.
+    - o conteúdo normalmente identifica um objeto, uma pessoa, um produto, individualmente.
+    - exemplos: matrícula de um aluno, número de uma nota fiscal, código de um produto, número de uma conta corrente, código do RENAVAM.
+
+## 4. Instâncias ou ocorrências de uma entidade
+
+- é cada existência ou ocorrência de um objeto na entidade.
+- representa um conjunto de valores que serão armazenados após a implementação da estrutura de armazenamento a partir de um SGBD.
+
+> é importante não confundir a entidade ou seus atributos com o **conteúdo** que será armazenado após a implementação do banco de dados por meio de um SGBD!
+
+### ***a) Tupla:***
+
+- é uma estrutura de atributos relacionados e interdependentes que residem em uma entidade.
+- uma ocorrência também é conhecida como instância, tupla ou registro. No Projeto Lógico, equivale a uma instância ou ocorrência da entidade. No Projeto Físico, equivale a um registro ou linha da tabela.
+
+### ***b) Identificação-Chave:***
