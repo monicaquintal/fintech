@@ -62,7 +62,7 @@
 [Capítulo 01: O app começa a tomar forma!](./fase03/capitulo01.md)<br>
 [Capítulo 02: Onde guardar as informações geradas?](./fase03/capitulo02.md)<br>
 [Capítulo 03: Como guardar as informações?](./fase03/capitulo03.md)<br>
-[Capítulo 04:]()<br>
+[Capítulo 04: O Modelo de Entidade-Relacionamento.](./fase03/capitulo04.md)<br>
 [Capítulo 05:]()<br>
 [Capítulo 06:]()<br>
 [Capítulo 07:]()
