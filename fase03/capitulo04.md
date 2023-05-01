@@ -166,21 +166,27 @@ Tx | Txt | Texto extenso
 
 <br>
 <div align="center">
-<img src="../assets/imagens-fase03/ex1-barker.png" width="30%"><br>
+<img src="../assets/imagens-fase03/ex1-barker.png" width="40%"><br>
 <em>Exemplo de notação de Barker.</em>
 </div>
 <br>
 
 <div align="center">
-<img src="../assets/imagens-fase03/ex1-ei.png" width="30%"><br>
+<img src="../assets/imagens-fase03/ex1-ei.png" width="40%"><br>
 <em>Exemplo de notação da Engenharia da Informação.</em>
+</div>
+<br>
+
+<div align="center">
+<img src="../assets/imagens-fase03/aplicando-data-modeler.png" width="40%"><br>
+<em>Exemplo de aplicação das notações, utilizando Oracle SQL Developer Data Modeler.</em>
 </div>
 <br>
 
 ### 1.4.2 Visão Física ou Relacional
 
 <div align="center">
-<img src="../assets/imagens-fase03/ex1-visao-fisica.png" width="30%"><br>
+<img src="../assets/imagens-fase03/ex1-visao-fisica.png" width="40%"><br>
 <em>Exemplo de visão física ou relacional.</em>
 </div>
 <br>
@@ -188,7 +194,7 @@ Tx | Txt | Texto extenso
 ### 1.4.3 Notação de Peter Chen
 
 <div align="center">
-<img src="../assets/imagens-fase03/ex1-peter-chen.png" width="30%"><br>
+<img src="../assets/imagens-fase03/ex1-peter-chen.png" width="40%"><br>
 <em>Exemplo de notação de Peter Chen.</em>
 </div>
 <br>
@@ -198,3 +204,87 @@ Tx | Txt | Texto extenso
 <div align="center">
 <h2>2. RELACIONAMENTOS</h2>
 </div>
+
+- um relacionamento é a representação de uma ação ou fato que associa as ocorrências de uma entidade com as de outra entidade.
+- ou seja, é o conjunto de associações entre ocorrências de entidades!
+- ***identificação dos relacionamentos***:
+  - analisar as entidades sempre aos pares.
+  - todo relacionamento tem:
+    - ***Nome***: normalmente um verbo: gravar, escrever, indicar etc.
+    - ***Opcionalidade***> deve ou pode.
+    - ***Cardinalidade***: nenhuma, uma única, uma ou mais ocorrências associadas.
+
+## 2.1 Cardinalidade do relacionamento
+
+- indica a quantidade de ocorrências de uma entidade A relacionadas com as de uma entidade B.
+- há ***três tipos de relacionamentos***:
+  - Relacionamento Um-para-Um (1:1). 
+  - Relacionamento Um-para-Muitos (1:n).
+  - Relacionamento Muitos-para-Muitos (m:n).
+- todo relacionamento possui cardinalidade mínima e cardinalidade máxima:
+  - mínima: indica com quantas ocorrências no mínimo uma entidade irá se associar com outra entidade.
+  - cardinalidade máxima: aponta com quantas ocorrências no máximo uma entidade irá se associar com outra entidade.
+
+<div align="center">
+
+Cardinalidade | Significado
+--------------|---------------
+Mínima | min = 0 → pode (condicional)<br>min = 1 → deve (incondicional)
+Máxima | 1 : 1<br>1 : N<br>M : N
+
+</div>
+
+- ***importante***:
+  - **linha tracejada** indica um **relacionamento opcional** (Condicional – cardinalidade mínima igual a zero).
+  - **linha contínua** aponta um **relacionamento obrigatório** (Incondicional – cardinalidade mínima igual a um).
+
+> Durante a análise de uma associação, a ***Chave Estrangeira deve ficar na entidade em que a cardinalidade máxima desse atributo (Chave Estrangeira) for igual a 1***, ou seja, a Chave Estrangeira é sempre um atributo MONOVALORADO!
+
+## 2.2 Caracterização dos relacionamentos
+
+### 2.2.1 Relacionamento 1:1
+
+- quando cada ocorrência da entidade (A) se associa,no máximo, a uma ocorrência da entidade (B).
+- e cada ocorrência da entidade (B) associa-se, no máximo, com uma ocorrência da entidade (A).
+(É necessário analisar sempre os dois sentidos do relacionamento)
+
+<details>
+<summary><strong>Exemplo 1 💭</strong></summary>
+<em>
+Dada a situação de um homem ser casado com uma mulher e uma mulher ser casada com um homem.<br>Lembrando que nem todas as pessoas são casadas.<br>
+E considerando a regra:
+- No Brasil, o casamento é monogâmico, portanto, um homem só pode ser casado com uma mulher e uma mulher só pode ser casada com um único homem.
+</em>
+
+### Temos:
+
+- associação “RELACIONAMENTO” é CONDICIONAL (só haverá ocorrências associadas para os indivíduos que forem casados).
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-homem-mulher.png" width="40%"><br>
+<em>Exemplo de relacionamento entre as entidades homem e mulher.</em>
+</div>
+<br>
+
+- representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-homem-mulher2.png" width="40%"><br>
+<em>Exemplo de relacionamento entre as entidades homem e mulher.</em>
+</div>
+<br>
+
+- Nota: exemplo de Relacionamento 1:1 – Não obrigatório (CONDICIONAL), cardinalidade mínima igual a zero.
+- Leia-se: um homem pode ser casado, se casado será com uma única mulher. Uma mulher pode ser casada, se casada será com um único homem.
+  - cada ocorrência da entidade “T_HOMEM” se associa,no máximo, com uma ocorrência da entidade “T_MULHER”.
+  - cada ocorrência da entidade “T_MULHER” se associa, no máximo, com uma ocorrência da entidade “T_HOMEM”.
+- Atenção: em toda a associação 1:1, deve-se indicar a entidade DOMINANTE, a entidade dominada ou filha receberá a Chave Estrangeira. 
+  - Lembrando que a Chave Estrangeira ficará na entidade em que a cardinalidade máxima do relacionamento é igual a 1, nesse caso, pode ser qualquer uma das entidades. 
+  - A Chave Estrangeira é sempre um atributo monovalorado.
+
+</details>
+
+<details>
+<summary><strong>Exemplo 2 💭</strong></summary>
+
+pág 11/20
