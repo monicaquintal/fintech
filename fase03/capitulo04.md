@@ -135,3 +135,66 @@ código departamento | cd_departamento
 </div>
 
 ### 1.3.3.3 Lista de prefixos comumente utilizados
+
+<div align="center">
+
+Prefixo (2 caracteres) | Prefixo (3 caracteres) | Significado
+-----------------------|------------------------|-----------------
+Nr | Num | Número (pode identificar exclusivamente)
+Cd | cod | Código (assinala esclusivamente uma ocorrência)
+Id | Idt | Identificador (aponta excluivamente uma ocorrênca)
+Ds | Des | Descrição
+Nm | Nom | Nome
+Dt | Dat | Data
+Vl | Val | Valor
+Qt | Qtd | Quantidade
+Sq | Seq | Número sequencial que reconhece algo do mundo real
+In | Ind | Indicador
+St | Sta | Status
+Ob | Obs | Observação
+Tx | Txt | Texto extenso
+
+</div>
+
+## 1.4 Representação gráfica de entidades e atributos
+
+### 1.4.1 Visão Lógica
+
+- utilizamos `#` para identificar a `chave primária` ou atributo identificador na representação gráfica da entidade. 
+- há diversas notações (formas de retratar ou expressar informações de forma gráfica ou por sinais, a fim de simplificar a representação de ideias, problemas e soluções). 
+- as mais utilizadas são as notações de Barker e da Engenharia da Informação (a seguir).
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/ex1-barker.png" width="30%"><br>
+<em>Exemplo de notação de Barker.</em>
+</div>
+<br>
+
+<div align="center">
+<img src="../assets/imagens-fase03/ex1-ei.png" width="30%"><br>
+<em>Exemplo de notação da Engenharia da Informação.</em>
+</div>
+<br>
+
+### 1.4.2 Visão Física ou Relacional
+
+<div align="center">
+<img src="../assets/imagens-fase03/ex1-visao-fisica.png" width="30%"><br>
+<em>Exemplo de visão física ou relacional.</em>
+</div>
+<br>
+
+### 1.4.3 Notação de Peter Chen
+
+<div align="center">
+<img src="../assets/imagens-fase03/ex1-peter-chen.png" width="30%"><br>
+<em>Exemplo de notação de Peter Chen.</em>
+</div>
+<br>
+
+---
+
+<div align="center">
+<h2>2. RELACIONAMENTOS</h2>
+</div>
