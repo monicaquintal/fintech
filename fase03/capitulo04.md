@@ -216,7 +216,7 @@ Tx | Txt | Texto extenso
 
 ## 2.1 Cardinalidade do relacionamento
 
-- indica a quantidade de ocorrências de uma entidade A relacionadas com as de uma entidade B.
+- indica a quantidade de ocorrências de uma entidade A relacionadas com as de uma entidade B (é sempre colocada no lado oposto à entidade, quando fazemos o diagrama).
 - há ***três tipos de relacionamentos***:
   - Relacionamento Um-para-Um (1:1). 
   - Relacionamento Um-para-Muitos (1:n).
@@ -253,12 +253,19 @@ Máxima | 1 : 1<br>1 : N<br>M : N
 <em>
 Dada a situação de um homem ser casado com uma mulher e uma mulher ser casada com um homem.<br>Lembrando que nem todas as pessoas são casadas.<br>
 E considerando a regra:
+
 - No Brasil, o casamento é monogâmico, portanto, um homem só pode ser casado com uma mulher e uma mulher só pode ser casada com um único homem.
 </em>
 
 ### Temos:
 
-- associação “RELACIONAMENTO” é CONDICIONAL (só haverá ocorrências associadas para os indivíduos que forem casados).
+- associação “RELACIONAMENTO” é **CONDICIONAL** (só haverá ocorrências associadas para os indivíduos que forem casados).
+
+<div align="center">
+<img src="../assets/imagens-fase03/diagrama-exemplo1.png" width="40%"><br>
+<em>Exemplo de diagrama de relacionamento entre as entidades homem e mulher.</em>
+</div>
+<br>
 
 <div align="center">
 <img src="../assets/imagens-fase03/exemplo-homem-mulher.png" width="40%"><br>
@@ -283,8 +290,31 @@ E considerando a regra:
   - A Chave Estrangeira é sempre um atributo monovalorado.
 
 </details>
+<br>
 
 <details>
 <summary><strong>Exemplo 2 💭</strong></summary>
 
-pág 11/20
+<em>Dada a situação hipotética de um departamento possuir um único gerente e um gerente gerenciar um único departamento.<br>
+Lembrando que nem todos os funcionários gerenciam departamentos.<br>
+Considerando a regra abaixo:
+
+- Levando em conta um momento no tempo e não um histórico de possíveis alterações no quadro funcional ou na divisão de departamentos, períodos de férias etc.
+
+### Temos:
+
+- associação “RELACIONAMENTO” é **INCONDICIONAL**, pois todas as ocorrências serão associadas entre as entidades.
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-departamento-funcionario.png" width="40%"><br>
+<em>Exemplo de relacionamento entre entidades departamento e gerente.</em>
+</div>
+<br>
+
+- representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-departamento-funcionario2.png" width="40%"><br>
+<em>Exemplo de modelo lógico entre departamento e gerente.</em>
+</div>
+<br>
