@@ -283,6 +283,7 @@ E considerando a regra:
 
 - exemplo da relação entre ocorrências nas tabelas:
 
+<div align="center">
 <img src="../assets/imagens-fase03/exemplo-tabelas-homem-mulher.png" width="40%"><br>
 <em>Exemplo das tabelas homem e mulher com registros.</em>
 </div>
@@ -307,10 +308,17 @@ Lembrando que nem todos os funcionários gerenciam departamentos.<br>
 Considerando a regra abaixo:
 
 - Levando em conta um momento no tempo e não um histórico de possíveis alterações no quadro funcional ou na divisão de departamentos, períodos de férias etc.
+</em>
 
 ### Temos:
 
 - associação “RELACIONAMENTO” é **INCONDICIONAL**, pois todas as ocorrências serão associadas entre as entidades.
+
+<div align="center">
+<img src="../assets/imagens-fase03/diagrama-exemplo2.png" width="40%"><br>
+<em>Exemplo de diagrama de relacionamento entre as entidades Departamento e Gerente.</em>
+</div>
+<br>
 
 <div align="center">
 <img src="../assets/imagens-fase03/exemplo-departamento-funcionario.png" width="40%"><br>
@@ -324,6 +332,185 @@ Considerando a regra abaixo:
 <img src="../assets/imagens-fase03/exemplo-departamento-funcionario2.png" width="40%"><br>
 <em>Exemplo de modelo lógico entre departamento e gerente.</em>
 </div>
+
+- exemplo da relação entre ocorrências nas tabelas:
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-tabelas-depto-gerente.png" width="40%"><br>
+<em>Exemplo das tabelas Departamento e Gerente com registros.</em>
+</div>
+<br>
+
+- Nota: 
+  - exemplo de Relacionamento 1:1 
+  - Obrigatório (INCONDICIONAL)
+  - Cardinalidade mínima igual a um, dos dois lados
+- Leia-se: 
+  - um gerente deve gerenciar um único departamento 
+  - e um departamento é gerenciado por um único gerente.
+- Atenção:
+  - em toda associação 1:1, deve-se indicar a entidade DOMINANTE, a entidade dominada ou filha receberá a Chave Estrangeira. 
+  - Lembrando que a Chave Estrangeira ficará na entidade em quea cardinalidade máxima do relacionamento é igual a 1.
+    - neste caso, pode ser qualquer uma das entidades. 
+  - A Chave Estrangeira é sempre um atributo monovalorado.
+
+> Cada ocorrência da entidade “T_DEPARTAMENTO” se associa, no máximo, com uma ocorrência da entidade “T_GERENTE”. Cada ocorrência de “T_GERENTE” se associa, no máximo, com uma ocorrência de “T_DEPARTAMENTO”.
+
+</details>
+
+***Importante:***
+
+> `Apenas no relacionamento 1:1 podemos escolher a entidade em que a Chave Estrangeira deverá ficar` (é a única situação em que a cardinalidade máxima é igual a 1 em ambos os lados do relacionamento).
+
+### 2.2.2 Relacionamento 1:N
+
+- quando cada ocorrência da entidade (A) associa-se, no máximo, com várias ocorrências da entidade (B).Cada ocorrência da entidade (B) associa-se, no máximo, com uma ocorrência da entidade (A).
+- analisar sempre os dois sentidos do relacionamento.
+
+<details>
+<summary><strong>Exemplo 1 💭</strong></summary>
+
+<em>
+"Dada a situação de um funcionário ter dependentes(marido, esposa e filhos).<br>
+Lembrando que nem todas as pessoas possuem dependentes, ou seja, nem todas as pessoas são casadas ou têm filhos.<br>
+Considerando as regras abaixo:
+- Neste exemplo, descartamos a possibilidade de um casal trabalhar na mesma empresa, portanto, não haverá dependentes (filhos) em comum
+- Todo dependente pertence a um único funcionário.
+</em>
+
+### Temos:
+
+> Importante: a entidade “DEPENDENTE” é uma entidade FRACA, portanto, precisa da entidade “FUNCIONÁRIO” para existir.
+
+- a CHAVE PRIMÁRIA da entidade “DEPENDENTE” é composta pela Chave Estrangeira mais um atributo da entidade FRACA, que juntos garantem unicidade de cada ocorrência da entidade “DEPENDENTE”. 
+  - ou seja, há um relacionamento `“CONDICIONAL”`.
+
+<div align="center">
+<img src="../assets/imagens-fase03/diagrama-exemplo3.png" width="40%"><br>
+<em>Exemplo de diagrama de relacionamento entre as entidades Funcionário e Dependente.</em>
+</div>
+<br>
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-funcionario-dependente.png" width="40%"><br>
+<em>Exemplo de relacionamento entre entidades funcionário e dependente.</em>
+</div>
+<br>
+
+- representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-funcionario-dependente2.png" width="40%"><br>
+<em>Exemplo de modelo lógico entre funcionário e dependente.</em>
+</div>
+
+- Nota:
+  - exemplo de Relacionamento 1:N
+  - não obrigatório (CONDICIONAL)
+  - cardinalidade mínima igual a zero.
+- Leia-se:
+  - um funcionário pode ter um ou vários dependentes e um dependente deve estar associado (pertencer) a um único funcionário.
+- Atenção:
+  - a associação é feita de funcionário para dependente, portanto, a entidade “FUNCIONÁRIO” é a principal (pai ou dominante) e a entidade “DEPENDENTE” é a filha (dominada).0
+  - Lembrando que `a Chave Estrangeira ficará na entidade em que a cardinalidade máxima do relacionamento é igual a 1`. 
+    - Considerando essa definição, podemos avaliar que cada funcionário estará associado a, no máximo, muitos dependentes.E cada dependente estará associado a, no máximo, um funcionário.
+    - Por esse motivo, a Chave Estrangeira ficará na entidade “DEPENDENTE”. 
+    - `A Chave Estrangeira é sempre um atributo monovalorado`.
+
+- `Chave Primária de uma entidade FRACA:`
+  - a entidade “DEPENDENTE” é FRACA
+  - ou seja, sua existência está vinculada do funcionário, pois não existe dependente sem funcionário. 
+
+> A Chave Primária de uma entidade FRACA deve ser composta pela Chave Estrangeira mais um atributo da própria entidade que, juntos, garantam a unicidade de cada ocorrência.
+
+- exemplo da relação entre ocorrências nas tabelas:
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-tabelas-funcionario-dependente.png" width="40%"><br>
+<em>Exemplo das tabelas Funcionário e Dependentes com registros.</em>
+</div>
+<br>
+
+</details>
+
+<details>
+<summary><strong>Exemplo 2 💭</strong></summary>
+
+<em>
+"Dada a situação de um cliente realizar pedidos.<br>
+Considerando as regras:
+
+- Cliente é toda pessoa que realizou ao menos um pedido na loja.
+- Cada cliente deve ter realizado pelo menos um pedido.
+- Cada pedido pertence a um único cliente.
+</em>
+
+- Trata-se de associação de “RELACIONAMENTO” `INCONDICIONAL` (todas as ocorrências serão associadas entre as entidades).
+
+<div align="center">
+<img src="../assets/imagens-fase03/diagrama-exemplo4.png" width="40%"><br>
+<em>Exemplo de diagrama de relacionamento entre as entidades Cliente e Pedido.</em>
+</div>
+<br>
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-cliente-pedido.png" width="40%"><br>
+<em>Exemplo de relacionamento entre entidades Cliente e Pedido.</em>
+</div>
+<br>
+
+- representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-cliente-pedido2.png" width="40%"><br>
+<em>Exemplo de modelo lógico entre Cliente e Pedido.</em>
+</div>
+
+- Nota: 
+  - exemplo de Relacionamento 1:N 
+  - Obrigatório (INCONDICIONAL)
+  - cardinalidade mínima igual a um, dos dois lados
+
+- Leia-se:
+  - um cliente deve ter realizado um ou mais pedidos e um pedido deve estar associado (pertencer) a um único cliente.
+
+- Atenção:
+  - a associação é feita de cliente para pedido, portanto, a entidade “CLIENTE” é a principal (pai  ou dominante) e a entidade “PEDIDO” é a filha (dominada). 
+  - Lembrando que a Chave Estrangeira ficará na entidade em que a cardinalidade máxima do relacionamento é igual a 1. 
+    - nesse caso, cada cliente estará associado a, no máximo, muitos pedidos e cada pedido estará associado a, no máximo, um cliente.
+    - portanto, a Chave Estrangeira ficará na entidade “PEDIDO”. 
+    - A Chave Estrangeira é sempre um atributo monovalorado.
+
+- exemplo da relação entre ocorrências nas tabelas:
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-tabelas-cliente-pedido.png" width="40%"><br>
+<em>Exemplo das tabelas Cliente e Pedido com registros.</em>
+</div>
+<br>
+
+</details>
+
+### 2.3 Relacionamento M:N
+
+- cada ocorrência da entidade (A) se associa com qualquer número de ocorrênciasda entidade (B).
+- cada ocorrência da entidade (B) se associa com qualquer número de ocorrências da entidade (A).
+
+<details>
+<summary><strong>Exemplo 1 💭</strong></summary>
+<em>
+"Dada a situação de um estudante matricular-se em várias disciplinas. Uma disciplina possuir vários alunos matriculados.<br>
+Considerando as regras:
+- Um estudante pode trancar a matrícula, portanto,não estará cursando nenhuma disciplina.
+- Um estudante pode matricular-se em várias disciplinas dentro de um curso.
+- Uma escola pode oferecer várias disciplinas aos seus estudantes.
+- Uma disciplina pode não ter nenhum aluno matriculado.
+- Uma disciplina pode ter vários estudantes matriculados."
+</em>
+
+### Temos:
+
+
 
 
 
