@@ -281,6 +281,13 @@ E considerando a regra:
 </div>
 <br>
 
+- exemplo da relação entre ocorrências nas tabelas:
+
+<img src="../assets/imagens-fase03/exemplo-tabelas-homem-mulher.png" width="40%"><br>
+<em>Exemplo das tabelas homem e mulher com registros.</em>
+</div>
+<br>
+
 - Nota: exemplo de Relacionamento 1:1 – Não obrigatório (CONDICIONAL), cardinalidade mínima igual a zero.
 - Leia-se: um homem pode ser casado, se casado será com uma única mulher. Uma mulher pode ser casada, se casada será com um único homem.
   - cada ocorrência da entidade “T_HOMEM” se associa,no máximo, com uma ocorrência da entidade “T_MULHER”.
@@ -290,7 +297,7 @@ E considerando a regra:
   - A Chave Estrangeira é sempre um atributo monovalorado.
 
 </details>
-<br>
+
 
 <details>
 <summary><strong>Exemplo 2 💭</strong></summary>
@@ -317,4 +324,7 @@ Considerando a regra abaixo:
 <img src="../assets/imagens-fase03/exemplo-departamento-funcionario2.png" width="40%"><br>
 <em>Exemplo de modelo lógico entre departamento e gerente.</em>
 </div>
-<br>
+
+
+
+</details>
