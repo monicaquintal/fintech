@@ -501,6 +501,7 @@ Considerando as regras:
 <em>
 "Dada a situação de um estudante matricular-se em várias disciplinas. Uma disciplina possuir vários alunos matriculados.<br>
 Considerando as regras:
+
 - Um estudante pode trancar a matrícula, portanto,não estará cursando nenhuma disciplina.
 - Um estudante pode matricular-se em várias disciplinas dentro de um curso.
 - Uma escola pode oferecer várias disciplinas aos seus estudantes.
@@ -510,8 +511,145 @@ Considerando as regras:
 
 ### Temos:
 
+- associação `“RELACIONAMENTO” é CONDICIONAL`
+  - só haverá ocorrências associadas se tiver alunos matriculados em disciplinas (existe uma condição para determinar as associações).
 
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-estudante-disciplina.png" width="40%"><br>
+<em>Exemplo de relacionamento entre entidades Estudante e Disciplina.</em>
+</div>
+<br>
 
+- representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
 
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-estudante-disciplina2.png" width="40%"><br>
+<em>Exemplo de modelo lógico entre Estudante e Disciplina.</em>
+</div>
 
+- Nota: 
+  - exemplo de Relacionamento M:N
+  - Não obrigatório (CONDICIONAL)
+  - cardinalidade mínima igual a zero, dos dois lados.
+- Leia-se:
+  - um estudante pode matricular-se em várias disciplinas e uma disciplina pode ter vários alunos matriculados (associados) a ela.
+- Atenção:
+  - ***neste caso, a Chave Estrangeira não será inserida em nenhuma entidade, pois seria multivalorada (cardinalidade máxima N).*** 
+  - Esse relacionamento refletirá uma situação especial na modelagem de dados que trataremos nos próximos capítulos.
+
+> cada ocorrência da entidade “T_ESTUDANTE” se associa,no máximo,com qualquer número de ocorrências da entidade “T_DISCIPLINA”. Cada ocorrência da entidade “T_DISCIPLINA” se associa,no máximo,a qualquer número de ocorrências da entidade “T_ESTUDANTE”.
+
+- exemplo da relação entre ocorrências nas tabelas:
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-tabelas-estudante-disciplina.png" width="40%"><br>
+<em>Exemplo das tabelas Estudante e Disciplina com registros.</em>
+</div>
+<br>
+
+> não podemos colocar a Chave Estrangeira na entidade “DISCIPLINA”, pois cada disciplina teria vários alunos (atributo nr_matricula multivalorado).Também não podemos colocar a Chave Estrangeira na entidade “ESTUDANTE”, pois cada estudante poderia se matricular em várias disciplinas (atributo cd_disciplina multivalorado)!
 </details>
+
+<details>
+<summary><strong>Exemplo 2 💭</strong></summary>
+<em>
+"Dada a situação em que um pedido possui vários produtos, ao menos um. Um produto pode ser comercializado em vários pedidos.<br>
+Considerando as regras:
+
+- Um pedido deve possuir ao menos um produto e, no máximo, vários produtos.
+- Uma empresa possui vários produtos, mas nem todos os produtos são comercializados.
+- Nem todo produto é comercializado em um pedido.
+</em>
+
+### Temos:
+
+- associação `“RELACIONAMENTO” é CONDICIONAL`
+  - só haverá ocorrências associadas se tiver produtos comercializados (existe uma condição para determinar as associações).
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-pedido-produto.png" width="40%"><br>
+<em>Exemplo de relacionamento entre entidades Pedido e Produto.</em>
+</div>
+<br>
+
+- representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-pedido-produto2.png" width="40%"><br>
+<em>Exemplo de modelo lógico entre Pedido e Produto.</em>
+</div>
+
+- Nota: 
+  - exemplo de Relacionamento N:N
+  - Não obrigatório (CONDICIONAL)
+  - cardinalidade mínima igual a zero, dos dois lados.
+- Leia-se:
+  - um pedido deve conter um ou mais produtos e um produto pode ser comercializado em vários pedidos.
+- Atenção:
+  - ***neste caso, a Chave Estrangeira não será inserida em nenhuma entidade, pois seria multivalorada (cardinalidade máxima N).*** 
+  - Esse relacionamento refletirá uma situação especial na modelagem de dados que trataremos nos próximos capítulos.
+
+> cada ocorrência da entidade “T_PEDIDO” se associa,no máximo,com qualquer número de ocorrências da entidade “T_PRODUTO”. Cada ocorrência da entidade “T_PRODUTO” se associa,no máximo,a qualquer número de ocorrências da entidade “T_PEDIDO”.
+
+- exemplo da relação entre ocorrências nas tabelas:
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-tabelas-pedido-produto.png" width="40%"><br>
+<em>Exemplo das tabelas Pedido e Produto com registros.</em>
+</div>
+<br>
+
+> não podemos colocar a Chave Estrangeira na entidade “PEDIDO”, pois cada pedido teria vários produtos (atributo cd_produto multivalorado). Também não podemos colocar a Chave Estrangeira na entidade “PRODUTO”, pois cada produto poderia ser comercializado em vários pedidos (atributo nr_pedido multivalorado).
+</details>
+
+## 2.3.1 Caracterização dos relacionamentos
+
+### Cardinalidade Máxima: 
+
+- representada ao lado da entidade “DEPARTAMENTO” e da entidade “PEDIDO” (“Exemplo de modelo conceitual (1)”). 
+- indicando cardinalidade máxima “UM” (1) e “Muitos” (N). Número máximo de ocorrências entre as entidades associadas.
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-modelo-conceitual.png" width="40%"><br>
+<em>Exemplo de modelo conceitual (1).</em>
+</div>
+<br>
+
+### Cardinalidade Mínima:
+
+- representada ao lado da entidade “GERENTE” e da entidade “CLIENTE” (“Exemplo de modelo conceitual (2)”). 
+- Indicando cardinalidade mínima “UM” (1). Número mínimo de ocorrências entre as entidades associadas.
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-modelo-conceitual2.png" width="40%"><br>
+<em>Exemplo de modelo conceitual (2).</em>
+</div>
+<br>
+
+- `cardinalidade mínima 1` recebe o nome de `“ASSOCIAÇÃO OBRIGATÓRIA”`, pois indica que o relacionamento deve obrigatoriamente associar uma ocorrência de entidade a cada ocorrência da entidade em questão.
+- `cardinalidade mínima` recebe a denominação de `“ASSOCIAÇÃO OPCIONAL”`, pois indica que o relacionamento pode ou não associar uma ocorrência da entidade a cada ocorrência da entidade em questão.- o losango representa o relacionamento entre as entidadeseo verbo significaa ação que ocorre entre as entidades.
+
+### Outro tipo de representação:
+
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-modelo-conceitual3.png" width="40%"><br>
+<em>Exemplo de modelo conceitual (3).</em>
+</div>
+<br>
+
+---
+
+## FAST TEST
+
+### 1. Selecione a alternativa que descreva um tipo de atributo com cardinalidade mínima = 0 e máxima = N.
+> Celular.
+
+### 2. De acordo com a notação de Barker, escolha qual das alternativas representa um atributo opcional de uma tabela.
+> O.
+
+### 3. Dentre as alternativas a seguir, escolha a que represente um relacionamento 1:N.
+> Cliente e nota fiscal.
+
+---
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
