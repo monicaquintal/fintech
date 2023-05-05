@@ -262,13 +262,13 @@ E considerando a regra:
 - associação “RELACIONAMENTO” é **CONDICIONAL** (só haverá ocorrências associadas para os indivíduos que forem casados).
 
 <div align="center">
-<img src="../assets/imagens-fase03/diagrama-exemplo1.png" width="40%"><br>
+<img src="../assets/imagens-fase03/diagrama-exemplo1.png" width="50%"><br>
 <em>Exemplo de diagrama de relacionamento entre as entidades homem e mulher.</em>
 </div>
 <br>
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-homem-mulher.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-homem-mulher.png" width="50%"><br>
 <em>Exemplo de relacionamento entre as entidades homem e mulher.</em>
 </div>
 <br>
@@ -276,7 +276,7 @@ E considerando a regra:
 - representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-homem-mulher2.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-homem-mulher2.png" width="50%"><br>
 <em>Exemplo de relacionamento entre as entidades homem e mulher.</em>
 </div>
 <br>
@@ -284,7 +284,7 @@ E considerando a regra:
 - exemplo da relação entre ocorrências nas tabelas:
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-tabelas-homem-mulher.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-tabelas-homem-mulher.png" width="50%"><br>
 <em>Exemplo das tabelas homem e mulher com registros.</em>
 </div>
 <br>
@@ -315,13 +315,13 @@ Considerando a regra abaixo:
 - associação “RELACIONAMENTO” é **INCONDICIONAL**, pois todas as ocorrências serão associadas entre as entidades.
 
 <div align="center">
-<img src="../assets/imagens-fase03/diagrama-exemplo2.png" width="40%"><br>
+<img src="../assets/imagens-fase03/diagrama-exemplo2.png" width="50%"><br>
 <em>Exemplo de diagrama de relacionamento entre as entidades Departamento e Gerente.</em>
 </div>
 <br>
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-departamento-funcionario.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-departamento-funcionario.png" width="50%"><br>
 <em>Exemplo de relacionamento entre entidades departamento e gerente.</em>
 </div>
 <br>
@@ -329,14 +329,14 @@ Considerando a regra abaixo:
 - representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-departamento-funcionario2.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-departamento-funcionario2.png" width="50%"><br>
 <em>Exemplo de modelo lógico entre departamento e gerente.</em>
 </div>
 
 - exemplo da relação entre ocorrências nas tabelas:
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-tabelas-depto-gerente.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-tabelas-depto-gerente.png" width="50%"><br>
 <em>Exemplo das tabelas Departamento e Gerente com registros.</em>
 </div>
 <br>
@@ -362,6 +362,8 @@ Considerando a regra abaixo:
 
 > `Apenas no relacionamento 1:1 podemos escolher a entidade em que a Chave Estrangeira deverá ficar` (é a única situação em que a cardinalidade máxima é igual a 1 em ambos os lados do relacionamento).
 
+---
+
 ### 2.2.2 Relacionamento 1:N
 
 - quando cada ocorrência da entidade (A) associa-se, no máximo, com várias ocorrências da entidade (B).Cada ocorrência da entidade (B) associa-se, no máximo, com uma ocorrência da entidade (A).
@@ -386,13 +388,13 @@ Considerando as regras abaixo:
   - ou seja, há um relacionamento `“CONDICIONAL”`.
 
 <div align="center">
-<img src="../assets/imagens-fase03/diagrama-exemplo3.png" width="40%"><br>
+<img src="../assets/imagens-fase03/diagrama-exemplo3.png" width="50%"><br>
 <em>Exemplo de diagrama de relacionamento entre as entidades Funcionário e Dependente.</em>
 </div>
 <br>
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-funcionario-dependente.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-funcionario-dependente.png" width="50%"><br>
 <em>Exemplo de relacionamento entre entidades funcionário e dependente.</em>
 </div>
 <br>
@@ -400,7 +402,7 @@ Considerando as regras abaixo:
 - representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-funcionario-dependente2.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-funcionario-dependente2.png" width="50%"><br>
 <em>Exemplo de modelo lógico entre funcionário e dependente.</em>
 </div>
 
@@ -426,7 +428,7 @@ Considerando as regras abaixo:
 - exemplo da relação entre ocorrências nas tabelas:
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-tabelas-funcionario-dependente.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-tabelas-funcionario-dependente.png" width="50%"><br>
 <em>Exemplo das tabelas Funcionário e Dependentes com registros.</em>
 </div>
 <br>
@@ -448,13 +450,13 @@ Considerando as regras:
 - Trata-se de associação de “RELACIONAMENTO” `INCONDICIONAL` (todas as ocorrências serão associadas entre as entidades).
 
 <div align="center">
-<img src="../assets/imagens-fase03/diagrama-exemplo4.png" width="40%"><br>
+<img src="../assets/imagens-fase03/diagrama-exemplo4.png" width="50%"><br>
 <em>Exemplo de diagrama de relacionamento entre as entidades Cliente e Pedido.</em>
 </div>
 <br>
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-cliente-pedido.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-cliente-pedido.png" width="50%"><br>
 <em>Exemplo de relacionamento entre entidades Cliente e Pedido.</em>
 </div>
 <br>
@@ -462,7 +464,7 @@ Considerando as regras:
 - representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-cliente-pedido2.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-cliente-pedido2.png" width="50%"><br>
 <em>Exemplo de modelo lógico entre Cliente e Pedido.</em>
 </div>
 
@@ -484,12 +486,14 @@ Considerando as regras:
 - exemplo da relação entre ocorrências nas tabelas:
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-tabelas-cliente-pedido.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-tabelas-cliente-pedido.png" width="50%"><br>
 <em>Exemplo das tabelas Cliente e Pedido com registros.</em>
 </div>
 <br>
 
 </details>
+
+---
 
 ### 2.3 Relacionamento M:N
 
@@ -515,7 +519,7 @@ Considerando as regras:
   - só haverá ocorrências associadas se tiver alunos matriculados em disciplinas (existe uma condição para determinar as associações).
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-estudante-disciplina.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-estudante-disciplina.png" width="50%"><br>
 <em>Exemplo de relacionamento entre entidades Estudante e Disciplina.</em>
 </div>
 <br>
@@ -523,7 +527,7 @@ Considerando as regras:
 - representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-estudante-disciplina2.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-estudante-disciplina2.png" width="50%"><br>
 <em>Exemplo de modelo lógico entre Estudante e Disciplina.</em>
 </div>
 
@@ -542,7 +546,7 @@ Considerando as regras:
 - exemplo da relação entre ocorrências nas tabelas:
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-tabelas-estudante-disciplina.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-tabelas-estudante-disciplina.png" width="50%"><br>
 <em>Exemplo das tabelas Estudante e Disciplina com registros.</em>
 </div>
 <br>
@@ -567,7 +571,7 @@ Considerando as regras:
   - só haverá ocorrências associadas se tiver produtos comercializados (existe uma condição para determinar as associações).
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-pedido-produto.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-pedido-produto.png" width="50%"><br>
 <em>Exemplo de relacionamento entre entidades Pedido e Produto.</em>
 </div>
 <br>
@@ -575,7 +579,7 @@ Considerando as regras:
 - representação gráfica por meio da ferramenta SQL Developer Data Modeler (notação de Barker).
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-pedido-produto2.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-pedido-produto2.png" width="50%"><br>
 <em>Exemplo de modelo lógico entre Pedido e Produto.</em>
 </div>
 
@@ -594,13 +598,15 @@ Considerando as regras:
 - exemplo da relação entre ocorrências nas tabelas:
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-tabelas-pedido-produto.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-tabelas-pedido-produto.png" width="50%"><br>
 <em>Exemplo das tabelas Pedido e Produto com registros.</em>
 </div>
 <br>
 
 > não podemos colocar a Chave Estrangeira na entidade “PEDIDO”, pois cada pedido teria vários produtos (atributo cd_produto multivalorado). Também não podemos colocar a Chave Estrangeira na entidade “PRODUTO”, pois cada produto poderia ser comercializado em vários pedidos (atributo nr_pedido multivalorado).
 </details>
+
+---
 
 ## 2.3.1 Caracterização dos relacionamentos
 
@@ -610,7 +616,7 @@ Considerando as regras:
 - indicando cardinalidade máxima “UM” (1) e “Muitos” (N). Número máximo de ocorrências entre as entidades associadas.
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-modelo-conceitual.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-modelo-conceitual.png" width="50%"><br>
 <em>Exemplo de modelo conceitual (1).</em>
 </div>
 <br>
@@ -621,7 +627,7 @@ Considerando as regras:
 - Indicando cardinalidade mínima “UM” (1). Número mínimo de ocorrências entre as entidades associadas.
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-modelo-conceitual2.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-modelo-conceitual2.png" width="50%"><br>
 <em>Exemplo de modelo conceitual (2).</em>
 </div>
 <br>
@@ -632,7 +638,7 @@ Considerando as regras:
 ### Outro tipo de representação:
 
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-modelo-conceitual3.png" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-modelo-conceitual3.png" width="50%"><br>
 <em>Exemplo de modelo conceitual (3).</em>
 </div>
 <br>
