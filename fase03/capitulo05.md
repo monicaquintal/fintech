@@ -7,7 +7,11 @@
 <h2>1. AGREGANDO AO MODELO DE DADOS</h2>
 </div> 
 
+<div align="center">
+
 ## 1.1 Sobre agregação
+
+</div>
 
 - um modelo de dados pode e deve passar por processo de refinamento.
 - `extensões` têm a função de possibilitar a correção de particularidades, para que o modelo de dados possa ser posteriormente implementado de forma física, por meio de um SGBD.
@@ -23,3 +27,7 @@
 - sua existência está condicionada à existência de duas ou mais entidades existentes no modelo!!!
 - ela existe porque as duas outras entidades existem.
 - ***é chamado de agregação, pois a nova entidade agrega atributos das duas entidades que anteriormente se associavam, mais os atributos que caracterizam o relacionamento!***
+- há situações em que não encontramos atributos que caracterizam este relacionamento, então utilizamos uma `nova entidade` (com intuito de ligação e solução para as chaves estrangeiras, sendo monovaloradas)!
+  - quando temos entidades apenas associativas, normalmente não conseguimos identificar um nome que represente a entidade e, ***no momento de nomeá-la, utilizamos os nomes das entidades que se associavam anteriormente!!!***
+
+## 1.1.1 Exemplificando agregação
