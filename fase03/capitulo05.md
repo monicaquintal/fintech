@@ -31,3 +31,43 @@
   - quando temos entidades apenas associativas, normalmente não conseguimos identificar um nome que represente a entidade e, ***no momento de nomeá-la, utilizamos os nomes das entidades que se associavam anteriormente!!!***
 
 ## 1.1.1 Exemplificando agregação
+
+~~~
+Suponha a seguinte situação: 
+
+Um médico pode avaliar, examinar e consultar um paciente, e um paciente pode ser avaliado, examinado, consultado por um médico.
+
+Cada médico pode avaliar, examinar, consultar vários pacientes,inclusive o mesmo paciente várias vezes.Cada paciente pode ser avaliado, examinado, consultado por vários médicos, inclusive com o mesmo médico várias vezes.
+~~~
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-medico-paciente.png" width="50%"><br>
+<em>Exemplo de relacionamento entre médico e paciente.</em>
+</div>
+<br>
+
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-medico-paciente2.png" width="50%"><br>
+<em>Exemplo 2 de relacionamento entre médico e paciente, de forma mais detalhada.</em>
+</div>
+<br>
+
+- relacionamento com cardinalidade M:N.
+- ***atributos que caracterizam o relacionamento M:N - Consulta Médica***:
+  - data e hora.
+  - sala ou consultório.
+- portanto, cria-se a nova entidade **CONSULTA**.
+  - passamos a ter dois relacionamentos 1:N:
+    - um entre “MEDICO” e “CONSULTA”;
+    - e outro entre “PACIENTE” e “CONSULTA”!
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-medico-paciente3.png" width="50%"><br>
+<em>Criação da entidade associativa "Consulta".</em>
+</div>
+<br>
+
+- Características da entidade CONSULTA → { Data e hora, Sala ou consultório }.
+
