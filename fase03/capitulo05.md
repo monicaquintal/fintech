@@ -35,9 +35,12 @@
 ~~~
 Suponha a seguinte situação: 
 
-Um médico pode avaliar, examinar e consultar um paciente, e um paciente pode ser avaliado, examinado, consultado por um médico.
+Um médico pode avaliar, examinar e consultar um paciente, 
+e um paciente pode ser avaliado, examinado, consultado por um médico.
 
-Cada médico pode avaliar, examinar, consultar vários pacientes,inclusive o mesmo paciente várias vezes.Cada paciente pode ser avaliado, examinado, consultado por vários médicos, inclusive com o mesmo médico várias vezes.
+Cada médico pode avaliar, examinar, consultar vários pacientes,inclusive o mesmo paciente várias vezes.
+Cada paciente pode ser avaliado, examinado, consultado por vários médicos, 
+inclusive com o mesmo médico várias vezes.
 ~~~
 
 <br>
@@ -91,3 +94,42 @@ Cada médico pode avaliar, examinar, consultar vários pacientes,inclusive o mes
 
 ## 1.1.2 Regras ou soluções possíveis para determinar a chave primária em uma agregação
 
+### 1ª Solução: 
+- criar uma chave primária composta pelas chaves estrangeiras, caso garantam unicidade das ocorrências, obtendo um relacionamento identificado.
+
+### 2ª Solução:
+- criar um novo atributo para ser a chave primária desta entidade.
+- chaves estrangeiras não são utilizadas como identificadores. 
+- o novo atributo será utilizado para garantir a unicidade das ocorrências.
+- ***solução utilizada no exemplo acima***!
+
+### 3ª Solução:
+- criar uma chave primária composta por uma das chaves estrangeiras, mais um atributo da própria entidade (desde que juntos garantam a unicidade das ocorrências). 
+- teríamos um relacionamento identificado de um dos lados.
+- considerando que a nova entidade é uma ***entidade FRACA*** (depende das outras entidades para existir), utilizamos a mesma regra da chave primária da entidade FRACA.
+
+> para cada situação deve-se avaliar a melhor solução a ser aplicada de acordo com o contexto de negócio e as necessidades de armazenamento!
+
+## 1.1.3 Evoluindo o exemplo de agregação
+
+~~~
+Suponha a situação: durante uma consulta, um Médico prescreve medicamentos para um Paciente.
+
+Em cada consulta, o Médico pode prescrever medicamentos diferentes para o Paciente, ou até nenhum.
+
+Mas, para existir uma prescrição, o paciente deve obrigatoriamente passar por uma consulta médica.
+
+Portanto, a prescrição seria um relacionamento entre uma entidade Medicamento e o relacionamento consulta.
+
+Cada consulta pode prescrever vários medicamentos ou nenhum.
+Cada medicamento pode ser prescrito em várias consultas ou nenhuma.
+~~~
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-conculta-medicamento1.png" width="50%"><br>
+<em>Relacionamento entre consulta e medicamento.</em>
+</div>
+<br>
+
+págs 5 e 13
