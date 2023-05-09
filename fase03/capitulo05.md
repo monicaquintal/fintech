@@ -71,3 +71,23 @@ Cada médico pode avaliar, examinar, consultar vários pacientes,inclusive o mes
 
 - Características da entidade CONSULTA → { Data e hora, Sala ou consultório }.
 
+- representação gráfica com ferramenta SQL Developer Data Modeler (notação da Engenharia da Informação).
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-medico-paciente4.png" width="50%"><br>
+<em>Relacionamento entre médico e paciente em um modelo lógico.</em>
+</div>
+<br>
+
+- representação do relacionamento por meio da nova entidade “CONSULTA”:
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-medico-paciente5.png" width="50%"><br>
+<em>Relacionamento médico e paciente envolvendo a entidade associativa consulta.</em>
+</div>
+<br>
+
+## 1.1.2 Regras ou soluções possíveis para determinar a chave primária em uma agregação
+
