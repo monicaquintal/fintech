@@ -132,4 +132,131 @@ Cada medicamento pode ser prescrito em várias consultas ou nenhuma.
 </div>
 <br>
 
-págs 5 e 13
+- relacionamento com cardinalidade M:N.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-consulta-medicamento2.png" width="50%"><br>
+<em>Criação da entidade associativa prescrição entre consulta e medicamento.</em>
+</div>
+<br>
+
+- Características da entidade PRESCRICAO → { Posologia, Via, Orientações de uso}
+
+- utilizando a ferramenta SQL Developer Data Modeler (notação de Barker):
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-consulta-medicamento3.png" width="50%"><br>
+<em>Relacionamento entre consulta, prescrição e medicamento no Modelo Lógico.</em>
+</div>
+<br>
+
+- utilizando a ferramenta SQL Developer Data Modeler (notação da Engenharia da Informação):
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-consulta-medicamento4.png" width="50%"><br>
+<em>Relacionamento entre consulta, prescrição e medicamento no Modelo Lógico.</em>
+</div>
+<br>
+
+- utilizada a 1ª solução (**relacionamento identificado**):
+  - chaves estrangeiras usadas para compor a chave primária da entidade “PRESCRICAO”.
+  - considera-se que um medicamento não é prescrito mais de uma vez para uma mesma consulta (identifica de forma única as ocorrências).
+
+> Observação: não é boa prática cr chaves primárias compostas com mais de dois atributos, pois a chave fica longa, ocupa espaço em disco, o SGBD tem um custo maior para ordenação e busca dos dados por meio da chave.
+
+## 1.1.4 Um pouco mais de atributos do relacionamento
+
+~~~
+Um engenheiro pode exercer funções diferentes em diferentes projetos nos quais atuar.
+
+Na representação do relacionamento “ATUACAO”, podemos utilizar um atributo que determinará a função que o engenheiro exerce em um projeto.
+
+O atributo função não pode ser considerado do “ENGENHEIRO”, pois pode atuar em diversos projetos;
+também não pode ser atributo do “PROJETO”, pois em um projeto podem atuar vários engenheiros.
+~~~
+
+- relacionamento M:N.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-eng-projeto1.png" width="50%"><br>
+<em>Modelo conceitual do relacionamento entre engenheiro e projeto.</em>
+</div>
+<br>
+
+- o atributo função (**atributo do relacionamento**) gera uma nova entidade, chamada “ENGENHEIRO_PROJETO” ou “ATUACAO”.
+
+- Modelo lógico (notação de Barker):
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-eng-projeto2.png" width="50%"><br>
+<em>Criação da entidade associativa atuação, entre as entidades engenheiro e projeto.</em>
+</div>
+<br>
+
+- Modelo lógico (notação Engenharia da Informação):
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/relacionamento-eng-projeto3.png" width="50%"><br>
+<em>Abordagem criando uma chave para a entidade associativa "atuação".</em>
+</div>
+<br>
+
+- aplicada a **2ª solução**.
+  - criado o atributo “CD_FUNCAO”.
+
+## 1.1.5 Exemplificando outra situação na qual temos entidade associativa
+
+- é possível que, em alguns relacionamentos M:N, não seja possível encontrar atributos do relacionamento em função das características de negócio.
+- nesse caso, a entidade associativa terá apenas as chaves estrangeiras.
+  - a entidade funcionará como ligação entre as entidades associadas.
+
+~~~
+Um professor pode lecionar uma ou mais disciplinas.
+
+Cada disciplina deve ser lecionada por um ou mais professores.
+~~~
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-professor-disciplina.png" width="50%"><br>
+<em>Criação da entidade associativa professor_disciplina.</em>
+</div>
+<br>
+
+- chave primária é composta pelas estrangeiras.
+
+---
+
+<div align="center">
+
+## 1.2 Sobre herança
+
+</div>
+
+- um modelo de dados pode e deve passar por um processo de refinamento.
+- **extensões**: possibilitam a correção de particularidades, para que o modelo de dados possa ser implementado de forma física, por meio de um SGBD.
+- `herança`:
+  - é uma forma de ajustar a implementação, quando há entidades que têm as mesmas características (atributos) e desempenhem as mesmas ações (relacionamentos).
+  - o conceito de herança é aplicado por meio da generalização e especialização.
+  - a especialização/generalização promove maior flexibilidade ao modelo, permitindo:
+    - Definir um conjunto de subclasses de um tipo de entidade.
+    - Definir atributos especificos para cada subclasse.
+    - Definir relacionamentos especificos entre subclasses, ou outras entidades.
+
+- `especialização`: conceito que permite atribuir propriedades particulares a um subconjunto das ocorrências (especializadas) de uma entidade genérica.
+  - a entidade que possui propriedades genéricas é chamada SUPERCLASSE ou ENTIDADE GENÉRICA.
+  - a entidade que possuir propriedades particulares será chamada de SUBCLASSE ou ENTIDADE ESPECÍFICA/ESPECIALIZADA.
+
+- `generalização`:
+  - conceito que permite unir dois ou mais conjuntos de subclasses (entidades com propriedades particulares), produzindo uma entidade com um conjunto de propriedades genéricas (Superclasse).
+  - atributos inseridos na entidade genérica são comuns a dois ou mais conjuntos de entidades.
+
+> As subclasses (entidades especializadas) herdam os atributos da superclasse (entidade genérica), ou seja, cada ocorrência da entidade especializada possui, além de suas próprias propriedades (atributos e relacionamentos), as propriedades da ocorrência da entidade genérica correspondente.
+
+pág 7 / 21
