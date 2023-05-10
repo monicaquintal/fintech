@@ -241,22 +241,169 @@ Cada disciplina deve ser lecionada por um ou mais professores.
 
 - um modelo de dados pode e deve passar por um processo de refinamento.
 - **extensões**: possibilitam a correção de particularidades, para que o modelo de dados possa ser implementado de forma física, por meio de um SGBD.
-- `herança`:
-  - é uma forma de ajustar a implementação, quando há entidades que têm as mesmas características (atributos) e desempenhem as mesmas ações (relacionamentos).
-  - o conceito de herança é aplicado por meio da generalização e especialização.
-  - a especialização/generalização promove maior flexibilidade ao modelo, permitindo:
-    - Definir um conjunto de subclasses de um tipo de entidade.
-    - Definir atributos especificos para cada subclasse.
-    - Definir relacionamentos especificos entre subclasses, ou outras entidades.
 
-- `especialização`: conceito que permite atribuir propriedades particulares a um subconjunto das ocorrências (especializadas) de uma entidade genérica.
-  - a entidade que possui propriedades genéricas é chamada SUPERCLASSE ou ENTIDADE GENÉRICA.
-  - a entidade que possuir propriedades particulares será chamada de SUBCLASSE ou ENTIDADE ESPECÍFICA/ESPECIALIZADA.
+### `Herança`:
+- é uma forma de ajustar a implementação, quando há entidades que têm as mesmas características (atributos) e desempenhem as mesmas ações (relacionamentos).
+- o conceito de herança é aplicado por meio da generalização e especialização.
+- a especialização/generalização promove maior flexibilidade ao modelo, permitindo:
+  - Definir um conjunto de subclasses de um tipo de entidade.
+  - Definir atributos especificos para cada subclasse.
+  - Definir relacionamentos especificos entre subclasses, ou outras entidades.
+- associações 1:1; para indicar que é uma generalização, inserir um arco que passa por cima dos relacionamentos (representa a herança).
 
-- `generalização`:
-  - conceito que permite unir dois ou mais conjuntos de subclasses (entidades com propriedades particulares), produzindo uma entidade com um conjunto de propriedades genéricas (Superclasse).
-  - atributos inseridos na entidade genérica são comuns a dois ou mais conjuntos de entidades.
+### `Especialização`: 
+- conceito que permite atribuir propriedades particulares a um subconjunto das ocorrências (especializadas) de uma entidade genérica.
+- a entidade que possui propriedades genéricas é chamada **SUPERCLASSE ou ENTIDADE GENÉRICA**.
+- a entidade que possuir propriedades particulares será chamada de **SUBCLASSE ou ENTIDADE ESPECÍFICA/ESPECIALIZADA**.
+
+### `Generalização`:
+- conceito que permite unir dois ou mais conjuntos de subclasses (entidades com propriedades particulares), produzindo uma entidade com um conjunto de propriedades genéricas (Superclasse).
+- atributos inseridos na entidade genérica são comuns a dois ou mais conjuntos de entidades.
 
 > As subclasses (entidades especializadas) herdam os atributos da superclasse (entidade genérica), ou seja, cada ocorrência da entidade especializada possui, além de suas próprias propriedades (atributos e relacionamentos), as propriedades da ocorrência da entidade genérica correspondente.
 
-pág 7 / 21
+## 1.2.1 Exemplificando especialização, generalização e herança
+
+### Exemplo 1:
+
+~~~
+Como ordenar um conjunto de dados que caracterizam clientes pessoas físicas e clientes pessoas jurídicas?
+~~~
+
+- há ***atributos comuns*** aos dois conjuntos de dados, como código, nome, e-mail, endereço e telefone.
+- há também ***atributos específicos*** a “PESSOA FÍSICA” (como RG, CPF, data de nascimento e sexo), e atributos específicos a “PESSOA JURÍDICA” (como razão social, CNPJ, inscrição estadual e ramo de atividade).
+
+Portanto, é possível separar os grupos de dados em: 
+- PESSOA - atributos comuns. 
+- PESSOA FÍSICA - atributos específicos dos clientes pessoa física.
+- PESSOA JURÍDICA - atributos específicos dos clientes pessoa jurídica.
+
+Notação de Peter Chen:
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-pf-pj1.png" width="50%"><br>
+<em>Relacionamento entre pessoa, pessoa física e pessoa jurídica.</em>
+</div>
+<br>
+
+SQL Data Modeler – Notação de Barker:
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-pf-pj2.png" width="50%"><br>
+<em>Modelo lógico utilizando um arco, notação de Barker.</em>
+</div>
+<br>
+
+SQL Data Modeler – Notação da Engenharia da Informação:
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-pf-pj3.png" width="50%"><br>
+<em>Modelo lógico utilizando um arco, notação de Engenharia da Informação.</em>
+</div>
+<br>
+
+> Quando utilizamos o conceito de especialização/generalização, temos a ideia de herança de atributos. O que significa que cada ocorrência das entidades (entidades especializadas) “PESSOA_FISICA” ou “PESSOA_JURIDICA”, além dos seus próprios atributos, possuirá também os atributos(herança) da entidade genérica “PESSOA".
+
+- há um relacionamento 1:1 entre entidades “PESSOA” e “PESSOA_FISICA”, e entre “PESSOA” e “PESSOA_JURIDICA”, ou seja:
+  - cada pessoa pode ser uma única pessoa física. 
+  - cada pessoa pode ser uma única pessoa jurídica.
+
+### Exemplo 2:
+
+~~~
+Conjunto de dados que caracterizam os funcionários de uma empresa.
+~~~
+
+- há dados que caracterizam alguns funcionários da empresa, como um médico possui CRM, um engenheiro possui CREA.
+- porém, a maior parte dos atributos é comum a todos os tipos de funcionários.
+
+Portanto, é possível:
+- especializar a entidade “FUNCIONARIO” a partir da categoria funcional, se os funcionários possuírem atributos ou relacionamentos próprios. 
+- caso não exista tal necessidade no modelo de negócios, é possível criar:
+  - uma única entidade com todos os atributos (comuns e específicos); 
+    - atributos que eram tratados como específicos na solução envolvendo especialização/generalização são opcionais quando implementados em uma única entidade, uma vez que não se aplicam a todos os funcionários!
+  - ou ainda criar três entidades e replicar seus atributos comuns.
+    - quando trabalhamos dessa forma, todos os atributos são replicados a cada entidade.
+    - os atributos tratados anteriormente como específicos, ora tratados como opcionais (no caso de única entidade), nessa implementação são atributos mandatórios, uma vez que cada entidade tem um papel específico dentro do contexto de negócio aplicado!
+
+## 1.2.2 Regras para determinar a chave primária nas entidades especializadas
+
+> Para que uma entidade seja considerada especialização de outra, é necessário que ela herde o identificador da entidade genérica.
+
+- por tratar-se de relacionamento 1:1 IDENTIFICADO, a chave primária da entidade especializada é a chave estrangeira, proveniente dos relacionamentos entre “PESSOA” e “PESSOA_FISICA”; “PESSOA” e “PESSOA_JURIDICA”.
+  - CODIGO_PESSOA é chave PRIMÁRIA na entidade PESSOA, e CHAVE ESTRANGEIRA nas entidades especializadas (PESSOA_FISICA E PESSOA_JURIDICA).
+  - devido à herança de atributos, `a chave estrangeira também é chave primária nas entidades especializadas`.
+
+## 1.2.3 Classificação ou Restrições em uma especialização/generalização
+
+### A) Classificação: Total ou Parcial.
+
+- `Total`:
+  - para cada ocorrência da entidade genérica (SUPERCLASSE) existe sempre uma ocorrência em uma das entidades especializadas (SUBCLASSE).
+  - exemplo: toda ocorrência da entidade “PESSOA” corresponde a uma ocorrência em uma das especializações (entidades “Pessoa Física” ou “Pessoa Jurídica”).
+
+- `Parcial`:
+  - nem toda ocorrência da entidade genérica (SUPERCLASSE) possui uma ocorrência correspondente em uma entidade especializada (SUBCLASSE).
+  - exemplo: nem todas as ocorrências da entidade “Funcionário” possuem ocorrências correspondentes nas entidades especializadas (nem todo funcionário é Engenheiro, Médico ou Secretária).
+  - quando há uma especialização/generalização parcial, podemos ter um atributo na entidade genérica que identifica o tipo de ocorrência (neste caso, atributo categoria funcional). Mas não se faz necessário, pois conseguimos recuperar informações em múltiplas entidades (tabelas) com os recursos dos comandos SQL.
+
+### B) Classificação: Exclusiva ou Compartilhada:
+
+- `Exclusiva`: 
+  - uma ocorrência da entidade genérica é especializada no máximo uma vez.
+  - exemplo: uma ocorrência de “FUNCIONARIO” aparece uma vez somente nas entidades especializadas (“ENGENHEIRO”, “MEDICO” ou “SECRETARIA”), já que um funcionário ou é médico, ou é engenheiro ou é secretária.
+
+- `Compartilhada`: 
+  - uma ocorrência da entidade genérica pode ser especializada várias vezes (poderá aparecer em várias entidades especializadas).
+  - exemplo: uma pessoa pode ser professor e aluno ou funcionário e aluno ao mesmo tempo.
+
+## 1.2.4 Exemplo de situações em que utilizamos ou não especialização/generalização
+
+### Exemplo 1: Utilizando Especialização/Generalização
+
+~~~
+Entidades “PESSOA_FISICA” e “PESSOA_JURIDICA” desempenham o mesmo papel, representando "CLIENTE".
+
+Ambas as entidades possuem a mesma ação, representada pela realização de “PEDIDO” 
+(possui as chaves estrangeiras opcionais, pois não é possível o mesmo pedido pertencer a pessoas diferentes).
+~~~
+
+- faz-se necessário criar alguma regra que valide se uma das chaves estrangeiras é preenchida durante um pedido; senão, haverá uma inconsistência (poderá existir um pedido que não pertence a nenhuma pessoa, já que a chave estrangeira é um atributo opcional).
+- portanto, para resolver essa situação, ***utilizar o conceito de especialização/ generalização***.
+  - foi criada uma entidade genérica chamada “CLIENTE”, que representa todos os clientes (pessoa física ou jurídica), que possuirão ações comuns. 
+  - nesse caso, a ação comum é realizar “PEDIDO”.
+  - quando aplicamos o conceito de especialização/generalização, deixamos de ter o problema da chave estrangeira opcional, em função da entidade genérica “CLIENTE” associar-se com a entidade “PEDIDO”.
+  - as entidades especializadas “PESSOA_FISICA” e “PESSOA_JURIDICA” associam-se apenas com entidades, suas ações são particulares, ou seja, se aplicam individualmente para pessoa física ou pessoa jurídica!
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-pf-pj-pedido1.png" width="50%"><br>
+<em>Modelo lógico entre pedido, cliente, pessoa física e pessoa jurídica.</em>
+</div>
+<br>
+
+### Exemplo 2: Quando não é necessário utilizar Especialização/Generalização
+
+~~~
+Na situação a seguir, a entidade “PESSOA_FISICA” representa um “CLIENTE” e a entidade “PESSOA_JURIDICA” representa um “FORNECEDOR”.
+~~~
+
+- como há entidades desempenhando papéis diferentes e ações diferentes, não é necessário aplicar o conceito de especialização/generalização.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-pf-pj-pedido2.png" width="50%"><br>
+<em>Modelo lógico formalizando algumas entidades.</em>
+</div>
+<br>
+
+<div align="center">
+<h2>1.3 Sobre Autorrelacionamento</h2>
+</div>
+
+- o modelo de dados pode e deve passar por um processo de refinamento.
+- extensões: função de possibilitar a correção destas particularidades para que o modelo de dados possa ser posteriormente implementado de forma física, por meio de um SGBD.
+- uma dessas extensões é o `relacionamento recursivo ou autorrelacionamento`, e acontece quando as ocorrências de uma entidade se relacionam com ela própria!
+- ocorre quando as ocorrências de uma mesma entidade desempenham papéis diferentes dentro de um contexto de negócio ou para representar algum tipo de hierarquia.
+
+PÁGS 10 / 41
