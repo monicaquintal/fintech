@@ -172,7 +172,8 @@ Cada medicamento pode ser prescrito em várias consultas ou nenhuma.
 ~~~
 Um engenheiro pode exercer funções diferentes em diferentes projetos nos quais atuar.
 
-Na representação do relacionamento “ATUACAO”, podemos utilizar um atributo que determinará a função que o engenheiro exerce em um projeto.
+Na representação do relacionamento “ATUACAO”, podemos utilizar um atributo 
+que determinará a função que o engenheiro exerce em um projeto.
 
 O atributo função não pode ser considerado do “ENGENHEIRO”, pois pode atuar em diversos projetos;
 também não pode ser atributo do “PROJETO”, pois em um projeto podem atuar vários engenheiros.
@@ -385,7 +386,8 @@ Ambas as entidades possuem a mesma ação, representada pela realização de “
 ### Exemplo 2: Quando não é necessário utilizar Especialização/Generalização
 
 ~~~
-Na situação a seguir, a entidade “PESSOA_FISICA” representa um “CLIENTE” e a entidade “PESSOA_JURIDICA” representa um “FORNECEDOR”.
+Na situação a seguir, a entidade “PESSOA_FISICA” representa um “CLIENTE” e 
+entidade “PESSOA_JURIDICA” representa um “FORNECEDOR”.
 ~~~
 
 - como há entidades desempenhando papéis diferentes e ações diferentes, não é necessário aplicar o conceito de especialização/generalização.
@@ -405,5 +407,102 @@ Na situação a seguir, a entidade “PESSOA_FISICA” representa um “CLIENTE�
 - extensões: função de possibilitar a correção destas particularidades para que o modelo de dados possa ser posteriormente implementado de forma física, por meio de um SGBD.
 - uma dessas extensões é o `relacionamento recursivo ou autorrelacionamento`, e acontece quando as ocorrências de uma entidade se relacionam com ela própria!
 - ocorre quando as ocorrências de uma mesma entidade desempenham papéis diferentes dentro de um contexto de negócio ou para representar algum tipo de hierarquia.
+- exemplos:
+  - Funcionário que desempenha papel de supervisor de algum departamento. 
+  - Funcionário que desempenha o papel de gerente de algum departamento.
 
-PÁGS 10 / 41
+> O relacionamento recursivo evita criação de entidades idênticas; o que difere uma da outra é o papel.
+
+- nos exemplos acima, há basicamente os mesmos atributos; o que difere é que a entidade “COORDENADOR” é um papel representado por apenas alguns “FUNCIONÁRIOS” da empresa.
+- não faria sentido manter duas entidades com as mesmas características em um modelo, pois o mesmo funcionário teria duas identificações diferentes na empresa (poderia provocar inconsistências em relação aos dados armazenados na estrutura de banco de dados).
+
+## 1.3.1 Exemplificando relacionamentos recursivos ou autorrelacionamento
+
+- usamos o relacionamento recursivo em modelos nos quais observamos o relacionamento entre entidades, existindo níveis hierárquicos entre elas. Cada nível representa uma entidade no modelo.
+- exemplo: "COORDENADOR" e "FUNCIONARIO".
+  - os principais atributos das entidades são iguais, e a natureza delas é semelhante, pois coordenador e funcionário são funcionários da empresa!
+  - alternativas de modelagem:
+
+A) Criação de um relacionamento recursivo na entidade “FUNCIONÁRIO”, representando a hierarquia da empresa:
+<br>
+
+- o relacionamento é indicado após inclusão de todos os elementos na entidade a ser relacionada.
+- é considerado um momento no tempo, em que um funcionário é subordinado a um coordenador, não considerando alterações funcionais ao longo do tempo.
+- associação recursiva de 1:n.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-recursiva-1.png" width="50%"><br>
+<em>Modelo lógico representando o autorrelacionamento da entidade funcionário.</em>
+</div>
+<br>
+
+- no autorrelacionamento,temos a chave estrangeira na mesma entidade.
+- no exemplo, a chave estrangeira “cd_func1” faz referência à chave primária “cd_func”.
+<br>
+
+B) Considerando que haverá, ao longo do tempo, mudanças de subordinação:
+<br>
+
+- considera-se que:
+  - um funcionário pode ser subordinado a vários funcionários (coordenador) diferentes ao longo do tempo.
+  - um coordenador pode ter vários subordinados (funcionários) ao longo do tempo.
+- associação recursiva m:n.
+  - criar uma entidade relacionando “FUNCIONÁRIOS” e “SUBORDINADOS”. 
+  - assim, flexibilizamos a estrutura, podendo indicar data de início e término de um vínculo entre funcionários–coordenador x subordinado,
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/exemplo-recursiva-2.png" width="50%"><br>
+<em>Modelo lógico das entidades funcionário e relacionamento_funcionario, notações de Barker e da Engenharia da Informação.</em>
+</div>
+<br>
+
+### Exemplos de situações em que podemos aplicar relacionamento recursivos: 
+
+- Representação de pessoas casadas em regimes monogâmicos ou não.
+- Indicações de pessoas, livros, filmes.
+- Indicações de amigos (rede de amizades). 
+- Composição de materiais (itens formados por outros itens: veículos automotores compostos por: carro – motor, direção, câmbio; moto – carburador, velas, platinado).
+
+---
+
+## FAST TEST
+
+### 1. Qual é a melhor alternativa para tratar tabelas que possuem os mesmos atributos e desempenham os mesmos relacionamentos?
+> Herança.
+
+### 2. Escolha a alternativa que necessita de uma agregação no relacionamento.
+> Fornecedor e Produto.
+
+### 3. Qual é o tipo de relacionamento onde a entidade se relaciona com si própria?
+> Autorrelacionamento.
+
+### 4. É correto afirmar que todos os relacionamentos M:N devem ser resolvidos com agregação?
+> Não, é necessário criar uma entidade associativa.
+
+---
+
+## ATIVIDADE INDIVIDUAL
+### Cap 5 - Agregando ao modelo de dados - Modelo Lógico de uma agenda de contatos
+
+<em>"Este é o momento de colocar seu novo conhecimento em banco de dados em prática! Abra seu Oracle SQL Developer Data Modeler e crie um modelo lógico para armazenar os dados de uma agenda de contatos!
+<br>
+Use como referência a agenda de contatos de seu smartphone, seja ela Android ou iOS.
+<br>
+Que informações são úteis ao armazenar um contato? Quais informações são indispensáveis (e, portanto, obrigatórias) e quais delas são desejáveis (e, portanto, opcionais?).
+<br>
+Algumas informações, como endereço e telefone, são multivaloradas, ou seja, um único contato pode possuir vários endereços e telefones associados a ele! Estas informações costumam ser compostas (vários dados formando uma única informação). Como resolver isso? O capítulo seguinte propõe soluções e algumas pistas já foram deixadas. Agora, gostaríamos que você tentasse resolver estes problemas!
+<br>
+Esta modelagem, com alguns ajustes, pode ser útil na modelagem seguinte, que será ainda mais desafiadora! Ou seja, dois coelhos com uma só cajadada!
+<br>
+Não quer usar o Oracle SQL Developer Data Modeler? Não tem problema! Embora nossos materiais didáticos estejam baseados nele, existem outras ferramentas de mercado tão boas quanto que você também pode usar! No entanto, seja qual for a ferramenta, pedimos que você sempre exporte o modelo em formato de imagem (como JPG ou PNG) porque seria inviável termos por aqui todas as ferramentas disponíveis.
+<br>
+Faça isso mesmo que você use o Data Modeler. Repare que, ao salvar o projeto em Data Modeler, ele cria um arquivo .dmd e uma pasta com o mesmo nome de seu projeto. Precisamos de um ZIP com tudo isso! Apenas o arquivo .dmd NÃO GARANTE A VISUALIZAÇÃO DO PROJETO. Compacte em ZIP e nos mande tudo! Repetimos: aproveite e gere JPG ou PNG (a ferramenta gera facilmente) para usarmos como “plano B”. Combinado?
+<br>
+Muito bem! Boa atividade! Qualquer dúvida, estamos por aqui, ok?"</em>
+
+
+--- 
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
