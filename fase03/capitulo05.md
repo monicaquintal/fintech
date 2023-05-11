@@ -487,19 +487,19 @@ B) Considerando que haverá, ao longo do tempo, mudanças de subordinação:
 ### Cap 5 - Agregando ao modelo de dados - Modelo Lógico de uma agenda de contatos
 
 <em>"Este é o momento de colocar seu novo conhecimento em banco de dados em prática! Abra seu Oracle SQL Developer Data Modeler e crie um modelo lógico para armazenar os dados de uma agenda de contatos!
-<br>
+<br><br>
 Use como referência a agenda de contatos de seu smartphone, seja ela Android ou iOS.
-<br>
+<br><br>
 Que informações são úteis ao armazenar um contato? Quais informações são indispensáveis (e, portanto, obrigatórias) e quais delas são desejáveis (e, portanto, opcionais?).
-<br>
+<br><br>
 Algumas informações, como endereço e telefone, são multivaloradas, ou seja, um único contato pode possuir vários endereços e telefones associados a ele! Estas informações costumam ser compostas (vários dados formando uma única informação). Como resolver isso? O capítulo seguinte propõe soluções e algumas pistas já foram deixadas. Agora, gostaríamos que você tentasse resolver estes problemas!
-<br>
+<br><br>
 Esta modelagem, com alguns ajustes, pode ser útil na modelagem seguinte, que será ainda mais desafiadora! Ou seja, dois coelhos com uma só cajadada!
-<br>
+<br><br>
 Não quer usar o Oracle SQL Developer Data Modeler? Não tem problema! Embora nossos materiais didáticos estejam baseados nele, existem outras ferramentas de mercado tão boas quanto que você também pode usar! No entanto, seja qual for a ferramenta, pedimos que você sempre exporte o modelo em formato de imagem (como JPG ou PNG) porque seria inviável termos por aqui todas as ferramentas disponíveis.
-<br>
+<br><br>
 Faça isso mesmo que você use o Data Modeler. Repare que, ao salvar o projeto em Data Modeler, ele cria um arquivo .dmd e uma pasta com o mesmo nome de seu projeto. Precisamos de um ZIP com tudo isso! Apenas o arquivo .dmd NÃO GARANTE A VISUALIZAÇÃO DO PROJETO. Compacte em ZIP e nos mande tudo! Repetimos: aproveite e gere JPG ou PNG (a ferramenta gera facilmente) para usarmos como “plano B”. Combinado?
-<br>
+<br><br>
 Muito bem! Boa atividade! Qualquer dúvida, estamos por aqui, ok?"</em>
 
 
