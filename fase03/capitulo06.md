@@ -81,3 +81,12 @@ III. Durante a ATUALIZAÇÃO de dados:
 <div align="center">
 <h2>1.2 Primeira Forma Normal (1FN)</h2>
 </div>
+
+> Uma entidade está na primeira forma normal quando nenhum de seus atributos (na estrutura) possuírem repetições.
+
+### `Solução`: Separar informação que se repete, em uma nova entidade.
+- levar a chave primária da entidade original para a nova entidade.
+- podemos localizar um atributo que, unido à chave primária, formará a chave da nova entidade ou criamos um atributo identificador para essa nova entidade.
+
+### Aplicando a 1FN no exemplo proposto:
+
