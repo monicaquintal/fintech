@@ -78,6 +78,7 @@ III. Durante a ATUALIZAÇÃO de dados:
 - O mesmo vale para o cliente, caso um cliente mude de endereço, será preciso atualizar todas as ocorrências em que o cliente está associado a uma nota fiscal.
 
 --- 
+
 <div align="center">
 <h2>1.2 Primeira Forma Normal (1FN)</h2>
 </div>
@@ -219,3 +220,76 @@ Nº Nota Fiscal | Produto | Qtd
 
 ### `Solução`: realizar a análise: se o atributo for resultado de um cálculo matemático, devemos simplesmente excluir esse atributo, pois ele não acrescenta nada no modelo de dados. Se for um grupo de informações relacionadas, aplicar a segunda forma normal. Se for um atributo “perdido”, devemos reconduzi‐lo à entidade da qual depende.
 
+> Muitas vezes mantemos alguns atributos resultantes de cálculos, a fim de ter melhores resultados no momento da pesquisa destas informações dentro da estrutura de armazenamento.
+
+### Aplicando a 3FN no exemplo proposto:
+
+- os dados do “CLIENTE” (CNPJ, nome, endereço) dependem funcionalmente do atributo “CNPJ”, o qual não faz parte da chave primária da entidade “NOTA FISCAL”.
+- o mesmo ocorre comos dados da “TRANSPORTADORA”.
+
+### Entidade “NOTA_FISCAL”:
+
+- contém os atributos associados à chave primária “Nr. Nota fiscal”.
+- o atributo “TOTAL DA NOTA” também foi retirado, por se tratar de um cálculo baseado nos atributos “QUANTIDADE VENDIDA” e “PREÇO UNITÁRIO” existentes na entidade “ITEM_NF”.
+
+<div align="center">
+
+Nº Nota Fiscal | Data Emissão | CNPJ Cliente | Código da Transportadora | ICMS 
+-------------|---------------|-----------|-------------|-----------------
+456789 | 10/09/2010 | 1111111 | 1 | 25%
+123456 | 12/09/2010 | 2222222 | 1 | 25% 
+654321 | 13/09/2010 | 3333333 | 1 | 25% 
+654322 | 14/09/2010 | 5555555 | 1 | 25%
+123456 | 12/09/2010 | 2222222 | 1 | 25% 
+212135 | 16/09/2010 | 3333333 | 2 | 25%
+635241 | 17/09/2010 | 4444444 | 2 | 25% 
+843221 | 19/09/2010 | 2222222 | 2 | 25%
+
+</div>
+
+### Entidades “TRANSPORTADORA” e “CLIENTE”
+
+- contêm os elementos (atributos) não dependentes da chave primária “Nr. Nota Fiscal”.
+
+<div align="center">
+
+CNPJ Cliente | Nome Cliente | Endereço Cliente
+-------------|---------------|-----------
+1111111 | Pedro Luis | Rua Serafim de Gusmão, 34
+2222222 | Amaro Godoi | Av. Rudge, 345
+3333333 | Celso Araujo | Av. Sto Amaro, 321 
+5555555 | Paula Maria | Rua Frei João, 42 
+4444444 | Joaquina Ramalho | Rua Frei João, 42
+
+</div>
+
+<div align="center">
+
+Código Transportadora | Transportadora
+-------------|---------------
+1 | Rio Grandense 
+2 | Entrega Expressa
+
+</div>
+
+--- 
+
+<div align="center">
+<h2>2. TRABALHANDO COM ATRIBUTOS</h2>
+</div>
+
+## 2.1 Trabalhando com atributos compostos
+
+- decompor atributos compostos em atributos “Atômicos” (únicos).
+- exemplos:
+  - atributo composto “TELEFONE”, podemos decompor em: DDI + DDD + Nr. Telefone + Ramal.
+  - atributo composto “ENDEREÇO”, podemos decompor em: Tipo de Logradouro, Nome Logradouro, Número, complemento, CEP, Cidade, Estado, Bairro e País.
+  - Atributo composto “CNPJ”, podemos decompor em: Número CNPJ, Número da filial CNPJ e o dígito verificador CNPJ.
+
+### 2.1.1 Trabalhando com atributos multivalorados
+
+- atributos multivalorados são transformados em entidades.
+- aplicar a 1ª Forma Normal, na qual geramos novas entidades para os atributos que se repetem dentro da estrutura.
+- exemplo: atributo multivalorado “ENDEREÇO”, pode gerar as entidades: Estado, Cidade, Bairro, Endereço(logradouro) e Tipo de Logradouro.
+
+págs 10/16
