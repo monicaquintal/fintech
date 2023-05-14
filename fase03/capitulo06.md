@@ -90,3 +90,132 @@ III. Durante a ATUALIZAÇÃO de dados:
 
 ### Aplicando a 1FN no exemplo proposto:
 
+- na tabela, há varias informações que se repetem, como:
+  - há vários produtos em uma mesma nota fiscal, portanto esses elementos precisam ser tirados da estrutura 
+  - nessa estrutura desnormalizada, se vender 3 produtos, haverá 3 ocorrências.
+  - portanto, é possível criar dois grupos: tabelas ***Nota_Fiscal*** e ***Itens_Nota_Fiscal***.
+    - “Número da Nota Fiscal” como chave primária do grupo original (NOTA FISCAL).
+
+### Entidades “NOTA FISCAL” e “ITENS NOTA FISCAL”, após a aplicação da 1FN:
+
+- Entidade “NOTA_FISCAL”:
+  - elementos (atributos) que compõem a estrutura original, excluindo os elementos repetidos.
+  - depois da aplicação da 1FN, haverá o grupo “NOTA FISCAL”, com os atributos: #Número Nota Fiscal, data da emissão, CNPJ cliente, nome do cliente, endereço do cliente, transportadora, ICMSe total da nota.
+
+<div align="center">
+
+Nº Nota Fiscal | Data Emissão | CNPJ Cliente | Nome Cliente | Endereço Cliente | Transportadora | ICMS | Total da Nota
+-------------|---------------|-----------|-------------|-----------------|-------|----------|-------------
+456789 | 10/09/2010 | 1111111 | Pedro Luis | Rua Serafim de Gusmão, 34 | Rio Grandense | 25% | R$ 3.290,00
+456789 | 10/09/2010 | 1111111 | Pedro Luis | Rua Serafim de Gusmão, 34 | Rio Grandense | 25% | R$ 3.290,00
+123456 | 12/09/2010 | 2222222 | Amaro Godoi | Av. Rudge, 345 | Rio Grandense | 25% | R$ 5.650,00
+654321 | 13/09/2010 | 3333333 | Celso Araujo | Av. Sto Amaro, 321 | Rio Grandense | 25% | R$ 4.050,00
+654322 | 14/09/2010 | 5555555 | Paula Maria | Rua Frei João, 42 | Rio Grandense | 25% | R$ 1780,00
+123456 | 12/09/2010 | 2222222 | Amaro Godoi | Av. Rudge, 345 | Rio Grandense | 25% | R$ 5.650,00
+212135 | 16/09/2010 | 3333333 | Celso Araujo | Av. Sto Amaro, 321 | Entrega Expressa | 25% | R$ 3.560,00
+635241 | 17/09/2010 | 4444444 | Joaquina Ramalho | Rua Frei João, 42 | Entrega Expressa | 25% | R$ 550,00
+123456 | 12/09/2010 | 2222222 | Amaro Godoi | Av. Rudge, 345 | Entrega Expressa | 25% | R$ 5.650,00
+843221 | 19/09/2010 | 2222222 | Amaro Godoi | Av. Rudge, 345 | Entrega Expressa | 25% | R$ 4.680,00
+654321 | 13/09/2010 | 3333333 | Celso Araujo | Av. Sto Amaro, 321 | Entrega Expressa | 25% | R$ 4.050,00
+
+</div>
+
+- Entidade “ITEM_NF”:
+  - dados (atributos) que compõem os elementos repetidos da estrutura original.
+  - depois da 1FN, teremos o grupo “ITEM_NF”,contendo: #Número Nota Fiscal, #Código do Produto, descrição do produto, valor do IPI, preço unitário do produto e quantidade vendida.
+  - chave primária: atributos “Nr. Nota Fiscal” e o “Código do Produto”.
+
+<div align="center">
+
+Nº Nota Fiscal | Produto | IPI | Preço Unitário | Qtd
+-------------|---------------|-----------|-------------|-----------------
+456789 | Refrigerador | 8% | R$ 1.200,00 | 2
+456789 | Televisão | 8% | R$ 890,00 | 1
+123456 | Aquecedor a gás | 8% | R$ 550,00 | 1
+654321 | Aquecedor a gás | 8% | R$ 550,00 | 3
+654322 | Televisão | 8% | R$ 890,00 | 2
+123456 | Refrigerador | 8% | R$ 1.200,00 | 2
+212135 | Televisão | 8% | R$ 890,00 | 4
+635241 | Aquecedor a gás | 8% | R$ 550,00 | 1
+123456 | Computador | 8% | R$ 1.350,00 | 2
+843221 | Freezer | 8% | R$ 1.560,00 | 3
+654321 | Refrigerador | 8% | R$ 1.200,00 | 2
+
+</div>
+
+--- 
+
+<div align="center">
+<h2>1.3 Segunda Forma Normal (2FN)</h2>
+</div>
+
+> Uma entidade está na segunda forma normal, se estiver na 1FN e quando todos os seus atributos não chave (atributos descritores) dependerem unicamente da chave.
+
+### `Solução`: Separar os atributos repetidos que não fazem parte (dependência parcial) exclusivamente da chave primária e criar uma nova entidade.
+
+### Aplicando a 2FN no exemplo proposto:
+
+- no exemplo que o atributo “Descrição do Produto” não depende da chave “Nr. Nota Fiscal e Código do Produto”. A descrição do produto depende apenas do “CÓDIGO DO PRODUTO”.
+- o atributo “QUANTIDADE VENDIDA” depende de forma total da chave primária “Nr. Nota Fiscal e Código do Produto”, pois a quantidade vendida só existe, quando o item (Produto) for vendido.
+- a descrição do produto pode ser escrita de forma diferente em cada ocorrência nessa entidade (exemplo original).
+
+> Essa técnica é utilizada em entidades que contêm mais de um atributo compondo a chave primária!
+
+Há, ainda, outros problemas no modelo original:
+
+- só poderemos inserir detalhes sobre um “PRODUTO”, “CLIENTE” ou “TRANSPORTADORA” apenas quando uma “VENDA” (Nota Fiscal) for realizada.
+- quando uma “VENDA” (Nota Fiscal) for eliminada do cadastro, serão eliminados os dados do Cliente, Produto e Transportadora.
+- para atualizar os dados (características) do “CLIENTE”, teremos que pesquisar todas as ocorrências da “VENDA” (Nota Fiscal) e atualizá‐las uma a uma. Para um cliente com muitas vendas, serão necessárias várias atualizações redundantes.
+
+### Entidade "Produto"
+
+- contém os atributos que dependem do “CÓDIGO PRODUTO”.
+- depois da aplicação da 2FN, teremos o grupo “PRODUTO”, contendo os atributos: #Código do produto, descrição do produto, valor IPI e preço unitário do produto.
+
+<div align="center">
+
+Código Produto | Produto | IPI | Preço Unitário
+-------------|---------------|-----------|-------------
+1 | Refrigerador | 8% | R$ 1.200,00
+2 | Televisão | 8% | R$ 890,00
+3 | Aquecedor a gás | 8% | R$ 550,00
+4 | Computador | 8% | R$ 1.350,00
+5 | Freezer | 8% | R$ 1.560,00
+
+</div>
+
+> Caso exista a necessidade de armazenar o valor unitário do produto como histórico de vendas, pode‐se replicar o atributo “PRECO UNITARIO” na entidade “ITEM_NF” (Desnormalização) ou implementar uma entidade responsável por manter o preço unitário do produto historicamente.
+
+### Entidade "ITEM_NF":
+
+- contém os elementos (atributos) originais, excluídos os atributos que são dependentes apenas do “PRODUTO”.
+- a chave primária será o atributo participante da chave primária da tabela origem, ou seja, serão os atributos:“Nr. NOTA FISCAL”e “CÓDIGO PRODUTO”.
+
+<div align="center">
+
+Nº Nota Fiscal | Produto | Qtd
+---------------|---------|------
+456789 | 1 | 2
+456789 | 2 | 1
+123456 | 3 | 1
+654321 | 3 | 3
+654322 | 2 | 2
+123456 | 1 | 2
+212135 | 2 | 4
+635241 | 3 | 1
+123456 | 4 | 2
+843221 | 5 | 3
+654321 | 1 | 2
+
+</div>
+
+---
+
+<div align="center">
+<h2>1.4 Terceira Forma Normal (3FN)</h2>
+</div>
+
+> Uma entidade está na terceira forma normal, se estiver na 2FN e quando todos os seus atributos não chave não dependerem de nenhum outro atributo não chave; em outras palavras, um atributo não deve depender de outro atributo (dependência transitiva).Isso ocorre normalmente em cálculos e em atributos “perdidos” na entidade errada.
+
+### `Solução`: realizar a análise: se o atributo for resultado de um cálculo matemático, devemos simplesmente excluir esse atributo, pois ele não acrescenta nada no modelo de dados. Se for um grupo de informações relacionadas, aplicar a segunda forma normal. Se for um atributo “perdido”, devemos reconduzi‐lo à entidade da qual depende.
+
