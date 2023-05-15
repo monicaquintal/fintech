@@ -292,4 +292,108 @@ Código Transportadora | Transportadora
 - aplicar a 1ª Forma Normal, na qual geramos novas entidades para os atributos que se repetem dentro da estrutura.
 - exemplo: atributo multivalorado “ENDEREÇO”, pode gerar as entidades: Estado, Cidade, Bairro, Endereço(logradouro) e Tipo de Logradouro.
 
-págs 10/16
+## 2.2 Normalização
+
+### 2.2.1 Benefícios da normalização
+
+- nível maior de simplificação, reorganizando o conteúdo e removendo os grupos repetitivos.
+- facilita a compreensão dos registros de dados e torna a aplicação de mudanças mais fácil do que em casos em que os dados estão organizados em formas menos precisas.
+- reduz a redundância de dados, tornando mais fácil manter as informações consistentes e seguras, diminuindo total de espaço requerido para armazenar os dados.
+
+### 2.2.2 Modelagem de dados exemplificando a normalização
+
+`Opção 1`: 
+- telefone implementado a partir da situação M:N.
+- necessidade em empresas em que várias pessoas compartilham o mesmo telefone, ou em residências onde uma mesma família possui um mesmo telefone fixo.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/modelagem_normalizacao_exemplo1.png" width="70%"><br>
+<em>Exemplo de modelagem para normalização, primeira opção.</em>
+</div>
+<br>
+
+`Opção 2`:
+- relação 1:N entre cliente e telefone, ou seja, um cliente pode possuir vários telefones.
+- se tivermos pessoas que trabalham na mesma empresa, compartilhando o mesmo fone, teremos o telefone cadastrado individualmente para cada pessoa.
+- ramal mantido como  atributo opcional.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/modelagem_normalizacao_exemplo2.png" width="70%"><br>
+<em>Exemplo de modelagem para normalização, segunda opção.</em>
+</div>
+<br>
+
+1. `Exemplo: Normalização do Endereço`
+
+- o nível de decomposição sempre está associado à necessidade de negócio.
+- criadas as tabelas:
+  - “Estado” – Representa todos os estados da Federação brasileira.
+  - “Cidade” – Representa todas as cidades existentes em cada estado.
+  - “Bairro” – Representa todos os bairros existentes em cada cidade.
+  - “Endereço” – Representa o nome do logradouro existente em cada bairro.
+  - “Tipo_Logradouro” – Representa o tipo de logradouro (rua, avenida, praça, travessa).
+  - “Cliente_Endereco” – Representa a entidade associativa que permite compartilhar um mesmo endereço para várias pessoas e representar a necessidade de uma pessoa possuir vários endereços, por exemplo: residencial, comercial, entrega, correspondência.
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/normalizacao_endereco.png" width="50%"><br>
+<em>Exemplo de modelagem para normalização.</em>
+</div>
+<br>
+
+2. `Exemplo: Normalização do Telefone`
+
+- criadas as tabelas:
+  - “TIPO_FONE” – Representa o tipo de telefone (residencial, comercial, recados, celular).
+  - “TELEFONE” – Representa todos os telefones cadastrados, pertencentes a uma ou mais pessoas.
+  - “CLIENTE_FONE” – Representa entidade associativa, que permite compartilhar um mesmo telefone para várias pessoas e representar a necessidade de uma pessoa possuir vários telefones (residencial, comercial, celular, recados).
+
+`Opção 1:`
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/normalizacao_telefone1.png" width="50%"><br>
+<em>Exemplo de modelagem para normalização (2).</em>
+</div>
+<br>
+
+- “TIPO_FONE” – Representa o tipo de telefone(residencial, comercial, recados, celular).
+- “TELEFONE” – Representa todos os telefones cadastrados, pertencentes a um único cliente. Nesse caso, o telefone é cadastrado individualmente para cada pessoa.
+
+`Opção 2:`
+
+<br>
+<div align="center">
+<img src="../assets/imagens-fase03/normalizacao_telefone1.png" width="50%"><br>
+<em>Exemplo de modelagem para normalização, segunda opção (2).</em>
+</div>
+<br>
+
+---
+
+<h2>2.3 Roteiro de apoio para aplicação da normalização</h2>
+
+Normalização | Procedimento
+-------------|----------------
+1FN | - Decompor a entidade em uma ou mais entidades, sem grupos repetitivos.<br>- Destacar um ou mais atributos como chave primária da(s) nova(s) entidade(s), e este será concatenado com a clahe primária da entidade original.<br>- Estabelecer o relacionamento e a cardinalidade entre a(a) nova(s) endidade(s) gerada(s) e a entidade geradora.<br>- Criar relacionamentoa 1:N entre a entidade original e a entidade criada.
+2FN | - Para entidades que contenham chaves primárias concatenadas, destacar os atributos que tenham dependência parcial em relação à chave primária concatenada.<br>- Criar uma entidade que conterá esses atributos e que terá como chave primária o(s) atributo(s) do(s) qual(quais) se tenha dependência parcial.<br>- Serão criadas tantas entidades quantos forem os atributos da chave primária concatenada que gerem dependência parcial.<br>- Estabelecer o relacionamento e a cardinalidade entre a(s) nova(s) entidade(s) gerada(s) e a entidade geradora.
+3FN | - Verificar se existem atributos que sejam dependentes transitivos de outros que não pertencem à chave primária, sendo ela concatenada ou não, bem como atributos que sejam dependentes de cálculo realizado a partir de outros atributos.<br>- Destacar os atributos com dependência transitiva, gerando uma nova entidade com esse atributo cuja chave primária é o atributo que originou a dependência.<br>- Eliminar os atributos obtidos por cálculos realizados a partir de outros atributos.
+
+--- 
+
+## FAST TEST
+
+### 1. Dentre as formar normais, qual é a opção para validar e tratar dados repetidos?
+> Primeira forma normal.
+
+### 2. Qual é a alternativa que pode ser resolvida com a criação de atributo composto?
+> Endereço residencial.
+
+### 3. O que é um dado redundante?
+> É um dado sem quelidade, sem coerência. Em uma base de dados redundantes, podem haver informações duplicadas ou haver informações desnecessárias.
+
+--- 
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)

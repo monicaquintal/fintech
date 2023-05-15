@@ -502,7 +502,6 @@ Faça isso mesmo que você use o Data Modeler. Repare que, ao salvar o projeto e
 <br><br>
 Muito bem! Boa atividade! Qualquer dúvida, estamos por aqui, ok?"</em>
 
-
 --- 
 
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
