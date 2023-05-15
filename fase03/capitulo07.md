@@ -50,7 +50,7 @@
 
 <br>
 <div align="center">
-<img src="../assets/imagens-fase03/exemplo-regra-mapeamento-identificador" width="40%"><br>
+<img src="../assets/imagens-fase03/exemplo-regra-mapeamento-identificador.png" width="40%"><br>
 <em>Exemplificando a Regra para Mapeamento de entidade com relacionamento identificador.</em>
 </div>
 <br>
@@ -83,7 +83,7 @@
 ### C) Fusão de Tabelas:
 
 - implementar em uma única tabela todos os atributos de ambas as entidades e atributos eventualmente existentes no relacionamento. 
-- esta conversão somente pode ser aplicada para relacionamentos do tipo 1:1.
+- esta conversão **somente pode ser aplicada para relacionamentos do tipo 1:1**.
 - teremos a implementação de um relacionamento recursivo.
 
 ## 1.4 Conversão de especialização e generalização
@@ -135,3 +135,17 @@ DATA | - usado para armazenar datas<br>- contém data e hora<br>- seu formato po
 - Opcionalmente desmarque as caixas “Atribuído a Esquemas”, “Esquemas”, “Tipos Estruturados” e “Tipos de Coleção”.
 - As instruções DDL foram geradas.
 - Ao clicar em Salvar, será gerado um arquivo com o script com os comandos DDL, que podem ser usados para criar as tabelas no banco de dados.
+
+---
+
+## FAST TEST
+
+### 1. Qual é o tipo de relacionamento que permite a fusão de tabelas?
+> 1:1
+
+### 2. No modelo físico, podemos afirmar que todos os atributos se transformam em colunas de tabelas?
+> Sim, exceto quando são atributos multivalorados ou compostos. Esses devem ter uma tratativa diferente.
+
+--- 
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
