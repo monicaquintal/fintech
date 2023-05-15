@@ -65,7 +65,7 @@
 [Capítulo 04: O Modelo de Entidade-Relacionamento.](./fase03/capitulo04.md)<br>
 [Capítulo 05: Agregando ao modelo de dados.](./fase03/capitulo05.md)<br>
 [Capítulo 06: Aprendendo a armazenar de maneira correta.](./fase03/capitulo06.md)<br>
-[Capítulo 07:]()
+[Capítulo 07: Definindo as estruturas físicas!](./fase03/capitulo07.md)
 </details>
 
 <details>

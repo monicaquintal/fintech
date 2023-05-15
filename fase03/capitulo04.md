@@ -1,4 +1,4 @@
-<div id="fase02" align="center">
+<div id="fase03" align="center">
 <h1>FASE 3 - MODELING</h1>
 <h2>Capítulo 04: O Modelo de Entidade-Relacionamento.</h2>
 </div>

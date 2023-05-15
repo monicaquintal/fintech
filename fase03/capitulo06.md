@@ -1,4 +1,4 @@
-<div id="fase02" align="center">
+<div id="fase03" align="center">
 <h1>FASE 3 - MODELING</h1>
 <h2>Capítulo 06: Aprendendo a armazenar de maneira correta. 🗂️</h2>
 </div>
@@ -354,7 +354,7 @@ Código Transportadora | Transportadora
 
 <br>
 <div align="center">
-<img src="../assets/imagens-fase03/normalizacao_telefone1.png" width="50%"><br>
+<img src="../assets/imagens-fase03/normalizacao_telefone1.png" width="30%"><br>
 <em>Exemplo de modelagem para normalização (2).</em>
 </div>
 <br>
@@ -366,7 +366,7 @@ Código Transportadora | Transportadora
 
 <br>
 <div align="center">
-<img src="../assets/imagens-fase03/normalizacao_telefone1.png" width="50%"><br>
+<img src="../assets/imagens-fase03/normalizacao_telefone1.png" width="30%"><br>
 <em>Exemplo de modelagem para normalização, segunda opção (2).</em>
 </div>
 <br>
