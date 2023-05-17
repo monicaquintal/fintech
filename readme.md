@@ -71,7 +71,7 @@
 <details>
 <summary>COMPUTATIONAL THINKING USING PYTHON</summary>
 
-[Capítulo 08:]()<br>
+[Capítulo 08: Salvo pelo dicionário!](./fase03/capitulo08.md)<br>
 [Capítulo 09:]()
 
 </details>
