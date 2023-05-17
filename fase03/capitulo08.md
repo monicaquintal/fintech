@@ -44,3 +44,20 @@
 <h2>Principais mpetodos e funções</h2>
 </div>
 
+Com as tuplas, é possível utilizar alguns métodos,como:
+- count() – retorna a quantidade de vezes que um valor aparece na tupla.
+- index() – procura na tupla um valor e retorna o númerodo índice da primeira ocorrência desse valor.
+
+> diretorio fase03 > projects > exemplo-metodos-tupla.py
+
+Além dos métodos, podemos utilizar com as tuplas algumas funções embutidas no Python:
+- all() – retorna True se todos os elementos de um objeto iterável (lista, tupla, dicionário, set etc) forem True ou também se o objeto estiver vazio.
+- any() – retorna False se todos os elementos de um objeto iterável forem False ou 0 (zero). Também retorna False se o objeto estiver vazio.
+- enumerate() – recebe uma coleção e a retorna como um objeto enumerado.
+- len() – retorna a quantidade de elementos em uma coleção.
+- max() – retorna o maior valor entre os elementos deum objeto.
+- min() – retorna o menor valor entre os elementos deum objeto.
+- sum() – realiza a soma dos elementos presentes em um objeto
+- tuple() –converte um objeto em uma tupla.
+
+pág. 14
