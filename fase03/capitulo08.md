@@ -119,4 +119,44 @@ nome_do_dicionario[chave_a_ser_incluida] = valor_a_ser_incluido
   - remover o último item inserido ou 
   - apagar o dicionário inteiro.
 
-- para remover um item específico, utilizar o método pop()
+> exemplos em [exemplo-exclusao-dicionario.py](./scripts/exemplo-exclusao-dicionario.py).
+
+- `método pop()`:
+  - para remover um item específico, utilizar o método pop, indicando entre parênteses a chave do item em questão.
+
+- `mpetodo popitem()`:
+  - usado para remover apenas o último item inserido.
+  - em versões antigas do Python, esse método removia um item aleatório.
+
+- `metodo clear()`:
+  - limpa totalmente o dicionário.
+
+## Dicionários dentro de dicionários
+
+- `nested dictionaries ou dicionários aninhados` (trata-se de inserir um dicionário dentro de outro).
+- exemplo: lista de contatos smartphone.
+  - nome do contato como chave.
+  - o valor dessa chave será outro dicionário, no qual cada chave será o nome da forma de contato e cada valor será a forma de contato em si.
+
+> exemplo em [lista-contatos.py](./scripts/lista-contatos.py).
+
+- para navegar nessa estrutura, é possível criar dois loops: 
+  - um para o dicionário mais externo, com o nome dos contatos, 
+  - e outro para o dicionário mais interno, com as formas de contato.
+
+---
+
+## FAST TEST
+
+### 1. Selecione a alternativa que contém o comando correto para exibir apenas os valores de um dicionário no Python. dicionario = {"a":10, "b":20, "c":30, "d":40}
+> print(dicionario.values())
+
+### 2. Escolha a alternativa que contém o comando correto para a criação de um objeto do tipo dicionário no Python.
+> dicionario = {"a":10, "b":20, "c":30, "d":40}
+
+### 3. Qual alternativa apresenta o método para exclusão de um item específico de um dicionário? dicionario = {"a":10, "b":20, "c":30, "d":40}
+> dicionario.pop("a")
+
+--- 
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
