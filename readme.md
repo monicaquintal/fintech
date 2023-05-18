@@ -72,6 +72,6 @@
 <summary>COMPUTATIONAL THINKING USING PYTHON</summary>
 
 [Capítulo 08: Salvo pelo dicionário!](./fase03/capitulo08.md)<br>
-[Capítulo 09:]()
+[Capítulo 09: Quem arquiva amigo é.](./fase03/capitulo09.md)
 
 </details>

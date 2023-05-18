@@ -11,7 +11,7 @@
 
 - uma lista, ainda que vazia, ocupa um espaço na memória, conforme script encontrado em:
 
-> pasta fase03 > projects > [exemplo-getsizeof.py](./scripts/exemplo-getsizeof.py).
+> pasta fase03 > projects > [exemplo-getsizeof.py](./scripts-cap08/exemplo-getsizeof.py).
 
 - incluir, reordenar e remover novos elementos têm um custo que se traduz em espaço em memória RAM.
 - neste capítulo, aprenderemos que há outras estruturas mais adequadas do que a lista, cada uma voltada para uma situação específica.
@@ -23,7 +23,7 @@
   - todos os dados que armazenarmos dentro de uma tupla permanecerão idênticos e na mesma posição ao longo de toda a execução do programa.
 - `enquanto listas são criadas com colchetes, tuplas são criadas com parênteses!`
 
-> diretorio fase03 > projects > [exemplo-tupla.py](./scripts/exemplo-tupla.py).
+> diretorio fase03 > projects > [exemplo-tupla.py](./scripts-cap08/exemplo-tupla.py).
 
 - índices e loops também podem ser usados nas tuplas, seguindo a mesma lógica das listas.
 
@@ -35,7 +35,7 @@
 
 <em>"Imagine que você esteja fazendo um software para o DETRAN do seu estado. Com você é um estudante atento e já aprendeu a modularizar seus programas, cria um módulo apenas para lidar com as carteiras de habilitação."</em>
 
-> diretorio fase03 > projects > [exemplo-detran.py](./scripts/exemplo-detran.py).
+> diretorio fase03 > projects > [exemplo-detran.py](./scripts-cap08/exemplo-detran.py).
 
 ## Principais métodos e funções
 
@@ -43,7 +43,7 @@ Com as tuplas, é possível utilizar alguns métodos,como:
 - count() – retorna a quantidade de vezes que um valor aparece na tupla.
 - index() – procura na tupla um valor e retorna o númerodo índice da primeira ocorrência desse valor.
 
-> diretorio fase03 > projects > [exemplo-metodos-tupla.py](./scripts/exemplo-metodos-tupla.py).
+> diretorio fase03 > projects > [exemplo-metodos-tupla.py](./scripts-cap08/exemplo-metodos-tupla.py).
 
 Além dos métodos, podemos utilizar com as tuplas algumas funções embutidas no Python:
 - all() – retorna True se todos os elementos de um objeto iterável (lista, tupla, dicionário, set etc) forem True ou também se o objeto estiver vazio.
@@ -67,7 +67,7 @@ Além dos métodos, podemos utilizar com as tuplas algumas funções embutidas n
 
 - utiliza-se o símbolo de chaves.
 - para criar um dicionário que contenha dados, precisamos organizá-los: primeiro escrever o dado chave, colocar o símbolo de dois pontos, e então escrever o dado valor.
-- exemplo em [exemplo-dicionario.py](./scripts/exemplo-dicionario.py).
+- exemplo em [exemplo-dicionario.py](./scripts-cap08/exemplo-dicionario.py).
 
 ## Exibindo o conteúdo de um dicionário
 
@@ -98,7 +98,7 @@ for chave, valor in dicionario.items():
   print("O personagem {} é da categoria {}.".format(chave, valor))
 ~~~
 
-> exemplos em [exemplo-dicionario.py](./scripts/exemplo-dicionario.py).
+> exemplos em [exemplo-dicionario.py](./scripts-cap08/exemplo-dicionario.py).
 
 ## Inserindo novos dados em um dicionário
 
@@ -108,7 +108,7 @@ for chave, valor in dicionario.items():
 nome_do_dicionario[chave_a_ser_incluida] = valor_a_ser_incluido
 ~~~
 
-> exemplos em [exemplo-inclusao-dicionario.py](./scripts/exemplo-inclusao-dicionario.py).
+> exemplos em [exemplo-inclusao-dicionario.py](./scripts-cap08/exemplo-inclusao-dicionario.py).
 
 - a mesma estrutur utilizada para incluir novos itens serve para ***substituir*** itens que já estavam lá. Portanto, se indicarmos uma chave pré-existente, seu valor será substituído.
 
@@ -119,7 +119,7 @@ nome_do_dicionario[chave_a_ser_incluida] = valor_a_ser_incluido
   - remover o último item inserido ou 
   - apagar o dicionário inteiro.
 
-> exemplos em [exemplo-exclusao-dicionario.py](./scripts/exemplo-exclusao-dicionario.py).
+> exemplos em [exemplo-exclusao-dicionario.py](./scripts-cap08/exemplo-exclusao-dicionario.py).
 
 - `método pop()`:
   - para remover um item específico, utilizar o método pop, indicando entre parênteses a chave do item em questão.
@@ -138,7 +138,7 @@ nome_do_dicionario[chave_a_ser_incluida] = valor_a_ser_incluido
   - nome do contato como chave.
   - o valor dessa chave será outro dicionário, no qual cada chave será o nome da forma de contato e cada valor será a forma de contato em si.
 
-> exemplo em [lista-contatos.py](./scripts/lista-contatos.py).
+> exemplo em [lista-contatos.py](./scripts-cap08/lista-contatos.py).
 
 - para navegar nessa estrutura, é possível criar dois loops: 
   - um para o dicionário mais externo, com o nome dos contatos, 
