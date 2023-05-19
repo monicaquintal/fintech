@@ -153,4 +153,97 @@ with open("c:\\arquivos\\arquivo_de_texto.txt", "w") as arquivo:
 
 --- 
 
+## QUIZ - MODELING
+
+1. Ao analisar a combinação de notas que são sacadas nos caixas eletrônicos instalados nos vários bairros da cidade de São Paulo, um analista de sistemas chegou à conclusão de que seria mais interessante abastecer os caixas eletrônicos instalados no bairro Pinheiros apenas com cédulas de R$ 100. No contexto de dados versus informações, tal conclusão representa um(a): 
+
+> Informação
+
+2. Considere as seguintes afirmações:
+
+I – Um Banco de Dados representa algum aspecto do mundo real, às vezes chamado de minimundo. As mudanças no minimundo são refletidas no Banco de Dados.
+II - Um Banco de Dados é uma coleção logicamente coerente de dados com algum significado inerente.
+III – Um Banco de Dados é projetado, construído e populado com dados para uma finalidade específica.
+Em relação às afirmações acima, assinale a alternativa correta:
+
+> Todas as afirmativas estão corretas
+
+3. Assinale a alternativa que complete corretamente a frase a seguir: "Na modelagem de dados, são utilizados três tipos de modelos de dados, que são os modelos _____________, _____________ e _____________.".
+
+> conceitual, lógico e físico.
+
+4. Para identificar uma entidade, deve-se focar no problema em pauta e perguntar-se: “Quais são as ‘coisas’ neste problema?”. Assim, uma competição, como uma corrida de Fórmula 1, por exemplo, representa uma entidade do tipo:
+
+> Incidente
+
+5. O endereço completo de uma pessoa é um exemplo de atributo:
+
+> Multivalorado
+
+6. Um objeto que existe no mundo real com uma identificação distinta e com um significado próprio é chamado de:
+
+> Entidade
+
+7. Em relação ao relacionamento Um-para-Muitos (1:n), assinale a alternativa correta:
+
+> Para cada registro da primeira tabela, pode existir um ou mais correspondentes na segunda tabela, e para cada registro na segunda tabela existe apenas um registro correspondente na primeira tabela.
+
+8. Em relação ao Modelo Entidade-Relacionamento, um atributo que pode possuir várias ocorrências é chamado de atributo:
+
+> Multivalorado
+
+9. Considere a seguinte situação da vida real: “Um médico atende muitos pacientes, e um paciente pode realizar consultas com vários médicos (várias especialidades médicas).” Assim, na modelagem de um banco de dados, para melhor descrever o relacionamento entre médico e paciente, podemos incluir a consulta como um atributo do relacionamento entre eles. Esta situação representa um exemplo de:
+
+> agregação.
+
+10. A herança de atributos é uma consequência do processo de:
+
+> Especialização/generalização
+
+11. As formas normais são as técnicas que evitam: 
+
+> Redundância de dados
+
+12. Em relação à normalização de dados, considere as seguintes afirmações:
+I – Normalizar o banco diminui ou elimina as anomalias dos dados.
+II – Geralmente, aumenta o número de tabelas do banco de dados.
+III – É baseada em 5 etapas, conhecidas como Formas Normais.
+Em relação às afirmações acima, assinale a alternativa correta:
+
+> Apenas as afirmações I e III estão corretas.
+
+13. A frase “É uma subdivisão da linguagem SQL utilizada para definir as estruturas de dados.”, refere-se à linguagem:
+
+> DDL (Data Definition Language)
+
+14. Todas as tabelas devem possuir uma:
+
+> Chave primária
+
+15. Assinale a alternativa que apresenta corretamente funções utilizadas com tuplas em Python:
+
+> min() / max() / len()
+
+16. Os dicionários de dados são estruturas em Python que funcionam seguindo a lógica de chave e:
+
+> Valor
+
+17. Em Python, para remover um item específico de um dicionário, utilizamos o método:
+
+> pop.
+
+18. Os arquivos, que contêm coleções de caracteres ou coleções de bytes são classificados em:
+
+> Arquivo texto e arquivo binário.
+
+19. A função open(), utilizada em Python para abrir um arquivo, além do nome do arquivo, pode ser utilizada com um segundo parâmetro para especificar a forma como o arquivo em questão será manipulado. Para abrir um arquivo para anexação de informações, devemos utilizar o parâmetro:
+
+> 'a'
+
+20. Para garantir que um arquivo que foi aberto seja finalizado sem ter que se preocupar com o close() ao final da manipulação de um arquivo, utilizamos o comando:
+
+> with
+
+---
+
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
