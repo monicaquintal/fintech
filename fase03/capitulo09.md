@@ -161,9 +161,9 @@ with open("c:\\arquivos\\arquivo_de_texto.txt", "w") as arquivo:
 
 2. Considere as seguintes afirmações:
 
-I – Um Banco de Dados representa algum aspecto do mundo real, às vezes chamado de minimundo. As mudanças no minimundo são refletidas no Banco de Dados.
-II - Um Banco de Dados é uma coleção logicamente coerente de dados com algum significado inerente.
-III – Um Banco de Dados é projetado, construído e populado com dados para uma finalidade específica.
+I – Um Banco de Dados representa algum aspecto do mundo real, às vezes chamado de minimundo. As mudanças no minimundo são refletidas no Banco de Dados.<br>
+II - Um Banco de Dados é uma coleção logicamente coerente de dados com algum significado inerente.<br>
+III – Um Banco de Dados é projetado, construído e populado com dados para uma finalidade específica.<br>
 Em relação às afirmações acima, assinale a alternativa correta:
 
 > Todas as afirmativas estão corretas
@@ -205,9 +205,9 @@ Em relação às afirmações acima, assinale a alternativa correta:
 > Redundância de dados
 
 12. Em relação à normalização de dados, considere as seguintes afirmações:
-I – Normalizar o banco diminui ou elimina as anomalias dos dados.
-II – Geralmente, aumenta o número de tabelas do banco de dados.
-III – É baseada em 5 etapas, conhecidas como Formas Normais.
+I – Normalizar o banco diminui ou elimina as anomalias dos dados.<br>
+II – Geralmente, aumenta o número de tabelas do banco de dados.<br>
+III – É baseada em 5 etapas, conhecidas como Formas Normais.<br>
 Em relação às afirmações acima, assinale a alternativa correta:
 
 > Apenas as afirmações I e III estão corretas.
