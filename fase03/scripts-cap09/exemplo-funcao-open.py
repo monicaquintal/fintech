@@ -1,5 +1,5 @@
 #usando a função open para abrir um objeto do tipo arquivo já existente
-arquivo = open("C:\\Users\\monic\\OneDrive\\Cursos\\FIAP\\fintech\\fase03\\scripts-cap09\\arquivo.txt")
+arquivo = open("C:\\Users\\monic\\OneDrive\\Cursos\\FIAP\\fintech\\fase03\\scripts-cap09\\arquivo.txt", encoding="UTF-8")
 
 #printando o conteúdo do objeto arquivo
 print(arquivo.read())
