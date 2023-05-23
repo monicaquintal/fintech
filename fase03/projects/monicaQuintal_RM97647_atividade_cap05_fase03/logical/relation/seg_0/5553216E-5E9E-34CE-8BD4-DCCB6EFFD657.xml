@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Categorizar" directorySegmentName="seg_0" id="5553216E-5E9E-34CE-8BD4-DCCB6EFFD657">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-14 23:58:26 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<sourcePk>94F7794B-6DB4-C3A9-5D50-50D5AD857224</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>06F352E8-A847-1AE4-B107-899C32F0AC32</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C7640C26-D299-AAE9-6EA8-CB4EF9179E60</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4BAAC075-A132-41E0-7953-2AC5B644652D" name="T_TIPO_ENDERECO">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 01:00:23 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_tipo_endereco" id="85768E1E-78C7-DD76-8953-7FEE696F1277">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 01:00:23 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_tipo_endereco" id="B7F624D4-1034-5465-3FE5-9556F4BF0100">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 01:00:23 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="869F5BAB-5462-5D72-86F1-4408DF396D10" name="T_TIPO_LOGRADOURO PK">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 01:00:23 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>85768E1E-78C7-DD76-8953-7FEE696F1277</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

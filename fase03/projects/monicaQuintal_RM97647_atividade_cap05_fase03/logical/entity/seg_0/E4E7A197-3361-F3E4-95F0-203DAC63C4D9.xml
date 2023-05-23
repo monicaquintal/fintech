@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E4E7A197-3361-F3E4-95F0-203DAC63C4D9" name="T_BAIRRO">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-14 23:51:59 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_bairro" id="89DE541F-FB60-30AF-3834-3611A83A0A48">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-14 23:52:11 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_cidade" id="543854BB-04D6-526E-2A14-7573E206DC00">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-14 23:53:06 UTC</createdTime>
+<generatorID>4FB50D09-4A3E-BEE0-C063-62C47352D083</generatorID>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<referedAttribute>06FC9A15-1AF8-4B91-9D2C-972C4A929366</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_bairro" id="F571ACBC-E019-E9AE-3411-9CA7460A6A9D">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-14 23:52:21 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="573144BE-4F26-F1E6-873C-6B3073D0E8F6" name="T_BAIRRO PK">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-14 23:52:15 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>89DE541F-FB60-30AF-3834-3611A83A0A48</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

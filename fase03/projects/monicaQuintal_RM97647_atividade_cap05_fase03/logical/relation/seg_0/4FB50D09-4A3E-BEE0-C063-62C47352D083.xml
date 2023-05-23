@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Residir" directorySegmentName="seg_0" id="4FB50D09-4A3E-BEE0-C063-62C47352D083">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-14 23:53:06 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<sourcePk>6218A633-4392-9C25-9C21-22DD0A1302F7</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>0E2BA0EB-8AAC-417E-1A58-843ECC07F0A9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E4E7A197-3361-F3E4-95F0-203DAC63C4D9</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

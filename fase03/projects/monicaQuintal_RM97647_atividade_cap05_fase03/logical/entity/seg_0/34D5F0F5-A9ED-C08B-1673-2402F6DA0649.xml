@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="34D5F0F5-A9ED-C08B-1673-2402F6DA0649" name="T_EMAIL">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:34:01 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_email" id="F3333FCB-200D-B513-2421-3B53732BBA83">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:57:55 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_contato" id="359565DC-ED2B-4895-7A64-43D15423963F">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:40:39 UTC</createdTime>
+<generatorID>F9204C68-0F7C-8A92-37CB-487A51FBC411</generatorID>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<referedAttribute>AFABFF00-A9AE-D329-F0B1-F74229D1C2A8</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_tipo_email" id="0663F3E5-44DF-ED18-513A-4562EEA88F11">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:57:03 UTC</createdTime>
+<generatorID>D88AF1EE-A245-A114-F8ED-CD50391099D7</generatorID>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<referedAttribute>AEBC1826-CA60-ACF4-EB23-6360A25895F4</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_email" id="6511CDA9-F9D4-1E71-8814-F2684AFD7329">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:59:38 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_dominio" id="DF2DA023-89D0-5A8C-22DC-7CF25F689CC1">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 01:00:02 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="891C176E-A930-A46F-D5AC-589BD6C187DC" name="T_EMAIL PK">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:40:39 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>359565DC-ED2B-4895-7A64-43D15423963F</attributeRef>
+<attributeRef>F3333FCB-200D-B513-2421-3B53732BBA83</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

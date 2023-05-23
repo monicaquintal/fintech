@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="30F78158-307C-4D84-F744-AE0EA107C5EB" name="T_ENDERECO_CONTATO">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:05:51 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_contato" id="C0BDE8A8-132F-8D2C-D4CE-5A4E339BC047">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:07:31 UTC</createdTime>
+<generatorID>F137F0AE-3D57-B625-4D27-88A8572122E5</generatorID>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<referedAttribute>AFABFF00-A9AE-D329-F0B1-F74229D1C2A8</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_cep" id="C8BF39D3-06A0-1721-9BCA-AFA09D3EBA0D">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:06:40 UTC</createdTime>
+<generatorID>38718412-322B-645A-321C-2D1938C0433A</generatorID>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<referedAttribute>40B0291E-4093-7A13-EE29-952502DD89C2</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_tipo_endereco" id="4BE08CFA-D43D-C863-F07C-5B08A724042F">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 01:01:32 UTC</createdTime>
+<generatorID>75785EE0-9C95-DCB0-FE49-CD9FD925C7A7</generatorID>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<referedAttribute>85768E1E-78C7-DD76-8953-7FEE696F1277</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_endereco" id="AB47BEB0-BD1F-5349-1C82-DB7E79FD7852">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:06:10 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_complemento" id="19340094-2CD7-C824-4FD1-750020492E12">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:06:18 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9643B9E4-EC1E-F628-2FC1-D1162013CC4D" name="T_CLIENTE_ENDERECO PK">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:06:40 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C8BF39D3-06A0-1721-9BCA-AFA09D3EBA0D</attributeRef>
+<attributeRef>C0BDE8A8-132F-8D2C-D4CE-5A4E339BC047</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

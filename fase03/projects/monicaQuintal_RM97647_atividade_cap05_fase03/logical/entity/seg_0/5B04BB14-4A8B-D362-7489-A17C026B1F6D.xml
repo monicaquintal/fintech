@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5B04BB14-4A8B-D362-7489-A17C026B1F6D" name="T_TELEFONE">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:12:22 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="nr_fone_completo" id="D2226030-E2E5-9025-EE08-46E0FDF1B8AE">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:12:34 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_contato" id="701DDD91-9C65-8C96-9737-824C242BEEE0">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:16:45 UTC</createdTime>
+<generatorID>3AFAEE1B-16E8-70F0-47A1-A6AC16774D88</generatorID>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<referedAttribute>AFABFF00-A9AE-D329-F0B1-F74229D1C2A8</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_tipo_telefone" id="42467CFE-592D-D3FE-4A79-0C44A1EF605C">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:15:00 UTC</createdTime>
+<generatorID>B82E5FDA-513E-487A-A32C-47170FEFFBFC</generatorID>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<referedAttribute>C141CF29-7F02-FC62-74E4-B3EC210713F3</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_ddi" id="69A10E45-18AD-2BA4-17CF-2D6D45EB8FC9">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:37:22 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_ddd" id="8D885B99-7131-DCCD-ECAB-8C0D89C0C600">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:12:57 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_telefone" id="482A6CDD-FF2A-B9FA-290C-DDF66DFA5A11">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:12:50 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_ramal" id="8B6B2CB6-0564-0597-5AB7-A974378B3F19">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:17:47 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9A3D3F70-DD80-2997-3807-5853630B4661" name="T_TELEFONE PK">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-15 00:12:41 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D2226030-E2E5-9025-EE08-46E0FDF1B8AE</attributeRef>
+<attributeRef>701DDD91-9C65-8C96-9737-824C242BEEE0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

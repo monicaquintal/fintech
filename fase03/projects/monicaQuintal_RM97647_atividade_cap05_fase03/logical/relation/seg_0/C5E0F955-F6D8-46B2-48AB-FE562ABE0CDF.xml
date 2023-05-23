@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Pertencer" directorySegmentName="seg_0" id="C5E0F955-F6D8-46B2-48AB-FE562ABE0CDF">
+<createdBy>monic</createdBy>
+<createdTime>2023-05-14 23:55:19 UTC</createdTime>
+<ownerDesignName>monicaQuintal_RM97647_atividade_cap05_fase03</ownerDesignName>
+<engineerTo>
+<item key="0D19B07A-3237-5A38-EE11-054DA4A6C847" value="true"/>
+</engineerTo>
+<sourcePk>573144BE-4F26-F1E6-873C-6B3073D0E8F6</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E4E7A197-3361-F3E4-95F0-203DAC63C4D9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C7640C26-D299-AAE9-6EA8-CB4EF9179E60</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
