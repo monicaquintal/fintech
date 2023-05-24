@@ -148,4 +148,31 @@ DATA | - usado para armazenar datas<br>- contém data e hora<br>- seu formato po
 
 --- 
 
+## ATIVIDADE:
+### DESENVOLVER UM MODELO DE DADOS COMPLETO (MODELO LÓGICO, MODELO FÍSICO E SCRIPT SQL DE CRIAÇÃO DE TABELAS) DO FINTECH
+
+Agora a brincadeira ficou séria! Abra seu Oracle SQL Developer Data Modeler e crie um modelo de dados completo do sistema Fintech! A entrega deve ser composta por:
+<br><br>
+- Diagrama de Modelo Lógico.
+- Diagrama de Modelo Físico.
+- Scripts SQL de criação de tabelas.
+- Plano “B”: Diagramas em formato JPG ou PNG caso o seu projeto do Data Modeler não abra por aqui!
+<br><br>
+As informações que você precisa foram explanadas nas Fases 1 e 2, tudo o que falamos até agora PODE E DEVE SER USADO. Não se esqueça de suas entregas até aqui: tudo isso auxilia na criação do modelo de dados.
+<br><br>
+O exercício de “Quais informações são indispensáveis (e, portanto, obrigatórias) e qual delas são desejáveis (e, portanto, opcionais?)” é por sua conta, use seu senso crítico!
+<br><br>
+Não deixe de fazer uma boa normalização! Como resolver dados compostos e multivalorados? E outras situações que deixem os dados redundantes? Mitigue tudo isso!
+<br><br>
+“Fui além dos dados passados nas fases 1 e 2, fiz isso no protótipo de telas e fiz no modelo. Está errado?” Não necessariamente! Se você acredita que o dado coletado é pertinente ao negócio (Fintech), ótima contribuição! No entanto, relembramos: todas as entregas a partir daqui precisam contemplar seu escopo diferenciado. O projeto final deverá ser entregue funcionando com esses acréscimos! Como sempre digo: se você topar, nós topamos!
+<br><br>
+Não quer usar o Oracle SQL Developer Data Modeler? Não tem problema! Embora nossos materiais didáticos estejam baseados nele, existem outras ferramentas de mercado tão boas quanto que você pode usar! No entanto, seja qual for a ferramenta, pedimos que você sempre exporte o modelo em formato de imagem (como JPG ou PNG) porque seria inviável termos por aqui todas as ferramentas disponíveis.
+<br><br>
+Faça isso, mesmo que você use o Data Modeler. Repare que, ao salvar o projeto em Data Modeler, ele cria um arquivo.dmd e uma pasta com o mesmo nome de seu projeto. Precisamos de um ZIP com tudo isso! Apenas o arquivo.dmd NÃO GARANTE A VISUALIZAÇÃO DO PROJETO. Compacte em ZIP e mande-nos tudo! Repetimos, aproveite e gere JPG ou PNG (a ferramenta gera facilmente) para usarmos como “plano B”. Combinado?
+<br><br>
+Muito bem! Excelente atividade para você e, qualquer dúvida, estamos por aqui, ok?
+<br>
+
+---
+
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
