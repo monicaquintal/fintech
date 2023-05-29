@@ -246,4 +246,108 @@ Em relação às afirmações acima, assinale a alternativa correta:
 
 ---
 
+## CHALLENGE BRQ
+
+### DESAFIO
+<br>
+No início de 2023 a BRQ Digital Solutions fez seu primeiro investimento do ano, a companhia injetou R$ 1,3 milhão na Easy Carros, que ajuda pequenas e médias locadoras a serem mais competitivas e digitais.
+<br>
+O investimento foi feito por meio do Innovation Hub, centro de inovação da BRQ criado em 2016 para acelerar a inovação de clientes e áreas de negócios a partir de aportes, parcerias e intraempreendedorismo. O foco do centro de inovação está em empresas B2B e software as a service (SaaS) que já têm clientes, mas estão no estágio seed, com uma atenção especial para as fintechs e insurtechs. Mais detalhes em https://startups.com.br/noticias/brq-investe-r-13-mi-em-plataforma-para-locadoras-de-carros/.
+<br>
+Com isso, a BRQ desafia os alunos do curso de Análise e Desenvolvimento de Sistemas a criar uma solução com o objetivo de reconstruir projetos para o mercado de locadoras de veículos.
+<br>
+
+### Primeiro Semestre
+
+- Definições: Identificar os requisitos funcionais e não funcionais da plataforma.
+- Protótipo: Criar um protótipo da plataforma e apresentar como será a arquitetura do sistema.
+- Conceitualização: Apresentar uma descrição detalhada do sistema, incluindo a tecnologia utilizada, o modelo de negócios, o público-alvo, a proposta de valor, o fluxo de trabalho etc.
+- Modelagem: Modelagem das entidades e relacionamentos da plataforma.
+
+### ENTREGA
+
+Uma pasta compactada com:
+<br>
+
+- Apresentação (ppt ou pdf).
+- Requisitos funcionais e não funcionais.
+- Descrição detalhada do sistema, tecnologia utilizada, o modelo de negócios, o público-alvo, a proposta de valor, o fluxo de trabalho etc.
+- Pasta Compactada com o protótipo da solução (Figma ou outra ferramenta).
+- PDF ou imagem com do modelo de dados (MER).
+
+Importante: Por se tratar de uma entrega referente ao Challenge, não será possível fazer a entrega posterior com o prazo de três dias valendo 70% da nota.
+<br>
+A equipe será configurada na plataforma no momento de entrega do projeto.
+
+---
+
+## GLOBAL SOLUTION 1º SEMESTRE
+
+### IAs generativas, Inovação e Tecnologia ajudando a solucionar os problemas da Fome mundial e da escassez de alimentos, promovendo a agricultura sustentável. 
+
+A fome mundial e a escassez de alimentos são problemas complexos e urgentes que afetam milhões de pessoas em todo o mundo. A ONU, em seu conjunto de Objetivos de Desenvolvimento Sustentável (ODS), inclui o ODS 2, Fome Zero e Agricultura Sustentável como metas para erradicar a fome e promover sistemas agrícolas sustentáveis até 2030.
+<br>
+Fatos sobre a Fome:
+<br>
+
+- Em 2020, entre 720 milhões e 811 milhões de pessoas em todo o mundo estavam sofrendo de fome, cerca de 161 milhões a mais do que em 2019.
+- Também em 2020 impressionantes 2,4 bilhões de pessoas, ou mais de 30% da população mundial, estavam moderada ou severamente inseguras alimentarmente, isto é, sem acesso regular a alimentos adequados.
+- Globalmente, 149,2 milhões de crianças com menos de 5 anos de idade, ou 22,0% do total, estavam sofrendo de retardo de crescimento (nanismo - baixa estatura para a idade) em 2020.
+- Para alcançar a meta de uma redução de 5% no número de crianças com retardo de crescimento até 2025, a taxa atual de declínio anual - 2,1% - deve dobrar para 3,9%.
+- Em 2020, a caquexia (baixo peso para a estatura) afetou 45,4 milhões ou 6,7% das crianças com menos de 5 anos de idade.
+- A parcela de países sobrecarregados por preços elevados de alimentos, que havia sido relativamente estável desde 2016, aumentou drasticamente de 16% em 2019 para 47% em 2020.
+<br>
+As metas da ODS2 são:
+<br>
+
+- Até 2030 acabar com a fome e garantir o acesso de todas as pessoas, em particular os pobres e pessoas em situações vulneráveis, incluindo crianças, a alimentos seguros, nutritivos e suficientes durante todo o ano.
+- Até 2030 acabar com todas as formas de má-nutrição, incluindo atingir até 2025 as metas acordadas internacionalmente sobre nanismo e caquexia em crianças menores de cinco anos de idade, e atender às necessidades nutricionais dos adolescentes, mulheres grávidas e lactantes e pessoas idosas.
+- Até 2030 dobrar a produtividade agrícola e a renda dos pequenos produtores de alimentos, particularmente das mulheres, povos indígenas, agricultores familiares, pastores e pescadores, inclusive por meio de acesso seguro e igual à terra, outros recursos produtivos e insumos, conhecimento, serviços financeiros, mercados e oportunidades de agregação de valor e de emprego não agrícola.
+- Até 2030 garantir sistemas sustentáveis de produção de alimentos e implementar práticas agrícolas resilientes, que aumentem a produtividade e a produção, que ajudem a manter os ecossistemas, que fortaleçam a capacidade de adaptação às mudanças climáticas, às condições meteorológicas extremas, secas, inundações e outros desastres, e que melhorem progressivamente a qualidade da terra e do solo.
+- Até 2030, manter a diversidade genética de sementes, plantas cultivadas, animais de criação e domesticados e suas respectivas espécies selvagens, inclusive por meio de bancos de sementes e plantas diversificados e bem geridos em nível nacional, regional e internacional, e garantir o acesso e a repartição justa e equitativa dos benefícios decorrentes da utilização dos recursos genéticos e conhecimentos tradicionais associados, como acordado internacionalmente.
+<br>
+As IAs generativas são tecnologias promissoras que podem ajudar a solucionar esses problemas. Essas IAs são capazes de gerar imagens, texto e até mesmo som de forma autônoma, com base em um conjunto de dados de entrada.
+<br>
+Na agricultura, as IAs generativas podem ser utilizadas para criar modelos de cultivo mais eficientes e sustentáveis, permitindo o cultivo de alimentos em áreas antes consideradas inadequadas para a agricultura. Por exemplo, as IAs podem ser usadas para prever condições climáticas e de solo, a fim de melhorar o manejo do cultivo e reduzir o desperdício de água e outros recursos naturais.
+<br>
+Além disso, as IAs generativas também podem ser usadas para ajudar a resolver problemas de segurança alimentar em regiões remotas ou de difícil acesso, por meio da criação de modelos de agricultura vertical, aquaponia e hidroponia, que podem ser utilizados para cultivar alimentos em ambientes fechados e controlados, com eficiência e produtividade.
+<br>
+A tecnologia e a inovação também podem ajudar a melhorar a distribuição de alimentos, desde a colheita até a entrega aos consumidores. As IAs generativas podem ser usadas para criar modelos de logística eficientes, reduzindo o desperdício de alimentos e os custos de transporte.
+<br>
+As IAs generativas têm um enorme potencial para ajudar a solucionar os problemas da fome mundial e da escassez de alimentos, promovendo a agricultura sustentável. Combinadas com outras tecnologias e inovações, podem ajudar a alcançar o ODS 2 da ONU e garantir um futuro alimentar sustentável para todos.
+<br>
+A FIAP uniu-se a Kraft Heinz, Microsoft e a Ong Caça-Fome para, por meio da tecnologia, promover ações para reduzir a fome global, a escassez de alimentos e promover a agricultura sustentável.
+<br>
+
+### Desafio: A tecnologia e a inovação têm um papel fundamental a desempenhar no combate à fome mundial e à escassez de alimentos. Você e seu time tem o desafio de desenvolver uma solução em software que interaja com uma IA generativa. Analise as metas da ODS2 e encontre uma solução inovadora e que permita alcançar alguma meta.
+<br>
+Tarefas: Estruture uma apresentação com os itens abaixo e grave um pitch de 3 minutos:
+<br>
+
+- Qual o problema será resolvido pela solução?
+- Explique como funciona a solução.
+- Apresente um protótipo da solução.
+- Modelagem de dados da solução. 
+- Como será a interação com a IA generativa.
+<br>
+Na apresentação insira o nome completo de cada aluno e o rm.
+<br>
+ENTREGA: UMA PASTA COM A APRESENTAÇÃO E O VÍDEO.
+<br>
+
+### DICAS PARA O PITCH
+<br>
+SEJA CLARO E OBJETIVO
+<br>
+Adotar uma linguagem objetiva é chave para o sucesso de um pitch. Afinal, é importante lembrar que você conta com pouco tempo para passar uma quantidade razoável de informações. Dito isso, de nada adianta preencher o tempo com dados complexos, já que isso vai dificultar a assimilação por parte da audiência.
+<br>
+A dica é focar exclusivamente o que seu público mais precisa entender para que você alcance seu objetivo.
+<br>
+
+### EXPLIQUE O PROBLEMA E SUA SOLUÇÃO
+<br>
+Por mais curta e objetiva que seja a apresentação, é fundamental encontrar espaço para explicar o problema que sua empresa busca resolver e como ela pretende fazer isso. Nesse momento, é crucial que você tenha conhecimento sobre o assunto, já que, sem isso, será difícil passar a confiança tão buscada por investidores.
+
+---
+
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
