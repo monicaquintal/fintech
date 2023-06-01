@@ -53,6 +53,12 @@ Quinta fase | Aprox. 40 dias | A documentação de projeto avançará com a part
 Sexta fase | Aprox. 30 dias | Desenvolvimento da camada model, mais próximo ao banco de dados (Oracle), com construção e manipulação dos dados.
 Sétima fase | ? | Integração da solução, unindo camadas view e model e tornando a solução funcional; testes de software deverão ser realizados e o projeto chegará à sua conclusão.
 
+<br>
+<div align="center">
+<img src="../assets/imagens-fase01/fases-fintech.png" width="60%">
+</div>
+<br>
+
 **Importante:** ao longo das etapas, também será desenvolvido um chatbot.
 
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
