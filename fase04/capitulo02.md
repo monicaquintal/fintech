@@ -98,4 +98,50 @@ Observações:
 - **www.fiap.com.br**: nome de domínio, que será traduzido por um servidor de DNS para o endereço de IP do servidor onde está instalado o site da FIAP.
 - **/graduacao**: subdiretório que fica dentro do domínio principal, onde se encontram informações sobre os cursos de graduação da Fiap.
 
-- para o usuário acessar o  serviço  WWW,  é  necessário  a  utilização  de  um programa-cliente,denominado browserou navegador.Nele,é possível inserir a URL da  página  que  queremos  acessar
+- para o usuário acessar o serviço WWW, é necessária utilização de um programa-cliente: `browser ou navegador`.
+  - permite inserir a URL da página que deseja acessar.
+  - o browser recebe as informações, interpreta e exibe a página HTML.
+  - há diversos browsers disponíveis gratuitamente, como Microsoft Edge, Mozilla Firefox, Google Chrome, Opera etc.
+  - passos para acessar uma página web:
+    - usuário insere no browser a URL da página que deseja acessar.
+    - o nome de domínio é traduzido para o endereço de IP do servidor.
+    - com o endereço de IP, o browser envia uma requisição HTTP para o servidor. 
+    - o servidor processa a requisição e envia uma resposta HTTP com as informações da página HTML. 
+    - o browser recebe a resposta, interpreta o documento HTML e mostra a página para o usuário.
+
+## 2.2 FTP – Protocolo de Transferência de Arquivos
+
+- é o serviço-padrão da Internet para transferência de arquivos entre computadores. 
+- seu funcionamento se baseia no estabelecimento de uma comunicação entre o cliente FTP e o servidor FTP remoto, tornando possível navegar na estrutura de diretórios do servidor FTP e executar comandos para a manipulação de diretórios e arquivos.
+
+## 2.3 E-Mail – Serviços de correio eletrônico
+
+- tem por objetivo a comunicação e troca de dados entre computadores.
+- o funcionamento tem como base um endereço conhecido como e-mail address ou endereço de correio eletrônico (usuario@dominio).
+- esses serviços são baseados nos protocolos POP3, IMAP e SMTP, que estão presentes também na camada de aplicação e são utilizados para enviar e receber as mensagens dos servidores de e-mail.
+  - há vários outros, como Telnet: para execução remota de aplicações e o Network News que permite a disponibilização e recebimento de informações agrupadas por categorias.
+
+### Recursos da Internet que mudaram o estilo de vida das pessoas:
+
+- ambiente de acesso remoto.
+- transmissão de mídia.
+- voz sobre IP (VoIP).
+
+## 2.4 W3C (World Wide Web Consortium) e Web Standards
+
+- criada em 1994.
+- trata-se de uma organização internacional formada por empresas, instituições, pesquisadores e desenvolvedores. 
+- cria normas e especificações aplicáveis aos diversos segmentos e setores da web (chamados de `Padrões Web ou Web Standards`), [disponíveis aqui](https://www.w3.org/).
+
+> Web Standards é um conjunto de normas, diretrizes, recomendações, notas, artigos, tutoriais e afins de caráter técnico produzidos pelo W3C e destinados a orientar fabricantes, desenvolvedores e projetistas para o uso de práticas que possibilitem a criação de uma Web acessível a todos, independentemente dos dispositivos usados ou de suas necessidades especiais.
+
+- benefícios de utilizar os padrões:
+  - as páginas que seguem padrões web terão grande visibilidade nos resultados de busca da web.
+  - a acessibilidade permite acesso de todas as pessoas. 
+    - podem utilizar browsers de voz, que leem documentos para pessoas com deficiência visual. 
+    - além de seguirem padrões que permitem que os usuários com Internet de baixa velocidade ou que utilizam browsers portáteis com dispositivos de telas pequenas possam usar os sites normalmente.
+
+<div align="center">
+<h2>3. DESENVOLVIMENTO EM CAMADAS</h2>
+</div>
+
