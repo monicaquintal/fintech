@@ -233,7 +233,7 @@
   - identificar as seções com os ids desejados.
   - na tag &lt;a&gt;,o atributo href deverá receber como valor o sinal de hashtag (#), seguido do id da seção que queremos acessar com aquele link.
 
-### [Aplicando os conceitos](./projetos/projeto2/)
+### [Aplicando os conceitos](./projetos/projeto2/pages/index.html)
 
 
 ---
