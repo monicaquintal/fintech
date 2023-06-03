@@ -39,7 +39,7 @@
 
 ## 1.5 Criando o arquivo index
 
-- por padrão, a página principal do site deverá ser chamada de [index.html](./projetos/pages/index.html).
+- por padrão, a página principal do site deverá ser chamada de [index.html](./projetos/projeto1/pages/index.html).
 - digitar ponto de exclamação (!) e pressionar ENTER.
   - o editor possui uma extensão nativa chamada `Emmet`, que possui muitos atalhos para criação de estruturas HTML.
 
@@ -61,6 +61,7 @@
 
 ### 1. &lt;!DOCTYPE html&gt;:
 - primeira linha do código.
+- normativa, tipo de HTML que há no código.
 - indica ao browser qual especificação de código HTML estará na página.
 
 ### 2. &lt;html lang="en"&gt;:
@@ -110,3 +111,145 @@
 <h2>2. TAGS INICIAIS</h2>
 </div>
 
+## 2.1 Comentários em HTML
+
+- são informações que podem ser inseridas em seu código para explicar o que significa uma determinada linha ou até mesmo um bloco de comandos.
+- as linhas comentadas não serão exibidas pelo navegador, apenas no código.
+- não exagerar na quantidade de comentários, podem deixar o código poluído.
+
+~~~html
+<!--comentário -->
+~~~
+
+## 2.2 Headings (h) – Cabeçalhos HTML
+
+- são os cabeçalhos de títulos.
+- há seis níveis possíveis (1 a 6).
+  - o maior título possível é o &lt;h1&gt;&lt;/h1&gt; e o menor é o &lt;h6&gt;&lt;/h6&gt;.
+- boas práticas:
+  - usar apenas um único elemento &lt;h1&gt; em cada página, e conter o assunto principal ou título.
+  - seguir a ordem numérica para manter a organização (título principal, subtítulo, tópicos do subtítulo, etc).
+
+## 2.3 Visualizando o código no browser
+
+- salvar com ctrl + S (ou ativar opção Auto Save, localizada no menu File).
+- opções:
+  - duplo clique em index.html.
+  - extensão Live Server (ALT+L ALT+O).
+
+## Criando parágrafos
+
+- tag &lt;p&gt;&lt;/p&gt; (paragraph).
+- não existe limite para o número de palavras.
+- a tag p deverá ser fechada.
+- observação:
+  - o VS Code possui recurso de simulação de texto através do Emmet, gerando texto Lorem ipsum (digitar lorem e pressionar Enter).
+  - caso queira um número definido de palavras, digitar lorem e o número de palavras desejado.
+
+## 2.5 Inserindo Imagens
+
+- tag &lt;img&gt;.
+- é uma tag vazia (não existe fechamento).
+- atributos:
+  - ***src***: 
+    - indica o caminho da imagem, local onde o arquivo está armazenado.
+  - ***alt***:
+    - insere um pequeno texto que descreve a imagem, e será exibido caso a imagem não seja carregada pelo navegador.
+    - ajuda na acessibilidade a pessoas que tenham deficiência visual e façam uso de leitores de tela. 
+    - o uso do atributo alt é uma boa prática!
+  - ***title***:
+    - texto que será quando posicionar o ponteiro do mouse sobre a imagem. 
+    - não é exclusivo para as imagens, praticamente todos os elementos HTML podem usar.
+    - na maioria das vezes o valor atribuído é o mesmo utilizado no alt.
+
+> [Primeiro site criado no mundo!](http://info.cern.ch/hypertext/WWW/TheProject.html)
+
+## 2.6 Listas
+
+- há três tipos de listas:
+  - listas ordenadas.
+  - listas não ordenadas.
+  - listas de definição.
+- podemos inserir uma lista dentro de outra lista, conhecidas como listas aninhadas.
+
+### 2.6.1 Lista ordenada
+
+- criada com o uso da tag &lt;ol&gt;&lt;/ol&gt;.
+- cada item da lista deverá estar dentro da tag &lt;li&gt;&lt;/li&gt;.
+
+### 2.6.2 Lista não ordenada
+
+- criada com o uso da tag &lt;ul&gt;&lt;/ul&gt;.
+- cada item da lista deverá estar dentro da tag &lt;li&gt;&lt;/li&gt;.
+
+### 2.6.3 Lista de definição
+
+- permite a criação de um conjunto de palavrase as suas respectivas definições.
+- deve ser criada com o uso da tag &lt;dl&gt;&lt;/dl&gt;.
+- cada palavra da lista a ser definida deverá estar dentro da tag &lt;dt&gt;&lt;/dt&gt;. 
+- a definição da palavra deverá estar dentro da tag&lt;dd&gt;&lt;/dd&gt;.
+
+## 2.6.4 Lista aninhada
+
+- montar uma nova lista dentro de um elemento &lt;li&gt; para criar uma lista aninhada (lista dentro de outra lista).
+- os navegadores colocam um recuo maior para a lista interna além de modificar o estilo do seu marcador.
+
+## 2.7 Links
+
+- permitem navegação entre documentos.
+- tag &lt;a&gt;Link&lt;/a&gt;, e pode possuir qualquer conteúdo entre abertura e fechamento.
+- utilizar o ***atributo href***, que deve receber como valor o endereço do conteúdo.
+
+### 2.7.1 Links para outros sites – links externos
+
+- o atributo href deve receber o endereço completo do site desejado (chamada url absoluta).
+
+### 2.7.2 Links para páginas no mesmo site – links internos
+
+- definir o endereço do arquivo HTML desejado no atributo href da tag &lt;a&gt;.
+
+### 2.7.3 Abrindo links em novas abas
+
+- sempre que clicamos em um link, o comportamento padrão é ser aberto na mesma aba do navegador que você está usando. 
+- podemos usar na tag &lt;a&gt; o atributo ***target="_blank"***, que permite que o link seja aberto em uma nova aba!
+- esse recurso pode ser usado tanto para links internos quanto externos. 
+
+### 2.7.4 Link para números de telefone
+
+- se o usuário estiver usando um smartphone, a ligação será realizada automaticamente. 
+- caso esteja utilizando um notebook ou desktop, poderá fazer a sincronização dos dispositivos para realizar a chamada.
+- colocar no atributo href o valor tel: seguido do código DDD da cidade e o número do telefone!
+
+### 2.7.5 Link para download de arquivos
+
+- colocar no atributo href o endereço do arquivo que será baixado pelo usuário, depois inserir o atributo download.
+
+### 2.7.6 Link para seções na mesma página
+
+- utilizar o `atributo id`, que corresponde a um identificador que qualquer elemento HTML pode utilizar (inclusive usamos esse atributo em linguagens como a CSS e o Javascript).
+- atribur o valor do id para o elemento HTML desejado.
+- em nenhuma circunstância podemos ter dois ou mais elementos com o mesmo id.
+- para criar os links para as seções:
+  - identificar as seções com os ids desejados.
+  - na tag &lt;a&gt;,o atributo href deverá receber como valor o sinal de hashtag (#), seguido do id da seção que queremos acessar com aquele link.
+
+<div align="center">
+<h2>Laboratório</h2>
+</div>
+
+---
+
+## FAST TEST
+
+### 1. A principal forma de interação, no que diz respeito à entrada de dados, são os formulários. Identifique uma tag que NÃO faz parte do formulário.
+> Tableless.
+
+### 2. Pensando na linguagem HTML, qual destas afirmações é FALSA?
+> A tag &lt;head&gt; é a primeira tag de um documento, colocada antes mesmo da tag &lt;html&gt;.
+
+### 3. Identifique a tag que está INCORRETA:
+> A tag &lt;script&gt; é utilizada para inserir comandos e efeitos especiais na página.
+
+--- 
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
