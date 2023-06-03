@@ -145,3 +145,123 @@ Observações:
 <h2>3. DESENVOLVIMENTO EM CAMADAS</h2>
 </div>
 
+Camada | Linguagem | Função
+:-------:|:------------:|-------
+Conteúdo | HTML | Inserir conteúdo
+Apresentação | CSS | Formatação de conteúdo
+Comportamento | JavaScript | Adicionar interação ao usuário
+
+### Benefícios do desenvolvimento web em camadas:
+
+- Reaproveitamento de Código.
+- Organização da equipe.
+- Limpeza do Código.
+
+## 3.1 Conceito de Front-End
+
+- é tudo aquilo que é exibido no navegador, ou seja, todo o conteúdo visual (informações, textos, imagens, menus, formulários).
+- deve ser bonito, organizado, agradável e causar um impacto positivo ao internauta assim que o site for carregado.
+
+### O desenvolvedor front-end:
+- o desenvolvedor front-end é o responsável pela criação da interface gráfica da página.
+- além de HTML, CSS e JS, há outras tecnologias que podem ser utilizadas para montar a aplicação, de acordo com necessidade e complexidade do projeto.
+  - BootStrap, Foundation, Tailwind, Materialize, Angular, Vue, Node e React.
+- estudar sobre conceitos de design, User Experience (UX), User Interface (UI) e acessibilidade.
+- ter noções sobre ferramentas de prototipação como o [Figma](http://www.figma.com) ou [Adobe XD](https://www.adobe.com/br/products/xd.html) pode ser um diferencial.
+- aprimorar soft skills: empatia, comunicação, trabalho em equipe, organização etc.
+
+## 3.2 Sites e sistemas web 
+
+> Não existe uma definição exata para diferenciar sites de aplicações web; os dois estão disponíveis na Internet e podem ser utilizados por meio de dispositivos que possuam um navegador (browser).
+
+- algumas definições possíveis para diferenciação:
+  - sites apenas fornecem conteúdo e aplicações web podem fornecer e/ou receber informações.
+  - aplicações web são mais interativas, com a entrada de informações para oseu processamento; e os sites são menos interativos.
+  - se o objetivo é divulgar informações de uma empresa, produtos ou um  determinado assunto, o termo é site. Se o propósito é criar uma ferramenta para controlar as atividades, seja de uma organização ou pessoal, utiliza-se o termo aplicação web.
+
+- em geral:
+  - sites necessitam de uma interface mais atrativa, pois estão normalmente divulgando alguma ideia ou informação.
+  - aplicações web se preocupam em atingir o objetivo funcional para o qual foram desenvolvidas, utilizando também uma interface com usabilidade, ou seja, fácil de ser utilizada e compreendida.
+
+<div align="center">
+<h2>4. SOFTWARES NECESSÁRIOS</h2>
+</div>
+
+## 4.1 Navegadores - browsers
+
+- o browser mais utilizado no mundo entre agosto de 2021 e agosto de 2022 foi o Chrome.
+
+## 4.2 Editor de Código 
+
+- VS Code:
+  - multiplataforma.
+  - open source.
+  - grande variedade de extensões.
+  - leve, e da suporte a diversas linguagens.
+
+### 4.2.1 Principais atalhos
+
+VSCode –Principais atalhos
+Atalho | Função
+-------|--------
+Ctrl + O | Abrir um arquivo
+Ctrl + Shift + P | Exibir todos os comandos
+Ctrl + + | Aumentar zoom
+Ctrl + - | Diminuir zoom
+Ctrl + 0 | Voltar ao zoom padrão
+Ctrl + , (Vírgula) | Abre o painel de configurações
+Ctrl + Alt + Setas para Cima/Baixo | Insere múltiplos cursores, assim o que você digitar será aplicado em todas as linhas
+Alt + Click | Insere novo cursor em cada linha clicada, ideal para fazer a mesma alteração em partes diferentes do código
+CTRL + F2 Ou CTRL + SHIFT + L | Quando você selecionar algo e pressionar o atalho, irá inserir múltiplos cursores em todas as ocorrências iguais à seleção
+Alt + Shift + F | Indentação automática – formata todo o documento
+Alt + Setas | Mover a linha ou bloco de código onde o cursor está posicionado
+Ctrl + Shift + K | Apagar a linha onde o cursor está posicionado
+Ctrl + K + C, Ctrl + ;(Ponto e Vírgula) | Comentar a linha onde o cursor está posicionado
+Ctrl + B | Exibir / ocultar a barra lateral – sidebar
+Ctrl + S | Salvar documentos
+Ctrl + G | Navegar entre linhas do código
+Ctrl + Shift + E | Exibir o explorer
+Alt + Shift + Setas | Duplica a linha onde está o cursor, para cima ou para baixo
+Ctrl + Barra de Espaço | Abre o intelisense 
+Ctrl + ] (Fecha Colchetes) | Dividir a tela
+Shift + Alt + A | Comentar linha ou bloco de linhas selecionadas
+Ctrl + K + S | Lista contendo todos os atalhos
+
+### 4.2.2 Extensões úteis
+
+1. Live Server
+- servidor virtual para testar projetos web.
+- quando alterar algum conteúdo no código e fizer a gravação, se a extensão estiver ativada ela automaticamente atualizará a página, mostrando a alteração executada.
+
+2. Auto Rename Tag
+- renomeia automaticamente uma tag dentro do código HTML.
+
+3. Material Icon Theme
+- associa um ícone a um arquivo conforme a extensão definida no momento que em que foi criado. 
+- facilita o reconhecimento visual do tipo de arquivo.
+
+4. Atom One Dark Theme e Dracula Official
+- aplicam novos padrões de cores e fontes para seu editor.
+
+5. Indent-rainbow
+- adicionará cores à indentação do código, facilitando a visualização dos blocos de comandos existentes.
+
+6. Color Highlight
+- quando digitar no editor o código de alguma cor, terá a visualização da cor correspondente.
+
+---
+
+## FAST TEST
+
+### 1. Pensando em desenvolvimento em camadas, qual destas afirmações é FALSA?
+> O desenvolvimento em camadas não permite que eu trabalhe com reaproveitamento de código.
+
+### 2. A comunicação entre as redes espalhadas por todo o mundo só é possível por meio do uso conjunto de protocolos. Quais são os protocolos que permitem essa comunicação?
+> TCP/IP.
+
+### 3. As autoestradas da internet são conhecidas como backbones. Em relação a isso, qual destas afirmações é FALSA?
+> Para constituir a internet, vários backbones estão interligados e encontram-se hierarquicamente divididos nos backbones nacionais.
+
+--- 
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
