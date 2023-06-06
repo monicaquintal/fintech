@@ -86,7 +86,7 @@
 [Capítulo 02: Internet: Como tudo começou.](./fase04/capitulo02.md)<br>
 [Capítulo 03: HTML - Falando a língua da internet.](./fase04/capitulo03.md)<br>
 [Capítulo 04: Aplicando algum estilo.](./fase04/capitulo04.md)<br>
-[Capítulo 05:]()<br>
+[Capítulo 05: Organizando e posicionando seu HTML.](./fase04/capitulo05.md)<br>
 [Capítulo 06:]()<br>
 [Capítulo 07:]()<br>
 [Capítulo 08:]()<br>
