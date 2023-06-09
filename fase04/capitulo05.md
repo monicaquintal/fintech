@@ -342,3 +342,231 @@ ul ~ p {
 - portanto, podemos substituir a tag &lt;td&gt; pela tag &lt;th&gt;.
   - essa tag deixará o nome da coluna centralizado e com estilo negrito.
   - a principal diferença será a **acessibilidade** para pessoas com leitores de tela: ele informará o que significa cada uma das colunas!
+
+## 3.6 Agrupando elementos na tabela
+
+- o conteúdo da tabela pode ser divido em cabeçalho, corpo e rodapé. 
+- a divisão não é obrigatória, mas ajuda a organizar os dados da tabela e contribui para formatação CSS. 
+- tags: &lt;thead&gt;, &lt;tbody&gt; e &lt;tfoot&gt;.
+
+### 3.6.1 Tag thead
+
+- após o uso da tag &lt;caption&gt;, criar o cabeçalho da tabela utilizando a tag &lt;thead&gt;.
+- serve para identificar a primeira linha da tabela, que provavelmente terá os nomes de cada coluna de dados. 
+- em tabelas muito grandes, que forem impressas, essa linha sempre será repetida no início de uma nova página, facilitando a identificação dos dados apresentados.
+
+### 3.6.2 Tag tbody
+
+- o elemento &lt;tbody&gt; consiste no corpo da tabela, onde são inseridas as informações nas linhas e colunas de dados.
+- permite a organização dos dados, agrupando-os em uma área específica da tabela.
+
+### 3.6.3 Tag tfoot
+
+- a tag &lt;tfoot&gt; representa a linha de rodapé da tabela. 
+- o uso é opcional.
+- na maioria das vezes, o &lt;tfoot&gt; é usado como uma linha para alguma observação sobre os dados: um comentário, marca de rodapé etc.
+
+## 3.7 Mesclando linhas e colunas
+
+### 3.7.1 Atributo colspan
+
+- define o número de colunas que devem ser mescladas. 
+- basta inserir na primeira &lt;td&gt; da linha, o atributo colspan com o número de colunas que desejamos mesclar.
+
+### 3.7.2 Atributo rowspan
+
+- define o número de linhas que devem ser mescladas.
+- inserir na primeira &lt;td&gt; o atributo rowspan,seguido do número de linhas que deseja mesclar.
+
+## 3.8 Criando e estilizando uma tabela
+
+> Exemplo da aplicação do conteúdo aqui: [HTML](./projetos/projeto4/pages/index.html) e [CSS](./projetos/projeto4/css/style.css).
+
+<div align="center">
+<h2>4. VARIÁVEIS – UNIDADES DE MEDIDA – ÍCONES</h2>
+</div>
+
+## 4.1 Variáveis CSS
+
+- objetivos:
+  - melhorar as declarações de algumas regras.
+  - facilitar o desenvolvimento (caso sejam necessárias alterações).
+  - facilitar a reutilização de estilos.
+- para criar uma variável, basta definir um nome e atribuir um valor.
+
+### 4.1.1 Escopo das variáveis
+
+- define a abrangência das variáveis (onde podem ser acessadas).
+- as variáveis CSS podem ser declaradas em qualquer seletor CSS e possuem os seguintes tipos de escopo:
+  - escopo local: 
+    - só podem ser usadas pelos elementos dentro do seletor onde elas foram declaradas.
+  - escopo global: 
+    - podem ser usadas por todos os elementos do documento.
+    - é a forma mais comum de declaração.
+
+### 4.1.2 Declarando variáveis
+
+- declarar a variável dentro do seletor no qual ela será usada. 
+- apenas os descendentes desse seletor terão acesso à essas variáveis.O
+
+> Os nomes das variáveis devem `iniciar com dois hifens (--)`, seguido do `nome desejado` e do `valor`. 
+
+- para usar a variável, basta chamá-la dentro dos elementos que a utilizarão, utilizando a `função var()`.
+  - nomes de variáveis são ***case sensitive***.
+
+> Quando declara-se as variáveis dentro do :root, elas tem o escopo global, ou seja, todos os elementos da página podem ter acesso a essa variável.
+
+### 4.1.3 Usando fallback 
+
+- podemos usar um valor de fallback na chamada das variáveis. 
+- caso aconteça algum erro e a variável não seja acessada, o valor definido como fallback será utilizado no lugar do valor declarado na variável.
+
+### 4.1.4 Escopo local x escopo global 
+
+- caso crie uma variável global e depois faça uma nova declaração de uma variável local utilizando o mesmo nome atribuído à global, a formatação que será aplicada será a da variável local.
+
+## 4.2 Unidades de medida CSS 
+
+### 4.2.1 Pixel – px
+
+- unidade de medida mais comum no desenvolvimento web.
+- é uma medida fixa: quando definimos um valor em pixels, esse valor não mudará, independente do dispositivo usado para acesso.
+
+### 4.2.2 Porcentagem – % 
+
+- é uma unidade de medida relativa, que fará os cálculos dos tamanhos dos elementos baseado no seu elemento pai.
+- caso o elemento Pai seja um container, é melhor definir a largura usando porcentagem, pois o container sempre será proporcional ao tamanho da tela, evitando que seja gerada a barra de rolagem horizontal.
+
+### 4.2.3 VW e VH
+
+- utiliza o viewport (área que o dispositivo possui para exibir o conteúdo) do dispositivo que o usuário está usando para acessar a aplicação, por isso o uso da letra “v”. 
+  - a largura é representada pela letra “w” (width).
+  - a altura é representada pela letra “h” (height).
+- para usar o viewport como referência, o browser fará uma pequena conversão: se definir que o container terá 100vw ou 100vh, o browser entenderá que esse container ocupará 100% da largura e da altura do viewport. 
+- como se baseiam pela largura e altura do viewport, o container vai se ajustar em todos os dispositivos. 
+- não esquecer de inserir a meta tag viewport na seção &lt;head&gt; da página, pois será ela a responsável por detectar o tamanho do viewport do dispositivo.
+
+### 4.2.4 Vmin e Vmax
+
+- as unidades vmin e vmax utilizarão, respectivamente, o menor viewport e o maior viewport: o browser detectará esses dois valores e usará para definir os tamanhos.
+- exemplo: viewport de 1200px de altura e 700px de largura. 
+  - o viewport que será usado pelo vmin será o de 700px (é o menor), e o que será usado pelo vmax será o de 1200px (o maior).
+  - se fizermos uma declaração de 10vmin teremos 70px (10% do menor viewport), e se declararmos 10vmax teremos 120px (10% do maior viewport).
+
+### 4.2.5 EM 
+
+- suportada por praticamente todos os browsers.
+- amplamente usada na criação de layouts, até os responsivos. 
+- para que um novo valor seja definido, a unidade em usará o tamanho da fonte do elemento pai, que deverá ser em pixels, e multiplicará pelo valor atribuído aos filhos.
+- exemplo:
+
+~~~css
+.container { margin: 20px;
+  font-size: 16px; /* medida usada como referência */
+}
+
+.box-um {
+  margin: 10px;
+  font-size: 2em; /* 2 x 16px (da referência) = 32px */
+}
+
+.box-dois {
+  margin: 10px;
+  padding: 20px 10px;
+  font-size: 1em; /* 1 x 16px (da referência) = 16px */
+}
+~~~
+
+### 4.2.6 REM
+
+- é bem parecida com a medida em.
+- **porém**, ao invés de usar o tamanho da fonte do elemento pai, ela usará o tamanho da fonte do elemento root da página, ou seja, a tag <&lt;html&gt;.
+- com o uso da medida rem, não importa onde os containers estarão inseridos, sempre buscará o valor do elemento root.
+- ajuda nas manutenções, pois alterando o valor de apenas uma única propriedade, todos os valores com rem serão recalculados.
+
+## 4.3 Ícones
+
+- são muito comuns, e podem ajudar no visual deixando a informação mais clara ao usuário. 
+- muitas vezes são usados ícones para identificar as redes sociais, exemplificar alguma ação ou tarefa que o usuário pode realizar.
+- bibliotecas:
+  - [Boxicons](https://boxicons.com/)
+  - [Ionicons](https://ionic.io/ionicons)
+  - [Flaticon](https://www.flaticon.com/)
+  - [Iconfinder](https://www.iconfinder.com/)
+  - [Bootstrap Icons](https://icons.getbootstrap.com/)
+  - [Font Awesome](https://fontawesome.com)
+
+- no caso do Font Awesome, [este link](https://cdnjs.com/libraries/font-awesome) disponibiliza o endereço de algum servidor que tenha esses ícones, sem precisar realizar o cadastro.
+  - clicar no sinal de tag HTML (</>) para copiar o link, ir até a sua página e colar esse conteúdo dentro da tag head.
+
+<details>
+<summary>Tag &lt;link&gt; para colar no HTML abaixo:</summary>
+
+~~~html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+~~~
+
+</details>
+
+### 4.3.1 Inserindo ícones para as redes sociais
+
+- exemplo aqui: [HTML](./projetos/projeto4/pages/index.html) e [CSS](./projetos/projeto4/css/style.css).
+
+<div align="center">
+<h2>5. POSICIONANDO ELEMENTOS</h2>
+</div>
+
+- o CSS entende cada elemento HTML como uma caixa e, por padrão, todos se comportam de duas formas: em linha (**inline**) e em bloco (**block**).
+- a `propriedade display` permite controlar esse comportamento, e definirá como os containers serão montados e exibidos no navegador.
+- todas as tags possuem um modo de exibição, ou seja, um display com um valor definido.
+  - o objetivo é alterar essa propriedade para atingir o melhor resultado.
+
+## 5.1 Display inline
+
+- tags que possuem comportamento de exibição inline permitem que ***seus elementos fiquem posicionadas um ao lado do outro***, caso exista espaço suficiente.
+- outra característica importante é que os elementos que utilizam o display inline ***desconsideram valores definidos para largura e altura***, sendo seu tamanho definido pelo conteúdo.
+- é o padrão seguido por links &lt;a&gt;, imagens &lt;img&gt;.
+
+## 5.2 Display block
+
+- tags que possuem comportamento de exibição block ocupam todo o espaço da linha, não permitindo que outros conteúdos fiquem ao seu lado. 
+- são posicionados um abaixo do outro, conforme são inseridos no HTML.
+- é o padrão seguido por: containers &lt;div&gt;, parágrafos &lt;p&gt;, itens da lista &lt;li&gt;, etc.
+- quando utilizamos o display block, ***valores definidos para altura e largura serão respeitados pelo navegador*** e aplicados aos elementos.
+
+## 5.3 Display inline-block 
+
+- permite posicionar os elementos um ao lado (como é feito no display inline), e definir valores válidos para a largura e altura (como é feito no display block).
+
+## 5.4 Float
+
+- retira um elemento da sua posição original de inserção no HTML, fluxo normal de exibição, e posiciona-o ao lado direito ou esquerdo do seu container.
+- valores válidos:
+  - Right: indica que o elemento deve flutuar à direita do container.
+  - Left: indica que o elemento deve flutuar à esquerda do container.
+  - None: indica que o elemento não deve flutuar. É o valor padrão.
+
+## 5.5 Clear
+
+- quando usamos a propriedade float, os conteúdos que vierem logo após o elemento que recebe essa propriedade também flutuarão, caso exista espaço disponível.
+- para que o conteúdo não herde essa flutuação, podemos utilizar a propriedade clear no primeiro elemento logo após a tag que está recebendo a propriedade float, independente dela possuir valor left ou right. 
+- a propriedade clear aceita os valores:
+  - Left: limpa a flutuação à esquerda.
+  - Right: limpa a flutuação à direita.
+  - Both: limpa a flutuação tanto à esquerda quanto à direita.
+
+## 5.6 Flexbox (ou flex)
+
+- um conjunto de propriedades que possibilitam o alinhamento dos containers, criando layouts flexíveis.
+- a ideia é aplicar ao container principal (Pai) propriedades flexíveis que possibilitem o posicionamento dos containers internos (filhos). 
+- é uma das propriedades CSS mais usadas.
+- possui muitas propriedades que podem ser aplicadas tanto ao elemento pai quanto aos elementos filhos. 
+
+## 5.7 Aplicando flexbox 
+
+- para usar o Flexbox, precisamos transformar o elemento pai em um flex container, para isso ele receberá `propriedade display` com o `valor flex`. 
+  - por padrão, os filhos desse container ficarão alinhados um ao lado do outro.
+- os elementos filhos são definidos como flex itens.
+
+## 5.8 Flex-direction 
+

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&amp;family=Poppins&amp;display=swap');
+
+:root {
+  --color-light: #f6f6f6;
+  --color-blue: rgb(42, 67, 99);
+  --color-blue-alpha: rgba(42, 67, 99, .9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+table {
+  width: 80%;
+  margin: 10px auto;
+  border-collapse: collapse; /* junta as bordas da tabela, não permitindo que exista algum espaço entre as suas colunas*/
+  text-align: center;
+}
+caption {
+  font-size: 2rem;
+  color: var(--color-blue);
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+thead tr {
+  background: var(--color-blue);
+  color: #fff;
+}
+th, td {
+  width: 25%;
+  padding: 15px;
+}
+tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+tbody tr:nth-child(even) {
+  background: #f9f9f9; /* a tabela é exibida como se estivesse “zebrada”, facilitando a leitura do usuário */
+}
+tbody tr:last-child { /* usada para aplicar uma borda inferior */
+  border-bottom: 20px solid var(--color-blue);
+}
+tbody tr:hover {
+  font-weight: 900;
+  background-color: var(--color-blue-alpha);
+  color: #ffffff;
+  cursor: pointer;
+}
+tfoot {
+  font-weight: 700;
+}
+
+/* REDES SOCIAIS */
+
+h1 {
+  margin:30px 0;  
+  text-align: center;
+  color: #dc143c; 
+}
+
+.container {
+  width: 80%;
+  padding: 20px;
+  margin: 20px auto;
+  background-color: #F6F6F6;
+  text-align: center; 
+  border-radius: 5px;
+}
+.icon {
+  border: 1px solid #666;
+  padding:15px;
+  border-radius: 5px;
+  font-size: 35px;
+  margin: 0 20px;
+  color: #666;   
+  transition: .5s;}
+  
+.icon:hover {
+  background-color: #dc143c;
+  color: #fff;
+  border-color: transparent;}
