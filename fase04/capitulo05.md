@@ -184,3 +184,132 @@
 - todo elemento HTML pode fazer uso de **várias classes ao mesmo tempo**.
   - usar o atributo class, seguido do sinal de igualdade ( = ) e os nomes das classes desejadas.
   - é possível criar uma classe mais genérica para propriedades comuns, e classes mais específicas para definir características específicas de cada tag, por exemplo.
+
+## 2.3 Seletor * (asterisco)
+
+- aplicará a formatação a todos os elementos inseridos na página. 
+- o uso é comum quando queremos resetar alguns padrões que os navegadores aplicam aos elementos assim que a página é renderizada. 
+  - essa técnica é chamada de reset CSS.
+  - é possível acessar e usar o código original [clicando aqui](https://meyerweb.com/eric/tools/css/reset/), é domínio público!
+
+## 2.4 Seletor de descendência
+
+- quando deseja formatar um elemento que esteja dentro de outro (um descendente).
+- exemplo:
+
+~~~css
+/* formatar elementos <p> que estão em uma <div> */
+
+div p {
+  width: 300px;
+  height: 50px;
+}
+~~~
+
+## 2.5 Seletor adjacente
+
+- representado pelo sinal de adição ( + ).
+- pode ser usado quando deseja formatar o próximo elemento após o elemento citado.
+- exemplo:
+
+~~~css
+/* formatar o próximo elemento <p> após a tag <ul> */
+
+ul + p {
+  width: 300px;
+  height: 50px;
+}
+~~~
+
+## 2.6 Seletor irmão
+
+- representado pelo sinal de til ( ~ ).
+- usado quando deseja formatar todos os elementos após o elemento citado. 
+- exemplo:
+
+~~~css
+/* formatar todas as tags <p> após a tag <ul> */
+
+ul ~ p {
+  width: 300px;
+  height: 50px;
+}
+~~~
+
+## 2.7 Seletor de filhos diretos
+
+- representado pelo sinal de maior que ( > ).
+- usado quando deseja formatar apenas os descendentes diretos do elemento.
+- exemplo:
+
+~~~css
+/* formatar apenas as tags <p> descendentes diretos da classe container. */
+
+.container > p{
+  width: 300px;
+  height: 50px;
+}
+~~~
+
+## 2.8 Pseudo-classes
+
+- palavras-chave que podem ser colocadas ao lado do nome do seletor, e ajudarão na formatação do elemento conforme o estado dele.
+  - o estado pode ser alterado por fatores externos ou ações do usuário: quando o elemento é clicado, quando passa o mouse sobre, quando é selecionado etc.
+
+### 2.8.1 Pseudo-classe :hover
+
+- aplica uma formatação quando o mouse passar sobre algum elemento.
+- assim que o mouse sair, ele voltará o seu estado normal. 
+
+### 2.8.2 Pseudo-classe :nth-child
+
+- aplica uma formatação a um elemento conforme a sua posição dentro de um grupo.
+- além dos números que indicam as posições dos elementos, podemos também usar as `palavras-chave odd(ímpar) e even (par)` para aplicar formatações para elementos nessas posições. 
+
+### 2.8.3 Pseudo-classes :first-child e :last-child
+
+- aplica uma formatação ao primeiro e ao último elemento de um grupo.
+
+> Podemos também passar uma pequena expressão com um valor qualquer, e o navegador fará o cálculo e aplicará a formatação aos elementos encontrados.
+
+### 2.8.4 Pseudo-classe :not
+
+- declarar uma negação para que determinada regra não seja aplicada a um elemento.
+
+### 2.8.5 Pseudo-classe :is e :where
+
+- através da `pseudo-classe :is`, definir uma lista de seletores:
+  - a regra que for declarada será aplicada aos elementos que ele conseguir selecionar em seu HTML. 
+  - se a lista possuir algum elemento inválido, não teremos problema algum, pois esse elemento será descartado e a formatação aplicada aos demais elementos.
+- a pseudo-classe :is pode ser substituída pela `pseudo-classe: where`
+  - a grande diferença entre as duas é a ***especificidade***.
+  - com o :where a especificidade sempre será 0 (zero), já o :is assumirá a maior especificidade dos seletores declarados na lista.
+
+### 2.8.6 Pseudo-classe :has
+
+- permite verificar se um determinado seletor existe dentro de um elemento pai.
+
+## 2.9 Pseudo-elementos
+
+- são palavras-chave que podem ser adicionadas a qualquer seletor CSS, permitindo a formatação de uma parte específica do elemento referenciado. 
+- importante: 
+  - colocar o sinal de dois pontos duas vezes ( :: ) irá distinguir os pseudos elementos de pseudos classes.
+  - usar apenas um pseudo-elemento em cada seletor.
+  - há alguns pseudos elementos que não são bem suportados pelos navegadores, podendo [consultar aqui](https://caniuse.com/).
+
+### 2.9.1 Pseudo-elemento ::first-line
+
+- aplica uma formatação na primeira linha da tag escolhida.
+
+### 2.9.2 Pseudo-elementos ::before e ::after
+
+- permitem que algum conteúdo possa ser inserido antes ou depois do seletor a ele associado.
+- será a CSS que fará a inserção do conteúdo utilizando a propriedade content - o conteúdo é inserido de forma dinâmica, e pode receber qualquer tipo de formatação.
+
+### 2.9.3 Pseudo-elemento selection
+
+- aplica uma formatação ao conteúdo que for selecionado pelo usuário.
+
+<div align="center">
+<h2>3. TABELAS</h2>
+</div>
