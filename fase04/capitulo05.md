@@ -173,3 +173,14 @@
   - nunca repetir os valores dos ids no mesmo código.
 - qualquer tag HTML pode receber um id, e seu uso não é obrigatório.
 - como boa prática e padrão do HTML, sempre escreva os valores dos ids em letras minúsculas e use a notação camelCase!
+- ao montar uma regra CSS usando um id, ela será utilizada apenas por um único conteúdo na página, aquele que possuir o atributo correspondente. 
+
+## 2.2 Seletor de Classe
+
+- representado pelo sinal de ponto final (.) seguido de um nome.
+- é o seletor mais importante. 
+- usadas para criar formatações que podem ser aplicadas a vários elementos ao mesmo tempo.
+  - diferente dos seletores de id, os seletores de classe podem e devem ser usados por diferentes elementos HTML inseridos no código.
+- todo elemento HTML pode fazer uso de **várias classes ao mesmo tempo**.
+  - usar o atributo class, seguido do sinal de igualdade ( = ) e os nomes das classes desejadas.
+  - é possível criar uma classe mais genérica para propriedades comuns, e classes mais específicas para definir características específicas de cada tag, por exemplo.
