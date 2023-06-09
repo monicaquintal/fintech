@@ -313,3 +313,32 @@ ul ~ p {
 <div align="center">
 <h2>3. TABELAS</h2>
 </div>
+
+## 3.1 Tag table
+
+- para criar tabelas em HTML, usar a tag &lt;table&gt;&lt;/table&gt;, onde deve ficar todo o conteúdo que formará a tabela. 
+- apenas com a tag &lt;table&gt; não há visualização no navegador.
+
+## 3.2 Tag caption
+
+- insere um título na tabela. 
+- deverá estar logo após a abertura da &lt;table&gt;.
+
+## 3.3 Tag tr
+
+- utilizada para a criação das linhas da tabela. 
+- tr significa “table row”.
+
+## 3.4 Tag td
+
+- utilizada para a criação das colunas na tabela. 
+- devem ficar dentro da tag &lt;tr&lt;. 
+- dentro da &lt;td&gt; que as informações devem ser inseridas. 
+- a sigla td significa “table data”.
+
+## 3.5 Tag th
+
+- a primeira linha de dados da tabela define os nomes das colunas.
+- portanto, podemos substituir a tag &lt;td&gt; pela tag &lt;th&gt;.
+  - essa tag deixará o nome da coluna centralizado e com estilo negrito.
+  - a principal diferença será a **acessibilidade** para pessoas com leitores de tela: ele informará o que significa cada uma das colunas!
