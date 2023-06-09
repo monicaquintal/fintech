@@ -570,3 +570,174 @@ ul ~ p {
 
 ## 5.8 Flex-direction 
 
+- define a direção que os filhos devem seguir dentro do flex container.
+
+### 5.8.1 Flex-direction: row
+
+- os flex itens ficarão um ao lado do outro. 
+- é o padrão assumido automaticamente quando o container pai se torna um flex container, ou seja, esse valor não precisará ser declarado.
+
+### 5.8.2 Flex-direction: column
+
+- flex itens ficarão um abaixo do outro, formando uma coluna.
+
+### 5.8.3 Flex-direction: row-reverse
+
+- os flex itens ficarão alinhados a partir da direita do container pai.
+
+### 5.8.4 Flex-direction: column-reverse
+
+- Os flex itens ficarão em ordem inversa um abaixo do outro, formando uma única coluna em ordem inversa.
+
+## 5.9 Flex-wrap
+
+- por padrão, o Flexbox deixará todos os flex itens de um container em uma mesma linha. 
+- a propriedade flex-wrap serve para definir que seja executada a quebra de linhas quando necessário. 
+
+### 5.9.1 Flex-wrap: nowrap
+
+- não permitirá a quebra de linhas.
+- é o valor padrão, não precisará ser declarado.
+
+### 5.9.2 Flex-wrap: wrap
+
+- permitirá a quebra de linhas quando os flex itens não couberem na mesma linha do container. 
+- com sua utilização, a largura definida aos filhos será aplicada.
+
+### 5.9.3 Flex-wrap: wrap-reverse
+
+- permitirá a quebra de linha, iniciando o posicionamento dos elementos da parte esquerda inferior para a parte superior do container pai.
+
+## 5.10 Justify-content
+
+- propriedade utilizada para definir o posicionamento dos flex itens, conforme o eixo definido (linha ou coluna).
+
+### 5.10.1 Justify-content: flex-start
+
+- alinha os flex itens no início do elemento pai.
+- é o valor padrão, não precisa ser declarado.
+
+### 5.10.2 Justify-content: flex-end
+
+- alinha os flex itens no fim do elemento pai.
+
+### 5.10.3 Justify-content: center
+
+- centraliza os flex itens no elemento pai.
+
+### 5.10.4 Justify-content: space-between
+
+- faz o posicionamento dos containers pelas extremidades do elemento pai, deixando um espaçamento praticamente igual entre os flex itens.
+
+### 5.10.5 Justify-content: space-around
+
+- faz o posicionamento dos containers pelo centro do elemento pai, deixando os espaçamentos centrais maiores que os espaçamentos entre as extremidades do container pai.
+
+### 5.10.6 Justify-content: space-evenly
+
+- faz o mesmo posicionamento feito pelo space-around.
+- a diferença é que todos os espaçamentos serão iguais.
+
+## 5.11 Align-items
+
+- alinha os flex itens de acordo com o eixo do container (linha ou coluna). 
+- com essa propriedade podemos fazer o alinhamento central pelo eixo vertical.
+
+### 5.11.1 Align-items: flex-start
+
+- alinhará os flex itens no início do elemento pai. 
+- é o valor padrão, não precisa ser declarado.
+
+### 5.11.2 Align-items: flex-end
+
+- alinha os flex itens no final do elemento pai.
+
+### 5.11.3 Align-items: center
+
+- alinha os flex itens no centro do elemento pai.
+- se esse elemento receber a propriedade flex-direction com o valor row, teremos o alinhamento vertical.
+
+### 5.11.4 Align-items: stretch
+
+- deixa os flex itens com a mesma altura do elemento pai. 
+- para essa propriedade funcionar, os flex itens não devem ter a propriedade height declarada na regra CSS.
+
+### 5.11.5 Align-items: baseline
+
+- faz o alinhamento dos flex itens conforme a linha base do texto.
+
+## 5.12 Flex-grow
+
+- essa propriedade deverá ser aplicada apenas aos flex itens.
+- permite que os flex itens tenham larguras diferentes.
+- o valor padrão é zero: eles ocuparão o tamanho máximo baseado no conteúdo ou na largura definida na regra CSS. 
+- se definir com valor 1, o browser tentará deixá-los com a mesma largura. 
+- caso algum deles tenha um conteúdo muito grande, a largura desse elemento será preservada.
+
+## 5.13 Flex-basis
+
+- só deve ser aplicada aos flex itens.
+- define um valor fixo para a largura de um container, e acontecerá caso exista espaço suficiente. Os demais elementos terão a sua largura calculada pelo espaço restante do container pai. 
+- podemos usar essa propriedade em conjunto com a flex-grow.
+
+## 5.13 Order
+
+- aplicado apenas aos flex itens.
+- define a ordem como os elementos devem aparecer na tela.
+- é uma opção legal para reorganizar conteúdo sem ter de alterar o código HTML.
+
+## 5.14 Gap
+
+- define o espaçamento entre as linhas e/ou colunas. - possibilidades para definir os valoresa:
+  - definindo um único valor: esse valor será utilizado tanto para linhas como para as colunas.
+  - definindo dois valores: o primeiro valor será utilizado para as linhas e o segundo para as colunas.
+  - utilizando a propriedade row-gap: define o valor de espaçamento entre as linhas.
+  - utilizando a propriedade column-gap: define o valor de espaçamento entre as colunas.
+
+## 5.15 Position
+
+- define a posição que um elemento ficará em relação ao body ou ao seu container pai, permitindo que ele saia do seu fluxo normal. 
+- a nova posição será controlada alterando os valores das propriedades: top, bottom, lefte right. 
+- todos os elementos HTML têm a propriedade position com valor padrão static (padrão). 
+
+### 5.15.1 Position Relative
+
+- usado para definir um novo posicionamento para o elemento.
+- se baseia na posição inicial onde o elemento foi inserido.
+
+### 5.15.2 Position absolute
+
+- define a posição absoluta do elemento. 
+- podemos usar o elemento &lt;body&gt; como referência para efetuar o novo posicionamento.
+- podemos também usar o elemento pai como referência: para isso devemos atribuir a ele um position diferente de static. 
+  - dessa forma, o browser entenderá que o filho usará o elemento pai para definir o seu novo posicionamento.
+
+### 5.15.3 Position fixed
+
+- define que um elemento deverá sempre ficar fixo na tela. 
+  - mesmo que exista rolagem de tela, o elemento sempre estará visível.
+
+## 5.16 Z-index
+
+- assim que a propriedade position é aplicada, o elemento também poderá receber a propriedade z-index,.
+- define a ordem que os elementos devem ter quando se sobrepõem. 
+- o valor inicial para todos é 0, e o elemento que receber o maior valor, ficará acima dos demais.
+
+### Laboratório Flexbox: [HTML](./projetos/projeto5/pages/index.html) e [CSS](./projetos/projeto5/css/style.css).
+
+---
+
+## FAST TEST
+
+### 1. Sobre as tags, assinale a alternativa correta:
+> A tag &lt;div&gt;&lt;/div&gt; é um contêiner que pode ser criado para armazenar qualquer tipo de conteúdo.
+
+### 2. Em relação às propriedades width (largura) e height (altura), os valores mais comuns são definidos em: 
+> px (pixel) e % (porcentagem).
+
+### 3. Imagens de fundo podem ser configuradas para que fiquem fixas na tela ou acompanhem o seu scroll. Para tanto, a propriedade background-attachment deve ser utilizada com quais valores?
+> fixed e scroll.
+
+---
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
