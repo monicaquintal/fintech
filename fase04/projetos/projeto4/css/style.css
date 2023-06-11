@@ -12,49 +12,67 @@
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
 }
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #dc143c;
+  text-align: center;
+  margin: 30px;
+}
+
 table {
   width: 80%;
   margin: 10px auto;
   border-collapse: collapse; /* junta as bordas da tabela, não permitindo que exista algum espaço entre as suas colunas*/
   text-align: center;
 }
+
 caption {
   font-size: 2rem;
   color: var(--color-blue);
   font-weight: 900;
   margin-bottom: 10px;
 }
+
 thead tr {
   background: var(--color-blue);
   color: #fff;
 }
+
 th, td {
   width: 25%;
   padding: 15px;
 }
+
 tbody tr {
   border-bottom: 1px solid #ccc;
 }
+
 tbody tr:nth-child(even) {
   background: #f9f9f9; /* a tabela é exibida como se estivesse “zebrada”, facilitando a leitura do usuário */
 }
+
 tbody tr:last-child { /* usada para aplicar uma borda inferior */
   border-bottom: 20px solid var(--color-blue);
 }
+
 tbody tr:hover {
   font-weight: 900;
   background-color: var(--color-blue-alpha);
   color: #ffffff;
   cursor: pointer;
 }
+
 tfoot {
   font-weight: 700;
 }
 
 /* REDES SOCIAIS */
 
-h1 {
-  margin:30px 0;  
+.redes {
+  font-size: 2rem;
+  margin: 30px 0;  
   text-align: center;
   color: #dc143c; 
 }
