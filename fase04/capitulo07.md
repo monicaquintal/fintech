@@ -245,4 +245,17 @@
 
 ---
 
-## Laboratório Formulários: [HTML]() e [CSS]().
+## FAST TEST
+
+### 1. Qual tag é utilizada para a criação das colunas em uma tabela?
+> &lt;td&gt;.
+
+### 2. Qual tag é utilizada para representar a linha de rodapé de uma tabela?
+> &lt;tfoot&gt;.
+
+### 3. Em relação à utilização de tabelas em documentos Web, assinale a alternativa correta.
+> Na criação de tabelas em HTML, toda a parte de formatação deve ser feita com o uso de folhas de estilo criadas com código CSS.
+
+---
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
