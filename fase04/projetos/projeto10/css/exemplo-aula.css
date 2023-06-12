@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300&amp;display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --color-blue: rgb(82, 147, 211);
+  --color-light: #ffffff;
+  --color-dark: #000000;
+}
+
+body {
+  font-family: 'Catamaran', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  width: 90%;
+  height: 80px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  font-size: 30px
+}
+
+.logo {
+  padding: 1px 3px;
+  background-color: var(--color-blue);
+  color: var(--color-light);
+  border-radius: 5px;
+}
+
+.header ul {
+  list-style: none;
+  display: flex
+}
+
+.header li {
+  margin: 0 10px;
+}
+
+.header a {
+  color: var(--color-dark);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.header a:hover {
+  color: var(--color-blue)
+}
+
+.hero {
+  width: 90%;
+  height: 60vh;
+  margin: 10px auto;
+  background-image: url(../images/ideia.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 30px;
+  border-radius: 5px;
+}
+
+.hero h3 {
+  color: var(--color-light);
+  font-size: 6vmin;
+  letter-spacing: -1px;
+}
+
+.hero h2 {
+  font-size: 12vmin;
+  line-height: 50%;
+  color: var(--color-blue);
+  line-height: 70%;
+}
+
+.hero h4 {
+  color: #999;
+  font-size: 4vmin;
+}
+
+.solutions {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.solution-item i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-blue);
+}
+
+.solution-item {
+  width: 22%;
+  border: 1px dotted var(--color-blue);
+  border-radius: 5px;
+  text-align: center;
+  padding: 30px;
+}
+
+.solution-item h3 {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.solution-item p {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 5px 30px;
+  border: 1px solid var(--color-blue);
+  color: var(--color-blue);
+  font-weight: 900;
+  border-radius: 5px;
+}
+
+/* aqui começa a parte responsiva */
+@media(max-width:1250px) {
+
+  .solution-item {
+    width: 48%;
+    justify-content: space-evenly;
+    margin: 20px 0;
+
+  }
+}
+
+@media(max-width:900px) {
+  
+  .header {
+    justify-content: space-evenly;
+  }
+
+  .hero {
+    margin-top: 20px;
+  }
+
+  .solution-item {
+    width: 90%;
+  }
+  
+}
