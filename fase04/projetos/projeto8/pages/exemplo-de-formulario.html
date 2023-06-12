@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Formulário</title>
+  <link rel="stylesheet" href="../css/exemplo-de-formulario.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <h1>Meu projeto Web</h1>
+      <h2>Crie sua conta</h2>
+      <form name="dados" id="dados" method="post" action="" class="box-form">
+        <div class="box-item">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" id="nome" name="nome" class="form-control" required minlength="10" maxlength="50" placeholder="Ex: Fulano de Tal" >
+        </div>
+        <div class="box-item">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-control" required placeholder="Ex: seuemail@email.com">
+        </div>
+        <div class="box-item">
+          <label for="user" class="form-label">Usuário</label>
+          <input type="text" id="user" name="user" class="form-control" required minlength="5" maxlength="15" placeholder="Ex: user12345">
+        </div>
+        <div class="box-item">
+          <label for="senha" class="form-label">Senha</label>
+          <input type="password" id="senha" name="senha" class="form-control" required minlength="5" maxlength="15" placeholder="Ex: 123456">
+        </div>
+        <div class="box-item">
+          <button class="form-btn">Criar conta</button>
+        </div>
+      </form>
+    </div>  
+  </main>
+</body>
+</html>

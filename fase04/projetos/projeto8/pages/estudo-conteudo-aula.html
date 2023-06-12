@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <title>Estudanto Formulários</title>
+  <link rel="stylesheet" href="../css/estudo-conteudo-aula.css">
+</head>
+<body>
+  <header>
+    <h1>Estudando Formulários</h1>
+    <p>Capítulo 07</p>
+  </header>
+
+  <main>
+
+    <!-- Tag fieldset -->
+    <h2>Tag Fieldset</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <p>Dados relacionados</p>
+      </fieldset>
+    </form>
+
+    <!-- Tag legend -->
+    <h2>Tag Legend</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Legenda</legend>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+      </fieldset>
+    </form>
+
+    <!-- Tags input e label -->
+    <h2>Tags input (text) e label</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <label for="nome">Nome do usuário: </label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome!" autofocus>
+      </fieldset>
+    </form>
+
+    <!-- Input tipo password -->
+    <h2>Input do tipo password</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <label for="senha">Senha do usuário: </label>
+        <input type="password" id="senha" name="senha">
+      </fieldset>
+    </form>
+
+    <!-- Input Date -->
+    <h2>Input do tipo date</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <label for="data">Data de Nascimento: </label>
+        <input type="date" id="data" name="data">
+      </fieldset>
+    </form>
+
+    <!-- Input Time -->
+    <h2>Input do tipo time</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="hora">Horário do atendimento: </label>
+        <input type="time" id="hora" name="hora">
+      </fieldset>
+    </form>
+
+    <!-- Input Datetime-local -->
+    <h2>Input do tipo datetime-local</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="data">Data e hora da viagem: </label>
+        <input type="datetime-local" id="data" name="data">
+      </fieldset>
+    </form>
+
+    <!-- Input Month -->
+    <h2>Input do tipo month</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="mes">Mês de entrega do projeto: </label>
+        <input type="month" id="mes" name="mes">
+      </fieldset>
+    </form>
+
+    <!-- Input Week -->
+    <h2>Input do tipo week</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="semana">Semana da challenge: </label>
+        <input type="week" id="semana" name="semana">
+      </fieldset>
+    </form>
+
+    <!-- Input Email -->
+    <h2>Input do tipo email</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="email">E-mail: </label>
+        <input type="email" id="email" name="email">
+      </fieldset>
+    </form>
+
+    <!-- Input URL -->
+    <h2>Input do tipo url</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="site">Site: </label>
+        <input type="url" id="site" name="site">
+      </fieldset>
+    </form>
+
+    <!-- Input Search -->
+    <h2>Input do tipo search</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="busca">Pesquisar: </label>
+        <input type="search" id="busca" name="busca">
+      </fieldset>
+    </form>
+
+    <!-- Input Number -->
+    <h2>Input do tipo number</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="rm">RM: </label>
+        <input type="number" id="rm" name="rm" min="10000" max="99999" step="100">
+      </fieldset>
+    </form>
+
+    <!-- Input Range -->
+    <h2>Input do tipo range</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="preco">Menor Preço: </label>
+        <input type="range" id="preco" name="preco" min="100" max="1000" step="50">
+      </fieldset>
+    </form>
+
+    <!-- Input Tel -->
+    <h2>Input do tipo tel</h2>    
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="celular">Celular: </label>
+        <input type="tel" id="celular" name="celular">
+      </fieldset>
+    </form>
+
+    <!-- Input Color -->
+    <h2>Input do tipo color</h2>  
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="cor">Selecione uma cor: </label>
+        <input type="color" id="cor" name="cor">
+      </fieldset>
+    </form>
+
+    <!-- Input Radio -->
+    <h2>Input do tipo radio</h2>  
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <h3>Selecione sua área de atuação: </h3>
+        <input type="radio" name="area" id="dev" value="1">
+        <label for="dev"> Desenvolvimento </label>
+        <input type="radio" name="area" id="banco"value="2"> 
+        <label for="banco"> Banco de Dados </label>
+        <input type="radio" name="area" id="projeto"value="3"> 
+        <label for="projeto"> Gestão de Projetos </label>
+      </fieldset>
+    </form>
+
+    <!-- Input Checkbox -->
+    <h2>Input do tipo checkbox</h2>  
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <h3>Selecione sua área de atuação:</h3>
+        <input type="checkbox" name="area" id="dev2" value="1"> 
+        <label for="dev2"> Desenvolvimento </label> 
+        <input type="checkbox" name="area" id="banco2" value="2"> 
+        <label for="banco2"> Banco de Dados </label> 
+        <input type="checkbox" name="area" id="projeto2" value="3"> 
+        <label for="projeto2"> Gestão de Projetos </label>
+      </fieldset>
+    </form>
+
+    <!-- Input File -->
+    <h2>Input do tipo file</h2>     
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="arquivo">Selecione um arquivo: </label>
+        <input type="file"id="arquivo" name="arquivo">
+      </fieldset>
+    </form>
+
+    <!-- Tag Select/Option -->
+    <h2>Tag selecion/option</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <legend>Dados do usuário</legend>
+        <label for="area">Área de atuação: </label>
+        <select id="area" required>
+          <option value="0" selected disabled>Selecione a sua opção</option>
+          <option value="1">Desenvolvimento</option>
+          <option value="2">Banco de Dados</option>
+          <option value="3">Gestão de Projetos</option>
+        </select>
+      </fieldset>
+    </form>
+
+    <!-- Tag Datalist -->
+    <h2>Tag datalist</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <h3>Tecnologias Favoritas</h3>
+        <label for="tech">Selecione ou digite sua tecnologia: </label>
+        <input list="myTech" id="tech" name="tech">
+        <datalist id="myTech">
+          <option value="Blockchain">
+          <option value="Cyber Security">
+          <option value="Cloud">
+          <option value="Hiperautomação">
+          <option value="IA">
+          <option value="IOT">
+          <option value="Metaverso">
+          <option value="Smart Cities">
+          <option value="XaaS">
+        </datalist>
+      </fieldset>
+    </form>
+
+    <!-- Tag Textarea -->
+    <h2>Tag textarea</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset>
+        <label for="mensagem">Digite sua mensagem: </label>
+        <textarea id="mensagem" name="mensagem" maxlength="20"></textarea>
+      </fieldset>
+    </form>
+
+    <!-- Tag Button -->
+    <h2>Tag button</h2>
+    <form name="dados" id="dados" action="" method="post">
+      <fieldset class="botoes">
+        <button type="submit">Enviar Dados</button>
+        <button type="reset">Limpar Formulário</button>
+        <button type="button">Chamar Javascript</button>
+      </fieldset>
+    </form>
+
+  </main>
+</body>
+</html>

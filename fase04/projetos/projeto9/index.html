@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hands on 09</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- título e imagem posicionados à esquerda -->
+    <div class="box box-40">
+      <h2>Crie sua conta</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus recusandae adipisci delectus velit possimus! Aperiam minus veniam, maxime quo amet eum quos at nihil in, dolore quaerat fuga, cumaccusamus.
+      </p>
+      <img src="./images/Online team meeting _Isometric.svg" alt="Cadastro">
+      <!-- Imagem obtida do site https://www.manypixels.co/ -->
+    </div>
+
+    <!-- formulário à direita -->
+    <div class="box box-60">
+      <h2>Preencha seus dados</h2>
+      <form action="" class="form">
+
+        <div class="box-form-item">
+          <label for="nome">Nome</label>
+          <i class="fa-regular fa-user icon"></i>
+          <input type="text" placeholder="Ex: Fulano" id="nome" name="nome" required>
+        </div>
+
+        <div class="box-form-item">
+          <label for="sobreNome">Sobrenome</label>
+          <i class="fa-solid fa-user-tag icon"></i>
+          <input type="text" placeholder="Ex: de Tal" id="sobreNome" name="sobreNome" required>
+        </div>
+
+        <div class="box-form-item">
+          <label for="usuario">Usuário</label>
+          <i class="fa-solid fa-user-secret icon"></i>
+          <input type="text" placeholder="Ex: user12345" id="usuario" name="usuario" required>
+        </div>
+
+        <div class="box-form-item">
+          <label for="senha">Senha</label>
+          <i class="fa-solid fa-key icon"></i>
+          <input type="password" placeholder="Ex: 123456!@#$%" id="senha" name="senha" required>
+        </div>
+
+        <div class="box-form-item">
+          <label for="email">Email</label>
+          <i class="fa-regular fa-envelope icon"></i>
+          <input type="email" placeholder="Ex: seuemail@email.com" id="email" name="email">
+        </div>
+
+        <div class="box-form-item">
+          <label for="dataNascimento">Data de Nascimento</label>
+          <i class="fa-solid fa-cake-candles icon"></i>
+          <input type="date" id="dataNascimento" name="dataNascimento">
+        </div>
+
+        <div class="box-form-item">
+          <label>Tipo de conta</label>
+          <div class="box-form-radio">
+            <div class="radio">
+              <input type="radio" name="conta" id="conta1">
+              <label for="conta1">Free</label>
+            </div>
+            <div class="radio">
+              <input type="radio" name="conta" id="conta2">
+              <label for="conta2">Gold</label>
+            </div>
+            <div class="radio">
+              <input type="radio" name="conta" id="conta3">
+              <label for="conta3">Premium</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-form-item">
+          <label for="" class="select">Área de atuação</label>
+          <select name="" id="">
+            <option value="0">Selecione sua opção</option>
+            <option value="1">Área 01</option>
+            <option value="2">Área 02</option>
+            <option value="3">Área 03</option>
+            <option value="4">Área 04</option>
+          </select>
+        </div>
+
+        <div class="box-form-button">
+          <button>Criar conta</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

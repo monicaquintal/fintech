@@ -13,6 +13,8 @@
 
 > Se o seu formulário não tiver uma linguagem de programação trabalhando em conjunto com o HTML, ao tentar enviar a página, ela será atualizada e os dados digitados serão apagados!
 
+### As tags e atributos estão exemplificados aqui: [HTML](./projetos/projeto8/pages/estudo-conteudo-aula.html) e [CSS](./projetos/projeto8/css/estudo-conteudo-aula.css).
+
 ## 1.1 Tag form
 
 - no interior da tag &lt;form&gt;&lt;/form&gt; são definidos os componentes que deverão ser vistos e utilizados pelos usuários. 
@@ -131,4 +133,116 @@
   - atributo max: define o maior valor possível do intervalo. Ex: max=“100” - irá finalizar o intervalo de valores no número 100.
   - atributo step: define um intervalo de valores. Ex: step=“5” – exibirá os valores iniciando pelo menor valor definido, pulando de 5 em 5 até chegar ao valor máximo.
 
-pág 22
+### 1.5.12 Range
+
+- insere uma barra deslizante para receber um valor de um intervalo previamente determinado. 
+- o intervalo padrão é de 0 a 100, podendo ser alterado conforme a necessidade.
+- também aceita os atributos: min, max e step.
+
+### 1.5.13 Tel
+
+- insere um campo para a digitação do número de telefone. 
+- a renderização será a mesmo de um campo “text”.
+
+### 1.5.14 Color
+
+- insere um campo que permitirá que o usuário selecione uma cor em uma paleta definida. 
+- com a utilização de alguma linguagem de programação, podemos utilizar a cor selecionada em qualquer parte da página.
+
+### 1.5.15 Radio
+
+- insere campos de seleção, permitindo que o usuário a escolha uma única opção entre as apresentadas. 
+- o usuário poderá mudar a seleção efetuada, mesmo assim ficará apenas com uma opção selecionada. 
+- para que funcione de forma correta, usar o atributo name contendo o mesmo valor para todos os elementos inseridos.
+
+### 1.5.16 Checkbox
+
+- insere campos de seleção, permitindo que o usuário escolha quantas opções quiser.
+- também poderá alterar as opções selecionadas quantas vezes forem necessárias.
+
+### 1.5.17 File
+
+- insere um campo que permite a seleção e o envio de arquivos. 
+- composto por um botão e uma área onde o usuário pode selecionar o arquivo que deseja enviar.
+- o envio só será concretizado com a utilização de alguma linguagem de programação.
+
+## 1.6 Tag select / option
+
+- a tag &lt;select&gt;&lt;/select&gt; cria um campo de seleção, no qual o usuário poderá selecionar uma das opções que serão listadas.
+- as opções serão criadas pela tag &lt;option&gt;&lt;/option&gt;.
+  - devem possuir o atributo value, recebendo algum valor que representa a opção selecionada pelo usuário.
+
+## 1.7 Tag datalist
+- tag &lt;datalist&gt;&lt;/datalist&gt; cria uma lista de opções que poderá ser associada ao elemento &lt;input&gt;, assim o usuário pode fazer uma busca entre as opções.
+- atribuir o elemento id à tag &lt;datalist&gt;, e na tag &lt;input&gt; utilizaremos o atributo list recebendo o mesmo valor do id. 
+- quando o usuário iniciar a digitação nesse campo, ele visualizará as opções que correspondem ao conteúdo digitado, como se estivesse sendo realizado um filtro de busca.
+
+## 1.8 Tag textarea
+
+- insere um campo de texto de múltiplas linhas. 
+- muito usado para que os usuários escrevam alguma mensagem, comentário, sugestão etc.
+
+## 1.9 Tag button
+
+- insere um botão na página.
+- o tipo de botão será definido no atributo type, que permite os valores:
+  - **submit**: 
+    - quando o botão for pressionado, o browser procurará o atributo action da tag &lt;form&gt;, e verificará para onde as informações deverão ser enviadas.
+  - **reset**:
+    - quando o botão for pressionado, todas as informações digitadas/selecionadas no formulário serão apagadas.
+  - **button**:
+    - quando clicado, pode executar uma função definida por uma linguagem de programação.
+    - muito utilizado para chamar alguma funcionalidade que a página deve executar desenvolvida em Javascript.
+
+## 1.10 Outros atributos para os campos (além do "type")
+
+### 1.10.1 Required
+
+- define que o campo deve ter o seu preenchimento obrigatório.
+- caso o usuário tente enviar o formulário sem preencher este campo, uma mensagem será exibida e o envio só será feito após o seu preenchimento.
+
+### 1.10.2 Value
+
+- define o valor inicial que será atribuído ao campo.
+- o Javascript usa esse atributo para recuperar o que foi selecionado ou digitado pelo usuário.
+
+### 1.10.3 Readonly
+
+- define que o valor do campo seja apenas de leitura, não permitindo alteração por parte do usuário.
+
+### 1.10.4 Disabled
+
+- define que campo fique desabilitado, não permitindo a inserção de dados.
+
+### 1.10.5 Maxlength
+
+- define a quantidade máxima de caracteres permitidos no campo.
+
+### 1.10.6 Minlength
+
+- define a quantidade mínima de caracteres que o campo deve possuir.
+
+### 1.10.7 Autofocus
+
+- define o campo que ganhará foco. 
+- quando a página está sendo carregada, o browser localizará o campo que possuir esse atributo e automaticamente o cursor será posicionado nele. 
+- ***usar esse atributo em apenas um campo!***
+
+### 1.10.8 Placeholder
+
+- define uma palavra ou frase que ficará visível dentro dos campos, permitindo sugerir como o usuário pode efetuar seu preenchimento.
+- esse conteúdo ficará visível até que algo seja digitado. 
+  - caso a informação digitada seja apagada, o valor inicial voltará a ser exibido no campo. 
+
+### 1.10.9 Submit – Reset – Button
+
+- o atributo type também pode ser usado para a inserção de botões, atribuindo os valores: submit, reset e button.
+- esses valores possuem as mesmas funcionalidades e aparência da tag &lt;button&gt;.
+
+## 1.11 Exemplo de formulário
+
+> [HTML](./projetos/projeto8/pages/exemplo-de-formulario.html) e [CSS](./projetos/projeto8/css/exemplo-de-formulario.css).
+
+---
+
+## Laboratório Formulários: [HTML]() e [CSS]().
