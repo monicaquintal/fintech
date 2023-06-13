@@ -104,4 +104,21 @@
 
 ---
 
-## Laboratório Design Responsivo
+## Laboratório Design Responsivo: [HTML](./projetos/projeto10/pages/projeto10.html) e [CSS](./projetos/projeto10/css/projeto10.css).
+
+---
+
+## FAST TEST
+
+### 1. Assinale a alternativa que completa corretamente a frase a seguir: "O _____________ define a abrangência das variáveis, ou seja, onde elas podem ser acessadas."
+> escopo.
+
+### 2. Os nomes das variáveis devem iniciar com:
+> dois hífens (--).
+
+### 3. Ícones são muito comuns em qualquer página Web, eles podem ajudar no visual, deixando a informação mais clara ao usuário. Uma das coleções de ícones mais utilizadas do mundo é a biblioteca:
+> Font Awesome.
+
+---
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
