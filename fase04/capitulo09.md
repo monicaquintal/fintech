@@ -3,6 +3,8 @@
 <h2>Capítulo 09: Muito estilo sem sofrimento! 😲</h2>
 </div>
 
+[Mais Bootstrap aqui!](https://github.com/monicaquintal/bootstrap) 🚀
+
 <div align="center">
 <h2>1. MUITO ESTILO SEM SOFRIMENTO</h2>
 </div>
@@ -110,3 +112,51 @@ Botão | btn | btn-danger
 Tabela | table | table-primary
 Borda | border | border-success
 
+## 1.4 Variáveis Bootstrap
+
+- o Bootstrap também usa o recurso de variáveis CSS para definição de cores, margem, padding, bordas etc.
+- no código do framework, encontra-se uma grande quantidade de variáveis, que podem ser utilizadas nas aplicações. 
+
+> Link para documentação [aqui](https://getbootstrap.com/docs/5.0/customize/css-variables/).
+
+## 1.5 Containers
+
+- são elementos de layout nos quais o conteúdo da página ficará armazenado. 
+- utilizando o framework, os containers serão criados através de classes CSS inseridas nos elementos HTML: &lt;div&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt; etc. 
+- há duas classes principais:
+  - classe container: largura máxima de 1320px (e centraliza o container na tela).
+  - classe container-fluid: tamanho flexível, ocupando 100% da largurada página ou do componente.
+  - **importante**: por padrão, a altura dos elementos que utilizarem essas classes, será definida pela quantidade de conteúdo que receberão.
+
+## 1.6 Sistema de grid
+
+- bem definido e responsivo.
+- composto por uma série de containers posicionados em conjunto, formando linhas e colunas do layout.
+- flexível.
+- composto por doze colunas em cada linha.
+- conta com seis breakpoints que facilitam a criação de aplicações responsivas.
+
+### 1.6.1 Breakpoints
+
+- o sistema de grid do Bootstrap é totalmente responsivo, e consegue se adaptar a qualquer tipo de dispositivo. 
+- há classes específicas para determinados breakpoints, que deverão ser aplicadas nas colunas do grid:
+  - classe col: deve ser usada para dispositivos de tamanho máximo de 575px (smartphones).
+  - classe col-sm: para dispositivos de tamanho mínimo de 576px (alguns smartphones e tablets).
+  - classe col-md: dispositivos de tamanho mínimo de 768px (tablets).
+  - classe col-lg: para dispositivos de tamanho mínimo de 992px (notebooks e desktops).
+  - classe col-xl: para dispositivos de tamanho mínimo de 1200px (telas grandes).
+  - classe col-xxl: deve ser usada para dispositivos de tamanho mínimo de 1400px, as maiores telas para o projeto.
+
+### 1.6.2 Aplicando classes do grid
+
+- dentro do elemento que possuir a classe “container” ou “container-fluid”, criar as linhas do grid com a utilização da classe “row”. 
+- dentro das linhas é feita a divisão em colunas.
+  - cada linha possui no máximo 12 colunas. 
+  - utilizar a classe “col” seguida do número de colunas desejadas.
+
+## 1.7 Tipografia
+
+- o Bootstrap possui estilos básicos para fontes.
+- ele usa o tamanho padrão da fonte em 16px e, em suas regras CSS faz uso da unidade de medida rem (16px = 1rem).
+
+pág17
