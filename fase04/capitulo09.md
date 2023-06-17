@@ -124,8 +124,8 @@ Borda | border | border-success
 - são elementos de layout nos quais o conteúdo da página ficará armazenado. 
 - utilizando o framework, os containers serão criados através de classes CSS inseridas nos elementos HTML: &lt;div&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt; etc. 
 - há duas classes principais:
-  - classe container: largura máxima de 1320px (e centraliza o container na tela).
-  - classe container-fluid: tamanho flexível, ocupando 100% da largurada página ou do componente.
+  - `classe container`: largura máxima de 1320px (e centraliza o container na tela).
+  - `classe container-fluid`: tamanho flexível, ocupando 100% da largurada página ou do componente.
   - **importante**: por padrão, a altura dos elementos que utilizarem essas classes, será definida pela quantidade de conteúdo que receberão.
 
 ## 1.6 Sistema de grid
@@ -167,3 +167,6 @@ Borda | border | border-success
 ### 1.7.2 Classe Lead
 
 - aplica formatação parecida com a da classe display, mas a lead deve ser usada nos parágrafos.
+
+### 1.7.3 Tamanho da fonte
+
