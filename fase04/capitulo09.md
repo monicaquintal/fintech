@@ -159,4 +159,11 @@ Borda | border | border-success
 - o Bootstrap possui estilos básicos para fontes.
 - ele usa o tamanho padrão da fonte em 16px e, em suas regras CSS faz uso da unidade de medida rem (16px = 1rem).
 
-pág17
+### 1.7.1 Classe Display
+
+- utilizada em qualquer elemento heading, alterando altura e espessura do título.
+- atribuir também o tamanho desejado (que varia entre 1 e 6).
+
+### 1.7.2 Classe Lead
+
+- aplica formatação parecida com a da classe display, mas a lead deve ser usada nos parágrafos.
