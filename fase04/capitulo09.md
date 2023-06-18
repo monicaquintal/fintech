@@ -347,3 +347,22 @@ Borda | border | border-success
 > para um melhor resultado visual, todas as imagens do elemento carousel devem possuir o mesmo tamanho.
 
 ---
+
+## Laboratório Bootstrap: [HTML](./projetos/projeto12/index.html) e [CSS](./projetos/projeto12/css/style.css).
+
+---
+
+## FAST TEST
+
+### 1. Identifique qual expressão é FALSA em relação ao Bootstrap:
+> O Bootstrap torna o desenvolvimento web front-end mais lento e difícil.
+
+### 2. Analise os conceitos apresentados sobre o framework e identifique a afirmação FALSA:
+> O Bootstrap divide suas ações em 3 (três) tipos diferentes, os quais são identificados por tipos de cores.
+
+### 3. Metatags são tags HTML que, quando posicionados no cabeçalho, podem determinar valores que vão influenciar desde a codificação dos caracteres apresentados até a forma como a sua página será apresentada nos navegadores. Identifique a metatag INCORRETA:
+> &lt;meta bootstrap="description" content="EXEMPLO - BOOTSTRAP"&gt;
+
+--- 
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
