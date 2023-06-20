@@ -3,6 +3,8 @@
 <h2>Capítulo 10: Tornando a interface com o usuário mais dinâmica. 🤖</h2>
 </div>
 
+[Mais Javascript aqui!](https://github.com/monicaquintal/estudandoJavaScript) 🚀
+
 <div align="center">
 <h2>1. TORNANDO A INTERFACE COM O USUÁRIO MAIS DINÂMICA</h2>
 </div>
@@ -294,3 +296,440 @@ Pode ser reatribuída | NÃO | SIM | SIM
 </div>
 
 ## 1.7 Template String (ou Template Literal)
+
+- permite definir como ficarão as strings, inserindo variáveis, expressões, funções e métodos, sem a necessidade de concatenar. 
+- permite a criação de strings mais complexas que contenham elementos dinâmicos.
+- `para criar uma Template String`:
+  - iniciar e finalizar com crase (`), em substituição a aspas. 
+  - é possível fazer o uso dos placeholders em seu interior, que representam uma variável, cálculo, função, etc. 
+  - os elementos devem ser precedidos do sinal de cifrão $ e da abertura e fechamento de chaves ${...}.
+- exemplo:
+
+~~~javascript
+let userId = 12345;
+let userName = 'Clark Kent';
+//Exibindo no console com template string
+console.log(`Id do usuário: ${userId}`);
+console.log(`Nome do usuário: ${userName}`);
+~~~
+
+## 1.8 Caixas de diálogo
+
+- há três caixas de diálogo, que podem ser usadas para permitir alguma interação com o usuário. 
+
+### 1.8.1 Alert()
+
+- o `método alert()` abre uma caixa de diálogo modal que exibe alguma mensagem.
+- a caixa ficará aberta enquanto o usuário não der um clique no botão do OK da modal.
+- pode receber uma string como argumento, que será a mensagem visualizada pelo usuário.
+
+~~~javascript
+//criando a variável
+let userName = 'Clark Kent';
+//chamando o método alert()
+alert(`Olá ${userName}, seja bem-vindo!!!`);
+~~~
+
+### 1.8.2 Confirm()
+
+- o `método confirm()` abre uma caixa de diálogo modal que exibe alguma mensagem para o usuário em conjunto com os **botões de OK e Cancelar**. 
+- quando o usuário clicar em um dos botões, será retornado um valor booleano:
+  - true, caso clique no botão OK.
+  - false, caso clique no botão Cancelar.
+
+~~~javascript
+//criando a variável
+let userName = 'Clark Kent';
+//chamando o método confirm()
+confirm(`${userName}, deseja finalizar a aplicação?`);
+~~~
+
+### 1.8.3 Prompt()
+
+- o `método prompt()` abre uma caixa de diálogo modal, que **solicita ao usuário a entrada de algum conteúdo**.
+- pode receber dois argumentos opcionais: 
+  - título da modal.
+  - valor para o campo de texto.
+- quando o usuário digitar o conteúdo, ele será armazenado como uma string.
+
+~~~javascript
+//criando a variável
+let userName = 'Clark Kent';
+//chamando o método prompt()
+prompt(`${userName}, digite a sua data de nascimento:`);
+~~~
+
+## 1.9 Operadores
+
+### 1.9.1 Operadores aritméticos
+
+- realizam a maioria dos cálculos matemáticos entre dois ou mais valores que podem estar armazenados em variáveis ou que serão atribuídos ao script.
+- operadores:
+
+<div align="center">
+
+Operador | Sinal | Definição
+---------|--------|------------
+Soma | + | Executa a soma entre dois ou mais números
+Subtração | - | Executa a subtração entre dois ou mais números
+Multiplicação | * | Executa a multiplicação entre dois ou mais números
+Divisão | / | Executa a divisão entre dois ou mais números
+Módulo | % | Consiste na divisão entre dois números, retornando o resto obtido nessa divisão
+Potência | ** | Executa o cálculo da potência entre dois números, elevando o primeiro número à potência do segundo número
+
+</div>
+
+- exemplos:
+
+~~~javascript
+//criando variáveis
+const firstValue = 50;
+const secondValue = 10;
+let result = 0; 
+// soma
+result = (firstValue + secondValue);
+console.log(`${firstValue} + ${secondValue} = ${result}`);
+//subtração
+result = (firstValue -secondValue);
+console.log(`${firstValue} -${secondValue} = ${result}`);
+// multiplicação
+result = (firstValue * secondValue);
+console.log(`${firstValue} * ${secondValue} = ${result}`);
+// divisão
+result = (firstValue / secondValue);
+console.log(`${firstValue} / ${secondValue} = ${result}`);
+// módulo
+result = (firstValue % secondValue);
+console.log(`${firstValue} % ${secondValue} = ${result}`);
+// potência
+result = (firstValue ** secondValue);
+console.log(`${firstValue} ** ${secondValue} = ${result}`);
+~~~
+
+### 1.9.2 Operadores relacionais
+
+- permitem a comparação entre dois ou mais valores, retornando apenas true (verdadeiro) ou false (falso).
+
+<div align="center">
+
+Operador | Sinal | Definição
+---------|------|----------
+Maior que | > | Retornará verdadeiro quando o primeiro valor for maior que o segundo valor.
+Menor que | < | Retornará verdadeiro quando o primeiro valor for menor que o segundo valor.
+Maior ou igual a | >= | Retornará verdadeiro quando o primeiro valor for maior ou igual ao segundo valor.
+Menor ou igual a | <= | Retornará verdadeiro quando o primeiro valor for menor ou igual ao segundo valor.
+Igual a | == | Retornará verdadeiro quando os dois valores forem iguais.
+Diferente de | != | Retornará verdadeiro quando os dois valores forem diferentes.
+Estritamente igual a | === | Retornará verdadeiro quando os dois valores forem iguais e do mesmo tipo.
+Estritamente diferente a | !== | Retornará verdadeiro quando os dois valores não forem iguais ou não forem do mesmo tipo.
+
+</div>
+
+- exemplos:
+
+~~~javascript
+//criando variáveis
+let firstValue = 50;
+let secondValue = 50;
+let result;
+// maior que
+result = (firstValue > secondValue);
+console.log(`${firstValue} > ${secondValue} = ${result}`);// false
+//menor que
+result = (firstValue < secondValue);
+console.log(`${firstValue} < ${secondValue} = ${result}`);// false
+// maior ou igual a
+result = (firstValue >= secondValue);
+console.log(`${firstValue} >= ${secondValue} = ${result}`);// true
+// menor ou igual a
+result = (firstValue <= secondValue);
+console.log(`${firstValue} <= ${secondValue} = ${result}`);// true
+// igual a
+result = (firstValue == secondValue);
+console.log(`${firstValue} == ${secondValue} = ${result}`);// true
+// diferente de
+result = (firstValue != secondValue);
+console.log(`${firstValue} != ${secondValue} = ${result}`);// false
+// convertendo o segundo valor em uma string
+secondValue = '50';
+// estritamente igual a
+result = (firstValue === secondValue);
+console.log(`${firstValue} === ${secondValue} = ${result}`);// false
+// estritamente diferente de
+result = (firstValue !== secondValue);
+console.log(`${firstValue} !== ${secondValue} = ${result}`);// true
+~~~
+
+### 1.9.3 Operadores lógicos
+
+- permitem a criação de expressões através da união entre expressões relacionais. 
+- esses operadores retornam apenas true (verdadeiro) ou false (falso).
+
+<div align="center">
+
+Operador | Sinal | Definição
+---------|-------|----------
+E | && | Para retornar verdadeiro, todas as expressões devem ser verdadeiras.
+OU | &#124;&#124; | Para retorna verdadeiro, basta apenas uma expressão ser verdadeira.
+NÃO | ! | Inverte o resultado da expressão: se o resultado for verdadeiro retornará falso, se o resultado for falso retornará verdadeiro.
+
+</div>
+
+- exemplos:
+
+~~~javascript
+//criando variáveis
+let firstValue = 50;
+let secondValue = 10;
+let result;
+// Operador OU
+result = (firstValue === secondValue) || (firstValue >= secondValue);
+console.log(`O resultado da expressão é: ${result}`);// true
+// Operador E
+result = (firstValue === secondValue) && (firstValue >= secondValue);
+console.log(`O resultado da expressão é: ${result}`);// false
+// Operador Não
+result = !((firstValue === secondValue) && (firstValue >= secondValue));
+console.log(`O resultado da expressão é: ${result}`);// true
+~~~
+
+### 1.9.4 Operadores de incremento e decremento
+
+- somam ou subtraem 1 do valor atribuído a alguma variável.
+
+<div align="center">
+
+Operador | Sinal | Definição
+---------|---------|---------
+Incremento | ++ | Adiciona 1 ao valor da variável.
+Decremento | -- | Subtrai 1 do valor da variável.
+
+</div>
+
+- é possível criar operações de duas formas diferentes:
+
+<div align="center">
+
+Operação | Sinal | Definição
+----------|-----|-------------
+Pré-fixada | ++ variável<br>--variável | O valor da variável é incrementado ou decrementado antes de ser usado em uma expressão.
+Pós-fixada | variável++<br>variável-- | O valor da variável é incrementado ou decrementado após ser usado em uma expressão.
+
+</div>
+
+- exemplos:
+
+~~~javascript
+//criando variáveis
+let value1 = 50;
+let value2 = 30;
+let total = 0;
+console.log(`Valor 1 = ${value1}`);
+console.log(`Valor 2 = ${value2}`);
+console.log('--------------------------');
+//aplicando os operadores
+value1++;
+value2--;
+console.log(`Novo Valor 1 = ${value1}`);// 51
+console.log(`Novo Valor 2 = ${value2}`);// 29
+console.log('--------------------------');
+//operação pré-fixada
+console.log(`Operação pré-fixada`);
+value1 = 50;
+total = ++value1 + 50;
+console.log(`Valor total = ${total}`);// 101
+console.log(`Novo Valor 1 = ${value1}`);// 51
+console.log('--------------------------');
+//operação pós-fixada
+console.log(`Operação pós-fixada`);
+value1 = 50;
+total = value1++ + 50;
+console.log(`Valor total = ${total}`);// 100
+console.log(`Novo Valor 1 = ${value1}`);// 51
+console.log('--------------------------');
+~~~
+
+### 1.9.5 Operadores de atribuição
+
+- permitem que algum valor seja atribuído a alguma variável.
+- opções:
+
+<div align="center">
+
+Operador | Sinal | Definição
+---------|-------|-----------
+Atribuição | = | Atribui um valor a uma variável.
+Atribuição de adição | += | Atribui um valor efetuando uma soma.
+Atribuição de subtração | -= | Atribui um valor efetuando uma subtração.
+Atribuição de multiplicação | *= | Atribui um valor efetuando uma multiplicação.
+Atribuição de divisão | /= | Atribui um valor efetuando uma divisão.
+Atribuição de resto | %= | Atribui um valor efetuando um módulo.
+Atribuição de exponencial | **= | Atribui um valor efetuando uma potenciação.
+
+</div>
+
+- exemplos:
+
+~~~javascript
+//criando variáveis
+let value = 50;
+console.log(`Valor = ${value}`);// 50
+//aplicando operadores
+Value+=10;
+console.log(`Novo valor = ${value}`);// 60
+value -= 10;
+console.log(`Novo valor = ${value}`);// 50
+value *= 10;
+console.log(`Novo valor = ${value}`);// 500
+value /= 10;
+console.log(`Novo valor = ${value}`);// 50
+value **= 10;
+console.log(`Novo valor = ${value}`);// 97656250000000000
+value %=10;
+console.log(`Novo valor = ${value}`)// 0
+~~~
+
+## 1.10 Objeto Math
+
+- o [`método math`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) permite a realização de qualquer operação aritmética.
+- possui uma série de métodos e propriedades que auxiliam em tarefas que envolvem cálculos.
+
+<div align="center">
+
+Método | O que faz
+-------|----------
+Math.ceil() | Retorna o próximo número inteiro.
+Math.floor() | Retorna o número inteiro anterior.
+Math.round() | Retorna o número inteiro mais próximo, para isso ele verifica:<br>Parte decimal do número maior ou igual a 49, retornará o número inteiro anterior.<br>Parte decimal do número maior ou igual a 50, retornará o próximo número inteiro.
+Math.max() | Retorna o maior valor encontrado no intervalo.
+Math.min() | Retorna o menor valor encontrado no intervalo.
+Math.pow() | Retorna a potência de um número. 
+Math.random() | Retorna um número aleatório entre 0 e 1.
+Math.sqrt() | Retorna a raiz quadrada de um número.
+Math.cbrt() | Retorna a raiz cúbica de um número.
+
+</div>
+
+- exemplos:
+
+~~~javascript
+const numero = 50.79;
+//Math.ceil()
+console.log(`Número retornado: ${Math.ceil(numero)}`);// 51
+//Math.floor()
+console.log(`Número retornado: ${Math.floor(numero)}`);// 50
+//Math.round()
+console.log(`Número retornado: ${Math.round(25.34)}`);// 25
+console.log(`Número retornado: ${Math.round(25.84)}`);// 26
+//Math.max()
+console.log(`Número retornado:${Math.max(13,45,23,89,12,11,2)}`);// 89
+//Math.min()
+console.log(`Número retornado:${Math.min(13,45,23,89,12,11,2)}`);// 2
+//Math.pow()
+console.log(`Número retornado: ${Math.pow(2,10)}`);// 1024
+//Math.random()
+console.log(`Número retornado: ${Math.random()}`);// 0.5484...
+// Math.sqrt()
+console.log(`Número retornado: ${Math.sqrt(81)}`);// 9
+//Math.cbrt()
+console.log(`Número retornado: ${Math.cbrt(27)}`);// 3
+~~~
+
+## 1.10.1 Sorteando um número qualquer
+
+- o uso do `método Math.random()` permite o sorteio de um valor aleatório entre 0 e 1.
+- para sortear um número inteiro qualquer, seguir os passos:
+  - multiplicar o número que será obtido por 100.
+    - qualquer número decimal multiplicado por 100 fará com que o ponto flutuante desse número, avance duas casas decimais para a direita. 
+  - utilizar o método Math.floor() para retornar o número inteiro anterior.
+
+~~~javascript
+//criando as variáveis e sorteando os números
+const numero1 = Math.floor(Math.random() * 100);const numero2 = Math.floor(Math.random() * 100);const numero3 = Math.floor(Math.random() * 100);
+//exibindo os números sorteados
+console.log(`Número sorteado: ${numero1}`);// 56
+console.log(`Número sorteado: ${numero2}`);// 94
+console.log(`Número sorteado: ${numero3}`);// 22
+~~~
+
+## 1.11 Objeto String
+
+- representa uma cadeia de caracteres que poderá ser manipulada através de uma série de métodos. 
+- podemos também acessar individualmente os caracteres que formam a string, usando os índices (assim como é feito nos arrays).
+  - o primeiro caracter da string está no índice 0.
+
+<div align="center">
+
+Método | O que faz
+-------|---------
+Propriedade length | Retorna o número de caracteres existente na string.
+toUpperCase() | Retorna toda a string em letras maiúsculas.
+toLowerCase() | Retorna toda a string em letras minúsculas.
+charAt() | Retorna o caractere que está posicionado no índice declarado.
+indexOf() | Retorna o índice da primeira ocorrência de uma substring declarada. Caso não encontre nada retornará -1.
+lastIndexOf() | Retorna o índice da última ocorrência de uma substring declarada. Caso não encontre nada retornará -1.
+concat() | Concatena duas ou mais strings.
+replace() | Substitui a primeira substring encontrada por outra.
+replaceAll() | Substitui todas as substrings encontradas por outra.
+substring() | Retorna uma parte da substring. Devemos definir o índice inicial e final.
+slice() | Extrai uma parte da string retornando uma nova string.
+split() | Converte uma string em um array.
+trim() | Remove espaços em branco existentes no início e no fimda string. Bem útil para a manipulação de dados em formulários.
+includes() | Verifica se uma string existe em outra string, retornando apenas true ou false.
+startsWith() | Verifica se a string começa com o prefixo especificado, retornando apenas true ou false.
+endsWith() | Verificase a string termina com o sufixo especificado, retornando apenas true ou false.
+
+</div>
+
+- exemplos:
+
+~~~javascript
+const minhaString = 'Javascript é uma linguagem de programação poderosa!';
+console.log(minhaString);// Javascript é uma linguagem de programação poderosa!
+//propriedade length
+console.log(`Tamanho da string: ${minhaString.length}`);// 51
+//toUpperCase()
+console.log(`Letras maiúsculas: ${minhaString.toUpperCase()}`);// JAVASCRIPT É UMA LINGUAGEM DE PROGRAMAÇÃO PODEROSA!
+//toLowerCase()
+console.log(`Letras minúsculas: ${minhaString.toLowerCase()}`);// javascript é uma linguagem de programação poderosa!
+//charAt()
+console.log(`Caracter retornado: ${minhaString.charAt(15)}`);// a
+//indexOf()
+console.log(`Caracter encontrado no índice:${minhaString.indexOf('s')}`);// 4
+//lastIndexOf()
+console.log(`Caracter encontrado no índice:${minhaString.lastIndexOf('s')}`);// 48
+//concat()
+console.log(`Concatenado strings:${'abc'.concat('def').concat('xyz')}`);// abcdefxyz
+//replace()
+console.log(`Substituindo a primeira letra a:${minhaString.replace('a','@')}`);// J@vascript é uma linguagem de programação poderosa!
+//replaceAll()
+console.log(`Substituindo todas as letras a:${minhaString.replaceAll('a', '@')}`);// J@v@script é um@ lingu@gem de progr@m@ção poderos@!
+//substring()
+console.log(`Pegando uma parte da string:${minhaString.substring(4,15)}`);// script é um
+//slice()
+let novaString = minhaString.slice(11,38);
+console.log(`Nova string gerada: ${novaString}`);// é uma linguagem de programa
+//split()
+console.log(`Convertendo array em string:${minhaString.split('')}`);// J,a,v,a,s,c,r,i,p,t, ,é, ,u,m,a, ,l,i,n,g,u,a,g,e,m, ,d,e, ,p,r,o,g,r,a,m,a,ç,ã,o, ,p,o,d,e,r,o,s,a,!
+//trim()
+console.log(`Removendo espaços no início e fim:${minhaString.trim()}`);// Javascript é uma linguagem de programação poderosa!
+//includes()
+console.log(`Verificando se existe na string:${minhaString.includes('ava')}`);// true
+//includes()
+console.log(`Verificando se começa com a string:${minhaString.startsWith('Java')}`);// true
+//includes()
+console.log(`Verificando se termina com a string:${minhaString.endsWith('rosa!')}`);// true
+~~~
+
+## 1.12 Objeto Date
+
+- possui métodos que permitem a manipulação de datas e horas.
+- para isso, estanciar o objeto utilizando o método construtor, que retornará a data e hora atual.
+
+~~~javascript
+//utilizando o método construtor
+const dataAtual = new Date();
+//exibindo o objeto
+console.log(`Data atual: ${dataAtual}`);
+~~~
+
