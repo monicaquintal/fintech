@@ -645,7 +645,9 @@ console.log(`Número retornado: ${Math.cbrt(27)}`);// 3
 
 ~~~javascript
 //criando as variáveis e sorteando os números
-const numero1 = Math.floor(Math.random() * 100);const numero2 = Math.floor(Math.random() * 100);const numero3 = Math.floor(Math.random() * 100);
+const numero1 = Math.floor(Math.random() * 100);
+const numero2 = Math.floor(Math.random() * 100);
+const numero3 = Math.floor(Math.random() * 100);
 //exibindo os números sorteados
 console.log(`Número sorteado: ${numero1}`);// 56
 console.log(`Número sorteado: ${numero2}`);// 94
@@ -733,3 +735,56 @@ const dataAtual = new Date();
 console.log(`Data atual: ${dataAtual}`);
 ~~~
 
+- agora que há um objeto com a data, é possível manipular as informações.
+- detalhes importantes:
+  - objetos instanciados serão baseados no valor de tempo composto pelo número de milissegundos transcorridos desde a data de 1º de Janeiro de 1970, até o momento de execução do script.
+  - os dias da semana são representados por números no intervalo entre 0 (domingo) e 6 (sábado).
+  - meses do ano são representados por números no intrevalo entre 0 (janeiro) e 11 (dezembro).
+  - dias da semana e do mês, números do mês, hora, minutos e segundos menores que 10, serão exibidos apenas o seus números correspondentes, sem a presença do número 0 antecedendo-os. 
+- para manipular o objeto instanciado, há os métodos:
+
+<div align="center">
+
+Método | O que faz
+-------|---------
+getTime() | Retorna o número de milissegundos transcorridos entre 1 de janeiro de 1970 até a data atual.
+getDay() | Retorna o número do dia da semana correspondente do objeto.
+getDate() | Retorna o número do dia do mês correspondente do objeto.
+getMonth() | Retorna o número do mês correspondente do objeto.
+getFullYear() | Retorna o ano correspondente do objeto.
+getHours() | Retorna a hora correspondente do objeto.
+getMinutes() | Retorna os minutos correspondentes do objeto.
+getSeconds() | Retorna os segundos correspondentes do objeto.
+getMilliseconds() | Retorna os milissegundos correspondentes do objeto.
+
+</div>
+
+- exemplos:
+
+~~~javascript
+//instanciandoo método construtor
+const dataAtual = new Date();
+//exibindo o objeto
+console.log(`Data atual: ${dataAtual}`);
+//milisegundos
+console.log(`Milisegundos: ${dataAtual.getTime()}`);
+//dia da semana
+console.log(`Dia da semana: ${dataAtual.getDay()+1}`);
+//dia do mês
+console.log(`Dia do mês: ${dataAtual.getDate()}`);
+//mês
+console.log(`Mês atual: ${dataAtual.getMonth()+1}`);
+//ano
+console.log(`Ano atual: ${dataAtual.getFullYear()}`);
+//hora
+console.log(`Hora: ${dataAtual.getHours()}`);
+//minutos
+console.log(`Minutos: ${'0'+ dataAtual.getMinutes()}`);
+//segundos
+console.log(`Segundos: ${dataAtual.getSeconds()}`);
+//milisegundos
+console.log(`Milisegundos: ${dataAtual.getMilliseconds()}`);
+~~~
+
+## 1.13 Estruturas de decisão
+pág 45
