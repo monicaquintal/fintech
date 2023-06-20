@@ -57,8 +57,8 @@
   <title>Meu projeto Web</title>
 </head>
 <body>
-  <!--Seu conteúdo HTML -->
-  <!--Chamada do arquivo Javascript -->
+  <!-- Conteúdo HTML -->
+  <!-- Chamada do arquivo Javascript -->
   <script src="./js/app.js"></script>
 </body>
 </html>
@@ -87,7 +87,7 @@ eu sou um comentário de múltiplas linhas!
 */
 ~~~
 
-## 1.4 Console.log
+## 1.4 console.log
 
 - o browser é o responsável pela interpretação do código Javascript.
   - lerá linha por linha e efetuará a renderização das informações.
@@ -151,7 +151,7 @@ let userEmail;
 console.log(userId);
 console.log(userName);
 console.log(userLogged);
-console.log(userEmail);
+console.log(userEmail);// undefined
 ~~~
 
 - “undefined”: significa que nenhuma atribuição de valor foi feita à variável.
@@ -256,7 +256,7 @@ console.log(firstNumber, typeof (firstNumber));// number
   - `VAR`:
     - a declaração feita com var permitirá que as variáveis tenham comportamento de `hoisting` (consiste em mover as variáveis e funções para o início do escopo onde foram declaradas, independente de onde estiverem no código).
     - variável é tratada como se tivesse sido definida sempre no início do escopo.
-    - essa prática pode gerar erros.
+    - essa prática pode gerar erros (permite declarar várias vezes a mesma variável).
 
 ~~~javascript
 //exibindo as variáveis
@@ -268,7 +268,7 @@ var userAge = 35;// undefined
 ~~~
 
   - `LET`:
-    - declarações feitas com let e com const ***não têm hoisting***.
+    - declarações feitas com let e com const ***não têm hoisting*** (não consegue acessar a variável antes de inicializar).
     - só estarão disponíveis para uso após as linhas onde foram declaradas, e caso tente usá-las antes da declaração, será gerado um erro na execução.
 
 > Outra diferença está na possibilidade de redeclararmos variáveis que foram declaradas com uso do var. Quando usamos let ou const não podemos redeclarar a mesma variável ou constante.
@@ -787,4 +787,274 @@ console.log(`Milisegundos: ${dataAtual.getMilliseconds()}`);
 ~~~
 
 ## 1.13 Estruturas de decisão
-pág 45
+
+- analisam testes lógicos (também chamadas de condições), e conforme o resultado obtido, ações previamente definidas são executadas pelo script.
+
+### 1.13.1 Estrutura if/else
+
+- pode ser usada para testar uma condição através de um teste lógico, e conforme a resposta obtida, o script executará alguma funcionalidade.
+- sempre retornará duas respostas: true e false. 
+  - quando retornar true, os comandos dentro do bloco if serão executadas.
+  - quando retornar false, o script executará os comandos do bloco else.
+
+~~~javascript
+if (teste lógico) {
+  // Blocotrue
+} else {
+  // Bloco false
+}
+~~~
+
+- exemplo: 
+
+> No código “Números pares e ímpares”, é realizado o sorteio de um número, e verifica-se se é par ou ímpar. Para isso, dentro do teste lógico é calculado o módulo do número: se o resultado for 0, será executado o bloco if (par). Se for diferente de 0, será executado o bloco else (ímpar).
+
+~~~javascript
+const numeroSorteado = Math.floor(Math.random() * 100);
+console.log(`Número sorteado: ${numeroSorteado}`);
+if (numeroSorteado % 2 === 0) {
+  console.log(`O número ${numeroSorteado} é par!!!`);
+} else {
+  console.log(`O número ${numeroSorteado} é ímpar!!!`);
+}
+~~~
+
+### 1.13.2 Estrutura if/else/if
+
+- permite a criação de quantos testes lógicos forem necessários.
+- assim que um teste retornar true, os testes abaixo dele não serão verificados. 
+- caso todos os testes retornem false, o bloco de comandos a ser executado será o do último else.
+- exemplo:
+
+> No código “Verificar número”, sortear dois números e verificar qual é o maior e o menor. Pode acontecer do script sortear números diferentes ou iguais, então é necessário verificar também se eles são iguais.
+
+~~~javascript
+const numSorteado1 = Math.floor(Math.random() * 100);
+const numSorteado2 = Math.floor(Math.random() * 100);
+console.log(`Números sorteados: ${numSorteado1} e ${numSorteado2}`);
+
+if (numSorteado1 > numSorteado2) {
+  console.log(`O número ${numSorteado1} é maior que o número${numSorteado2}`);
+} else if (numSorteado2 > numSorteado1) {
+  console.log(`O número ${numSorteado2} é maior que o número${numSorteado1}`);
+} else {
+  console.log(`${numSorteado1} é igual ao número${numSorteado2}`);
+}
+~~~
+
+### 1.13.3 If ternário
+
+- permite passar o resultado de um teste lógico diretamente a uma variável, sem precisar da instrução if.
+- atribuir à variável a condição a ser verificada, e usar o operador ternário ponto de interrogação (?). São passados dois valores separados pelo sinal de dois pontos (:), o primeiro para o retorno true e o segundo para o retorno false.
+- no exemplo abaixo, “Mês e semestre”, instanciado o Objeto Date para usar o mês e o ano atual. O if ternário foi usado para verificar se o mês atual pertence ao 1º ou ao 2º semestre do ano:
+
+~~~javascript
+//instanciando o objeto Date 
+const data = new Date();
+//pegando o mês contido no objeto
+const mes = data.getMonth() + 1;
+//criando o if ternário
+const semestre = (mes <=6 ? 'primeiro semestre' : 'segundosemestre');
+//exibindo no console
+console.log(`Estamos no mês ${mes}`);
+console.log(`Estamos no ${semestre} do ano de${data.getFullYear()}`);
+~~~
+
+### 1.13.4 Switch / Case / Default
+
+- `switch` compara o conteúdo de uma variável com valores definidos dentro da instrução `case`. 
+- quando há um retorno true, será executado o bloco de comandos correspondente. 
+- caso o retorno seja false, será testado o próximo case.
+- é possível definir um último bloco de comandos através da instrução `default`: será usado caso todos os cases retornem false. 
+  - não existe obrigatoriedade para a utilização do default.
+
+~~~javascript
+switch (variável) {
+  case valor: // primeiro valor a ser verificado 
+  //bloco de comandos
+  break; //saída da instrução switch
+  
+  case valor: // segundo valor a ser verificado 
+  //bloco de comandos
+  break; //saída da instrução switch
+  
+  default: //caso nenhuma opção seja executada
+  //bloco de comandos
+}
+~~~
+
+***Importante***:
+
+> A instrução `break` deve ser inserida no fim de cada bloco case, forçando o encerramento da estrutura, não permitindo que outros blocos sejam executados!
+
+- no exemploa seguir, será sorteado um número entre 1 e 5, representando o código de um produto. O switch é usado para escrever o nome do produto conforme o número sorteado. Logo após, é exibida a mensagem contendo as informações obtidas.
+
+~~~javascript
+const codigo = Math.ceil(Math.random() * 5);
+let produto;
+switch (codigo) {
+  case 1:
+    produto = 'Notebook';
+    break;
+  case 2:
+    produto = 'Tablet';
+    break;
+  case 3:
+    produto = 'Videogame';
+    break;
+  case 4:
+    produto = 'Smartphone';
+    break;
+  default:
+    produto ='Drone';
+} 
+console.log(`Código do produto: ${codigo}`);
+console.log(`Tipo do produto: ${produto}`);
+~~~
+
+## 1.14 Estruturas de repetição
+
+- usadas quando precisamos repetir alguma ação dentro dos scripts, conforme condições a serem definidas. 
+- também são conhecidas por **loops**.
+- as mais usuais são: for, while e do/while.
+- nessas estruturas, podemos utilizar uma variável responsável por controlar o número de repetições executadas, na maioria das vezes atribuindo como identificador a `letra i`.
+
+### 1.14.1 Estrutura for
+
+- utilizada quando sabemos o número exato de repetições que uma determinada tarefa ou bloco de comandos deve executar.
+
+- sintaxe:
+~~~javascript
+for (variável = início; variável < fim; incremento++) {
+  //Bloco de comandos que será repetido
+}
+~~~
+
+- sendo que:
+  - variável = início: declarar a variável que controlará o número de repetições a ser executado pelo loop, e atribuir seu valor inicial.
+  - variável < fim: definir o valor final da variável, que deve finalizar a estrutura de repetição.
+  - incremento++: definir a quantidade de vezes que o loop será executado.
+
+- exemplo: estrutura para sortear dez números entre 0 e 100. O script exibirá esses números, totalizará a quantidade de números pares e ímpares sorteados, além de exibir a somatória dos números sorteados.
+
+~~~javascript
+//declarando as variáveis
+let totalSoma = 0;
+let totalPares = 0;
+let totalImpares = 0;
+let numerosSorteados;
+//criando o for
+for (let i = 0; i <= 9; i++) {
+  //sorteando os números
+  numerosSorteados = Math.ceil(Math.random() * 100);
+  //fazendo a somatória
+  totalSoma += numerosSorteados;
+  //verificando se o número é par ou ímpar
+  if (numerosSorteados % 2 === 0) {
+    //caso par somando 1 na variável totalPares
+    totalPares++;
+  } else {
+    //caso ímpar somando 1 na variável totalImpares
+    totalImpares++;
+  }
+  //exibindo os números no console
+  console.log(`Números sorteados: ${numerosSorteados}`);
+}//finalizando o for
+//exibindo as informações no console
+console.log(`Quantidade de números pares: ${totalPares}`);
+console.log(`Quantidade de números ímpares: ${totalImpares}`);
+console.log(`Somatória dos números sorteados: ${totalSoma}`);
+~~~
+
+### 1.14.2 Estrutura while
+
+- usamos essa estrutura quando não sabemos o número de repetições que serão executadas, mas também pode ser usada quando temos o número de repetições definido.
+- se parece com a estrutura if, mas com uma ***grande diferença***: o if não consegue voltar e refazer o teste lógico, já o while consegue voltar e testar novamente a condição!
+
+- sintaxe:
+~~~javascript
+while (condição) {
+  //Bloco de comandos a ser executado
+}
+~~~
+
+- no exemplo a seguir, sortear dez números e fazer com que todos sejam pares. Para sortear os números vamos utilizar o for, para não permitir números ímpares, usaremos o while. O script deve exibir esses números bem como o número de sorteios realizados.
+
+~~~javascript
+//declarando as variáveis
+let numerosSorteados;
+let totalSorteio = 10;
+//declarando o for
+for (let i = 0; i <= 9; i++) {
+  //sorteando os números
+  numerosSorteados = Math.ceil(Math.random() * 100);
+  //fazendo o while para verificar se o número não é par
+  while(numerosSorteados % 2 !== 0) {
+    //quando número ímpar, entra e refaz o sorteio
+    numerosSorteados = Math.ceil(Math.random() * 100);
+    //somando 1 cada vez que fizer novo sorteio
+    totalSorteio++;
+  }
+  //exibindo os números sorteados
+  console.log(`Números sorteados: ${numerosSorteados}`);
+}
+//exibindo a quantidade de sorteios
+console.log(`Quantidade de sorteios realizados:${totalSorteio}`);
+~~~
+
+### 1.14.3 Estrutura do / while
+
+- obrigatoriamente executará o loop pelo menos uma vez, independente da condição ser verdadeira ou falsa. 
+- podemos também utilizar algum incremento para definir o número de vezes que a estrutura repetirá.
+
+- sintaxe:
+~~~javascript
+do {
+  //Bloco de comandos a ser executado pelo menos uma vez
+} while(condição);
+~~~
+
+- no exemplo a seguir, “Contagem regressiva”, utilizar do/while para contar os números de 10 até  0. Exibir a contagem no console e quando chegar no 0, ter a mensagem “Final da contagem”.
+
+~~~javascript
+//declarando a variável 
+let contagem = 10;
+//iniciando o loop
+do {
+  //exibindo a mensagem
+  console.log(`Fazendo a contagem em: ${contagem}`);
+  //criando o if para ver se a contagem chegou em 0
+  if (contagem === 0) {
+    //exibir a mensagem quando chegar em 0
+    console.log(`Final da contagem`);
+  }
+  // fazendo o decremento do contador
+  contagem--;
+}
+//definindo a condição para o loop parar
+while (contagem >= 0);
+~~~
+
+---
+
+## Laboratório: Introdução Javascript
+- [HTML](./projetos/projeto13/index.html)
+- [CSS](./projetos/projeto13/css/style.css)
+- [JS](./projetos/projeto13/js/script.js)
+
+---
+
+## FAST TEST
+
+### 1. Sobre aestruturas de repetição no JavaScript, podemos afirmar que é FALSA a alternativa:
+> Apenas as estruturasde repetição while e do..while estão disponíveis em JavaScript.
+
+### 2. Qual destas afirmações NÃO DESCREVE as características do JavaScript?
+> A linguagem não reage à interação do usuário, seja por teclado, mouse e, mais recentemente, toquepor telas sensíveis.
+
+### 3. Dos tipos mais comuns de variantes indicados a seguir, qual NÃO PERTENCE ao JavaScript?
+> typeof.
+
+--- 
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
