@@ -92,7 +92,7 @@
 [Capítulo 08: Design Responsivo.](./fase04/capitulo08.md)<br>
 [Capítulo 09: Muito estilo sem sofrimento!](./fase04/capitulo09.md)<br>
 [Capítulo 10: Tornando a interface com o usuário mais dinâmica.](./fase04/capitulo10.md)<br>
-[Capítulo 11:]()<br>
+[Capítulo 11: Javascript Essencial.](./fase04/capitulo11.md)<br>
 [Capítulo 12:]()
 
 </details>
