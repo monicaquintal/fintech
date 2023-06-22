@@ -656,4 +656,50 @@ console.log(heroi2);
 
 ## 1.5 Spread Operator 
 
-página 42
+- permite que os elementos de um objeto sejam passados para outro objeto. 
+- representado por três pontos finais seguidos (...), em conjunto do nome do objeto que deseja espalhar. 
+- é útil principalmente quando queremos manipular objetos ou arrays.
+
+~~~javascript
+//primeiro array
+const xMen = new Array('Ciclope', 'Wolverine', 'Fênix', 'Fera', 'Vampira');
+//segundo array
+const vingadores = ['Homem de Ferro', 'Capitão América', 'Thor', 'Valquíria', 'Capitã Marvel'];
+//gerando um novo array com o spread
+const novoArray = [...xMen, ...vingadores];
+//exibindo o novo array
+console.log(novoArray);
+// (10) ['Ciclope', 'Wolverine', 'Fênix', 'Fera', 'Vampira', 'Homem de Ferro', 'Capitão América', 'Thor', 'Valquíria', 'Capitã Marvel']
+~~~
+
+- copiando um array:
+
+~~~javascript
+//array original
+const vingadores = ['Homem de Ferro', 'Capitão América', 'Thor', 'Valquíria', 'Capitã Marvel'];
+//copiando o array original para outro
+const novoArray = [...vingadores];
+//exibindo o novo array
+console.log(novoArray);
+// (5) ['Homem de Ferro', 'Capitão América', 'Thor', 'Valquíria', 'Capitã Marvel']
+~~~
+
+- utilizando o operador para gerar um outro objeto com novas propriedades:
+
+~~~javascript
+//criando o objeto original
+const vingador = { 
+  nome: 'Clint Barton', 
+  email: 'clint@arqueiro.com'
+};
+//exibindo o objeto original
+console.log(vingador);
+//criando um novo objeto com novas propriedades
+const upgradeVingador = {...vingador, forca: 82, pontaria: 100};
+//exibindo o novo objeto
+console.log(upgradeVingador);
+// {nome: 'Clint Barton', email: 'clint@arqueiro.com', forca: 82, pontaria: 100}
+~~~
+
+## 1.6 Rest Operator
+
