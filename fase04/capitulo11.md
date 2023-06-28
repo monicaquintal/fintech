@@ -703,3 +703,24 @@ console.log(upgradeVingador);
 
 ## 1.6 Rest Operator
 
+- permite que uma função receba um número indefinido de argumentos e os armazene em um array.
+- representado por três pontos finais sequenciais, ( ... ) e deve ser colocado como parâmetro em uma função.
+- exemplo:
+
+~~~javascript
+//criando a função passando o operador como parâmetro
+function somar(...numeros) {
+  let total = 0;
+  numeros.forEach(numero => {
+    total += numero;
+    })
+  return total;
+}
+console.log(`Somando os valores: ${somar(1, 2, 3, 4, 5, 6, 7, 8, 9)}`);
+console.log(`Somando os valores: ${somar(1, 2, 3, 4, 5, 6, 7, 8)}`);
+console.log(`Somando os valores: ${somar(1, 2, 3, 4, 5, 6, 7)}`);
+console.log(`Somando os valores: ${somar(1, 2, 3, 4, 5, 6)}`);
+~~~
+
+## 1.7 Desestruturação
+
