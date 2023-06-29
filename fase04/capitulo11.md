@@ -724,3 +724,58 @@ console.log(`Somando os valores: ${somar(1, 2, 3, 4, 5, 6)}`);
 
 ## 1.7 Desestruturação
 
+- permite acessar os valores existentes em objetos ou arrays e atribuí-los a qualquer variável ou até mesmo gerar um novo objeto.
+
+### 1.7.1 Desestruturação em arrays
+
+- para desestruturar um array, usar colchetes "[]".
+- dentro deles serão declaradas as variáveis que receberão os valores existentes no array, seguindo a posição de seus índices.
+- também é possível usar o ***spread operator*** em conjunto com a desestruturação, gerando um novo array:
+
+~~~javascript
+const vingadores = ['Homem de Ferro', 'Capitão América', 'Thor', 'Valquíria', 'Capitã Marvel'];
+console.log(`Array originial`);
+console.log(vingadores);
+//fazendo a desestruturação com três variáveis e um array
+const [vingador1, vingador2, vingador3, ...outrosVingadores] = vingadores;
+console.log(`Exibindo as variáveis criadas`);
+console.log(`Vingador 1: ${vingador1}`);
+console.log(`Vingador 2: ${vingador2}`);
+console.log(`Vingador 3: ${vingador3}`);
+console.log(`Exibindo o novo array`);
+console.log(`Demais vingadores: ${outrosVingadores}`);
+~~~
+
+### 1.7.2 Desestruturação em objetos
+
+- usar as chaves "{}".
+- declarar os nomes das propriedades que serão utilizadas na desestruturação do objeto.
+- também poderá ser usado o spread operator, gerando assim um novo objeto.
+
+~~~javascript
+const usuario = {
+  nome: 'Clark Kent',
+  id: 12345,
+  idade: 38,
+  profissao: 'Repórter',
+  email: 'clark@planetadiario.com'
+}
+console.log(`Exibindo o objeto original`);
+console.log(usuario);
+//fazendo a desestruturação com três variáveis e um objeto
+const {nome, id, profissao, ...demaisDados} = usuario;
+console.log(`Exibindo as variáveis`);
+console.log(`Id: ${id}`);
+console.log(`Nome: ${nome}`);
+console.log(`Profissão: ${profissao}`);
+console.log(`Exibindo o novo objeto`);
+console.log(demaisDados);
+~~~
+
+## 1.8 DOM 
+
+- `DOM` = Document Object Model.
+- modelo de documento carregado pelos browsers, através do qual podemos definir um padrão para acessar e manipular qualquer conteúdo inserido em uma página HTML.
+- a representação do documento é feita através de uma árvore de nós, e cada elemento da página é representado por um nó específico.
+
+pág 49
