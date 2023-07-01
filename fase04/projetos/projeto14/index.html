@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Projeto Web</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&amp;display=swap" rel="stylesheet">   
+<!-- <link rel="stylesheet" href="./css/style.css"> -->
+</head>
+<body>
+  <h1 class="p-3 bg-danger text-light">Estudando DOM</h1>
+
+  <div class="container d-flex flex-column flex-lg-row">
+    <div class="p-3 col-lg-6 col-md-12">
+      <h2 class="display-6 p-2 ">Lista de Vingadores</h2>
+      <table class="table text-center" id="tabela">
+        <thead>
+          <tr>
+            <th>Vingador</th>
+            <th>Força</th>
+            <th>Velocidade</th>
+            <th>Agilidade</th>
+            <th>XP Final</th>
+          </tr>
+        </thead>
+        <tbody id="vingadores">
+          <tr class="vingador">
+            <td class="nome">Homem de Ferro</td>
+            <td class="forca">90</td>
+            <td class="velocidade">89</td>
+            <td class="agilidade">85</td>
+            <td class="xp-Final"></td>
+          </tr>
+          <tr class="vingador">
+            <td class="nome">Capitão América</td>
+            <td class="forca">94</td>
+            <td class="velocidade">90</td>
+            <td class="agilidade">88</td>
+            <td class="xp-Final"></td>
+          </tr>
+          <tr class="vingador">
+            <td class="nome">Thor</td>
+            <td class="forca">95</td>
+            <td class="velocidade">92</td>
+            <td class="agilidade">89</td>
+            <td class="xp-Final"></td>
+          </tr>
+          <tr class="vingador">
+            <td class="nome">Viúva Negra</td>
+            <td class="forca">90</td>
+            <td class="velocidade">91</td>
+            <td class="agilidade">92</td>
+            <td class="xp-Final"></td>
+          </tr>
+          <tr class="vingador">
+            <td class="nome">Capitão Marvel</td>
+            <td class="forca">94</td>
+            <td class="velocidade">90</td>
+            <td class="agilidade">93</td>
+            <td class="xp-Final"></td>
+          </tr>
+        </tbody>
+        <tr>
+        <tfoot>
+          <tr>
+            <td colspan="5" data-JS="">Dados atualizados: </td>
+          </tr>
+        </tfoot>
+        </tr>
+      </table>
+    </div>
+
+    <hr class="my-4">
+
+    <div class="p-3 rounded-2 col-lg-6 col-md-12">
+      <form action="" id="criarVingador">
+        <div class="row">
+          <h2 class="display-6">Criar um novo vingador</h2> 
+          <div class="my-2">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" id="nome" name="nome" class="form-control" required>
+          </div> 
+          <div class="col-md-4 my-2">
+            <label for="forca" class="form-label">Força</label>
+            <input type="number" id="forca" name="forca" class="form-control" required>
+          </div>
+          <div class="col-md-4 my-2">
+            <label for="velocidade" class="form-label">Velocidade</label>
+            <input type="number" id="velocidade" name="velocidade" class="form-control" required>
+          </div>
+          <div class="col-md-4 my-2">
+            <label for="agilidade" class="form-label">Agilidade</label>
+            <input type="number" id="agilidade" name="agilidade" class="form-control" required>
+          </div>
+          <div class="col-12 d-flex justify-content-end my-2">
+            <button class="btn btn-danger" id="inserirVingador">Inserir novo vingador</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+ 
+  <script src="./formataData.js"></script>
+  <script src="./calcularXP.js"></script>
+  <script src="./exibirDados.js"></script>
+  <script src="./inserirVingador.js"></script>
+</body>
+</html>

@@ -775,7 +775,107 @@ console.log(demaisDados);
 ## 1.8 DOM 
 
 - `DOM` = Document Object Model.
-- modelo de documento carregado pelos browsers, através do qual podemos definir um padrão para acessar e manipular qualquer conteúdo inserido em uma página HTML.
-- a representação do documento é feita através de uma árvore de nós, e cada elemento da página é representado por um nó específico.
+- modelo de documento carregado pelos browsers, que permite definir um padrão para acessar e manipular qualquer conteúdo inserido em uma página HTML.
+- a representação do documento é feita através de uma árvore de nós de diversos tipos, e cada elemento da página é representado por um nó específico.
+  - nós de elemento: elementos existentes na página.
+  - nós de texto: são os conteúdos de texto.
+  - nós de comentários.
+- DOM é uma interface modelo de objeto e de programação; define os elementos HTML como objetos, as propriedades que possuem, os métodos necessários para acessar esses elementos e os eventos disponíveis.
+- o uso do Javascript permite acessar a estrutura definida pelo DOM, e manipular os elementos existentes na página, tornando-a mais funcional e interativa.
+- com utilização do DOM, o JS poderá:
+  - manipular qualquer elemento HTML existente na página.
+  - usar qualquer atributo das tags HTML inseridas na página.
+  - utilizar todos os estilos CSS definidos para os elementos.
+  - inserir, alterar ou remover qualquer elemento HTML e seus respectivos atributos, estilos e conteúdo.
 
-pág 49
+### 1.8.1 Principais métodos DOM
+
+<div align="center">
+
+Método | O que faz
+-------|---------------
+getElementById() | Retorna o elemento HTML que possuir o atributo id definido
+getElementsByClassName() | Retorna todos os elementos HTML que possuírem o atributo class definido
+getElementsByTagName() | Retorna todos os elementos HTML que sejam da tag definida
+querySelector() | Retorna o primeiro seletor encontrado, conforme a atribuição que foi feita
+querySelectorAll() | Retorna todos os seletores encontrados, conforme a atribuição que foi feita
+createElement() | Cria um elemento HTML qualquer
+addEventListener() | Adiciona um escutador de eventos a um elemento HTML
+appendChild() | Adiciona um novo nó (filho) a um elemento HTML
+removeChild() | Remove um nó (filho) de um elemento HTML
+setAttribute() | Define o valor para algum atributo de um elemento HTML
+getAttribute() | Retorna o valor atribuído a algum atributo de um elemento HTML
+removeAttribute() | Remove algum atributo de um elemento HTML
+cloneNode() | Cria uma cópia de algum elemento HTML existente na página
+
+</div>
+
+### 1.8.2 Percorrendo a página
+
+> métodos estudados nos arquivos [index.html](./projetos/projeto14/index.html), [style.css](./projetos/projeto14/css/style.css) e [metodosDom.js](./projetos/projeto14/js/metodosDom.js) e [app.js](./projetos/projeto14/js/app.js).
+
+1. **BUSCANDO PELO ID:** utilizados os métodos `getElementById()` e `querySelector()`, buscando o id=”vingadores”: o elemento &lt;tbody&gt; será retornado com todos os seus descendentes.
+  - o método querySelector() pode buscar seletores diferentes, o uso da hashtag define que ele busque pelo ID.
+
+2. **BUSCANDO PELA CLASS:** `métodos getElementsByClassName()` e `querySelectorAll()`, buscando a class=”nome”.
+  - quando usarmos o getElementsByClassName(),o console faz a exibição de um HTMLCollection (coleção de elementos HTML).
+  - com o método querySelectorAll(), será exibido um NodeList, uma lista de nós do DOM.
+    - o método querySelectorAll() retorna todos os elementos que existirem na página, diferente do querySelector() que retorna apenas o primeiro elemento encontrado.
+    - o método querySelector() pode buscar seletores diferentes, o uso do ponto final define que ele busque pela class.
+
+3. **BUSCANDO PELA TAG:** `métodos getElementsByTagName()` e `querySelectorAll()`, buscando a tag &lt;td&gt;.
+  - quando usarmos getElementsByTagName(), há exibição de um HTMLCollection; com o método querySelectorAll(), será exibido um NodeList.
+
+4. **MANIPULANDO DADOS:** `propriedade “text-content”` para alterar o nome de algum vingador dentro da página.
+
+5. **UTILIZANDO ATRIBUTOS PARA OBTER INFORMAÇÕES:** podemos pegar informações através de atributos existentes, ou criar atributos para serem utilizados nas aplicações, através do `“data-attribute”` (na marcação HTML, começando com prefixo "data-" seguido pelo nome desejado).
+- com "data-attribute”, o atributo data-JS foi recuperado na página HTML, e a variável dataAtual instanciou o objeto Date. 
+- para formatar a data foi usado o objeto “Intl.DateTimeFormat”,que permite que datas e horas sejam formatadas conforme convenções do idioma padrão.
+- foi criado um objeto e passado o idioma através do pt-BR, usamos a propriedade dateStyle que recebeu o valor long, e deixou a data no formato apresentado.
+
+### 1.8.3 Eventos
+
+- eventos são ações que ocorrem quando o usuário está manipulando a aplicação; as ações são detectadas e podem ser utilizados para chamar alguma função Javascript.
+- exemplos:
+
+<div align="center">
+
+Evento | Executa uma função quando:
+-------|------------------------------
+click | Algum elemento é clicado.
+dblclick | Algum elemento é clicado duas vezes.
+mouseover | O mouse está em um elemento.
+mouseup | O mouse sai do elemento.
+keydown | Uma tecla está pressionada.
+keyup | Uma tecla deixar de ser pressionada.
+load | Algum objeto for carregado.
+scroll | Acontece scroll em algum elemento.
+submit | O formulário for enviado.
+reset | O formulário for resetado.
+change | O valor de algum elemento for mudado.
+focus | Algum elemento ganhar foco.
+blur | Algum elemento perder foco.
+
+</div>
+
+- para atribuir um evento a uma função, há três formas diferentes:
+
+<div align="center">
+
+Forma de atribuição | Sintaxe
+-------------------|----------
+Adicionando diretamente em um elemento HTML | &lt;button onclick=”nomeFuncao()”&gt; Clique &lt;/button&gt;
+Usando o método on existente no DOM | document.querySelector(‘button’).onclick = nomeFuncao
+Usando o método addEventListener existente no DOM | document.querySelector(‘button).addEventListener(‘click’, function())
+
+</div>
+
+### 1.8.4 Calculando o XP dos heróis
+
+- utilizado o addEventListener para “escutar” quando o botão que possui o id="calcular" for clicado. 
+- assim que isso ocorrer será disparada uma função que percorrerá o código, lendo as informações que estão no corpo da tabela.
+
+### 1.8.5 Criando elementos no HTML via Javascript
+
+- criação de um novo formulário para digitação dos dados, que ficará acima da tabela anteriormente inserida.
+- criação dos arquivos [formataData.js](), [calcularXP.js](), [exibirDados.js]() e [inserirVingador.js]().
