@@ -173,6 +173,8 @@ Atenção para a entrega:<br>
 Nesta atividade, você deverá criar um documento contendo o link do seu perfil no GitHub. Exporte para PDF e faça o upload do arquivo em nossa plataforma.<br>
 Lembre-se de manter o repositório como público, pois somente assim o professor que irá corrigir a atividade conseguirá avaliar o trabalho realizado."</em>
 
+> Atividade desenvolvida [aqui](https://github.com/monicaquintal/cashPro).
+
 --- 
 
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
