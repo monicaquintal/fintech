@@ -878,4 +878,25 @@ Usando o método addEventListener existente no DOM | document.querySelector(‘b
 ### 1.8.5 Criando elementos no HTML via Javascript
 
 - criação de um novo formulário para digitação dos dados, que ficará acima da tabela anteriormente inserida.
-- criação dos arquivos [formataData.js](), [calcularXP.js](), [exibirDados.js]() e [inserirVingador.js]().
+- criação dos arquivos [formataData.js](./projetos/projeto14/js/formataData.js), [calcularXP.js](./projetos/projeto14/js/calcularXP.js), [exibirDados.js](./projetos/projeto14/js/exibirDados.js) e [inserirVingador.js](./projetos/projeto14/js/inserirVingador.js).
+
+---
+
+## [Laboratório Javascript](./projetos/projeto15)
+
+---
+
+## FAST TEST
+
+### 1. Sobre as tags semânticas, qual tag é utilizada para darmos uma ênfase maior a uma palavra ou parte de um texto?
+> &lt;em&gt;.
+
+### 2. Sobre as tags semânticas, qual tag é utilizada para definir as informações de contato?
+> &lt;address&gt;.
+
+### 3. O conceito de tags semânticas foi introduzido em qual versão HTML?
+> HTML5.
+
+--- 
+
+[Voltar ao início!](https://github.com/monicaquintal/fintech)
