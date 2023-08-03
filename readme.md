@@ -96,3 +96,35 @@
 [Capítulo 12: A rede social dos desenvolvedores.](./fase04/capitulo12.md)
 
 </details>
+<h2>📚 FASE 5 - OOP (de 02/08 até 12/09)</h2>
+
+<details>
+<summary>AGILE SOFTWARE DESIGN</summary>
+
+[Capítulo 01:]()<br>
+[Capítulo 02:]()<br>
+[Capítulo 04:]()<br>
+[Capítulo 07:]()<br>
+
+</details>
+
+<details>
+<summary>DOMAIN DRIVEN DESIGN</summary>
+
+[Capítulo 03:]()<br>
+[Capítulo 04:]()<br>
+[Capítulo 05:]()<br>
+[Capítulo 06:]()<br>
+[Capítulo 08:]()<br>
+
+</details>
+
+<details>
+<summary>AI & CHATBOT</summary>
+
+[Capítulo 09:]()<br>
+[Capítulo 10:]()<br>
+[Capítulo 11:]()<br>
+
+</details>
+<br>
