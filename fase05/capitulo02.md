@@ -73,9 +73,64 @@ Grady Booch – Booch | Sistema que deve ser analisado por meio de várias visõ
 
 ### 1.2.1 Classe
 
+- conjunto de objetos com as mesmas características (***atributos***) e comportamentos (***métodos ou operações***).
+- `objeto`:
+  - são as instâncias das classes, construídos com base nos atributos e métodos definidos por elas. 
+  - classes são como moldes ou formas, e os objetos são moldados a partir delas. 
+  - são considerados qualquer coisa do mundo real.
 
+### 1.2.2 Mensagem
 
+- objetos de um sistema trocam mensagens entre si para realizarem tarefas. 
+- a mensagem estimula que um comportamento ocorra no objeto que a recebe, comportamento obtido por meio de uma operação que é executada.
+- enviar uma mensagem = executar um método.
+- **mensagem é uma requisição enviada de um objeto a outro para que este último realize alguma operação**.
 
+### 1.2.3 Métodos, operações ou comportamentos
+
+- `método`:
+  - é a operação realizada quando um objeto recebe uma mensagem para que seja executada.
+  - a mensagem é a chamada para a execução do método.
+
+- `operação`:
+  - é a implementação de um serviço que pode ser solicitado por algum objeto da classe para modificar o comportamento.
+  - uma operação é uma abstração de algo que pode ser feito com um objeto e que é compartilhado entre todos os objetos da classe.
+  -ao definir uma responsabilidade, determina-se um contrato de obrigações que a classe deve ter.
+
+> Classes têm métodos, também conhecidos como operações ou comportamentos (**UML usa o termo operação**). Um método representa uma atividade que o objeto da classe pode executar.
+
+- comportamento, operação ou método definem o que a classe pode realizar e o que é de sua responsabilidade perante os objetos da classe.
+- em um sistema orientado a objetos, agrupamos objetos comuns em uma classe e determinamos quais são os comportamentos que estes podem ter no cenário ao qual pertencem.
+
+<details>
+<summary>Exemplo</summary>
+
+### Classe **Dog**
+- Atributos: 
+  - nome: String
+  - raca: String
+  - idade: int
+- Comportamentos/métodos/operações:
+  - + correr()
+  - + latir()
+  - + comer()
+  - + dormir()
+
+### Objetos:
+- Pluto
+- Scooby Doo
+- Bidu
+
+### Importante:
+- correr, latir, comer e dormir: comportamentos observados em qualquer cachorro, logo, são métodos (ou operações) definidos na Classe Dog.
+- um objeto “dono” solicita ao seu objeto “cachorro” latir e esta interação entre os dois objetos é uma troca de mensagens.
+- o método “solicitar” do objeto “dono” em suas instruções realiza uma chamada ao método “latir” do objeto do tipo “Dog”.
+
+</details>
+
+### 1.2.4 Abstração a orientação a objetos
+
+- 
 
 
 
