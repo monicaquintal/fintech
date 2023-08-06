@@ -107,9 +107,9 @@ Grady Booch – Booch | Sistema que deve ser analisado por meio de várias visõ
 
 ### Classe **Dog**
 - Atributos: 
-  - nome: String
-  - raca: String
-  - idade: int
+  - - nome: String
+  - - raca: String
+  - - idade: int
 - Comportamentos/métodos/operações:
   - + correr()
   - + latir()
@@ -130,7 +130,98 @@ Grady Booch – Booch | Sistema que deve ser analisado por meio de várias visõ
 
 ### 1.2.4 Abstração a orientação a objetos
 
-- 
+- conceitualmente, depende de quem vê e qual é a relação de interesse sobre algo que pode se tornar mais relevante para um do que para outro. 
+- a abstração depende do contexto sobre o que está sendo analisado e da perspectiva sobre a qual uma coisa é analisada. 
+- são “modelos mentais” para uma visão simplificada do mundo construída por um indivíduo e para cada situação.
+- `princípios da abstração da orientação a objetos`:
+
+<details>
+<summary>1.2.4.1 Encapsulamento</summary>
+
+- maneira de restringir o acesso ao comportamento interno de um objeto.
+- permite controlar melhor o acesso a atributos e sub-rotinas (métodos mais curtos) que chamam umas às outras, escondendo detalhes irrelevantes de outros programadores que precisam apenas saber qual método chamar.
+- no exemplo, a Classe Dog possui atributos com a visibilidade privada (acesso aos atributos é restrito somente à classe). Para ter acesso ao objeto, as demais classes utilizam os métodos que devem ser públicos para a troca de mensagens.
+  - o encapsulamento de garante a segurança para a estrutura de atributos dos objetos.
+  - representado com "-" antes do atributo, neste caso.
+
+</details>
+
+<details>
+<summary>1.2.4.2 Polimorfismo</summary>
+
+- habilidade de classes diferentes responderem à mesma mensagem de uma classe de maneiras diferentes.
+- no exemplo anterior:
+  - os cachorros executam o método Latir, em comum, mas não com os mesmos parâmetros, cada um emite um som diferente.
+- outro exemplo:
+  - "calcular saldo" é uma operação comum para vários tipos de contas, mas como se trata de contas diferentes, cada uma possui um conjunto de atributos respectivos ao tipo de conta.
+  - portanto, calcular o saldo é um procedimento ligeiramente diferente em cada uma delas.
+
+</details>
+
+</details>
+
+<details>
+<summary>1.2.4.3 Herança (generalização)</summary>
+
+- permite a reutilização de atributos e operações (métodos) de uma classe mais genérica para elementos mais específicos.
+
+</details>
+
+</details>
+
+<details>
+<summary>1.2.4.4 Composição</summary>
+
+- os objetos podem ser compostos por outros objetos; esse é o princípio da composição, que permite a criação de objetos a partir da reunião de outros objetos.
+- exemplo: um livro é composto de páginas, páginas possuem parágrafos, parágrafos têm frases e assim por diante.
+
+</details>
+
+## 1.3 Histórico da UML
+
+- entre 1991 e 1995: 
+  - desenvolvimento de técnicas para modelagem de sistemas orientados a objetos.
+  - inicialmente era chamada de UM (Unified Method).
+- em 1997:
+  - a Object Management Group (OMG), organização que define e ratifica padronização de assuntos relacionados à orientação a objetos, aprovou e adotou o padrão UML (Unified Modeling Language) para a modelagem de sistemas orientados a objetos.
+- a UML se tornou uma linguagem/notação visual que permite representar os paradigmas da orientação a objetos para modelagem de sistemas (várias perspectivas do sistema).
+
+### Por que utilizar diagramas para modelar sistemas?
+
+- são notações visuais que facilitam a interpretação lógica do sistema em vários aspectos.
+- podemos representar facilmente as necessidades de um sistema de informação, considerando o dinamismo, complexidade e abrangência.
+- fornecem uma representação objetiva do sistema (“Uma imagem diz mais que mil palavras.”).
+
+## 1.4 UML
+
+UML é:
+
+- linguagem de notação visual para construir, documentar e especificar sistemas orientados a objetos.
+- independente de linguagem de programação, pode ser usada para documentar sistemas que sejam desenvolvidos em qualquer linguagem.
+- independente de processo de desenvolvimento (Cascata, Interativo e Incremental, XP, PMBOK®, Scrum, não importa).
+- padrão de notação visual.
+- responsável pela documentação da arquitetura do sistema.
+- especificação dos requisitos.
+- auxiliar na construção e validação dos casos de testes.
+- axiliar no planejamento e gerenciamento de versão.
+
+UML não é:
+
+- linguagem de programação.
+- metodologia.
+- método.
+
+Quais são as razões para construção de modelos visuais?
+
+- facilidade de comunicação entre os envolvidos no projeto de software.
+- redução do tempo e custo de desenvolvimento.
+- futura manutenção do sistema.
+- complexidade do sistema.
+- controle da complexidade.
+- gerenciamento dos entregáveis.
+- gerenciamento de mudanças.
+- redução das ambiguidades.
+
 
 
 
