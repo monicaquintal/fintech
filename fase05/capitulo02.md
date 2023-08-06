@@ -249,6 +249,7 @@ Diagramas Estáticos (de Estrutura) | - Diagrama de Classe.<br>- Diagrama de Obj
 <img src="../assets/imagens-fase05/diagrama-de-atividades.png" width="50%"><br>
 <em>Exemplo 1: Diagrama de Atividades.</em>
 <br>
+<br>
 <img src="../assets/imagens-fase05/diagrama-de-atividades-2.png" width="50%"><br>
 <em>Exemplo 2: Diagrama de Atividades.</em>
 <br>
@@ -281,6 +282,7 @@ Diagramas Estáticos (de Estrutura) | - Diagrama de Classe.<br>- Diagrama de Obj
 <div align="center">
 <img src="../assets/imagens-fase05/diagrama-de-classe.png" width="50%"><br>
 <em>Exemplo 1: Diagrama de Classe.</em>
+<br>
 <br>
 <img src="../assets/imagens-fase05/diagrama-de-classe2.png" width="50%"><br>
 <em>Exemplo 2: Diagrama de Classe.</em>
@@ -333,6 +335,7 @@ Diagramas Estáticos (de Estrutura) | - Diagrama de Classe.<br>- Diagrama de Obj
 <div align="center">
 <img src="../assets/imagens-fase05/diagrama-de-componentes.png" width="50%"><br>
 <em>Exemplo 1: Diagrama de Componentes, notação UML 1.4.</em>
+<br>
 <br>
 <img src="../assets/imagens-fase05/diagrama-de-componentes2.png" width="50%"><br>
 <em>Exemplo 2: A partir da UML 2, o componente que era representado por um retângulo com dois retângulos menores foi substituído por um retângulo contendo internamente o antigo símbolo.</em>
