@@ -113,7 +113,7 @@
 <details>
 <summary>DOMAIN DRIVEN DESIGN</summary>
 
-[Capítulo 03: Pensando software de uma maneira diferente.](./fase05/capitulo03.md)<br>
+[Capítulo 03: Pensando software de maneira diferente.](./fase05/capitulo03.md)<br>
 [Capítulo 04:]()<br>
 [Capítulo 05:]()<br>
 [Capítulo 06:]()<br>

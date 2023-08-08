@@ -1,6 +1,6 @@
 <div id="fase05" align="center">
 <h1>FASE 5 - OOP</h1>
-<h2>Capítulo 03: Pensando software de uma maneira diferente.</h2>
+<h2>Capítulo 03: Pensando software de maneira diferente.</h2>
 </div>
 
 <div align="center">
