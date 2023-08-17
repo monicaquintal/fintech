@@ -36,6 +36,39 @@
   - `alto desempenho`: código Java é convertido em bytecodes, que são interpretados em um ambiente de execução do Java para executá-los. Se for necessário mais desempenho, esse ambiente de execução transforma os bytecodes em código de máquina nativo para a CPU específica, ganhando assim desempenho.
 - outras duas características determinantes para o sucesso da plataforma Java são a `portabilidade` e a `orientação a objetos`.
 
+### 1.3.1 Portabilidade
+
+- portabilidade do código é a capacidade de ser utilizado em qualquer plataforma/sistema operacional (Windows, Linux, Mac OS) e hardware.
+  - ***a linguagem Java é utilizada independentemente da plataforma***!
+- `compilação`: 
+  - significa transformar o código-fonte (mais fácil para os desenvolvedores) em código de máquina (utilizado pelo computador).
+  - linguagens como C e Pascal são compiladas para determinado sistema operacional e arquitetura de hardware. Se for necessário executar em outro ambiente, compilar o programa especificamente para esse ambiente.
+  - na linguagem Java, existe uma máquina virtual (`JVM` - Java Virtual Machine), que é capaz de interpretar/executar os arquivos Java compilados.
+  - `linguagem Java é Compilada e Interpretada`: os arquivos de código-fonte Java com extensão “.java” são compilados para ***bytecodes*** (arquivos de extensão “.class”). Os bytecodes são interpretados pela JVM, iniciando a execução do software. Para cada plataforma (sistema operacional + hardware), existe uma Máquina Virtual Java, tornando as aplicações Java portáveis.
+  - uma vez compilado, podemos executar o programa Java independentemente da plataforma utilizada.
+
+## 1.4 Orientação a objetos
+
+- programação orientada a objetos é um padrão de desenvolvimento que focaliza a construção e interação entre objetos. 
+- a essência consiste em tratar os dados e os procedimentos que atuam sobre os dados como um objeto: uma entidade independente com uma identidade e características próprias.
+
+- um `objeto` é gerado a partir de um molde (ou classe), seguindo os princípios do mundo real. Um objeto representa uma entidade que pode ser física, conceitual ou de software:
+  - ***Física***: quando representa um modelo físico, como um carro, caminhão, óculos, prédio etc.
+  - ***Conceitual***: quando representam formas abstratas ou não palpáveis, como a matemática, um processo químico, o sentimento etc.
+  - ***De software***: quando representam objetos de software, como um botão, usuário, arquivo etc.
+
+> Um objeto é uma entidade com fronteira e identidade bem definidas que encapsulam o estado e o comportamento.
+
+- `estado`:
+  - representado pelos atributos do objeto; representam as características do objeto em determinado instante.
+  - estado normalmente é alterado ao longo do tempo.
+  - representam as informações que o objeto possui.
+
+- `comportamento`:
+  - é representado pelos métodos que determinam como o objeto age ou reage a uma requisição (chamada) de outro objeto.
+  - definem  as operações que o objeto pode realizar. Como mostra a Figura “Métodos da classe Professor”,  todos  os  comportamentos   que   o   objeto   Professor   pode   executar representam os métodos a ele designados
+
+
 
 
 
