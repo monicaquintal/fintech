@@ -66,13 +66,55 @@
 
 - `comportamento`:
   - é representado pelos métodos que determinam como o objeto age ou reage a uma requisição (chamada) de outro objeto.
-  - definem  as operações que o objeto pode realizar. Como mostra a Figura “Métodos da classe Professor”,  todos  os  comportamentos   que   o   objeto   Professor   pode   executar representam os métodos a ele designados
+  - definem as operações que o objeto pode realizar. 
 
+> A programação orientada a objetos é uma sequência de instruções enviadas ao computador que utiliza e manipula objetos em seu funcionamento!
 
+### 1.5.1 Princípios de orientação a objetos
 
+- são quatro princípios:
 
+1. `Abstração`: 
+  - entendimento e análise das necessidades do sistema, abstraindo do mundo real. 
 
+2. `Encapsulamento`: 
+  - programar por partes, o mais isolado possível, encapsulando-as. 
+  - objetiva tornar o software mais flexível, fácil de modificar e evoluir. 
+  - as classes devem proteger as suas informações e comportamentos, ou seja, devem possuir proteção no acesso a seus atributos e métodos.
+  - a classe esconde a implementação das outras classes e faz com que estes interajam somente através das interfaces disponíveis.
 
+3. `Hierarquia` (herança):
+  - mecanismo pelo qual uma classe pode estender (herdar) de outra classe para receber seus comportamentos (métodos) e estados (atributos).
+  - possibilita a criação de novas classes a partir de uma já existente.
+  - aplicada como forma de reutilizar os atributos e métodos de classes já definidos, permitindo derivar uma nova classe mais especializada a partir de outra classe genérica existente.
+  - **vantagem**: reaproveitamento de código.
+  - aplicar herança envolve basicamente dois elementos: uma superclasse ou classe pai e uma subclasse ou classe filha.
+    - ***Superclasse*** (ou classe ancestral ou classe pai): apresenta as características genéricas de um conjunto de objetos.
+    - ***Subclasse*** (ou classe descendente ou classe filha): estende a superclasse para receber as suas características (herdam). 
+  - importante:
+    - organização das classes deve ser realizada hierarquicamente.
+    - duas perguntas são básicas para essa organização: `IS-A (É-UMA) e HAS-A (TEM-UMA)`. 
+    - é necessário perguntar se uma classe É-UMA parte hierárquica de outra classe ou se contém outra classe.
+
+4. `Modularização`:
+  - processo de dividir um todo em partes bem definidas, que podem ser construídas e examinadas separadamente e que consigam interagir entre si. A
+  - criação de componentes modulares, que podem ser reutilizados para diversos sistemas.
+
+---
+
+## FAST TEST
+
+### 1. Escolha a alternativa que apresenta apenas linguagens de programação orientadas a objetos.
+> Java, C++, PHP eRuby.
+
+### 2. Qual das alternativas apresenta corretamente o conceito de Modularização?
+> É o processo de dividir um todo em partes bem definidas, que podem ser construídas e examinadas separadamente e que consigam interagir entre si.
+
+### 3. Analise o conceito a seguir: É a capacidade de ser utilizado em qualquer plataforma, neste caso, sistema operacional (Windows, Linux, Mac OS) e hardware. Ou seja, pode ser utilizado independentemente da plataforma. Selecione a alternativa que representa esse conceito.
+> Portabilidade do código.
+
+### 4. A linguagem Java tornou-se popular pelo uso da internet e hoje roda em muitos equipamentos e dispositivos: computadores, servidores, celulares, videogames, chips de cartões etc. Em relação à linguagem Java é correto o que se afirma em:
+> Os arquivos de código-fonte Java com extensão “.java” são compilados para bytecodes, também conhecidos como arquivos de extensão “.class”.
 
 --- 
 
