@@ -105,7 +105,7 @@
 
 [Capítulo 01: Entrando de cabeça em orientação a objeto.](./fase05/capitulo01.md)<br>
 [Capítulo 02: ... porque todos amam diagramas!](./fase05/capitulo02.md)<br>
-[Capítulo 04:]()<br>
+[Capítulo 04: Diagramando as estruturas!](./fase05/capitulo04.md)<br>
 [Capítulo 07:]()<br>
 
 </details>
@@ -114,7 +114,7 @@
 <summary>DOMAIN DRIVEN DESIGN</summary>
 
 [Capítulo 03: Pensando software de maneira diferente.](./fase05/capitulo03.md)<br>
-[Capítulo 04:]()<br>
+[Capítulo 04: Diagramando as estruturas!](./fase05/capitulo04.md)<br>
 [Capítulo 05:]()<br>
 [Capítulo 06:]()<br>
 [Capítulo 08:]()<br>
