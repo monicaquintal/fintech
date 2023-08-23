@@ -115,6 +115,7 @@ Símbolo | Tipo de visibilidade | Significado
 
 - nesse diagrama não é obrigatório demonstrar as classes de controle e a fronteira.
 - também não possui todas as operações, estas podem surgir em conjunto com o desenvolvimento do Diagrama de Sequência.
+-
 
 
 
