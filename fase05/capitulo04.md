@@ -115,7 +115,23 @@ Símbolo | Tipo de visibilidade | Significado
 
 - nesse diagrama não é obrigatório demonstrar as classes de controle e a fronteira.
 - também não possui todas as operações, estas podem surgir em conjunto com o desenvolvimento do Diagrama de Sequência.
--
+
+> O objetivo da VCP (visão de classes participantes) é auxiliar no desenvolvimento de diagramas de classes complexos, mas também pode ser utilizada para representar um estudo sobre determinada funcionalidade em relação às classes envolvidas.
+
+<div align="center">
+<img src="../assets/imagens-fase05/exemplo1-classe-de-analise.png" width="70%"/><br/>
+<em>Exemplo de Diagrama de Caso de Uso para controle de chamados e soluções.</em>
+</div>
+<br>
+<div align="center">
+<img src="../assets/imagens-fase05/exemplo2-classe-de-analise.png" width="70%"/><br/>
+<em>Exemplo de VCP para o caso de uso “Registrar Abertura do Chamado”.</em>
+</div>
+
+- na fase de análise, quando um diagrama de caso de uso é desenvolvido, é possível observar a fronteira através da interação de um caso. Ou seja, **cada interação do ator com um caso de uso pode ser representada por uma fronteira**.
+- para cada caso de uso é representada uma classe de controle que gerencia o fluxo do processo da funcionalidade do sistema, conforme o objetivo determinado no fluxo principal do caso de uso.
+
+
 
 
 
