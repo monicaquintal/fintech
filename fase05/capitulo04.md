@@ -101,7 +101,7 @@ Símbolo | Tipo de visibilidade | Significado
 
 - é possível ter até três perspectivas de abstração do diagrama de classes:
 
-1. ***Diagrama de classe de análise***:
+1. ***`Diagrama de classe de análise`***:
 
 - representa as classes com as informações do que o sistema deve fazer em relação à solução do problema.
 - ou seja, representa as classes no domínio do negócio.
@@ -130,10 +130,26 @@ Símbolo | Tipo de visibilidade | Significado
 
 - na fase de análise, quando um diagrama de caso de uso é desenvolvido, é possível observar a fronteira através da interação de um caso. Ou seja, **cada interação do ator com um caso de uso pode ser representada por uma fronteira**.
 - para cada caso de uso é representada uma classe de controle que gerencia o fluxo do processo da funcionalidade do sistema, conforme o objetivo determinado no fluxo principal do caso de uso.
+- no exemplo acima, há o ator Atendente que “Registra Abertura do Chamado” e terá uma tela de acesso para interação, portanto será necessário criar uma classe de fronteira que é a tela de acesso da funcionalidade do sistema e a classe de controle para gerenciar o fluxo do processo de “Registar Abertura do Chamado”. 
 
+<div align="center">
+<img src="../assets/imagens-fase05/exemplo3-classe-de-analise.png" width="70%"/><br/>
+<em>Exemplo de Diagrama de Classe de Análise para “Sistema de Controle de Pedido”.</em>
+</div>
 
+- o exemplo acima não apresenta as classes de fronteira e de controle, pois podemos optar por não as exibir, para facilitar e simplificar o entendimento.
 
+2. ***`Diagrama de classe de projeto ou especificação`***:
 
+- representa as classes do funcionamento do sistema.
+- é construído na fase de projeto do desenvolvimento do sistema,
+- **objetivo**: complementar o Diagrama de Classe de Análise. 
+- nesta fase, normalmente identificamos a necessidade de criar outras classes, pois esse modelo relaciona a tecnologia utilizada e apresenta todas as camadas de funcionamento do sistema MVC (Model, View e Controller) ou, simplificadamente, a camada de modelo, fronteira e controle.
+
+<div align="center">
+<img src="../assets/imagens-fase05/exemplo1-classe-de-projeto.png" width="70%"/><br/>
+<em>Exemplo de Diagrama de Classe de Projeto para “Sistema de Controle de Pedido”.</em>
+</div>
 
 
 
