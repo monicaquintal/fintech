@@ -163,16 +163,94 @@ Símbolo | Tipo de visibilidade | Significado
 - relacionamento descreve como as classes interagem umas com as outras, sendo necessário para a implementação de um comportamento.
 - classes costumam ter relacionamentos entre si (associações), que permitem que compartilhem informações entre elas e também colaborem para a execução dos processos executados pelo sistema. 
 - uma associação (relacionamento) descreve um vínculo que ocorre entre os objetos de uma ou mais classes.
-- relacionamentos são divididos em dois grandes grupos: associações e generalizações.
+- relacionamentos são divididos em dois grandes grupos: 
+  - associações e 
+  - generalizações.
 
 ### 1.4.1 Associações
 
 - relacionamento existente entre as classes. 
 - possui vários tipos.
+
+- associações possuem algumas `características importantes`: 
+  - `multiplicidade`, 
+  - `navegabilidade`, 
+  - `papéis e nome da associação` e 
+  - `direção de leitura`.
+
+> A) Multiplicidade:
+
 - deve-se especificar a multiplicidade entre as classes:
-  - `multiplicidade` é a indicação de quantos objetos podem participar de um relacionamento.
+  - `multiplicidade`:
+  - é a indicação de quantos objetos podem participar de um relacionamento.
   - multiplicidade das associações indica os números mínimo e máximo de objetos envolvidos em um relacionamento.
   - cada associação em um Diagrama de Classes possui duas multiplicidades, uma em cada extremo da linha de associação.
+
+<div align="center">
+
+Nome | Simbologia
+-----|-----------
+Apenas um | 1..1 (ou 1)
+Zero ou Muitos | 0..* (ou *)
+Um ou Muitos | 1..*
+Zero ou Um | 0..1
+Intervalo Específico | 1i..1s
+
+</div>
+
+> B) Navegabilidade: 
+
+- associação também pode ter `navegabilidade`:
+  - pode ser com ou sem setas. 
+  - a seta representa qual a direção de leitura da troca de mensagens.
+  - na representação sem a seta, não conseguimos identificar a navegabilidade da troca de mensagens, podendo ocorrer para os dois lados.
+  - demonstra a direção em que os objetos são transmitidos entre as classes envolvidas.
+
+> C) Papéis e nome da associação:
+
+- os `papéis` indicam qual é a função da classe no contexto do relacionamento.
+- `nome da associação`:
+  - deve ser utilizado quando não for de fácil interpretação a leitura do relacionamento.
+  - ajuda a evitar que existam interpretações equivocadas, principalmente quando ocorrem associações múltiplas (uma mesma classe pode ter mais de uma associação com outra classe).
+  - nome da associação normalmente é um verbo e está relacionado ao tipo de relacionamento entre as classes.
+  - possui uma seta que representa a direção da leitura do relacionamento.
+  - é preferível não nomear associações a usar nomes vagos ou óbvios demais. O mesmo vale para os papéis: em situações que o significado da associação for intuitivo, a utilização só serve para ‘carregar’ o diagrama.
+
+<div align="center">
+<img src="../assets/imagens-fase05/exemplo-nomes-e-papeis.png" width="70%"/><br/>
+<em>Exemplo de utilização de nome de associação e papéis, sendo que o nome da associação é "Contrata", representando que a Organização contrata Indivíduo.</em>
+</div>
+
+### 1.4.2 Associação simples (ou associação binária, entre duas classes):
+
+- representa a conexão entre as classes, isso define que os objetos se relacionam uns com os outros, eles usam os objetos.
+- é o relacionamento mais comum.
+
+<div align="center">
+<img src="../assets/imagens-fase05/exemplo-associacao-simples.png" width="70%"/><br/>
+<em>Exemplo de associação normal ou simples, onde a classe Imóvel pode se relacionar ou não a uma Locação, enquanto Locação obrigatoriamente tem que se relacionar ao imóvel para que o objeto Locação seja construído com todas as características pertinentes ao domínio de negócio (enquanto existir um objeto da classe Locação, deve haver um objeto da classe Imóvel). A navegabilidade para o Imóvel demonstra em que sentido ocorre a troca de mensagens, a Locação usa um Imóvel para ser construído, mas um Imóvel pode ser locado em nenhuma ou em muitas Locações.</em>
+</div>
+
+### 1.4.3 Associação por composição
+
+- associações por composição e agregação sempre estão relacionadas a um contexto em que a informação pertence ao negócio.
+- a composição é um caso especial de associação.
+- definido como um relacionamento todo-parte, ou seja, propagam o comportamento, no sentido de que um comportamento que se aplica a uma classe se aplicará a suas partes, já que uma classe faz parte de outra.
+- o objeto parte de uma Composição depende do objeto todo, ou seja, as partes “vivem” e “morrem” como um todo. Neste caso, o objeto parte é essencial para a existência do objeto todo.
+
+<div align="center">
+<img src="../assets/imagens-fase05/exemplo-associacao-composicao.png" width="70%"/><br/>
+<em>Exemplo de Associação por Composição, onde "a parte" é representada pela classe Item, e "o todo" é a Nota Fiscal. Ao eliminar a classe NotaFiscal, todos os Itens relacionados à Nota Fiscal também serão eliminados, ou seja, "morreram" com a Nota Fiscal. A leitura é um Item formal (<strong>notação de losango fechado</strong>) de uma Nota Fiscal e uma Nota Fiscal tem no mínimo um Item, mas pode ter vários Itens.</em>
+</div>
+
+### 1.4.4 Associação por agregação
+
+- é um relacionamento do tipo todo-parte.
+- a informação contida no objeto parte é complementar ao objeto todo, não é essencial para constituir a informação relacionada ao conceito do negócio do objeto todo.
+- o símbolo da agregação é um **pequeno losango sem preenchimento**, também ao lado do objeto-todo.
+
+
+
 
 
 
