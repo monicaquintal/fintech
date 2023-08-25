@@ -151,6 +151,30 @@ Símbolo | Tipo de visibilidade | Significado
 <em>Exemplo de Diagrama de Classe de Projeto para “Sistema de Controle de Pedido”.</em>
 </div>
 
+3. ***`Diagrama de classe de implementação`***:
+
+- representado com base em um padrão de desenvolvimento, conforme uma linguagem de programação orientada a objetos, como Java ou C#. 
+- é o menos utilizado no mercado por analistas de sistemas, pois uma vez que já existe o Diagrama de Classe de Análise, não é necessário construir o Diagrama de Classe de Implementação.
+- deve seguir o padrão de arquitetura que foi definido ao projeto sob a responsabilidade de um arquiteto de softwares na fase de implementação. 
+- somente o Diagrama de Classe de Análise é de responsabilidade do analista de sistemas, com base no problema e nos requisitos necessários para desenvolvimento do sistema.
+
+## 1.4 Relacionamentos
+
+- relacionamento descreve como as classes interagem umas com as outras, sendo necessário para a implementação de um comportamento.
+- classes costumam ter relacionamentos entre si (associações), que permitem que compartilhem informações entre elas e também colaborem para a execução dos processos executados pelo sistema. 
+- uma associação (relacionamento) descreve um vínculo que ocorre entre os objetos de uma ou mais classes.
+- relacionamentos são divididos em dois grandes grupos: associações e generalizações.
+
+### 1.4.1 Associações
+
+- relacionamento existente entre as classes. 
+- possui vários tipos.
+- deve-se especificar a multiplicidade entre as classes:
+  - `multiplicidade` é a indicação de quantos objetos podem participar de um relacionamento.
+  - multiplicidade das associações indica os números mínimo e máximo de objetos envolvidos em um relacionamento.
+  - cada associação em um Diagrama de Classes possui duas multiplicidades, uma em cada extremo da linha de associação.
+
+
 
 
 
