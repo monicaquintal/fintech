@@ -448,6 +448,235 @@ Intervalo Específico | 1i..1s
 
 ### 2.4.1 Análise do caso de uso
 
+- para a identificação das classes, o `RUP (Rational Unified Process)`, que é uma metodologia de desenvolvimento de software, propõe a análise de casos de uso.
+- casos de uso são utilizados no início do levantamento das classes, e observa-se quais são os objetos utilizados para que o caso de uso produza um resultado, ou seja, são verificados quais são os objetos envolvidos no processo da funcionalidade pretendida para o sistema.
+- para cada caso de uso, deve-se identificar as classes de acordo com o comportamento do caso de uso e distribuir o comportamento do caso de uso conforme as classes identificadas.
+  - para cada classe de análise resultante, deve-se descrever suas responsabilidades e seus atributos e associações.
+  - analistas devem estudar cada caso de uso, compreender os Fluxos Principais, Alternativos e Exceção. É necessário atribuir as responsabilidades de cada classe com seus atributos e operações
+
+### 2.4.2 Análise de robustez
+
+- propõe que os objetos sejam desenvolvidos por categorias: fronteira, controle e entidade.
+- também chamada de `Categorização BCE (Boundary, Control e Entity)`.
+  - objetos de fronteira (ou Boundary) desenvolvem a comunicação e a interação do sistema com os atores.
+  - objetos de controle (ou Control) servem como uma ponte entre os objetos de entidades e os objetos de fronteira, essas classes controlam as operações que o sistema deve executar.
+  - objetos de entidade (ou Entity), que representados pela classe, contextualizam a informação de domínio do negócio.
+- para cada caso de uso, podem ser utilizadas as `regras`:
+  - um objeto de fronteira para cada interação do usuário com um caso de uso.
+  - um objeto de controle para cada caso de uso, que deve controlar a colaboração de um ou mais objetos entre si, a fim de realizar a tarefa definida para o caso de uso.
+  - classes de entidade correspondem aos conceitos pertinentes ao domínio de negócio.
+
+<div align="center">
+<img src="../assets/imagens-fase05/notacao-categorizacao-bce.png" width="50%"/><br/>
+<em>Notação de Categorização BCE.</em>
+</div>
+
+- classes de fronteira e de controle são normalmente identificadas na modelagem de classes de aplicação. Portanto, controladores normalmente não são objetos de domínio, mas sim da aplicação, cuja responsabilidade é coordenar a interação entre outros objetos.
+- classes com mais detalhes de controle e fronteira são, portanto, construídas na modelagem do diagrama de classe de projeto, seu objetivo é compreender a aplicação, ou seja, seu funcionamento através do uso da tecnologia no qual o sistema será implementado.
+
+### 2.4.3 Modelagem CRC
+
+- Modelagem CRC = Classes, Responsabilidades e Colaboradores.
+- ***objetivo***: ensinar os conceitos do paradigma da orientação a objetos, mas por ser muito simples tem o envolvimento de analistas e desenvolvedores, que se reúnem em uma sala para dar início ao que é chamado de sessão CRC.
+- teve início na utilização de um cartão para cada classe de domínio envolvida no projeto de software.
+- exemplo de cartão de matrícula:
+
+<div align="center">
+
+***Classe Matrícula***
+
+Responsabilidades | Colaboradores
+----------------|-------------
+Ter a data de matrícula | Candidato
+Ter o número da matrícula | Curso
+&#32; | Turno
+
+</div>
+
+- neste exemplo, a classe Matricula tem como responsabilidade ter a data e o número de matrícula, mas para que essa classe possa construir um objeto Matrícula, é necessária a ajuda das classes colaboradoras Candidato, Curso e Turno.
+- o Colaborador é a outra classe que oferece seu objeto para auxiliar na construção de um objeto para outro que necessite de sua instância.
+- amodelagem CRC é um processo que é utilizado em reuniões, mas sem o uso efetivo de cartões.
+- na prática, existem muito mais discussões para as definições das classes com o uso da modelagem CRC como um processo mental e lógico.
+
+> há algo em comum entre as técnicas para construção do diagrama de classe entre a modelagem CRC e a Análise de Robustez: ambas determinam as colaborações para a construção dos objetos.
+
+- na utilização da técnica CRC, novos casos de uso podem ser identificados, e essa técnica pode ser necessária para a alteração de casos de uso já existentes, até porque a modelagem realizada é em alto nível.
+- detalhes são adicionados aos poucos, à medida que o problema é entendido.
+
+<div align="center">
+<img src="../assets/imagens-fase05/independencia-casodeuso-classes.png" width="50%"/><br/>
+<em>Interdependência entre o modelo de caso de uso e o modelo de classes.</em>
+</div>
+
+- casos de uso são essenciais para interpretação e identificação das classes, assim como estas auxiliam na visão dos objetos pertinentes ao caso de uso de um sistema; portanto, um complementa o outro.
+- os casos de uso devem ser analisados para se obter classes, e as classes fornecem detalhes para refinar os casos de uso.
+- no caso do Diagrama de Classe, também pode ser utilizado o Diagrama de Sequência, que enriquece as classes com detalhes em operações.
+
+---
+
+<div align="center">
+<h2>3. PASSOS PARA ELABORAR O DIAGRAMA DE CLASSE</h2>
+</div>
+
+## 3.1 Diagrama de classe
+
+- inicialmente, vamos analisar os casos de uso e observar quais são os objetos utilizados para que o caso de uso produza um resultado.
+- a modelagem CRC será utilizada para atribuir o que é responsabilidade de uma classe através de atributos e comportamentos, além de definir quais são as classes colaboradoras (classes necessárias para completar o objeto de negócio).
+- são necessárias várias fontes de informação para conhecer o domínio de negócio, para isso, os documentos de requisitos e regras de negócio são importantes para os esclarecimentos em caso de dúvidas.
+- as técnicas serão trabalhadas em conjunto.
+
+### `Como identificar as classes?`
+
+- um sistema orientado a objetos é composto de objetos em colaboração para realizar as tarefas do sistema.
+- todo objeto pertence a uma classe. 
+- portanto, quando se fala na identificação das classes, o objetivo na verdade é saber quais objetos são necessários para compor o sistema.
+
+### `Quais são os passos paracriar o Diagrama de Classe?`
+
+1. Observar os casos de uso com os seus cenários. A documentação de caso de uso facilita na identificação de objetos no processo da funcionalidade.
+
+2. Verificar as regras de negócio e identificar as possibilidades de relacionamentos das informações pertinentes ao domínio.
+
+3. Levantar TODAS as classes possíveis, com base na análise de caso de uso e nas Regras de Negócio.
+
+4. Atribuir as responsabilidades das classes que não precisam de outras. As responsabilidades são seus atributos e operações (comportamentos), essas classes instanciam objetos sem ter a colaboração de outros, portanto, estas devem ser as que colaboram com as demais.
+
+5. Identificar as classes que precisam de colaboradores e quem são esses colaboradores.
+
+6. Relacionar as classes conforme os conceitos de relacionamento.
+
+## Exemplo: Cenário de controle de reservas de mesa de um restaurante
+
+<em>
+"O restaurante ABC Ltda. necessita de um controle para as reservas de mesa que são realizadas on-line através de uma aplicação Web. Você foi contratado para realizar a modelagem do sistema.<br>
+Após o levantamento de dados, ficou definido que: o funcionário do restaurante cadastra as mesas do restaurante, informa o número da mesa, a posição no salão (com base na entrada e que pode ser: centro, lado esquerdo e lado direito), número de cadeiras e status.<br>
+O cliente consulta as mesas. O sistema deve exibir somente as mesas disponíveis para o cliente. Este realiza o cadastro com CPF, RG, nome, endereço, telefone e e-mail.<br>
+Para reservar uma mesa, o cliente informa o número da mesa disponível, informa data e horário e CPF do cliente solicitante da reserva. Ao concluir areserva, recebe um protocolo com a identificação da reserva."
+</em>
+
+### `Regras de negócio`:
+
+<div align="center">
+
+Regra de negócio 001 | &#32;
+--------------------|----------
+Nome | Reserva Cliente
+Descrição | Uma reserva tem um cliente
+
+Regra de negócio 002 | &#32;
+--------------------|----------
+Nome | Reserva Mesa
+Descrição | Uma reserva tem uma mesa
+
+Regra de negócio 03 | &#32;
+--------------------|----------
+Nome | Protocolo Reserva
+Descrição | Um protocolo da reserva tem CPF do cliente + data da reserva + número da mesa
+
+</div>
+
+### `1°. Passo`: 
+
+- observar os casos de uso com os seus cenários. 
+- analisar o Diagrama de Caso de Uso e a documentação de caso de uso com o fluxo principal, no qual informa os objetos processados através dos substantivos. 
+
+<div align="center">
+<img src="../assets/imagens-fase05/caso-de-uso-reservar-mesa.png" width="50%"/><br/>
+<em>Diagrama de Caso de Uso Reservar Mesa.</em>
+</div>
+
+- podemos identificar os objetos que são processados nos casos de uso, não em seu detalhe, mas em um nível mais alto, como o objeto cliente aparece no caso de uso Cadastrar Cliente, isso significa que o cliente será armazenado em um banco de dados. Portanto, será necessária uma classe para esse objeto.
+- outro exemplo usado para abstração de classes é a ***documentação de casos de uso***; realizar análise dos substantivos que são candidatos a objeto da classe do cenário.
+
+<div align="center">
+
+Usuário | Sistema 
+--------|------------------
+Cliente seleciona a data para sua reserva | Exibe datas e horários disponíveis
+Cliente seleciona data e horário | &#32;
+&#32; | Reserva data e horário
+Cliente seleciona a mesa | &#32;
+&#32; | Recebe a mesa
+Cliente confirma a reserva | &#32;
+Caso de uso continua | &#32;
+
+</div>
+
+- se analisarmos alguns dos substantivos, serão os atributos da classe, outros serão colaboradores da Reserva, como a classe Cliente e a classe Mesa.
+- utilizar as Regras de Negócio também pode facilitar muito, pois representam os objetos do negócio em sua restrição e relação.
+- as documentações de casos de uso nem sempre são desenvolvidas com tanta agilidade, e o tempo para o desenvolvimento das classes não é compatível.
+
+> Portanto, utilizar o diagrama de caso de uso e as regras de negócio é mais viável, pois as classes são identificadas no início do processo de desenvolvimento de software, na fase de Levantamento de Requisitos.
+
+### `2°. Passo`: 
+
+- verificar as regras de negócio e identificar as possíveis classes, até para complemento das que já foram identificadas através do Diagrama de Caso de Uso.
+- avaliar a possibilidade de relacionar as informações pertinentes ao domínio.
+- no exemplo:
+
+**Regras de Negócio (representação simplificada do exemplo):**<br>
+RN01. Uma reserva tem um cliente.<br>
+RN02. Uma reserva tem uma mesa.<br>
+RN03. Um protocolo da reserva tem CPF do cliente + data da reserva + número da mesa.<br>
+<br>
+
+- por meio das Regras de Negócio, é possível identificar as classes que foram levantadas através do Diagrama de Caso de Uso, mas isso nem sempre é possível
+
+### `3°. Passo`: 
+
+- representar TODAS as classes possíveis com base na análise de caso de uso e nas Regras de Negócio.
+
+<div align="center">
+<img src="../assets/imagens-fase05/classes-reserva-mesa.png" width="30%"/><br/>
+<em>Classes identificadas – exemplo Reserva.</em>
+</div>
+
+### `4°. Passo`: 
+
+- atribuir as responsabilidades das classes que não precisam de outras, ou seja, essas classes instanciam um objeto sem a necessidade de troca de mensagens com outra classe (colaborador).
+- responsabilidades são seus atributos (características) e operações (comportamentos), essas classes instanciam objetos independentemente da necessidade da colaboração de outros objetos, portanto, provavelmente, estas são as classes colaboradoras ou que colaboram com as demais.
+
+<div align="center">
+<img src="../assets/imagens-fase05/classes-com-responsabilidades-mesa.png" width="50%"/><br/>
+<em>Classes com Responsabilidades – exemplo Reserva.</em>
+</div>
+
+### `5°. Passo`:
+
+- identificar as classes que precisam de colaboradores – são asclasses que trocam mensagens com outras para gerar uma instância. 
+- também definir quais são as responsabilidades dessas classes e quais são os colaboradores para o relacionamento no próximo passo.
+
+<div align="center">
+<img src="../assets/imagens-fase05/classes-que-presicam-colaboradores-reserva.png" width="50%"/><br/>
+<em>Classe que precisa de colaboradores – exemplo Reserva.</em>
+</div>
+
+- no exemplo, a classe Reserva que atribuímos às responsabilidades (atributos e operações) recebe a colaboração da classe Clientee da classe Mesa. 
+- neste caso, não é necessário inserir os métodos get e set, pois eles são óbvios ao identificar os atributos da classe. 
+- somente foram identificadas as operações essenciais para a reserva da mesa.
+- identificamos que a Reserva precisa de colaboradores, por si só não consegue gerar uma instância e, consequentemente, seus colaborares são a classe Mesa e a classe Cliente.
+
+### `6°. Passo`: 
+
+- relacionar as classes conforme os conceitos de relacionamentos.
+- para saber qual o tipo de relacionamento das classes, é importante entender o negócio, pois isto facilitará muito em alguns conceitos do que representa o objeto no contexto da execução do sistema para resolver o problema do negócio. 
+- algumas questões devem ser levantadas:
+  - é necessário entender o objeto a ser relacionado com um colaborador, se esse objeto é parte do todo nessa colaboração?
+  - o objeto colaborador tem como objetivo formar um todo?
+  - em caso afirmativo, isso é essencial? Ou seja, é composição para formar o todo?
+  - é um complemento do objeto que solicita a colaboração?
+  - tem características comuns que podem ser compartilhadas com outras classes?
+  
+- agora vamos relacionar a classe Reserva.
+- observar que não existe generalização, pois são objetos diferentes, não têm características comuns entre eles. 
+- portanto, vamos analisar as questões da associação que podem ser simples, por composição ou agregação.
+
+<div align="center">
+<img src="../assets/imagens-fase05/classes-colaboradoras-reserva.png" width="50%"/><br/>
+<em>Classes colaboradoras – exemplo Reserva.</em>
+</div>
+
+
 
 
 
