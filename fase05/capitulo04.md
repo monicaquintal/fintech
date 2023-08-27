@@ -676,11 +676,85 @@ RN03. Um protocolo da reserva tem CPF do cliente + data da reserva + número da 
 <em>Classes colaboradoras – exemplo Reserva.</em>
 </div>
 
+- no exemplo acima, podemos verificar se os objetos são parte, todo ou simplesmente independentes, e se são associados para construir a instância necessária. 
+- uma pergunta pode facilitar a identificação do tipo de relacionamento: **“É possível instanciar o Cliente sem ter uma Reserva?”**.
+  - neste caso, a pergunta relacionou a classe Cliente com a classe Reserva, mas ela pode ser utilizada para qualquer relacionamento.
+  - conforme o Diagrama de Caso de Uso, a resposta é SIM. Neste caso, então, é uma **Associação Simples**, pois o objeto Cliente não depende da instância da classe Reserva para ser instanciado. 
+  - mas para a Reserva é necessário, ou seja, precisa de uma Mesa e de um Cliente, conforme as Regras de Negócio 01 e 02.
+- com relação ao outro relacionamento da classe Reserva e da classe Mesa, fazer novamente a pergunta: **“É possível instanciar uma Mesa sem Reserva?”**.
+  - a resposta é SIM, pois caso seja necessário instanciar o objeto Mesa, este é compreendido em suas características e comportamentos por si só, não precisa de outra classe para entendê-lo como objeto.
 
+> Portanto, nos dois casos os relacionamentos são Associações Simples, ou seja, o objeto Reserva utiliza os objetos Cliente e o objeto Mesa como colaboradores através de uma ligação de “eu preciso do seu objeto, para entender um objeto reserva, mas vocês não precisam de mim para ser entendidos”.
 
+<div align="center">
+<img src="../assets/imagens-fase05/classes-colaboradoras-reserva2.png" width="50%"/><br/>
+<em>Classes colaboradoras – exemplo Reserva.</em>
+</div>
 
+- inserir as classes de Fronteira para contextualizar a tela e a classe de Controle para representar a comunicação das classes de entidade com a classe de fronteira.
 
+<div align="center">
+<img src="../assets/imagens-fase05/diagrama-de-classe-exemplo-reserva.png" width="50%"/><br/>
+<em>Diagrama de Classe – exemplo Reserva.</em>
+</div>
 
+> há mais dois exemplos na apostila, consultar!
+
+---
+
+## 3.2 Diagrama de Objetos
+
+- ***objetivo***: esclarecer como serão construídos os objetos do sistema quando instanciados por uma classe.
+  - fornecer uma “visão” dos valores armazenados pelos objetos das classes, em um determinado momento do sistema.
+
+- utilizando o exemplo da Reserva de Mesa, demonstraremos o Diagrama de Objetos com a construção das instâncias das classes.
+- a estrutura das classes em relação aos seus atributos é mantida, e somente são apresentadas as informações correlacionadas ao objetivo da classe.
+
+<div align="center">
+<img src="../assets/imagens-fase05/diagrama-de-objetos-reserva.png" width="50%"/><br/>
+<em>Diagrama de Objetos – exemplo Reserva.</em>
+</div>
+
+- segundo a notação dos objetos conforme Guedes (2011, p. 183), o nome dos objetos está contido, como nas classes, na primeira divisão do retângulo que representa os objetos e pode ser apresentado de três formas: 
+  - nome do objeto, com todas as letras minúsculas, seguido do símbolo de dois-pontos (:) e o nome da classe à qual o objeto pertence, com as letras iniciais maiúsculas. Este é o formato mais completo.
+  - nome do objeto omitido, mas mantendo o símbolo de dois pontos e o nome da classe.
+  - somente o nome do objeto, sem os dois-pontos.
+
+---
+
+## 3.3 Tutorial para modelar o Diagrama de Classe
+
+- utilizando a ferramenta Astah.
+- para criar um projeto, clique em File > New.
+- para criar o Diagrama de Classe, clique no menu Diagram > Class Diagram.
+- clicar no segundo botão da barra para criar uma classe, e informar o nome da classe conforme os padrões. 
+- clicar sobre a Classe e utilizar a propriedade do lado esquerdo na aba Base, conforme os itens Name e Visibility.
+  - também é possível clicar com o botão direito do mouse sobre a Classe.
+- inserir os atributos, através do botão direito do mouse, no link Add Atributte.
+- inserir as operações, através do botão direito do mouse, no link Add Operation.
+- para relacionar com Associações, clicar no botão Association.
+- para utilizar um dos relacionamentos, clicar sobre ele e sobre a classe que deseja relacionar com o colaborador.
+- para inserir Generalização clicar no botão Generalization. Clicar inicialmente nas subclasses e direcione para a superclasse.
+- ao finalizar o Diagrama, é possível exportar a imagem, clicanto no Menu: Tools > Export Image. 
+  - a imagem pode ser exportada para PNG.
+
+---
+
+<div align="center">
+<h2>FAST TEST</h2>
+</div>
+
+### 1. Uma empresa solicitou aos analistas de sistemas a elaboração de um diagrama que represente a visão estática do sistema que servirá como base de construção para outros diagramas. Com base nesse pedido, qual diagrama deve ser elaborado?
+> Diagrama de Classes.
+
+### 2. Com base no conteúdo estudado no capítulo, podemos afirmar que as visibilidades são representadas pelos símbolos -, +, # e ~ antes de um atributo ou uma operação. Selecione a alternativa que apresenta o conceito da visibilidade representado pelo símbolo #.
+> Visibilidade protegida: é visível para as classes derivadas.
+
+### 3. Uma classe é um gabarito para a definição de objetos. A especificação de uma classe é composta por:
+> Nome da classe, atributos (propriedades) e métodos (funcionalidades).
+
+### 4. Em um diagrama de classe, as classes podem ser apresentadas em três tipos ou camadas, que estão relacionados com o seu objetivo na modelagem do sistema. Qual das alternativas apresenta o conceito de classes de entidades?
+> As classes de entidade são aquelas que representam os conceitos de domínio que o sistema deve processar. Essas classes representam as informações e as regras de negócio que direcionam a manipulação destas informações.
 
 --- 
 
