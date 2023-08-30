@@ -98,21 +98,39 @@ Diagrama de Comunicação | Diagrama de Sequência
 
 - cenário: Controle de Chamados.
 - para o Diagrama de Classe, desenvolvido o caso de uso Registrar Abertura do Chamado. Também fazer o Diagrama de Sequência dessa funcionalidade.
+- Diagrama de Caso de uso:
 
 <div align="center">
-<img src="../assets/imagens-fase05/diagrama-caso-uso-chamados.png" width="50%" /><br />
+<img src="../assets/imagens-fase05/diagrama-caso-uso-chamados.png" width="70%" /><br />
 <em>Diagrama de Caso de Uso para controle de chamados e soluções.</em>
 </div>
 
-- desenvolvido o Diagrama de Classe do caso de uso:
+- Diagrama de Classe:
 
 <div align="center">
-<img src="../assets/imagens-fase05/vcp-chamados.png" width="50%" /><br />
+<img src="../assets/imagens-fase05/vcp-chamados.png" width="70%" /><br />
 <em>VCP (Visão de Classes Participantes) do caso de uso "Registrar Abertura do Chamado".</em>
 </div>
 
+- Diagrama de Sequência:
 
+<div align="center">
+<img src="../assets/imagens-fase05/diagrama-de-sequencia-chamados.png" width="70%" /><br />
+<em>Diagrama de Sequência do caso de uso “Registrar Abertura do Chamado”.</em>
+</div>
 
+- neste caso, o chamado é criado após concluir todas as trocas de mensagens. 
+- foram utilizadas mensagens síncronas, e ao gravar o Chamado é retornada uma mensagem de confirmação (verdadeiro ou falso), para determinar se ele foi criado com sucesso.
+
+> Observações:
+
+- o Diagrama de Sequência pode ainda possuir `condição de guarda`, representadas dentro dos colchetes [Condição], utilizado para realizar verificações SE, CASO etc.
+- em caso `loop`, este vem acompanhado da condição de guarda []. O loop pode ser utilizado em cenários que pedem a estrutura de repetição.
+- quando é `criado um componente`, utilizamos &lt;&lt;create&gt;&lg;.
+- `componente de destruição`: representado pelo X. 
+- a interação com outros casos de uso permite a fragmentação do Diagrama de Sequência.
+  - outro caso de fragmentação está relacionado ao desenvolvimento da sequência de troca de mensagens de acordo com a documentação de caso de uso, podendo ser construído um diagrama para o Fluxo Principal, outro para o Fluxo Alternativo ou para o Fluxo de Exceção. Estes dois últimos são desenvolvidos somente quando ocorre um conjunto considerável de mensagens entre os objetos.
+- a `notação de interação` representa a existência de outras funcionalidades no sistema e que cada uma tem uma sequência, sendo representada, nesse diagrama, apenas pelas sequências agrupadas em uma referência, chamada de `interaction`.
 
 
 
