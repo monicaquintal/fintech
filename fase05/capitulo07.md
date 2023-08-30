@@ -69,9 +69,47 @@ Diagrama de Comunicação | Diagrama de Sequência
 
 <div align="center">
 <img src="../assets/imagens-fase05/diagrama-de-sequencia1.png" width="50%" /><br />
-<em>Diagrama de Comunicação – Processo Reservar Mesa.</em>
+<em>Notação do Diagrama de Sequência.</em>
 </div>
 
+1. `Linha da vida`:
+
+- sua criação está relacionada ao objeto participante do caso de uso.
+- os objetos são representados por meio da linha da vida. 
+- a notação da parte superior da linha da vida é a mesma aplicada aos objetos, e os objetos que podem ser representados são os de fronteira, controle e entidade.
+
+2. `Barra de ativação ou controle`:
+
+- ao receber uma mensagem, a linha da vida cria uma barra para demonstrar o processamento do objeto e indica os momentos em que o objeto é utilizado para executar os métodos encontrados no processo do caso de uso.
+- indica os períodos em que um determinado objeto está participando ativamente do processo.
+- ativada por meio do recebimento de uma mensagem.
+
+3. `Tipos de mensagem`:
+
+- a mensagem é representada por uma linha entre dois elementos.
+- podem ser trocadas entre Ator com objeto e entre objetos.
+
+<div align="center">
+<img src="../assets/imagens-fase05/tipos-de-mensagem.png" width="80%" /><br />
+<em>Tipos de mensagem.</em>
+</div>
+
+4. `Exemplo`:
+
+- cenário: Controle de Chamados.
+- para o Diagrama de Classe, desenvolvido o caso de uso Registrar Abertura do Chamado. Também fazer o Diagrama de Sequência dessa funcionalidade.
+
+<div align="center">
+<img src="../assets/imagens-fase05/diagrama-caso-uso-chamados.png" width="50%" /><br />
+<em>Diagrama de Caso de Uso para controle de chamados e soluções.</em>
+</div>
+
+- desenvolvido o Diagrama de Classe do caso de uso:
+
+<div align="center">
+<img src="../assets/imagens-fase05/vcp-chamados.png" width="50%" /><br />
+<em>VCP (Visão de Classes Participantes) do caso de uso "Registrar Abertura do Chamado".</em>
+</div>
 
 
 
