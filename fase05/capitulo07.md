@@ -132,7 +132,43 @@ Diagrama de Comunicação | Diagrama de Sequência
   - outro caso de fragmentação está relacionado ao desenvolvimento da sequência de troca de mensagens de acordo com a documentação de caso de uso, podendo ser construído um diagrama para o Fluxo Principal, outro para o Fluxo Alternativo ou para o Fluxo de Exceção. Estes dois últimos são desenvolvidos somente quando ocorre um conjunto considerável de mensagens entre os objetos.
 - a `notação de interação` representa a existência de outras funcionalidades no sistema e que cada uma tem uma sequência, sendo representada, nesse diagrama, apenas pelas sequências agrupadas em uma referência, chamada de `interaction`.
 
+---
 
+## 1.4 Tutorial para modelar o Diagrama de Sequência
+
+1. para criar um projeto, opção: File > New.
+2. para criar o Diagrama de Sequência, menu Diagram > Sequence Diagram.
+3. utilizar o botão da “Linha da Vida”. 
+4. quando as classes estiverem prontas, clicar sobre elas, arrastá-las e soltá-las na área de desenvolvimento do diagrama.
+5. qualquer outro elemento pode ser inserido na área de desenvolvimento do diagrama. 
+6. as classes de Fronteira e Controle também podem ser arrastadas para o diagrama.
+7. mensagens estão na barra de ferramentas; clicar sobre ela, deixar no ponto de origem em que deseja criar a mensagem, arrastar e soltar sobre o destino.
+8. ao clicar na mensagem, a propriedade do lado esquerdo na parte inferior irá exibir as operações relacionadas à classe, quando houver.
+9. para criar as operações, utilizamos a propriedade Operation.
+10. ao selecionar a mensagem, clicar na Propriedade do lado esquerdo na parte inferior e pressionar Guard: esta é a condiçã guarda(Figura “Propriedade de condição de guarda”).
+11. para criar uma situação de loop, utilizar o elemento CombinedFragment (alt, loop, opt...): cliar neste elemento, segurar e arrastar para a posição em que deseja colocar no diagrama.
+    - a propriedade do lado esquerdo possui duas Abas: a Base e a Operand.
+    - na Aba Base, alterar a propriedade Operator para loop.
+    - na Aba Operand, insirerir a condição de Guard e informar o texto que deseja para a condição.
+12. para criar um objeto temporário cuja instância será excluída após o processo:
+    - clicar no elemento Lifeline da barra de ferramentas; o Astah irá criar um objeto.
+    - com o novo Lifeline, usar a barra de ferramentas e clicar sobre “Create Message”.
+    - clicar sobre o Create Message e arrastar até a barra de ativação em que deseja iniciar um novo objeto.
+
+---
+
+<div align="center">
+<h2>FAST TEST</h2>
+</div>
+
+### 1. De acordo com o estudo do capítulo, selecione a alternativa que contém o conceito de Diaframa de Interação.
+> Demonstra o comportamento interno do sistema, auxiliando no esclarecimento dos casos de uso pela representação do funcionamento do processo por meio da troca de mensagens entre os objetos.
+
+### 2. Representa a requisição de um objeto remetente a um objeto receptor para que esse último execute alguma operação definida para sua classe. Ela deve conter informação suficiente para que a operação do objeto receptor possa ser executada.
+> Mensagem.
+
+### 3. Analise o texto a seguir: "Representa a ordem lógica da troca de mensagens entre os objetos de um caso de uso, ou seja, demonstra o processamento a partir de solicitações e de execuções dos métodos entre os objetos". Qual é a alternativa que representa o conceito apresentado?
+> Diagrama de Sequência.
 
 --- 
 
