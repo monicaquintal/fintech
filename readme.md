@@ -117,7 +117,7 @@
 [Capítulo 04: Diagramando as estruturas!](./fase05/capitulo04.md)<br>
 [Capítulo 05: Um pouco de Java nesta forma de pensar.](./fase05/capitulo05.md)<br>
 [Capítulo 06: Software de classe.](./fase05/capitulo06.md)<br>
-[Capítulo 08:]()<br>
+[Capítulo 08: Como a herança pode me ajudar a programar melhor?](./fase05/capitulo08.md)<br>
 
 </details>
 
