@@ -124,7 +124,7 @@
 <details>
 <summary>AI & CHATBOT</summary>
 
-[Capítulo 09:]()<br>
+[Capítulo 09: Inteligência Artificial.](./fase05/capitulo09.md)<br>
 [Capítulo 10:]()<br>
 [Capítulo 11:]()<br>
 

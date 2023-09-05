@@ -376,7 +376,14 @@ public class ContaCorrente extends Conta{
 
 ## FAST TEST
 
+### 1. A palavra-chave extends é utilizada na declaração de uma classe para determinar a sua:
+> Superclasse.
 
+### 2. "É um dos principais pilares da programação orientada a objetos. A ideia é criar classes com base em classes existentes, dessa forma, a classe que for criada herdará todos os comportamentos e atributos de uma classe já existente".
+> Herança.
+
+### 3. Uma classe que herda de outra classe é chamada de:
+> Subclasse.
 
 --- 
 
