@@ -385,6 +385,26 @@ public class ContaCorrente extends Conta{
 ### 3. Uma classe que herda de outra classe é chamada de:
 > Subclasse.
 
+---
+
+## Atividade Cap 8 - Como a herança pode me ajudar a programar melhor? - Implementação de herança nas classes do sistema fintech!
+
+<em>
+"Revise o diagrama de classe e suas implementações, que foram entregues nos capítulos anteriores. Nas outras entregas não era obrigatório o uso da Herança, porém, se você já o utilizou, parabéns! Poderá reaproveitá-lo para esta atividade.
+<br>
+Crie um projeto Java, conforme os capítulos anteriores, e implemente todas as classes do projeto Fintech. Não se esqueça de utilizar o encapsulamento para proteger os atributos e métodos. Os métodos gets e sets não aparecem no diagrama de classe.
+<br>
+Implemente uma classe de teste com o método main, escolha duas classes implementadas e crie objetos, instanciando-as. Coloque alguns valores em seus atributos e invoque seus métodos.
+<br>
+Ajuste o Diagrama de Classe para mapear as classes que utilizam herança. Faça as modificações utilizando a notação de generalização ou herança que foi vista no capítulo “Diagramando as Estruturas!”.
+<br>
+Depois, modifique o código-fonte para implementar a herança nas classes Java, de acordo com o diagrama de classe que foi ajustado. Crie os construtores para as superclasses e subclasses.
+<br>
+Para a entrega da atividade, exporte o diagrama de classe como imagem e copie, para um arquivo Microsoft Word, somente a parte da herança. Copie também os códigos-fonte que foram implementados em Java com a herança. Exporte como PDF e entregue para a gente. Dúvidas?
+<br>
+Você vai precisar entregar o projeto também, para isso, exporte o projeto no formado zip. "
+</em>
+
 --- 
 
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
