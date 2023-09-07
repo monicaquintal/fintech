@@ -106,6 +106,9 @@ b) `Inteligência Artificial Limitada` (Narrow Artificial Intelligence, ou Narro
 
 - a IA deve substituir funções em empresas que podem ser automatizadas, como foi o caso da IBM que anunciou em 2023 que pausou a contratações de 7.800 vagas para automatizar com inteligência artificial. 
 - por outro lado, compreender a IA permitirá que os profissionais aproveitem seu potencial para aprimorar seu trabalho, melhorar a eficiência e tomar decisões baseadas em dados. 
+
+> `Digital Footprint`(ou vestígio tecnológico) são vestígios que deixamos na internet por meio de nossas ações; esses dados são ativos para grandes empresas, pois é a partir dos dados gerados, por exemplo, que é possível criar recomendações para os usuários.
+
 - o primeiro passo para aprender sobre IA é entender os três tipos de dados:
 
 ### 1.3.1 Dados Estruturados
@@ -113,15 +116,26 @@ b) `Inteligência Artificial Limitada` (Narrow Artificial Intelligence, ou Narro
 - referem-se ao dado que é organizado e armazenado em um formato predefinido com um schema ou modelo de dado bem definido. 
 - segue uma estrutura consistente e é tipicamente armazenado em bancos de dados relacionais ou planilhas.
 - características:
-  - Formato: 
+  - formato: 
     - dados são organizados em um formato fixo com uma estrutura clara e predefinida. 
     - geralmente representado no formato de tabelas com linhas e colunas, onde cada coluna corresponde a um atributo ou campo específico, e cada linha representa um registro de dados.
-  - Schema: 
+  - schema: 
     - os dados estruturados seguem um schema predefinido ou modelo de dados que define a estrutura, os tipos de dados e os relacionamentos entre diferentes elementos.
     - fornece uma forma de como os dados são organizados e permite consistência e integridade dos dados.
   - tipos de dados: 
     - cada atributo ou campo de um dado estruturado tem um tipo de dado definido, como um número, texto ou booleano. 
     - isso permite armazenamento, indexação e consulta eficientes dos dados.
+  - relacionamentos: 
+    - dados estruturados podem capturar relacionamentos entre diferentes entidades de dados por meio de chaves primárias, chaves estrangeiras ou outras associações definidas.
+    - esses relacionamentos permitem unir tabelas e realizar consultas complexas em vários conjuntos de dados relacionados.
+  - exemplos:
+    - Bancos de dados relacionais: dados armazenados em tabelas com colunas e linhas fixas, gerenciados por sistemas de gerenciamento de banco de dados (DBMS) como MySQL, Oracle, ou Microsoft SQL Server.
+    - Planilhas: dados organizados em linhas e colunas usando software como Microsoft Excel ou Google Sheets.
+    - Arquivos CSV (Comma-Separated Values): arquivos de texto com dados tabular onde os valores estão separados por vírgulas.
+    - Sistemas ERP (Enterprise Resource Planning): bancos de dados que armazenam dados estruturados relacionados aos processos do negócio como vendas, inventário e finanças.
+
+> dados estruturados são adequados para consultas, relatórios e análises usando Structured Query Language (ou SQL) ou outras ferramentas para poder processar dado tabular de forma eficiente.
+
 
 
 
