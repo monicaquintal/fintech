@@ -125,7 +125,7 @@
 <summary>AI & CHATBOT</summary>
 
 [Capítulo 09: Inteligência Artificial.](./fase05/capitulo09.md)<br>
-[Capítulo 10:]()<br>
+[Capítulo 10: O que são os Chatbots?](./fase05/capitulo10.md)<br>
 [Capítulo 11:]()<br>
 
 </details>
