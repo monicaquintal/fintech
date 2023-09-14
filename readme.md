@@ -130,3 +130,35 @@
 
 </details>
 <br>
+
+<h2>📚 FASE 6: MODEL (de 13/09 até 24/10)</h2>
+
+<details>
+<summary>DOMAIN DRIVEN DESIGN</summary>
+
+[Capítulo 01:E o sistema passa a falar com o banco de dados!](./fase06/capitulo01.md)<br>
+[Capítulo 02: ]()<br>
+[Capítulo 05: ]()<br>
+[Capítulo 08: ]()<br>
+
+</details>
+
+<details>
+<summary>BUILDING RELATIONAL DATABASE</summary>
+
+[Capítulo 03: ]()<br>
+[Capítulo 04: ]()<br>
+[Capítulo 06: ]()<br>
+[Capítulo 07: ]()<br>
+[Capítulo 09: ]()<br>
+[Capítulo 10: ]()<br>
+
+</details>
+
+<details>
+<summary>FORMAÇÃO SOCIAL E SUSTENTABILIDADE</summary>
+
+[Capítulo 11: ]()<br>
+
+</details>
+<br>
