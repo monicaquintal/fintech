@@ -136,8 +136,8 @@
 <details>
 <summary>DOMAIN DRIVEN DESIGN</summary>
 
-[Capítulo 01:E o sistema passa a falar com o banco de dados!](./fase06/capitulo01.md)<br>
-[Capítulo 02: ]()<br>
+[Capítulo 01: E o sistema passa a falar com o banco de dados!](./fase06/capitulo01.md)<br>
+[Capítulo 02: Lidando com vários dados... em Java!](./fase06/capitulo02.md)<br>
 [Capítulo 05: ]()<br>
 [Capítulo 08: ]()<br>
 
