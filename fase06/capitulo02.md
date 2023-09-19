@@ -30,7 +30,7 @@ while (<condição>) {
 }
 ~~~
 
-- exemplo: trecho de código que imprime os números do 1 ao 10.
+- [exemplo](./projects/capitulo02_fase06/src/capitulo02_fase06/Estruturas_de_repeticao.java): trecho de código que imprime os números do 1 ao 10.
 
 ~~~java
 int numero = 0;
@@ -54,7 +54,7 @@ do {
 } while (<condição>);
 ~~~
 
-- exemplo: trecho de código que imprime os números do 1 ao 10.
+- [exemplo](./projects/capitulo02_fase06/src/capitulo02_fase06/Estruturas_de_repeticao.java): trecho de código que imprime os números do 1 ao 10.
 
 ~~~java
 int numero2 = 0;
@@ -67,7 +67,7 @@ do {
 
 > há situações em que não é possível prever a quantidade de iterações; nesses casos, as duas estruturas podem ser utilizadas.
 
-- exemplo 2:
+- [exemplo 2](./projects/capitulo02_fase06/src/capitulo02_fase06/Exemplo_do_while.java):
 
 ~~~java
 Scanner sc = new Scanner(System.in);
@@ -96,18 +96,211 @@ sc.close();
 
 ### 1.2.3 `For`
 
+- seu uso é **indicado quando sabemos exatamente quantas vezes o loop deve ser realizado**.
+- é uma estrutura de repetição que utiliza uma **variável responsável por controlar o número de iterações**. 
+  - funciona como um contador de voltas que é incrementadoa cada iteração. 
+- sintaxe básica:
 
+~~~
+for (<inicialização>; <condição lógica>; <incremento ou decremento>) {
+  <instruções>
+}
+~~~
 
+- [exemplo](./projects/capitulo02_fase06/src/capitulo02_fase06/Estruturas_de_repeticao.java): trecho de código que imprime os números do 1 ao 10.
 
+~~~java
+System.out.println("Utilizando FOR:");
+for (int i = 0; i <= 10; i++) {
+  System.out.println(i);
+}
+~~~
 
+### 1.2.4 Exercícios
 
+1. Elabore um programa para ler 20 valores inteiros fornecidos pelo usuário e calcular a soma deles. Apresente o resultado ao final.
+2. Elabore um programa para fazer a tabuada de um número fornecido pelo usuário,variando de 0 a 12, e mostre o resultado a cada iteração.
+3. Elabore um programa que calcule a sequência de Fibonacci até o 30º termo.A sequência obedece ao seguinte padrão: 1, 1, 2, 3, 5, ... n.
+4. Elabore um programa que leia o nome e o salário de n pessoas, o usuário deverá informar se deseja continuar a iteração. Ao final, apresente a quantidade de pessoas informadas e a média entre os salários.
 
+## 1.3 Arrays
 
+- estrutura de dados que armazena uma coleção de itens do mesmo tipo, que pode ser um tipo primitivo ou um objeto.
+- cada item no vetor possui seu próprio local numerado, chamado `índice`. 
+  - o índice é utilizado para acessar um elemento no vetor e, assim, recuperar ou atribuir uma informação naquele índice.
+  - em um array, o índice se inicia a partir do 0.
+  - um array possui um comprimento fixo que não pode ser alterado. 
+  - há a possibilidade de recuperar o tamanho do array por meio do `atributo length`.
+- um array em Java é um objeto, logo devemos utilizar o `operador new` para criar um anova instância de um array.
+- para declarar uma variável de modo a armazenar um array: especificar o tipo de array, acrescentar colchetes ([ ]) e definir o nome da variável, ou adicionar os colchetes depois do nome da variável.
+- exemplo:
 
+~~~java
+int[] notas = new int[40];
+int notas2 [] = new int [50];
 
+notas[0] = 10;
+/* Para atribuir valor em uma posição:
+  * indicar o nome do vetor e 
+  * inserir o índice nos colchetes. */
+~~~
 
+- no momento da declaração, definir entre colchetes o comprimento do array.
+- um array de boolean é inicializado com false, e um array de objeto é inicializado com null.
+- exemplo:
 
+~~~java
+notas[0] = 10;
+~~~
 
+- para recuperar o valor, indicar o nome e o índice do vetor:
+
+~~~java
+System.out.println(notas[0]);
+~~~
+
+- há **duas formas de declarar um vetor com suas posições preenchidas com valores predeterminados**:
+  - a primeira consiste em atribuir uma lista de valores entre chaves { }, sendo cada valor separado por vírgula.
+  - a outra forma tem o mesmo princípio, diferenciando-se pela adição do operador new na declaração.
+
+~~~java
+int notas[] = {10, 9, 8, 2};
+// ou
+int notas[] = new int{10, 9, 8, 2};
+
+/* o resultado das declarações acima 
+ * é igual ao resultado do código:
+ */
+int notas[] = new int[4];
+notas[0] = 10;
+notas[1] = 9;
+notas[2] = 8;
+notas[3] = 2;
+~~~
+
+- podemos criar arrays seja qual for o tipo de dado em Java: String, byte, char, int, long, double, float, boolean ou qualquer classe Java. 
+- exemplos:
+
+~~~java
+byte bytes[] = new byte[4];
+short shorts[] = new short[8];
+double doubles[] = new double[7];
+float floats[] = new float[3];
+String strings[] = new String[10];
+Carro carros[] = new Carro[15];
+~~~
+
+- para acessar todas as posições de um vetor, utilizamos loops: podemos fazer um loop para repetir uma determinada operação pela quantidade de vezes igual ao tamanho do vetor.
+
+### [Exemplo 1](./projects/capitulo02_fase06/src/capitulo02_fase06/Exemplo_For.java):
+
+- desenvolver um programa que precisa armazenar as notas de uma turma de 10 alunos e calcular a sua média. 
+- primeiro, ler as notas dos 10 alunos utilizando um loop e armazenando cada uma em uma posição do array (vetor).
+- depois, calcular a média e exibir para o usuário. 
+
+~~~java
+Scanner scanner = new Scanner(System.in);
+
+float[] notas = new float[4];
+float totalNotas = 0;
+
+for (int i = 0; i < notas.length; i++) {
+  System.out.println("Digite a nota do aluno: ");
+  notas[i] = scanner.nextFloat();
+  totalNotas = totalNotas + notas[i];
+}
+float mediaNotas = totalNotas / notas.length;
+System.out.println("A média dos alunos é: "+ mediaNotas);
+scanner.close();
+~~~
+
+### Exemplo 2:
+
+- definido um array com 5 posições para armazenar as referências de objetos do tipo Carro.
+- para popular o array de carros, primeiro instanciá-lo e depois armazenar a sua referência em uma posição do vetor.
+
+~~~java
+Carro[] carros = new Carro[5];
+
+Carro carro = new Carro();
+carro.setModelo("Gol");
+
+carros[0] = carro;
+~~~
+
+- para recuperar o valor do modelo do carro que está armazenado na primeira posição do vetor:
+
+~~~java
+String modelo = carros[0].getModelo();System.out.println(modelo);
+~~~
+
+### 1.3.1 `For-each`:
+
+- permite percorrer um vetor de primitivos ou referências com uma sintaxe mais simples.
+- não necessita manter uma variável de controle para indicar a posição do elemento no vetor.
+- sintaxe:
+
+~~~
+for (<tipo> <variável> : <array>){
+  <instruções>
+}
+~~~
+
+- temos:
+  - primeiro parâmetro é o tipo do array; 
+  - o segundo é um nome para a variável que vai receber cada um dos itens do vetor; 
+  - e o último parâmetro, que está após os dois pontos (:), é o array que queremos percorrer.
+- percorrendo o array do exemplo acima: 
+
+~~~java
+for (Carro carro: carros) {
+  System.out.println(carro.getModelo());
+}
+~~~
+
+### 1.3.2 `Matrizes` (ou arrays multidimensionais):
+
+- são arrays de arrays. 
+- ou seja, cada posição do array armazena outro array. Esses arrays também podem conter arrays e assim por diante, abrangendo quantas dimensões o desenvolvedor desejar.
+- exemplo:
+  - as notas dos alunos devem ser armazenadas por disciplina. 
+  - o curso tem 9 disciplinas com 40 alunos cada.
+  - criar um array com 9 posições e em cada posição armazenar um outro array com 40 elementos.
+
+~~~java
+float[][] notas = new float[9][40];
+~~~
+
+- o array de array denominado "notas" representa uma matriz de 9 linhas com 40 colunas.
+- ou seja, uma matriz 9 x 40 que tem 360 posições, uma para cada aluno em 9 disciplinas. 
+- para armazenar uma nota 10 para o primeiro aluno na primeira disciplina:
+
+~~~java
+notas[0][0] = 10f;
+~~~
+
+- para informar uma nota 9 ao segundo aluno da primeira disciplina, basta alterar o índice:
+
+~~~java
+notas[0][1] = 9f;
+~~~
+
+- portanto, arrays de arrays funcionam da mesma forma que arrays unidirecionais. 
+- o primeiro índice de cada array começa em 0.
+- é possível também criar um array de array de array, ou em quantas dimensões forem necessárias:
+
+~~~java
+float[][][] notas = new float[10][50][10];
+~~~
+
+### 1.3.3 Exercícios
+
+1. Escreva um programa para preencher uma matriz unidimensional (vetor) com 15 posições de números inteiros e, em seguida,apresente os elementos.
+2. Escreva um programa para preencher uma matriz unidimensional (vetor) que deverá receber as temperaturas ao longo do dia. A medição precisa ser registrada a cada uma hora. Ao final, exiba a temperatura média do dia.
+3. Altere o programa anterior para registrar as temperaturas de cada dia do mês, neste caso, utilize uma matriz com 30 linhas e 24 colunas. Ao final, verifique qual foi a maior temperatura, a menor temperatura e a temperatura média.
+4. Escreva um programa para armazenar em uma matriz as notas das 5 disciplinas dos 20 alunos de uma turma.
+
+### 1.4 Strings
 
 
 
