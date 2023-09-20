@@ -302,6 +302,197 @@ float[][][] notas = new float[10][50][10];
 
 ### 1.4 Strings
 
+- são sequências de caracteres.
+- **Java não tem um tipo de dado primitivo,como int ou double, para armazenar uma string.** Em vez disso, podemos utilizar a biblioteca-padrão Java,que contém uma classe predefinida, chamada String!
+
+> Importante: **String** é a palavra reservada do Java e representa uma classe predefinida, e **string** refere-se a uma cadeia de caracteres, ou seja, um texto.
+
+- objetos strings são imutáveis e seu conteúdo de caracteres não pode ser alterado após a sua inicialização.
+- porém, é possível armazenar outra string no lugar da string original. 
+- uma variável String deve ser declarada, instanciada e inicializada. 
+- sintaxe:
+
+~~~java
+String nome;
+~~~
+
+- depois de declarar uma String, podemos instanciá-la como uma classe normal.
+- sintaxe: 
+
+~~~java
+String nome = new String();
+nome = "hello";
+// OU
+String nome = new String("hello");
+
+/* 
+ * É possível também atribuir um valor 
+ * a uma variável String sem instanciá-la:
+ */
+String nome = "hello";
+~~~
+
+- dessa forma, a string será armazenada em um pool de strings, área utilizada pelo Java como cache.
+- caso a variável String seja uma variável de instância, ou seja, um atributo de uma classe, ela precisa ser instanciada ou inicializada antes de ser utilizada, pois todos os atributos de referência são inicializados com null.
+  - se invocarmos um método de uma variável vazia, vamos receber uma exceção (exception), chamada `NullPointerException`.
+  - ou seja, um erro pode acontecer.
+  - exemplo: método length() para recuperar a quantidade de caracteres da string nome sem instanciá-la:
+
+~~~java
+String nome = null;
+System.out.println(nome.length());
+~~~
+
+- a variável nome não possui nenhum valor, é nula (null).
+- quando o programa for executado, um erro vai ocorrer.
+- para resolve-lo, instanciar ou inicializar uma variável String:
+
+~~~java
+String nome = new String();
+System.out.println(nome.length());
+
+// OU
+
+String nome = "hello";
+System.out.println(nome.length());
+~~~
+
+- ao declarar uma variável dentro de um método, é necessário inicializá-la antes de utilizá-la!
+
+### 1.4.1 Caracteres de escape:
+
+- são alguns caracteres precedidos da contrabarra, considerados sequência de escape e que têm um significado especial para o compilador.
+
+<div align="center">
+
+Sequência de escape | Descrição
+--------------------|----------------
+&#92;n | Nova linha.<br>Posiciona o cursor no início da próxima linha.
+&#92;t | Tabulação horizontal.<br>Move o cursor para a próxima posição da tabulação horizontal.
+&#92;&#92; | Barras invertidas.<br>Utilizadas para gerar um caractere de barra invertida (&#92;).
+&#92;" | Aspas duplas.<br>Utilizadas para gerar um caractere de aspas duplas.
+&#92;' | Aspas simples.<br>Utilizadas para gerar um caractere de aspas simples.
+
+</div>
+
+### 1.4.2 Somando strings (concatenação):
+
+- concatenação de strings consiste em juntar duas ou mais strings para criar uma nova.
+- a forma mais fácil de concatenar uma string é utilizar o operador de soma (+).
+- além do operador + e +=, podemos concatenar strings utilizando o método concat:
+
+~~~java
+String nome = "FIAP";
+String slogan = "A melhor faculdade de tecnologia";String faculdade = nome.concat("-").concat(slogan);
+System.out.println(faculdade);
+~~~
+
+### 1.4.3 Comparação de strings:
+
+- deve ser realizada por meio de métodos:
+  - `equals(string)`: verifica a igualdade do valor das strings.
+  - `equalsIgnoreCase(string)`: verifica a igualdade do valor das strings sem diferenciar as letras maiúsculas e minúsculas.
+
+> IMPORTANTE: não utilizar o operador == para comparar strings, pois compara o endereço de memória em que a string está alocada em vez do valor armazenado na string.
+
+~~~java
+String nome = new String("FIAP");
+String nome2 = new String("FIAP");
+
+if (nome == nome2) {
+  System.out.println("As Strings são iguais.");
+} else {
+  System.out.println("As Strings são diferentes.");
+}
+
+/*
+ * Nesse caso, as duas variáveis têm o mesmo valor,
+ * porém estão alocadas em endereços de memória
+ * diferentes. 
+ * O resultado será “As strings são diferentes”,
+ * pois o operador == compara o endereço de
+ * memória e não o valor!
+ */
+~~~
+
+- porém, se inicializar as strings sem instanciá-las, os valores serão alocados em um pool de strings. 
+- dessa forma, se os valores forem iguais, elas vão compartilhar o mesmo espaço de memória no pool, fazendo com que o operador == funcione!
+- porém, se uma das duas variáveis for instanciada utilizando-se new, o operador == não vai funcionar.
+
+> POR ISSO é recomendado sempre utilizar os métodos para realizar a comparação de strings, porque eles funcionam independentemente da forma que a variável foi inicializada!
+
+### a) `Método equals`
+- compara o conteúdo de duas strings, diferenciando os caracteres maiúsculos e minúsculos. 
+- ou seja, a string “Fiap” é diferente de “fiap”.
+- para verificar se as strings são diferentes, não precisamos de um método específico; **adicionar na comparação o operador de negação (!)**.
+- exemplo:
+
+~~~java
+String nome = "FIAP";
+String nome2 = new String("FIAP");
+
+if (!nome.equals(nome2)) {
+  System.out.println("As Strings são diferentes."); 
+} else {
+  System.out.println("As Strings são iguais.");
+}
+~~~
+
+### b) `Método equalsIgnoreCase`
+- compara o conteúdo de duas strings, mas não diferencia caracteres maiúsculos e minúsculos. 
+- ou seja, nesse caso a string “Fiap” é igual à string “fiap”.
+
+~~~java
+String nome = "FIAP";
+String nome2 = new String("fiap");
+
+if (nome.equalsIgnoreCase(nome2)) {
+  System.out.println("As Strings são iguais.");
+} else {
+  System.out.println("As Strings são diferentes.");
+}
+~~~
+
+- podemos verificar se uma string começa com uma sequência de caracteres específica, utilizando o `método startsWith()`:
+  - lembrar que esse método diferencia o case das letras.
+
+~~~java
+String facu = "FIAP – A melhor faculdade de tecnologia.";
+
+if (facu.startsWith("FIAP")) {
+  System.out.println("A String começa com FIAP.");
+} else {
+  System.out.println("A String não começa com FIAP.");
+}
+~~~
+
+- para verificar se uma string termina com uma sequência de caracteres específica, utilizar o `método endsWith()`, que também recebe a palavra a ser procurada:
+  - lembrar que esse método também diferencia o case das letras.
+
+~~~java
+String facu = "FIAP – A melhor faculdade de tecnologia.";
+
+if (facu.endsWith("gia.")) {
+  System.out.println("A String termina com gia."); 
+} else {
+  System.out.println("A String não termina com gia.");
+}
+~~~
+
+### c) `Método length`:
+- permite recuperar a quantidade de caracteres. 
+- na string, o length é um método, logo, deve terminar com abre e fecha parênteses:
+
+~~~java
+String facu = "FIAP – A melhor faculdade de tecnologia.";
+int caracteres = facu.length();
+
+System.out.println("A string possui " + caracteres + "caracteres.");
+~~~
+
+
+
+
 
 
 
