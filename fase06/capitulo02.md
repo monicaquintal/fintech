@@ -424,18 +424,19 @@ if (nome == nome2) {
 ### a) `Método equals`
 - compara o conteúdo de duas strings, diferenciando os caracteres maiúsculos e minúsculos. 
 - ou seja, a string “Fiap” é diferente de “fiap”.
-- para verificar se as strings são diferentes, não precisamos de um método específico; **adicionar na comparação o operador de negação (!)**.
+- obs: para verificar se as strings são diferentes, não precisamos de um método específico; **adicionar na comparação o operador de negação (!)**.
 - exemplo:
 
 ~~~java
 String nome = "FIAP";
 String nome2 = new String("FIAP");
 
-if (!nome.equals(nome2)) {
+if (nome.equals(nome2)) {
   System.out.println("As Strings são diferentes."); 
 } else {
   System.out.println("As Strings são iguais.");
 }
+// retorna: "As Strings são iguais."
 ~~~
 
 ### b) `Método equalsIgnoreCase`
@@ -451,6 +452,7 @@ if (nome.equalsIgnoreCase(nome2)) {
 } else {
   System.out.println("As Strings são diferentes.");
 }
+// retorna: "As Strings são iguais."
 ~~~
 
 - podemos verificar se uma string começa com uma sequência de caracteres específica, utilizando o `método startsWith()`:
@@ -464,6 +466,7 @@ if (facu.startsWith("FIAP")) {
 } else {
   System.out.println("A String não começa com FIAP.");
 }
+// retorna: "A String começa com FIAP."
 ~~~
 
 - para verificar se uma string termina com uma sequência de caracteres específica, utilizar o `método endsWith()`, que também recebe a palavra a ser procurada:
@@ -477,6 +480,7 @@ if (facu.endsWith("gia.")) {
 } else {
   System.out.println("A String não termina com gia.");
 }
+// retorna: "A String termina com gia."
 ~~~
 
 ### c) `Método length`:
@@ -488,8 +492,188 @@ String facu = "FIAP – A melhor faculdade de tecnologia.";
 int caracteres = facu.length();
 
 System.out.println("A string possui " + caracteres + "caracteres.");
+// retorna: "A string possui 39 caracteres."
 ~~~
 
+### d) `Método charAt`:
+- permite recuperar um caractere específico de uma string dada a sua posição.
+- parecida com um vetor, onde podemos recuperar um elemento por meio do seu índice (o primeiro caractere da string está na posição zero (0)).
+- o método recebe a posição do caractere que será recuperado.
+
+~~~java
+String facu = "FIAP – A melhor faculdade de tecnologia.";
+char caracter = facu.charAt(1);
+
+System.out.println("O segundo caractereda string é" + caracter);
+// retorna: "O segundo caractereda string é I".
+~~~
+
+### e) `Método indexOf`:
+- permite localizar a primeira ocorrência de um caractere ou palavra em uma string. 
+- caso não seja localizado, o ***valor -1*** é retornado.
+- lembrando que o índice da string começa no zero, e os espaços também são considerados!
+- exemplo, buscando a primeira ocorrência do caractere ‘a’:
+
+~~~java
+String facu = "FIAP – A melhor faculdade de tecnologia.";
+int posição = facu.indexOf("a");
+
+System.out.println("O índice do caractere 'a' na string é" + posição);
+// retorna: "O índice do caractere 'a' na string é 17".
+~~~
+
+- o método indexOf também pode ser utilizado para ***procurar por uma sequência de caracteres***:
+  - caso a palavra não seja encontrada, o valor -1 também será retornado. 
+
+~~~java
+String facu = "FIAP – A melhor Faculdade de tecnologia.";
+int posição = facu.indexOf("Faculdade");
+
+System.out.println("O índice da palavra \"Faculdade\" na string é" + posição);
+// retorna: "O índice da palvra "Faculdade" na string é 16."
+~~~
+
+### f) `Método lastIndexOf`:
+- parecido com o indexOf, retorna o índice da última ocorrência de um caractere ou palavra em uma string.
+
+~~~java
+String facu = "FIAP - A Melhor Faculdade de Tecnologia";
+int posicao = facu.lastIndexOf('a');
+System.out.println("O índice do último caractere\'a\' na string é " + posicao);
+
+// retorna: "O índice do último caractere 'a' na string é 38."
+~~~
+
+- para procurar por uma palavra, passá-la como parâmetro.
+
+### g) `Método substring`:
+- permite criar uma string a partir de um trecho de outra string.
+- recebe como parâmetro a posição inicial (inclusive) e a posição final (exclusive) do conjunto de caracteres a serem copiados da string original: o caractere da posição inicial será copiado para a nova string,e o caractere da última posição não será copiado.
+
+~~~java
+String facu = "FIAP - A Melhor Faculdade de Tecnologia";
+String nova = facu.substring(16, 25);
+System.out.println("A nova string é: " + nova);
+
+// retorna: "A nova string é: Faculdade"
+~~~
+
+- é possível utilizar métodos vistos anteriormente em conjunto com substring. 
+- exemplo: método indexOf para retornar o índice da primeira ocorrência e criar uma nova string.
+
+~~~java
+String facu = "FIAP – A Melhor Faculdade de Tecnologia";
+String nova = facu.substring(facu.indexOf('M'), 25);
+System.out.println("A nova string é: " + nova);
+
+// retorna: "A nova string é: Melhor Faculdade"
+~~~
+
+- o método substring também aceita apenas a posição inicial do conjunto de caracteres, e a nova string será criada da posição inicial informada até o fim da string original.
+
+### h) `Método toUpperCase toLowerCase`:
+- para transformar os caracteres de uma string para maiúsculo, utilizar o método toUpperCase, e para minúsculo, o método toLowerCase.
+- considerando que uma string é imutável, quando utilizamos esses métodos, uma nova string será criada com a alteração solicitada (devemos sempre atribuir a uma nova variável).
+
+~~~java
+String facu = "FIAP – A Melhor Faculdade de Tecnologia";
+String nova = facu.toUpperCase();
+System.out.println("A nova string é: " + nova);
+
+// retorna: "A nova string é: FIAP - A MELHOR FACULDADE DE TECNOLOGIA"
+~~~
+
+### i) `Método replace`:
+- permite substituir caracteres ou palavras de uma string original.
+- esse método recebe como parâmetros o caractere ou a palavra a ser substituída e a letra ou a palavra para substituir. 
+- esse método também cria uma nova string com a alteração.
+
+~~~java
+String facu = "FIAP – A Melhor Faculdade de Tecnologia";
+String nova = facu.replace('a', 'x');
+System.out.println("A nova string é: " + nova);
+
+// retorna: "A nova string é: FIAP – A Melhor Fxculdxde de Tecnologix"
+~~~
+
+- é possível também substituir uma palavra em uma string.
+
+### j) `Método split`:
+- separa o valor de uma string em várias strings separadas por um delimitador, que deve ser informado ao método.
+
+~~~java
+String facu = "FIAP – A Melhor Faculdade de Tecnologia";
+String[] palavras = facu.split(" ");
+for (String p : palavras) {
+  System.out.println(p);
+}
+
+/*
+ * Este exemplo separa a string em várias 
+ * palavras, separadas por um espaço. 
+ * O resultado é armazenado em um vetor de strings.
+ * retorna:
+ * FIAP 
+ * – 
+ * A 
+ * Melhor 
+ * Faculdade 
+ * de 
+ * Tecnologia
+ */
+~~~
+
+- além do espaço, podemos usar qualquer outro caractere ou palavra
+ como delimitador.
+
+<details>
+<summary>Cálculo dos dígitos de controle do CPF</summary>
+
+São válidos os seguintes aspectos:
+- O CPF possui 11 dígitos; os dois últimos números são dígitos de controle.
+- O primeiro dígito de controle é calculado com base nos 9 primeiros dígitos.
+- O segundo dígito de controle é calculado com base nos 9 primeiros dígitos e no primeiro dígito de controle.
+- A Região Fiscal onde é emitido o CPF (definida pelo nono dígito) tem a seguinte abrangência:
+  - 1 (DF-GO-MS-MT-TO),
+  - 2 (AC-AM-AP-PA-RO-RR),
+  - 3 (CE-MA-PI),
+  - 4 (AL-PB-PE-RN),
+  - 5 (BA-SE),
+  - 6 (MG),
+  - 7 (ES-RJ),
+  - 8 (SP),
+  - 9 (PR-SC) e
+  - 0 (RS).
+
+- Solução:
+  - Considere a representação do CPF em forma de letras: 
+    - ABC.DEF.GHI-JK,
+    - onde cada uma das letras representa um dígito do CPF.
+  - O dígito de controle J é calculado pela seguinte expressão:
+    - Soma = 10 * A + 9 * B + 8 * C + 7 * D + 6 * E + 5 * F + 4 * G + 3 * H + 2 * I
+    - Resto = resto(Soma,11), ou seja, resto da divisão de “Soma” por 11.
+      - Se resto <= 1 então J = 0.
+      - SenãoJ = 11 – Resto.
+  - Uma vez calculado o dígito J (primeiro dígito de controle), calcular o dígito de controle K (segundo dígito de controle). 
+    - operação muito semelhante àanterior, como segue:
+    - Soma = 11 * A + 10 * B + 9 * C + 8 * D + 7 * E + 6 * F + 5 * G + 4 * H + 3 * I + 2 * J
+    - Resto = resto(Soma,11), ou seja, resto da divisão de “Soma” por 11.
+      - Se resto <= 1 então K = 0.
+      - Senão K = 11 – Resto.
+  - O processo de desenvolvimento desse algoritmo consiste, primeiramente, na leitura de um número representando os 9 primeiros dígitos do CPF para o cálculo dos dígitos de controle.
+  - Depois, o algoritmo deverá calcular cada dígito de verificação, concatenando-os à sequência original de 9 dígitos. 
+  - Notar que com ambos os dígitos de controle calculados e feita a concatenação, a variável CPF, que contém o CPF, passa a ter 11 posições.
+
+---
+
+<div align="center">
+<h2>2. COLLECTIONS FRAMEWORK (COLEÇÕES)</h2>
+</div>
+
+
+
+
+</details>
 
 
 
