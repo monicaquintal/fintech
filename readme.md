@@ -146,8 +146,8 @@
 <details>
 <summary>BUILDING RELATIONAL DATABASE</summary>
 
-[Capítulo 03: ]()<br>
-[Capítulo 04: ]()<br>
+[Capítulo 03: Tornando as coisas físicas.](./fase06/capitulo03.md)<br>
+[Capítulo 04: ... e as estruturas do banco são finalmente criadas!](./fase06/capitulo04.md)<br>
 [Capítulo 06: ]()<br>
 [Capítulo 07: ]()<br>
 [Capítulo 09: ]()<br>
