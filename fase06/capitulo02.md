@@ -663,6 +663,7 @@ São válidos os seguintes aspectos:
   - O processo de desenvolvimento desse algoritmo consiste, primeiramente, na leitura de um número representando os 9 primeiros dígitos do CPF para o cálculo dos dígitos de controle.
   - Depois, o algoritmo deverá calcular cada dígito de verificação, concatenando-os à sequência original de 9 dígitos. 
   - Notar que com ambos os dígitos de controle calculados e feita a concatenação, a variável CPF, que contém o CPF, passa a ter 11 posições.
+  </details>
 
 ---
 
@@ -670,18 +671,180 @@ São válidos os seguintes aspectos:
 <h2>2. COLLECTIONS FRAMEWORK (COLEÇÕES)</h2>
 </div>
 
+- são estruturas de dados utilizadas para armazenar e organizar objetos de maneira eficiente e prática. 
+- podem ser usadas para representar estruturas, como vetores, listas, pilhas, filas, mapas, conjuntos e outras estruturas de dados. 
+- são muito comuns nas aplicações Java para o acesso ao banco de dados, principalmente no resultado de buscas.
+- Coleções são definidas por meio de interfaces. As interfaces determinam o que a estrutura deve oferecerde funcionalidades, ou seja, fornece um contrato para que a classe concreta as implemente.
 
+### Categorias:
+- no Java, as Coleções podem ser classificadas em duas categorias: as que implementam a interface Collection e as que implementam a interface Map.
+- as `principais subinterfaces de Collection` são:
+  - ***List***: representa uma lista de objetos, a implementação mais utilizada é o ***ArrayList***.
+  - ***Set***: representa um conjunto de objetos únicos, e os objetos não se repetem; a implementação mais usada é a ***HashSet***.
+- a `Interface Map` representa uma tabela Hash, que armazena valores compostos de [chave, valor]. A principal subinterface é:
+  - ***SortedMap***: representa um mapa ordenado, a implementação mais utilizada é o ***HashMap***.
 
+- A interface Collection, que é base para todas as Coleções, exceto Mapas, define um conjunto de métodos comuns a todas as outras estruturas que estão abaixo dela: list, set e queue.
+- Os principais métodos da interface Collection são:
 
-</details>
+<div align="center">
 
+Método | Descrição
+-------|---------------
+add | Adiciona um objeto à coleção
+clear | Remove todos os objetos da lista
+contains | Verifica se a coléção contém o objeto determinado
+isEmpty | Verifica se a coleção está vazia
+remove | Remove um objeto da coleção
+size | Retorna a quantidade de objetos na coleção
+toArray | Retorna um array contendo os elementos da coleção
 
+</div>
 
+## 2.1 Interface List
 
+- representa uma sequência de elementos ordenados e pode conter elementos repetidos: os elementos de uma lista estão dispostos pela ordem de inserção. 
+- para criar uma lista, não precisamos passar o tamanho dela, como temos que fazer no array; a lista se adapta quando inserimos um elemento, possibilitando adicionar ou remover quantos elementos forem necessários. 
+- também podemos manipular a lista, ordenando-a ou buscando um elemento pelo seu valor.
+- há diversas implementações disponíveis, sendo a ArrayLista mais utilizada.
+- principais métodos de uma lista:
 
+<div align="center">
 
+Método | Descrição
+-------|------------
+add | Insere um objeto no final da lista
+get | Retorna o objeto localizado numa determinada posição
+remove | Remove um objeto localizado numa determinada posição
+set | Coloca um objeto numa determinada posição (substitui objetos)
+indexOf | Retorna a posição de um objeto na lista
+lastIndexOf | Retorna a última posição de um objeto na lista
+subList | Retorna parte de uma lista
 
+</div>
 
+- a `ArrayList` armazena seus elementos em um array interno para gerar uma lista, que cresce ou diminui dinamicamente no momento que um elemento é inserido ou excluído da lista. 
+- apesar do nome, ArrayList é uma implementação da interface List da API de Collections do Java; essa classe somente utiliza um array para armazenar os valores, porém não podemos acessar diretamente esse array, pois é um atributo encapsulado. 
+- para criar uma ArrayList, basta chamar o seu construtor:
+
+~~~java
+Array lista = new ArrayList();
+lista.add("LIP");
+lista.add("Web");
+lista.add("Algoritmos");
+lista.set(1, "Algoritmos"); 
+listra.remove(1);
+
+System.out.println(lista.get(1));
+
+for (int i = 0; i < lista.size(); i++) {
+  System.out.println(lista.get(i));
+}
+~~~
+
+## 2.2 Interface Set
+
+- define uma coleção que não pode conter valores duplicados. 
+- corresponde à abstração de um conjunto que funciona de forma análoga aos conjuntos da matemática.
+- nem sempre a ordem de inserção dos elementos será a ordem dos elementos dispostos na coleção: pode variar de implementação para implementação.
+- a interface contém somente os métodos herdados da interface Collection:
+
+<div align="center">
+
+Método | Descrição
+-------|---------------
+add | Adiciona um objeto no Set
+clear | Remove todos os objetos do Set
+contains | Verifica se o Set possui um objeto determinado
+isEmpty | Verifica se o Set está vazio
+remove | Remove um objeto do Set
+size | Retorna a quantidade de objetos no Set
+toArray | Retorna um array contendo os objetos do Set
+
+</div>
+
+- uma das principais implementações de Set é a `classe HashSet`, que armazena seus elementos em uma tabela hash.
+
+~~~java
+HashSet cursos = new HashSet<>();
+
+cursos.add("Java");
+cursos.add("J.NET");
+cursos.add("Android");
+cursos.add("Java"); // repetido, não será adicionado ao hashset
+~~~
+
+- a grande vantagem do Set é a performance nas operações de busca (método contains) em relação à List.
+
+## 2.3 Map
+
+- um mapa é composto de um par de chaves e valor. 
+  - chaves não podem conter valores iguais, porém o valor, sim.
+- a principal implementação de Map é a classe HashMap.
+
+<div align="center">
+
+Método | Descrição
+-------|---------------
+clear | Remove todos os mapeamentos
+containsKey | Verifica se uma chave já está presente no mapeamento
+containsValue | Verifica se um valor já está presente no mapeamento
+get | Retorna o valor associado a uma chave determinada
+isEmpty | Verifica se o mapeamento está vazio
+ketSet | Retorna um Set contendo as chaves
+put | Adiciona um mapeamento
+remove | Remove um mapeamento
+size | Retorna o número de mapeamentos
+values | Retorna o número de mapeamentos
+
+</div>
+
+## 2.4 Generics
+
+- A partir do Java 5, podemos utilizar o recurso de Generics para restringir os tipos de dados aceitos por referência genérica; somente será permitido inserir na lista o tipo determinado no Generics, e não qualquer objeto.
+- O Generics permite a verificação do tipo em tempo de compilação e deixa o código mais limpo, pois não é necessário realizar um cast.
+- sintaxe:
+
+~~~java
+ArrayList<Tipo> lista = new ArrayList<Tipo>();
+ArrayList<Cliente> listaCliente = new ArrayList<Cliente>();
+~~~
+
+- Podemos utilizar o operador for-each para percorrer a lista.
+- Toda a API de Collections permite a utilização de Generics por oferecer maior segurança na manipulação dos tipos e não há necessidade de cast.
+
+> O Generic não permite tipos primitivos!
+
+---
+
+## FAST TEST
+
+### 1. Ao utilizarmos Strings, em Java, temos métodos auxiliares que possibilitam realizar certas verificações de verdadeiro ou falso para algumas comparações. Escolha a alternativa que representa alguns desses métodos.
+> startsWith(), endsWith() e equalsIgnoreCase().
+
+### 2. Em Java, assim como em outras linguagens de programação, existem as estruturas de repetição. Escolha a alternativa que melhor descreve a função dessas estruturas.
+> As estruturas de repetição têm a função de executar uma ou mais vezes um bloco de código.
+
+### 3. O laço FOR pode, normalmente, ser utilizado para percorrer uma array através de um índice. Escolha a opção que representa uma alternativa válida para o uso do laço FOR na linguagem Java.
+> for (&lt;tipo&gt; &lt;variável&gt; : &lt;array&gt;) { &lt;instruções&gt; }
+
+### 4. Array é uma das estruturas de dados mais utilizadas em programação de sistemas em Java. Escolha a alternativa que representa a inicialização de uma array e o uso de um valor na quarta posição.
+> String[] amigos = { “José”, “Carla”, “Flávio”, “Ana” }; String amigo4 = amigos[3];
+
+### 5. Há um método existente na classe String, em Java, responsável por transformar uma cadeia de caracteres em uma array, qual é esse método?
+> split().
+
+### 6. Em Java, além das arrays, podemos utilizar algumas outras classes mais eficientes e práticas na criação de estruturas de dados usadas para armazenar e organizar objetos. Qual das opções representa algumas das classes disponíveis para uso na criação dessas estruturas?
+> ArrayList, Set e Map.
+
+### 7. Escolha a alternativa que representa o conceito correto para o método indexOf() utilizado na classe String em Java.
+> O método é utilizado para encontrar a primeira ocorrência de um caractere.
+
+### 8. Qual é o termo utilizado para uma array que armazena outras arrays?
+> Array multidimensional.
+
+### 9. No ambiente de desenvolvimento em Java, assim como em outras linguagens modernas, existe a figura do Generics. Escolha a definição verdadeira para essa entidade.
+> São marcações de código que permitem a verificação do tipo em tempo de compilação, dando clareza de leitura ao código-fonte.
 
 --- 
 
