@@ -173,6 +173,91 @@ CK | CHECK
 - RN11 – Um funcionário pode participar da implantação de um mesmo projeto várias vezes (pode participar da implantação de um projeto em diferentes momentos).
 - RN12 – Não será considerada a hipótese de termos um casal trabalhando na mesma empresa (teriam dependentes comuns).
 
+## 1.7 Passos para implementação de um modelo relacional
+
+### a) Criar as tabelas contendo campos, tipos de dados e tamanho, utilizando o comando CREATE TABLE.
+### b) Criar as Chaves Primárias e demais constraints (exceto Chaves Estrangeiras), usando o comando ALTER TABLE.
+### c) Criar as Chaves Estrangeiras, utilizando o comando ALTER TABLE após todas as tabelas, respectivas Chaves Estrangeiras e demais constraints.
+
+- vantagem: o código fica mais simples de ser lido e mantido.
+- desvantagem: necessário observar a ordem de criação das tabelas, conforme a dependência que existe entre elas e os seus relacionamentos. 
+  - o comando se torna mais complexo e mais difícil de ser mantido.
+
+## 1.8 Impondo restrições
+
+- restrições (`constraints`), são as regras aplicadas à estrutura de armazenamento. 
+- elas evitam:
+  - que uma tabela seja deletada se houver pendências,
+  - que dados inválidos sejam inseridos em branco e
+  - garante a integridade dos dados armazenados.
+- constraint é parte opcional dos comandos CREATE TABLE e ALTER TABL.
+- pode ser utilizada para impor regras a colunas e tabelas.
+- no Oracle, há os seguintes tipos de constraint:
+  - NOT NULL.
+  - UNIQUE.
+  - CHECK.
+  - DEFAULT.
+  - PRIMARY KEY.
+  - FOREIGN KEY.
+
+### 1.8.1 Restrição NOT NULL
+
+- indica que o conteúdo de uma coluna não poderá ser nulo.
+- diferentemente das outras restrições, só pode ser definida ao nível de coluna e implementada na criação da estrutura da coluna com o comando CREATE TABLE ou modificando-se a estrutura do campo com o comando ALTER TABLE.
+- exemplo:
+
+~~~sql
+CREATE TABLE T_SIP_DEPARTAMENTO (
+  nm_depto VARCHAR2(30) NOT NULL,
+  ...
+);
+~~~
+
+### 1.8.2 Restrição UNIQUE
+
+- indica que não pode haver repetição no conteúdo da coluna.
+- é diferente do conceito de Chave Primária (único e não nulo): quando indicamos que uma coluna deve conter valores únicos, mostramos que todos os valores não nulos devem ser exclusivos.
+- exemplo:
+
+~~~sql
+CREATE TABLE T_SIP_DEPARTAMENTO (
+  ...
+  nm_depto VARCHAR2(30) UNIQUE,
+  ...
+);
+~~~
+
+### 1.8.3 Restrição CHECK
+
+- pode ser utilizada para validar o valor que será atribuído a um campo.
+- exemplo: definição de um domínio (definição de valores possíveis para o conteúdo de uma coluna de acordo com as Regras do Negócio).
+- exemplo:
+
+~~~sql
+CREATE TABLE T_SIP_FUNCIONARIO (
+  ...
+  sexo char(1) CHECK (UPPER(SEXO)= 'M' OR UPPER(SEXO) = 'F' OR UPPER(SEXO) = 'O'),
+  ...
+);
+~~~
+
+- importante:
+  - função UPPER (&lt;nome-campo&gt;) converte o conteúdo do campo para maiúsculas no momento da validação.
+  - o operador lógico “OR” (ou) permite avaliar condições: retorna um valor verdadeiro, se uma das condições for satisfeita.
+  - outros operadores lógicos:
+    - AND (e): permite avaliar condições; retorna um valor verdadeiro se todas as condições envolvidas forem satisfeitas.
+    - NOT (não): retorna um valor contrário à expressão avaliada.
+
+- exemplo2:
+
+~~~sql
+CONSTRAINT CK_SPI_SALARIO CHECK (vl_salario >= 788);
+~~~
+
+
+
+
+
 
 
 
