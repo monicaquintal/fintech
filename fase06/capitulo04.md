@@ -254,6 +254,168 @@ CREATE TABLE T_SIP_FUNCIONARIO (
 CONSTRAINT CK_SPI_SALARIO CHECK (vl_salario >= 788);
 ~~~
 
+### 1.8.4 Restrição Primary Key
+
+- permite identificar um registro na tabela e garante que cada registro seja único no banco de dados.
+- além de assegurar a unicidade, esse(s) atributo(s) será(rão) exportado(s) em caso de relacionamento, tornando-se, na outra tabela, a Chave Estrangeira!
+- exemplo:
+
+~~~sql
+CREATE TABLE T_SIP_DEPARTAMENTO (
+  ...
+  cd_depto NUMBER(2) PRIMARY KEY,
+  ...
+);
+~~~
+
+- já ao nível de tabela, o campo é definido e a restrição pode ser imposta a qualquer momento.
+- a restrição requer a indicação do nome do campo ao qual se aplicará:
+
+~~~sql
+CREATE TABLE T_SIP_DEPARTAMENTO (
+  ...
+  cd_depto number(2),
+  ...
+  PRIMARY KEY(cd_depto)
+);
+~~~
+
+- nos exemplos anteriores, a restrição não foi identificada (não recebeu um nome).
+- isso não é uma boa prática, pois o Oracle atribuirá um identificador, o que dificultará o trabalho nas situações em que seja necessário manipular a restrição.
+- a nomeação explícita das restrições pode ser feita ao nível de coluna ou tabela e aplicada a qualquer tipo de restrição.
+
+### 1.8.5 Restrição FOREIGN KEY
+
+- estabelece o relacionamento entre duas tabelas.
+- recebe o nome "Chave Estrangeira" porque a chave é originária de outro local:
+  - é, necessariamente, uma Chave Primária em outra tabela que foi exportada para esta com o objetivo de estabelecer um relacionamento entre as duas informações.
+- ***há uma exceção à regra***: em caso de autorrelacionamento, a Chave Estrangeira é exportada a partir da própria Chave Primária da tabela,relacionando assim, uma ocorrência (ou registro) com outro!
+- exemplo:
+
+~~~sql
+CREATE TABLE T_SIP_FUNCIONARIO (
+  ...
+  CONSTRAINT fk_depto_func FOREIGN KEY (cod_depto) REFERENCES T_SIP_DEPARTAMENTO(cod_depto),
+  ...
+);
+~~~
+
+- sendo:
+  - fk_depto_func: nome da restrição.
+  - FOREIGN KEY (cod_depto): definição do campo cod_depto, da tabela que está sendo criada, como Chave Estrangeira.
+  - REFERENCES T_SIP_DEPARTAMENTO(cod_depto): a instrução references estabelece a relação entre o campo que está sendo definido como Chave Estrangeira e a tabela pai. Os campos de origem e referenciado possuem o mesmo nome (cod_depto), mas isso não é obrigatório, os nomes podem ser diferentes.
+
+### 1.8.6 Restrição DEFAULT
+
+- atribui um conteúdo-padrão a uma coluna da tabela sempre que for incluída uma nova linha nela.
+- exemplo:
+
+~~~sql
+CREATE TABLE T_SIP_PROJETO(
+  ...
+  dt_inicio DATE default SYSDATE
+  ...
+);
+
+/* SYSDATE é uma função que retorna a data atual.
+~~~
+
+### 1.8.7 Recomendações para adição de constraints
+
+- normalmente, utilizamos o comando “ALTER TABLE” para inserir restrições (constraints).
+- é uma boa prática adicionar ou eliminar restrições, mas não modificar restrições.
+- adicione uma restrição NOT NULL utilizando a cláusula MODIFY. 
+- exemplo:
+
+~~~sql
+ALTER TABLE tb_Exemplo
+MODIFY status CONSTRAINT nn_tb_Exemplo_status NOT NULL;
+~~~
+
+- é recomendado que se especifique sempre um nome significativo para as restrições (constraints) pois ,quando ocorrer um erro de restrições, ficará mais fácil identificar o problema ou mesmo sua manutenção quando necessário!
+
+## 1.9 Comando ALTER TABLE
+
+- permite alterar a estrutura de uma tabela, acrescentando ou modificando a estrutura das colunas e restrições de uma tabela.
+
+~~~sql
+ALTER TABLE <nome-tabela>
+  DROP COLUMN <nome-coluna>
+  ADD <nome-coluna> <tipo-do-dado> [NOT NULL][NOT NULL WITH DEFAULT] 
+  RENAME <nome-coluna> <novo-nome-coluna>
+  MODIFY <nome-coluna> <tipo-do-dado> [NULL][NOT NULL];
+~~~
+
+- a partir da sintaxe básica, observamos que é possível executar as seguintes ações:
+  - DROP COLUMN – Permite eliminar colunas de uma tabela.
+  - ADD – Permite adicionar colunas ou restrições a uma tabela existente.
+  - RENAME – Permite renomear a própria tabela, colunas e constraints.
+  - MODIFY – Permite modificar a estrutura das colunas, como um tipo de dado, tamanho ou restrições.
+
+### 1.9.1 Adicionando elementos a uma tabela
+
+- exemplo 1:
+
+~~~sql
+ALTER TABLE T_SIP_FUNCIONARIO
+  ADD ds_email VARCHAR2(60);
+~~~
+
+> Importante: podemos inserir constraints no momento da adição de uma nova coluna.
+
+- ao adicionar uma nova coluna à tabela, também podemos definir as restrições que se aplicam a ela:
+
+~~~sql
+ALTER TABLE T_SIP_FUNCIONARIO
+  ADD ds_email VARCHAR2(60) NULL;
+~~~
+
+> Caso a tabela na qual foi inserida a nova coluna já possua linhas, a nova coluna terá inicialmente seu conteúdo nulo.
+
+- exemplo 2:
+
+~~~sql
+ALTER TABLE T_SIP_FUNCIONARIO
+  ADD CONSTRAINT CK_SIP_FUNC_SALARIO
+  CHECK (VL_SALARIO >= 880 );
+~~~
+
+### 1.9.2 Modificando elementos de uma tabela
+
+~~~sql
+ALTER TABLE T_SIP_FUNCIONARIO
+  MODIFY ds_email VARCHAR2(100) NOT NULL;
+~~~
+
+- podemos alterar uma coluna de não obrigatória (NULL) para obrigatória,(NOT NULL) considerando: ***a tabela deve estar vazia***.
+  - caso a tabela tenha registros, é necessário haver valores para todos os registros na coluna a ser alterada.
+- não há restrições para a alteração de obrigatório (NOT NULL) para não obrigatório (NULL).
+- é possível aumentar ou reduzir o tamanho de colunas. 
+  - porém, se a coluna for Chave Primária da tabela, primeiramente,deve-se alterar as tabelas que recebem o relacionamento antes de modificar a tabela propriamente dita.
+
+> O novo tamanho da coluna não pode ser inferior ao comprimento dos dados já inseridos na tabela.
+
+### 1.9.3 Eliminando elementos de uma tabela
+
+- eliminando uma coluna:
+
+~~~sql
+ALTER TABLE T_SIP_FUNCIONARIO
+  DROP COLUMN ds_email;
+~~~
+
+- eliminando a constraint Chave Primária:
+
+~~~sql
+ALTER TABLE T_SIP_DEPARTAMENTO
+  DROP CONSTRAINT PK_SIP_DEPARTAMENTO CASCADE;
+~~~
+
+Importante:
+- a opção CASCADE CONSTRAINT possibilita a eliminação de todas as restrições de integridade referencial que se referem às Chaves Primárias. 
+- se essa cláusula for omitida e as restrições de integridade referencial existirem, ocorrerá um erro durante a execução do comando e a constraint não será descartada!
+
+### 1.9.4 Alterando os nomes dos elementos de uma tabela
 
 
 
