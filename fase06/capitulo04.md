@@ -417,6 +417,176 @@ Importante:
 
 ### 1.9.4 Alterando os nomes dos elementos de uma tabela
 
+- exemplo 1: alterar o nome da tabela.
+
+~~~sql
+ALTER TABLE T_SIP_FUNCIONARIO
+  RENAME TO T_SIP_FUNC;
+~~~
+
+- exemplo 2: alterar o nome da coluna.
+
+~~~sql
+ALTER TABLE T_SIP_FUNCIONARIO
+  RENAME COLUMN nm_funcionario TO nm_func;
+~~~
+
+- exemplo 3: alterar o nome da constraint.
+
+~~~sql
+ALTER TABLE T_SIP_FUNCIONARIO
+  RENAME CONSTRAINT CK_SIP_FUNC_SALARIO
+  TO CK_SIP_FUNC_SAL;
+~~~
+
+### 1.9.5 Visualizando CONSTRAINTS de uma tabela
+
+- exemplo para as tabelas a que tenhamos acesso:
+
+~~~sql
+-- VISUALIZAR CONSTRAINTS DE TODAS AS TABELAS A QUE
+-- TENHA ACESSO
+SELECT TABLE_NAME, CONSTRAINT_NAME,
+  CONSTRAINT_TYPE, SEARCH_CONDITION
+FROM ALL_CONSTRAINTS;
+~~~
+
+- é possível também consultar as restrições de uma tabela específica:
+
+~~~sql
+-- VISUALIZAR CONSTRAINTS DE UMA TABELA ESPECÍFICA
+SELECT TABLE_NAME, CONSTRAINT_NAME,
+  CONSTRAINT_TYPE, SEARCH_CONDITION
+FROM ALL_CONSTRAINTS 
+WHERE UPPER(TABLE_NAME) = 'T_SIP_FUNCIONARIO';
+~~~
+
+---
+
+<div align="center">
+<h2>2. DROP TABLE</h2>
+</div>
+
+- o comando DROP TABLE é uma instrução DDL utilizada para remover a definição de uma tabela.
+- estrutura, dados e índices são eliminados permanentemente.
+- sintaxe é simples, mas o resultado não pode ser desfeito!!!
+
+~~~sql
+DROP TABLE tabela;
+~~~
+
+- em caso de tabelas que possuam vínculos (que usem sua chave primária como chave estrangeira), a operação causará uma falha, a menos que sejam incluídas as palavras-chave CASCADE CONSTRAINTS (elimina os vínculos de integridade referencial com outras tabelas).
+
+~~~sql
+DROP TABLE tabela CASCADE CONSTRAINTS;
+~~~
+
+### 2.1 Implementando as tabelas do estudo de caso SIP
+
+<details>
+<summary>Criando algumas das tabelas do projeto.</summary>
+
+~~~sql
+-- TABELA DEPARTAMENTO
+CREATE TABLE T_SIP_DEPARTAMENTO 
+  ( 
+    cd_depto NUMBER (2) NOT NULL , 
+    nm_depto VARCHAR2 (30) NOT NULL 
+  ) ;
+
+-- CRIAÇÃO DA CHAVE PRIMÁRIA
+ALTER TABLE T_SIP_DEPARTAMENTO 
+ADD CONSTRAINT PK_SIP_DEPARTAMENTO PRIMARY KEY ( cd_depto );
+
+-- CRIAÇÃO DA CONSTRAINT UNIQUE
+ALTER TABLE T_SIP_DEPARTAMENTO 
+ADD CONSTRAINT UN_SIP_DEPTO_NOME UNIQUE ( nm_depto ) ;
+
+-- TABELA FUNCIONARIO
+CREATE TABLE T_SIP_FUNCIONARIO 
+  ( 
+    nr_matricula NUMBER (6) NOT NULL , 
+    cd_depto NUMBER (2) NOT NULL , 
+    nm_funcionario VARCHAR2 (60) NOT NULL , 
+    dt_nascimento DATE NULL , 
+    dt_admissao DATE NOT NULL , 
+    ds_endereco VARCHAR2 (80) NOT NULL , 
+    vl_salario NUMBER (7,2) NOT NULL 
+  );
+
+-- CRIAÇÃO DA CHAVE PRIMÁRIA
+ALTER TABLE T_SIP_FUNCIONARIO 
+  ADD CONSTRAINT PK_SIP_FUNCIONARIO PRIMARY KEY ( nr_matricula ) ;
+
+-- CRIAÇÃO DA CONSTRAINT CHECK PARA O SALÁRIO
+ALTER TABLE T_SIP_FUNCIONARIO 
+  ADD CONSTRAINT CK_SIP_FUNC_SALARIO CHECK ( vl_salario >= 788 ) ;
+
+-- TABELA DEPENDENTE
+CREATE TABLE T_SIP_DEPENDENTE 
+  ( 
+    cd_dependente NUMBER (3) NOT NULL , 
+    nr_matricula NUMBER (6) NOT NULL , 
+    nm_dependente VARCHAR2 (60) NOT NULL , 
+    dt_nascimento DATE NOT NULL 
+  ) ;
+
+-- CRIAÇÃO DA CHAVE PRIMÁRIA
+ALTER TABLE T_SIP_DEPENDENTE 
+  ADD CONSTRAINT PK_SIP_DEPENDENTE 
+PRIMARY KEY ( cd_dependente, nr_matricula ) ;
+-- Observe que criamos uma Chave Primária composta pelos campos cd_dependente e nr_matricula
+
+-- TABELA PROJETO
+CREATE TABLE T_SIP_PROJETO 
+  ( 
+    cd_projeto NUMBER (4) NOT NULL , 
+    nm_projeto VARCHAR2 (40) NOT NULL , 
+    dt_inicio DATE NOT NULL , 
+    dt_termino DATE 
+  ) ;
+
+-- CRIAÇÃO DA CHAVE PRIMÁRIA
+ALTER TABLE T_SIP_PROJETO 
+  ADD CONSTRAINT PK_SIP_PROJETO PRIMARY KEY ( cd_projeto ) ;
+
+-- CRIAÇÃO DA CONSTRAINT UNIQUE
+ALTER TABLE T_SIP_PROJETO 
+  ADD CONSTRAINT UN_SIP_PROJETO_NOME UNIQUE ( nm_projeto ) ;
+
+-- CRIAÇÃO DA CONSTRAINT CHECK PARA AS DATAS
+ALTER TABLE T_SIP_PROJETO 
+  ADD CONSTRAINT CK_SIP_PROJETO_DATE CHECK ( DT_TERMINO > DT_INICIO ) ;
+
+-- TABELA IMPLANTACAO
+CREATE TABLE T_SIP_IMPLANTACAO 
+  ( 
+    cd_implantacao NUMBER (6) NOT NULL , 
+    cd_projeto NUMBER (4) NOT NULL , 
+    nr_matricula NUMBER (6) NOT NULL , 
+    dt_entrada DATE NOT NULL , 
+    dt_saida DATE NULL 
+  ) ;
+
+-- CRIAÇÃO DA CHAVE PRIMÁRIA
+ALTER TABLE T_SIP_IMPLANTACAO 
+  ADD CONSTRAINT PK_SIP_IMPLANTACAO 
+  PRIMARY KEY ( cd_implantacao, cd_projeto ) ;
+
+-- CRIAÇÃO DA CONSTRAINT CHECK PARA AS DATAS
+ALTER TABLE T_SIP_IMPLANTACAO 
+  ADD CONSTRAINT CK_SIP_IMPLAT_DATE CHECK 
+    ( DT_SAIDA > DT_ENTRADA ) ;
+~~~
+
+</details>
+
+
+
+
+
+
+
 
 
 
