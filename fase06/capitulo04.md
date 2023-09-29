@@ -581,7 +581,60 @@ ALTER TABLE T_SIP_IMPLANTACAO
 
 </details>
 
+## 2.2 Criação do arquivo de script de banco de dado
 
+- são arquivos que contêm instruções SQL utilizadas para realizar a implementação de um banco de dados. 
+- fazem parte da etapa de implantação (pré e pós-implantação) de banco de dados, compondo o projeto de banco de dados.
+- ferramenta SQL Developer da Oracle.
+  - "SCRIPT_DDL_IMPLANTACAO_PROJETOS.SQL" com a extensão SQL.
+
+## 2.3 Restrições de integridade referencial
+
+- um BD impõe restrições referenciais para garantir a integridade dos dados quando as linhas de uma tabela são alteradas ou excluídas.
+  - além da Cascade, há outras que poderemos usar para garantir a integridade referencial do banco de dados.
+- o SQL:2003 especifica cinco diferentes ações referenciais: 
+  - cascade, 
+  - restrict, 
+  - no action, 
+  - set null, 
+  - set default.
+- usando restrições de integridade referencial, é possível definir as ações que o SGBD toma quando o usuário tenta excluir ou atualizar uma chave para a qual apontam as Chaves Estrangeiras existentes.
+
+### 2.3.1 Ações referenciais – Cláusula CASCADE
+
+- pelos riscos de sua utilização, as opções da cláusula CASCADE têm de ser usadas com muito critério.
+- são de grande valia na garantia de integridade referencial no banco de dados.
+- a utilização da `cláusula ON DELETE CASCADE` especifica que, se houver uma tentativa de apagar uma linha com uma Chave Primária referenciada por Chaves Estrangeiras em linhas existentes em outras tabelas, também serão apagadas as linhas que contêm essas Chaves Estrangeiras, como se fosse um efeito cascata.
+- a `cláusula ON UPDATE CASCADE` especifica que, se for feita uma tentativa para atualização de um valor de chave em uma linha, onde o valor de chave é referenciado pelas Chaves Estrangeiras em linhas existentes em outras tabelas, todos os valores que constituem a Chave Estrangeira serão igualmente atualizados no novo valor especificado para a chave.
+- **as duas cláusulas podem ser utilizadas juntas***!
+
+### 2.3.2 Ações referenciais – Cláusula RESTRICT
+
+- não permite a exclusão/alteração na tabela pai de um registro cuja Chave Primária exista em alguma tabela filha.
+- a verificação é feita antes de executar a instrução de exclusão/alteração.
+- a operação será revertida se uma operação de atualização ou exclusão violar uma restrição de Chave Estrangeira.
+
+### 2.3.3 Ações referenciais – Cláusula NO ACTION
+
+- não permite a exclusão/alteração na tabela pai de um registro cuja Chave Primária exista em alguma tabela filha.
+- NO ACTION é a regra de atualização implícita.
+- a verificação é feita após a execução da instrução de exclusão/alteração.
+- se a regra de atualização for NO ACTION, serão verificadas as tabelas dependentes com relação às restrições de Chave Estrangeira após todas as exclusões terem sido realizadas, mas antes de os gatilhos serem executados. 
+  - se alguma linha de tabela dependente violar a restrição de Chave Estrangeira, a instrução será rejeitada.
+- significa que se uma Chave Estrangeira é atualizada com um valor não nulo, o valor de atualização deve corresponder a um valor na Chave Primária da tabela pai, quando a instrução de atualização for concluída. - se a atualização não corresponde a um valor na Chave Primária da tabela pai, a declaração é rejeitada.
+
+### 2.3.4 Ações referenciais – Cláusula SET NULL
+
+- altera o conteúdo da coluna (Chave Estrangeira) para nulo, perdendo a referência, sem deixar valores inconsistentes, caso a coluna correspondente à Chave Estrangeira permita nulos.
+- é necessário que as Chaves Estrangeiras estejam definidas com a restrição NULL para que a ação referencial possa ser realizada.
+
+### 2.3.5 Ações referenciais – Cláusula SET DEFAULT
+
+- altera o conteúdo da coluna (Chave Estrangeira) para o valor especificado na cláusula default, se houver.
+- a cláusula SET DEFAULT especifica que se for feita uma tentativa para exclusão de uma linha com uma chave referenciada por Chaves Estrangeiras em outras tabelas, todos os valores que constituem a Chave Estrangeira nas linhas referenciadas serão definidos como seus valores-padrão.
+- todas as colunas de Chave Estrangeira precisam ter uma definição-padrão para que essa restrição seja executada. 
+- se a coluna for anulável e não houver nenhum valor-padrão explícito definido, NULL se tornará o valor-padrão implícito para a coluna. 
+- todos os valores não nulos definidos por ON DELETE, SET DEFAULT ou ON UPDATE SET DEFAULT precisam conter valores correspondentes na tabela primária para poderem manter a validade da Chave Estrangeira.
 
 
 
