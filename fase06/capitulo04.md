@@ -636,13 +636,192 @@ ALTER TABLE T_SIP_IMPLANTACAO
 - se a coluna for anulável e não houver nenhum valor-padrão explícito definido, NULL se tornará o valor-padrão implícito para a coluna. 
 - todos os valores não nulos definidos por ON DELETE, SET DEFAULT ou ON UPDATE SET DEFAULT precisam conter valores correspondentes na tabela primária para poderem manter a validade da Chave Estrangeira.
 
+### 2.3.6 Ações referenciais – Exemplo NO ACTION
 
+- a cláusula NO ACTION (regra implícita para exclusões e alterações) permite que, quando ocorrerem deleções ou alterações, essa alteração será efetivada, caso não ocorra violação de integridade.
+- ou seja, só será possível eliminar uma pessoa caso não exista uma pessoa física ou jurídica associada a ela, e somente será possível alterar uma Chave Estrangeira para um valor válido de chave.
+- o código abaixo realizará a deleção considerando a regra implícita NO ACTION:
 
+~~~sql
+DELETE FROM T_PESSOA WHERE CD_PESSOA = 1;
+~~~
 
+- para o uso da opção implícita NO ACTION, não é necessário inserir nenhum código adicional no momento da criação das tabelas.
 
+### 2.3.7 Ações referenciais – Exemplo CASCADE
 
+- ao utilizarmos a cláusula CASCADE, quando ocorrer a deleção de um departamento, todos os funcionários associados a esse departamento serão excluídos.
+- ocorrerá o mesmo entre as tabelas FUNCIONARIO e DEPENDENTE: cada um dos dependentes está associado a um funcionário obrigatoriamente; se utilizar a cláusula CASCADE, quando um funcionário for deletado, todos os dependentes associados a esse funcionário serão excluídos.
+- o código abaixo realizará a deleção em cascata em função das ações referenciais:
 
+~~~sql
+DELETE FROM T_DEPTO WHERE CD_DEPTO = 1;
+~~~
 
+- demontração de código-fonte utilizando a cláusula CASCADE:
+
+~~~sql
+CREATE TABLE T_DEPTO
+(
+  cd_depto NUMBER(3) NOT NULL ,
+  ds_depto VARCHAR2(30) NOT NULL
+);
+
+ALTER TABLE T_DEPTO
+  ADD CONSTRAINT PK_DEPTO 
+  PRIMARY KEY (cd_depto);
+
+CREATE TABLE T_FUNCIONARIO
+(
+  nr_matricula NUMBER(4) NOT NULL ,
+  cd_depto NUMBER(3) NOT NULL ,
+  nm_func VARCHAR2(60) NOT NULL ,
+  dt_nasc DATE NOT NULL ,
+  dt_admissao DATE NOT NULL ,
+  vl_salario NUMBER(7,2) NOT NULL
+);
+
+ALTER TABLE T_FUNCIONARIO
+  ADD CONSTRAINT PK_FUNC 
+  PRIMARY KEY (nr_matricula);
+
+CREATE TABLE T_DEPENDENTE
+(
+  cd_dependente NUMBER(3) NOT NULL ,
+  nr_matricula NUMBER(4) NOT NULL ,
+  nm_dependente VARCHAR2(60) NOT NULL ,
+  dt_nascimento DATE NOT NULL
+);
+
+ALTER TABLE T_DEPENDENTE
+  ADD CONSTRAINT PK_DEPENDENTE 
+  PRIMARY KEY (nr_matricula, cd_dependente);
+
+ALTER TABLE T_FUNCIONARIO
+  ADD CONSTRAINT FK_DEPTO_FUNC 
+  FOREIGN KEY (cd_depto)
+  REFERENCES T_DEPTO (cd_depto)
+  ON DELETE CASCADE;
+
+ALTER TABLE T_DEPENDENTE
+  ADD CONSTRAINT FK_FUNC_DEP 
+  FOREIGN KEY (nr_matricula)
+  REFERENCES T_FUNCIONARIO (nr_matricula)
+  ON DELETE CASCADE;
+~~~
+
+### 2.3.8 Ações referenciais – Exemplo SET NULL
+
+- se utilizarmos a cláusula SET NULL quando ocorrer a deleção ou alteração de uma Chave Primária que possui ocorrências associadas a ela, a Chave Estrangeira correspondente será preenchida com o valor NULO.
+- dessa forma, a ocorrência anteriormente associada perderá a referência, mas não teremos valores inconsistentes.
+- o código abaixo realiza a deleção considerando a cláusula SET NULL, durante a aplicação das ações referenciais.
+
+~~~sql
+DELETE FROM T_FUNCIONARIO WHERE nr_matricula = 3;
+~~~
+
+- demonstração de código-fonte utilizando a cláusula SET NULL:
+
+~~~sql
+CREATE TABLE T_FUNCIONARIO 
+( 
+  nr_matricula NUMBER (5) NOT NULL , 
+  cd_depto NUMBER (4) NOT NULL , 
+  cd_cargo NUMBER (4) NOT NULL , 
+  nr_matricula_gerente NUMBER (5) NULL , 
+  nm_funcionario VARCHAR2 (60) NOT NULL , 
+  nr_cpf NUMBER (11) NOT NULL , 
+  nr_rg CHAR (10) NOT NULL 
+ ) ;
+
+ALTER TABLE T_FUNCIONARIO 
+  ADD CONSTRAINT PK__FUNCIONARIO 
+  PRIMARY KEY ( nr_matricula ) ;
+
+ALTER TABLE T_FUNCIONARIO 
+  ADD CONSTRAINT FK_FUNC_GERENTE 
+  FOREIGN KEY ( nr_matricula_gerente ) 
+  REFERENCES T_FUNCIONARIO ( nr_matricula ) 
+  ON DELETE SET NULL ;
+~~~
+
+## 2.4 Sequências
+
+- sequência é um item de banco de dados cuja função é gerar automaticamente uma série de números inteiros.
+- os números gerados pela sequência também são conhecidos por valores autonuméricos ou autonumeração.
+- podemos gerar sequências crescentes ou decrescentes a serem utilizadas para preencher ou compor campos-chave.
+
+### 2.4.1 Criando uma sequência
+
+- utilizar o `CREATE SEQUENCE`, comando dentro da divisão DDL, da linguagem SQL.
+
+~~~sql
+CREATE SEQUENCE nome_sequencia
+[ START WITH num_inicio ]
+[ INCREMENT BY num_incremento ]
+[ { MAXVALUE num_maximo | NOMAXVALUE } ]
+[ { MINVALUE num_minimo | NOMINVALUE } ]
+[ { CYCLE | NOCYCLE} ]
+[ { CACHE num_cache | NOCACHE } ]
+[ { ORDER | NOORDER } ];
+~~~
+
+- sendo: 
+  - nom_sequencia: nome da sequência.
+  - num_inicio: número inteiro usado para iniciar a sequência. O número inicial-padrão é 1.
+  - num_incremento: número inteiro para incrementar a sequência. O número de incremento-padrão é 1.
+  - num_maximo: número inteiro máximo da sequência. Deve ser maior ou igual ao número inicial e maior que o número mínimo.
+  - NO MAX VALUE: especifica que o máximo é 10^27 para uma sequência crescente ou –1 para uma sequência decrescente. A opção NOMAXVALUE é padrão.
+  - num_minimo: número inteiro mínimo da sequência. Deve ser menor ou igual ao número inicial da sequência e menor que o número máximo da sequência.
+  - NOMINVALUE: especifica que o mínimo é 1 para uma sequência crescente ou 10^26 para uma sequência decrescente. NOMINVALUE é o padrão.
+  - CYCLE: significa que a sequência gera números inteiros mesmo depois de atingir seu valor máximo ou mínimo. Quando uma sequência crescente atinge seu valor máximo, o próximo valor gerado é o mínimo. Quando uma sequência decrescente atinge seu valor mínimo, o próximo valor gerado é o máximo.
+  - NOCYCLE: significa que a sequência não pode gerar mais número inteiro algum após atingir seu valor máximo ou mínimo. NOCYCLE é o padrão.
+  - num_cache: é o número de valores inteiros a manter na memória. O número de valores inteiros padrão colocados na cache é 20. O número mínimo de valores inteiros a ser postosno cache é 2. O número máximo de valores inteiros que podem ser colocados no cache é determinado pela fórmula: CEIL (num_maximo – num_minimo) / ABS (num_incremento).
+  - NOCACHE: sem cache. Isso impede o banco de dados de alocar valores previamente para a sequência, o que evita lacunas numéricas na sequência, mas reduz o desempenho. As lacunas ocorrem porque os valores alocados no cache são perdidos quando um banco de dados é fechado. Se for omitida CACHE/NOCACHE, o banco de dados colocará 20 números de sequência na CACHE, por padrão.
+  - ORDER: garante que os números inteiros sejam gerados na ordem da solicitação.
+  - NOORDER: não garante que os números inteiros sejam gerados na ordem de solicitação. NOORDER é o padrão.
+
+- pode haver lacunas (ntervalos ou "Gaps” de valores da sequência) quando:
+  - ocorre um rollback (uma transação é desfeita).
+  - ocorre uma falha no sistema.
+  - uma sequência é usada por duas ou mais tabelas.
+
+### 2.4.2 Modelo relacional utilizado para exemplificar a aplicação de sequências
+
+- exemplo de armazenamento de um cadastro de livros associados aos seus vários autores e à categoria a que pertencem.
+- comando DDL para criar a tabela e constraints da tabela “AUTOR”:
+
+~~~sql
+CREATE TABLE T_AUTOR
+(
+  cd_autor NUMBER (3) NOT NULL ,
+  nm_primeiro_nome_autor VARCHAR2 (20) NOT NULL ,
+  nm_segundo_nome_autor VARCHAR2 (40) NOT NULL ,
+  nm_nome_completo VARCHAR2 (40) NOT NULL ,
+  ds_email VARCHAR2 (30) NOT NULL
+) ;
+
+ALTER TABLE T_AUTOR 
+  ADD CONSTRAINT PK_AUTOR 
+  PRIMARY KEY ( cd_autor ) ;
+
+ALTER TABLE T_AUTOR 
+  ADD CONSTRAINT UN_AUTOR_EMAIL 
+  UNIQUE ( ds_email ) ;
+~~~
+
+- comando DDL para criar a sequência de números inteiros que serão utilizados na Chave Primária:
+
+~~~sql
+CREATE SEQUENCE SQ_AUTOR
+INCREMENT BY 1
+START WITH 1
+MAXVALUE 999
+NOCACHE
+NOCYCLE;
+~~~
+
+### 2.4.3 Pseudocolunas CURRVAL e NEXTVAL
 
 
 
