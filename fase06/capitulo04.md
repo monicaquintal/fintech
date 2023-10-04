@@ -823,11 +823,125 @@ NOCYCLE;
 
 ### 2.4.3 Pseudocolunas CURRVAL e NEXTVAL
 
+- podemos utilizar as duas pseudocolunas das sequências para saber o valor atual e o próximo valor da sequência.
+- essas pseudocolunas são chamadas de CURRVAL e NEXTVAL.
+  - quando utilizamos o CURRVAL para determinar o valor atual da sequência, não há alteração no próximo valor.
+  - quando usamoso NEXTVAL para determinar o próximo valor da sequência, o próximo valor é alterado, o que causa um “GAP” de valores, dependendo de como for utilizado.
 
+> IMPORTANTE: Caso a sequência não tenha sido iniciada, ocorrerá um erro se CURRVAL for utilizado. Para isso, iniciar a sequência utilizando NEXTVAL.
 
+- exemplo CURRVAL:
 
+~~~sql
+SELECT SQ_AUTOR.CURRVAL FROM DUAL;
+~~~
 
+- exemplo NEXTVAL:
 
+~~~sql
+SELECT SQ_AUTOR.CURRVAL FROM DUAL;
+~~~
+
+### 2.4.4 Preenchendo uma Chave Primária com uma sequência
+
+- podemos usar uma sequência para preencher uma coluna de Chave Primária,mas quando a utilizamos, recomenda-se usar NOCACHE para evitar “GAPS” na sequência.
+  - importante: utilizando NOCACHE, há uma redução de desempenho.
+  - se as lacunas “GAPS” não forem um problema, pode utilizar CACHE.
+- exemplo: utilizado o comando DML INSERT para inserção de linhas em uma tabela. 
+
+~~~sql
+INSERT INTO T_AUTOR 
+(CD_AUTOR, 
+ NM_PRIMEIRO_NOME_AUTOR,
+ NM_SEGUNDO_NOME_AUTOR,
+ NM_NOME_COMPLETO,
+ DS_EMAIL
+) 
+VALUES 
+(SQ_AUTOR.nextval , 
+ 'RITA DE CASSIA',
+ 'RODRIGUES',
+ 'RITA DE CASSIA RODRIGUES',
+ 'PROFARITA@FIAP.COM.BR'
+ );
+~~~
+
+### 2.4.5 Recuperando informações sobre sequências
+
+- podemos recuperar informações a respeito de uma sequência a partir da `visão user_sequences`. 
+- as sequências recuperadas são aquelas a que o usuário tem acesso.
+- exemplo:
+
+~~~sql
+SELECT SEQUENCE_NAME, 
+INCREMENT_BY, 
+MAX_VALUE, 
+LAST_NUMBER 
+FROM USER_SEQUENCES
+WHERE SEQUENCE_NAME = 'SQ_AUTOR';
+~~~
+
+- o comando “SELECT” permite que colunas da tabela “USER_SEQUENCES” sejam recuperadas para a sequência “SQ_AUTOR”.
+- as colunas recuperadas representam:
+  - SEQUENCE_NAME: nome da sequência.
+  - INCREMENT_BY: valor do incremento utilizado na sequência.
+  - MAX_VALUE: valor numérico inteiro máximo utilizado pela sequência.
+  - LAST_NUMBER: último valor utilizado na sequência.
+- a cláusula WHERE é responsável pela condição, ou seja, o filtro, que indica qual sequência será recuperada pelo comando “SELECT”.
+
+### 2.4.6 Alterando uma sequência
+
+- podemos alterar uma sequência utilizando a instrução ALTER SEQUENCE. 
+- há algumas limitações que devemos considerar:
+  - o valor inicial de uma sequência não pode ser alterado.
+  - o valor mínimo não pode ser maior que o valor atual da sequência.
+  - o valor máximo não pode ser menor do que o valor atual da sequência.
+  - para alterar uma sequência, é necessário ser proprietário dela.
+  - somente os números futuros da sequência são afetados após a alteração.
+- a sequência deve ser eliminada e recriada para que seja reiniciada em um número diferente.
+- exemplo do comando DDL para alterar uma sequência de números inteiros:
+
+~~~sql
+ALTER SEQUENCE sq_autor
+INCREMENT BY 2
+MAXVALUE 9999
+NOCACHE
+NOCYCLE;
+~~~
+
+### 2.4.7 Excluindo uma sequência
+
+- é possível alterar uma sequência utilizando a instrução DROP SEQUENCE.
+- exemplo de comando DDL para excluir uma sequência:
+
+~~~sql
+DROP SEQUENCE sq_autor;
+~~~
+
+### 2.4.8 Sequências e outros SGBDs
+
+- os SGBDs permitem a criação de autonuméricos.
+- cada fabricante implementa essa funcionalidade de forma diferente.
+- exemplo: SGBDs, como Oracle, DB2 e PostgreSQL, utilizam sequências para gerar valores numéricos inteiros. No SQL Server, podemos qualificar uma coluna com o IDENTITY (valor_inicial, incremento), já no MySQL, qualifica-se com o AUTO_INCREMENT, e ambos são vinculados a uma coluna da tabela que permite gerar os valores numéricos inteiros.
+
+---
+
+## FAST TEST
+
+### 1. Qual dos bancos de dados a seguir NÃO utiliza SQL?
+> MongoDB.
+
+### 2. Qual dos comandos DDL a seguir NÃO funciona?
+> SELECT COL_A COM_B FROM TABELA.
+
+### 3. A DQL (Data Query Language) é composta, exclusivamente, por:
+> SELECT.
+
+### 4. Qual a melhor definição para uma Chave Primária ou Primary Key (PK)?
+> Uma constraint utilizada para identificar de forma única uma linha em uma tabela.
+
+### 5. O comando CREATE TABLE pertence ao grupo:
+> DDL.
 
 --- 
 
