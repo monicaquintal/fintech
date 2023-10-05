@@ -53,6 +53,74 @@ RuntimeException | Exceção que pode ser tratada pelo desenvolvedor. | Nullpoin
 <img src="./assets/hierarquia-excecoes.png" width="50%"/><br/>
 </div>
 
+- a classe Throwable tem duas subclasses: Exception e Error:
+  - Exception é a classe base para as subclasses de exceções checked e unchecked, exceções que devem ou podem ser tratadas. 
+  - Error é a base para as classes de exceções que não podem ser tratadas.
+- `exceções mais comuns em Java`:
+
+1. ***ArithmeticException***:
+
+- exceção unchecked.
+- ocorre quando alguma operação aritmética é inválida; operação esta que não pode ser resolvida, como é o caso da divisão de um número por zero.
+
+2. ***ArrayIndexOutOfBoundsException***:
+
+- exceção do tipo unchecked (o desenvolvedor não é obrigado a tratar a exceção).
+- acontece quando tentamos acessar uma posição inválida de uma matriz ou vetor (array). 
+  - uma posição inválida é uma posição que não existe (negativa ou valor igual ou maior que o tamanho do vetor). 
+  - lembre-se: o índice do vetor sempre começa em zero, ou seja, não existe posição negativa e o último elemento de um array está posicionado no tamanho do vetor menos um.
+
+3. ***NullpointerException***:
+
+- é uma exceção unchecked, mais conhecida e comum durante o desenvolvimento.
+- ocorre na tentativa de acessar um objeto que ainda não foi instanciado.
+- exemplo: quando tentamos acessar o método size() de um ArrayList que ainda não foi instanciado. 
+
+4. ***FileNotFoundException***:
+
+- exceção checked.
+- precisamos tratar quando tentamos acessar um arquivo que não foi encontrado.
+
+5. ***NumberFormatException***:
+
+- não precisa ser tratada (unchecked).
+- ocorre quando tentamos transformar uma string inválida em algum tipo numérico. 
+
+## 1.4 Captura e tratamento de exceções
+
+- para tratar as exceções (checked ou unchecked) em tempo de execução, elas devem ser capturadas e tratadas. 
+- o Java possui duas estruturas importantes para o tratamento de exceções: `try-catch` e `try-catch-finally`.
+- essas estruturas têm a finalidade de separar o código que executa as tarefas desejadas das rotinas de tratamento das exceções.
+
+~~~java
+try {
+  //Código
+} catch(Excecao) {
+  //Tratamento da exceção
+}
+~~~
+
+- o `bloco try` tem um código que pode gerar uma exceção, ou seja, esse trecho de código será monitorado pela JVM. 
+  - se um erro for gerado, o fluxo da execução será desviado para o bloco catch, para o tratamento do erro.
+  - o uso do try indica que o código está tentando realizar algo “perigoso”, passível de erro. 
+- o `bloco catch` só é executado se uma exceção for gerada. 
+  - caso nenhuma exceção seja lançada, a execução pula o bloco catch e continua normalmente. 
+  - se uma exceção for lançada, o bloco try é finalizado e o fluxo de execução procura por um bloco catch adequado para tratar a exceção.
+  - depois de executar o bloco catch, a execução do programa continua na primeira instrução após o último bloco catch.
+  - podemos adicionar vários blocos catch para capturar diferentes tipos de exceções:
+
+~~~java
+try {
+  // Código
+  } catch (Excecao1) {
+    // Tratamento da exceção 1
+  } catch (Excecao2) {
+    //Tratamento da exceção 2
+  } catch (Excecao3) {
+    //Tratamento da exceção 3
+}
+~~~
+
 
 
 
