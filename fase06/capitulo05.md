@@ -139,8 +139,22 @@ System.out.println("O resultado é: "+ divisao);
 sc.close();
 ~~~
 
+- código é simples, porém pode lançar uma exceção, caso o segundo número informado pelo usuário seja zero; caso isso aconteça, o erro gerado será:
 
+~~~
+2
+0
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+at br.com.fiap.tds.View.main(View.java:16)
+~~~
 
+- a exceção ArithmeticException foi lançada, pois não é possível realizar uma divisão por zero! 
+- essa exceção é unchecked, já que não fomos obrigados a tratá-la.
+- realizando alteração no código, para realizar o tratamento da exceção:
+
+~~~java
+
+~~~
 
 
 
