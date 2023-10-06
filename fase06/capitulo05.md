@@ -121,6 +121,23 @@ try {
 }
 ~~~
 
+- os catches são testados de cima para baixo, um por um, até que o catch apropriado seja executado, por isso as exceções mais específicas devem ser colocadas nos primeiros catches, sempre obedecendo à ordem das exceções mais específicas para as mais genéricas.
+- a `exceção Exception` é a mais genérica possível, pois todas as exceções (checked ou unchecked) são filhas dela. 
+  - portanto, a captura dessa exceção deve ser colocada no último catch, pois ela captura qualquer tipo de exceção que for lançada.
+  - se nenhum catch conseguir capturar a exceção lançada, ela não será tratada, como se não existisse o bloco try-catch.
+  - exemplo:
+
+~~~java
+Scanner sc= new Scanner(System.in);
+//Lê os dois números
+int numero1 = sc.nextInt();
+int numero2 = sc.nextInt();
+//Realiza a divisão
+int divisao = numero1/numero2;
+//Exibe o resultado
+System.out.println("O resultado é: "+ divisao);
+sc.close();
+~~~
 
 
 
