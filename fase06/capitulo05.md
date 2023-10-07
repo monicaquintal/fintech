@@ -148,13 +148,73 @@ Exception in thread "main" java.lang.ArithmeticException: / by zero
 at br.com.fiap.tds.View.main(View.java:16)
 ~~~
 
-- a exceção ArithmeticException foi lançada, pois não é possível realizar uma divisão por zero! 
+- a `exceção ArithmeticException` foi lançada, pois não é possível realizar uma divisão por zero! 
 - essa exceção é unchecked, já que não fomos obrigados a tratá-la.
 - realizando alteração no código, para realizar o tratamento da exceção:
 
 ~~~java
+Scanner sc = new Scanner(System.in);
+// Lê os dois números
+int numero1 = sc.nextInt();
+int numero2 = sc.nextInt();
+
+try {
+  // Realiza a divisão
+  int divisao = numero1 / numero2;
+  // Exibe o resultado
+System.out.println("O resultado é: "+ divisao);
+} catch(ArithmeticException e) {
+  System.err.println("Erro ao dividir por zero!");
+}
+sc.close();
+~~~
+
+- neste caso, o bloco try-catch captura a exceção: caso o usuário insira um divisor igual a zero, a divisão vai gerar a ArithmeticException. 
+- assim, o fluxo da execução será desviado para o bloco catch, e a linha do código que exibe o resultado não será executada; o tratamento de exceção previsto no catch para o erro consiste na apresentação da mensagem Erro ao dividir por zero, retornando:
 
 ~~~
+2
+0
+Erro ao dividirpor zero!
+~~~
+
+- se o programa rodar sem lançar exceção (se o usuário informar o dividendo diferente de zero), o resultado da divisão será exibido e o bloco catch não será executado.
+- dentro do bloco catch, podemos recuperar a exceção gerada, por meio do parâmetro; `no exemplo dado, a exceção é recuperada no parâmetro com o nome "e"`.
+- A `classe Throwable` possui alguns métodos que podem exibir informações dos erros gerados, então, por herança, a exceção ArithmeticException também tem estes métodos:
+  - ***printStackTrace()***:
+    - imprime a pilha de erro encontrada na exceção.
+    - nesta pilha, podemos verificar o número da linha e a classe na quala exceção foi gerada.
+  - ***getMessage()***:
+    - retorna uma mensagem contendo a lista de erros armazenados em uma exceção.
+- resultado retornado pelo método printStackTrace e a mensagem de erro da exceção:
+
+~~~java
+int[] array = new int[2];
+try {
+  //Tentaa cessar uma posição inexistente do vetor 
+  array[2] = 10;
+} catch (ArrayIndexOutOfBoundsException e) {
+  System.err.println("Mensagem de erro: "+ e.getMessage());
+  e.printStackTrace();
+}
+~~~
+
+- a exceção é gerada quando tentamos acessar uma posição inválida de um array: ArrayIndexOutOfBoundsException.
+- no bloco catch, utilizamos os métodos getMessage() e printStackTrace(), resultando em:
+
+~~~
+Mensagem de erro: 2
+java.lang.ArrayIndexOutOfBoundsException: 2
+at br.com.fiap.tds.View.main(View.java:10)
+~~~
+
+
+
+
+
+
+
+
 
 
 
