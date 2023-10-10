@@ -341,6 +341,94 @@ public void depositar (double valor) {
 }
 ~~~
 
+- no exemplo, estamos validando se o valor depositado é maior do que zero. 
+  - em caso positivo, o valor é adicionado ao saldo.
+  - caso contrário, uma exceção do tipo IllegalArgumentException será lançada, o que indica que o valor passado como parâmetro para o método é inválido.
+- não foi preciso adicionar o throws na assinatura do método, pois essa exceção é unchecked. Caso a exceção seja checked, é necessário declará-la na assinatura do método!
+
+~~~java
+public void sacar (double valor) throws Exception {
+  if (valor > saldo) {
+    throw new Exception ("Saldo insuficiente");
+  }
+  saldo = saldo - valor;
+}
+~~~
+
+- o método acima valida se o valor a ser retirado é maior do que o valor do saldo. 
+- caso o valor do saldo seja insuficiente, uma exceção será lançada (foi necessário adicionar o throws na assinatura do método, para que, quem chamar o método sacar possa tratar a exceção ou lançá-la novamente).
+
+~~~java
+public static void main (String[] args) {
+  // Cria uma nova instância de Conta
+  Conta c = new Conta();
+  try {
+    // Saca
+    c.sacar(100);
+  } catch (Exception e) {
+    e.printStackTrace();
+  }
+  // Deposita
+  c.depositar(200);
+}
+~~~
+
+- após criar um novo objeto conta, chamamos o método sacar e, como lança uma exceção checked, precisamos tratá-la ou lançá-la.
+  - nesse caso, optamos por tratar a exceção com o bloco try-catch.
+- já o método depositar lança uma exceção unchecked, não sendo obrigados a tratá-la. 
+  - porém, se uma exceção ocorrer, ela será relançada automaticamente pelo método main, que imprimirá o erro no console!
+
+## 1.6 Criação de exceções
+
+- é possível também criar as nossas próprias classes de exceções. 
+- exemplo "Método sacar":
+  - lança a exceção mais genérica possível (Exception). 
+  - para melhorar o uso das exceções e não utilizar uma exceção que serve para tudo, podemos criar uma exceção específica para o erro que pode acontecer.
+- para criar uma exceção, criar uma classe que herde de Exception(checked) ou RuntimeException (unchecked).
+- vamos criar nossas exceções: uma para identificar que o valor de saque é inválido e outra para dizer que o saldo da conta é insuficiente.
+  - a primeira exceção será unchecked (vai descender de RuntimeException). Por padrão, as exceções no Java terminam com Exception.
+
+~~~java
+public class ValorInvalidoException extends RuntimeException {
+  // ...
+}
+~~~
+
+- para utilizá-la, modificar o método sacar para que lance a exceção customizada:
+
+~~~java
+public void depositar (double valor) {
+  if (valor < 0) {
+    throw new ValorInvalidoException();
+  }
+  saldo = saldo + valor;
+}
+~~~
+
+- agora vamos criar uma exceção checked que verifique se o saldo é insuficiente:
+
+~~~java
+public class SaldoInsuficienteException extends Exception{
+  // ...
+}
+~~~
+
+- para utilizá-la, podemos relançá-la, não nos esquecendo de modificar o throws na assinatura do método:
+
+~~~java
+public void sacar (double valor) throws SaldoInsuficienteException {
+  if (valor > saldo) {
+    throw new SaldoInsuficienteException();
+  }
+  saldo = saldo - valor;
+}
+~~~
+
+- nos exemplos anteriores, criamos exceções checked e unchecked para ilustrar nossos exemplos, mas nada impede de elaborar somente um tipo de exceção para a classe Conta. 
+- ***procure sempre utilizar as exceções customizadas com informações do motivo do erro!***
+
+## 1.7 Acesso a arquivos
+
 
 
 
