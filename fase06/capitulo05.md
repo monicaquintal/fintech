@@ -53,7 +53,7 @@ RuntimeException | Exceção que pode ser tratada pelo desenvolvedor. | Nullpoin
 <img src="./assets/hierarquia-excecoes.png" width="50%"/><br/>
 </div>
 
-- a classe Throwable tem duas subclasses: Exception e Error:
+- a classe Throwable tem duas subclasses: Exception e Error
   - Exception é a classe base para as subclasses de exceções checked e unchecked, exceções que devem ou podem ser tratadas. 
   - Error é a base para as classes de exceções que não podem ser tratadas.
 - `exceções mais comuns em Java`:
@@ -207,6 +207,140 @@ Mensagem de erro: 2
 java.lang.ArrayIndexOutOfBoundsException: 2
 at br.com.fiap.tds.View.main(View.java:10)
 ~~~
+
+- a mensagem tem o valor do índice inválido que tentamos acessar no array. 
+- o método printStackTrace imprime o rastro da pilha e exibe a exceção, a classe e a linha que gerou a exceção: View.java:10. Classe View, linha 10.
+- utilizamos o `System.err` para exibir a mensagem de erro:
+  - é uma classe utilizada para exibir os erros em um programa Java.
+  - podemos enviar o fluxo de saída para um arquivo de log, enquanto o fluxo de saída padrão de um System.out é a tela da aplicação.
+  - além do try-catch, podemos utilizar o bloco try-catch-finally para tratar as exceções.
+  - o terceiro bloco finally é opcional e utilizado sempre que precisamos executar um código, independentemente de ter ou não acontecido uma exceção.
+    - se uma exceção for lançada: o fluxo de execução passa do bloco try para o bloco catch adequado e, após a sua execução, o bloco finally será processado.
+    - se não for gerado uma exceção: após executar todo o bloco try, o bloco finally será processado.
+  - exemplo:
+
+~~~java
+try {
+  //Fluxo normal que pode gerar uma exceção
+} catch (Exception e) {
+  //Fluxo alternativo, para tratamento da exceção
+} finally {
+  //Fluxo normal, que sempre será executado
+}
+~~~
+
+- um exemplo clássico da utilização do bloco finally é o fechamento da conexão com o banco de dados (sempre devemos fechar a conexão, independentemente da concretização ou não da operação no banco).
+- voltando ao primeiro exemplo, vamos tratar as exceções de divisão por zero e entrada de dados inválida, quando o usuário digita um número inválido; também vamos adicionar um bloco finally para exibir uma mensagem para o usuário e fechar o objeto scanner:
+
+~~~java
+Scanner sc = new Scanner(System.in);
+try {
+  // Lê os dois números
+  int numero1 = sc.nextInt();
+  int numero2 = sc.nextInt();
+  // Realiza a divisão
+  int divisao = numero1 / numero2;
+  // Exibe o resultado
+  System.out.println("O resultado é: "+ divisao);
+} catch (ArithmeticException e) {
+  System.err.println("Erro ao dividir por zero!");
+} catch (InputMismatchException e) {
+  System.err.println("Erro de entrada de dados!");
+} finally {
+  System.out.println("Finalizando a execução do programa!");
+  sc.close();
+}
+~~~
+
+- portanto, há 3 possíveis fluxos de execução:
+
+1. Sem gerar exceção, a saída será: 
+
+~~~
+2
+2
+O resultado é: 1
+Finalizando a execução do programa!
+~~~
+
+2. Em exceção causada pela divisão por zero, a saída será:
+
+~~~
+2
+0
+Erro ao dividir por zero!
+Finalizando a execução do programa!
+~~~
+
+3. Em exceção causada pelo valor inserido inválido, a saída será:
+
+~~~
+a
+Erro de entrada de dados!
+Finalizando a execução do programa!
+~~~
+
+> Observe que todos os fluxos sempre executam o bloco finally!
+
+## 1.5 Propagação de exceções – Throws
+
+- umm método pode optar por não tratar a exceção e simplesmente propagá-la, ou melhor, delegá-la para o método que a chamou.
+- podemos notificar o método que invocou outro método em que alguma exceção ocorreu.
+- exemplo: criar uma classe chamada Calculadora que será responsável por implementar as operações aritméticas, entre eles a divisão.
+
+~~~java
+public class Calculadora {
+  public int dividir (int n1, int n2) {
+    return n1/n2;
+  }
+}
+~~~
+
+- esse método pode lançar uma exceção, caso o valor de n2 seja zero. 
+- podemos utilizar o try-catch para tratar a exceção, porém quem chamar o método dividir não saberá se a operação ocorreu de forma correta ou se aconteceu algum erro.
+
+~~~java
+public int dividir (int n1, int n2) {
+  try {
+    return n1/ n2;
+  } catch (ArithmeticException e) {
+    e.printStackTrace();
+  }
+  return 0;
+}
+~~~
+
+- nesse exemplo, quando o método dividir for acionado e o usuário informar para n2 o valor zero, internamente, no método dividir, será feito o tratamento do erro e ele retornará para o ambiente de chamada o valor zero e, nesse caso, o usuário não será informado sobre a ocorrência do erro!!!
+- logo, ***a melhor maneira de tratar a exceção é não a tratar***; no caso, somente propagar a exceção, notificando ao ambiente de chamada que algum problema aconteceu na execução: adicionar na assinatura do método o throws, com a exceção que queremos propagar!
+
+~~~java
+public int dividir (int n1, int n2) throws Exception {
+  return n1 / n2;
+}
+~~~
+
+- um método pode propagar mais de um tipo de exceção.
+- para isso, adicionar as exceções separadas por vírgula.
+
+~~~java
+public void gravarArquivo (String valor) throws SecurityException, FileNotFoundException, IOException {
+  //Código...
+}
+~~~
+
+- portanto, ***a cláusula throws declara exceções que podem ser lançadas em determinados métodos***.
+- é uma vantagem para os devs, pois deixamos de modo explícito os eventuais erros que podem ocorrer na chamada do método, permitindo que o tratamento adequado para o erro seja implementado.
+- podemos também lançar uma nova exceção nesse método, utilizando o comando throw:
+
+~~~java
+public void depositar (double valor) {
+  if (valor < 0) {
+    throw newIllegalArgumentException();
+  } 
+  saldo = saldo + valor;
+}
+~~~
+
 
 
 
