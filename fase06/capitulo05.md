@@ -429,6 +429,57 @@ public void sacar (double valor) throws SaldoInsuficienteException {
 
 ## 1.7 Acesso a arquivos
 
+- o armazenamento de dados em variáveis, arrays, coleções ou outra estrutura de dados em memória é temporário (são perdidas quando o programa termina).
+- os arquivos são utilizados para persistência de dados (armazenamento mesmo após o término da execução do programa).
+- para armazenar grandes quantidades de informações, como clientes, produtos ou vendas de uma empresa, os lugares mais adequados são os bancos de dados.
+- vantagens dos arquivos:
+  - úteis para armazenar as configurações do programa, ao invés de colocar as configurações diretamente no código-fonte. 
+  - possibilidade de alterar o arquivo de configurações sem a necessidade de recompilar e empacotar todo o programa novamente.
+  - integração de sistemas diferentes (um sistema pode realizar um processamento de informações e gerar um arquivo final, enquanto outro sistema pode ler esse arquivo e apresentar as informações, gerando a integração). 
+- a plataforma Java possui facilidade na leitura e gravação de arquivos, pois é independente de plataforma, logo não precisamos nos preocupar com o tipo de sistema operacional em que o programa será executado.
+- todas entradas e saídas em Java são definidas em termos de `fluxos`, ou `streams`: sequências ordenadas de dados que possuem uma fonte de origem (streams de entrada), ou um destino (streams de saída).
+  - uma stream é uma conexão para uma fonte de dados ou para um destino de dados. 
+  - a plataforma Java trata cada arquivo como uma stream!
+- há `dois tipos de streams`, dependendo da operação que será realizada:
+  - ***Output stream***: para gravar em um destino.
+  - ***Input stream***: para ler de uma fonte.
+- arquivos baseados em um fluxo de caracteres são chamados `arquivos textos`:
+  - pode ser lido e entendido pelas pessoas, e também manipulado na plataforma Java. 
+  - geralmente, registros contidos neles são representados pelas linhas, enquanto os campos o são por colunas ou valores separados por vírgula.
+  - para ***gravar dados em um arquivo texto***, é preciso executar três passos: abrir o arquivo > gravar os dados > fechar o arquivo.
+  - as ***classes para manipular os arquivos*** ficam dentro do pacote java.io:
+    - ***java.io.FileWriter*** e 
+    - ***java.io.PrintWriter***.
+
+### Aplicando:
+
+1. `classe FileWriter`:
+  - filha da classe OutputStreamWriter.
+  - utilizar essa classe para abrir o arquivo para escrita.
+
+2. `classe PrintWriter`:
+  - usada para escrever no arquivo. 
+  - para criar um objeto do tipo PrintWriter, é preciso passar o arquivo, ou seja, o objeto FileWriter.
+
+~~~java
+public static void main(String[] args) {
+  try {
+    //Abre o arquivo 
+    FileWriter stream = new FileWriter("arquivo.txt");
+    PrintWriter print = new PrintWriter (stream);
+    //Escreve no arquivo
+    print.println("Teste");
+    print.println("Escrevendo no arquivo");
+    print.close();
+    //Fecha o arquivo
+    stream.close();
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+~~~
+
+
 
 
 
