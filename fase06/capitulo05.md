@@ -479,13 +479,115 @@ public static void main(String[] args) {
 }
 ~~~
 
+- o exemplo acima apresenta o método main, que abre, escreve e fecha o "arquivo.txt" (aberto, se existir, ou criado, caso não exista). 
+- na instanciação do FileWriter, é passado o caminho e nome do arquivo. Como não especificamos nenhum caminho, o arquivo estará na pasta raiz do programa.
+  - podemos também especificar o caminho completo do arquivo:
 
+~~~java
+FileWriter stream = new FileWriter("C://arquivo.txt");
+~~~
 
+- após criar o objeto FileWriter, instanciado o objeto PrintWriter, passando como parâmetro o objeto que encapsula o arquivo:
 
+~~~java
+PrintWriter print = new PrintWriter(stream);
+~~~
 
+- com o objeto PrintWriter, é possível utilizar os métodos print ou println para escrever no arquivo:
 
+~~~java
+print.println("Teste");
+print.println("Escrevendo no arquivo");
+~~~
 
+- para finalizar, chamamos o método close do objeto PrintWriter e FileWriter, fechando o arquivo texto:
 
+~~~java
+print.close();
+stream.close();
+~~~
+
+- foi preciso tratar a exceção IOException, pois podemos ter problemas na hora de abrir ou manipular o arquivo.
+- o resultado da execução será o arquivo texto com as informações gravadas.
+
+### Lendo o arquivo:
+
+- para ler o arquivo, três passos: abrir o arquivo > utilizar o arquivo (ler os dados) > fechar o arquivo.
+- `classes que podemos utilizar`:
+  - ***java.io.FileReader*** (descende da classe InputStreamReader) e 
+  - ***java.io.BufferedReader***.
+- exemplo:
+
+~~~java
+public static void main(String[] args) {
+  try {
+    //Abre o arquivo
+    FileReader stream = new FileReader("arquivo.txt");
+    BufferedReader reader = new BufferedReader(stream);
+    //Lê uma linha do arquivo
+    String linha = reader.readLine();
+    while (linha != null) {
+      System.out.println(linha);
+      //Lê a próxima linha do arquivo
+      linha = reader.readLine();
+    }
+    reader.close();
+    //Fecha o arquivo
+    stream.close();
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+~~~
+
+- a mesma regra do caminho se aplica: caso o arquivo esteja em outro diretório, devemos especificá-lo:
+
+~~~java
+FileReader stream= new FileReader("C://arquivo.txt");
+~~~
+
+- para finalizar, é preciso fechar o FileReader e o BufferedReader.
+- a plataforma Java oferece várias Classes para leitura/escrita de arquivos textos.
+
+<div align="center">
+<img src="./assets/hierarquia-pacote-javaio.svg" width="60%"><br>
+<p><em>Hierarquia do pacote java.io.</p></em>
+</div>
+
+- as principais classes desse pacote são:
+
+1. ***Classes para entrada ou saída baseada em bytes***:
+  - FileInputStream: para entrada baseada em bytes de um arquivo.
+  - FileOutputStream: para saída baseada em bytes para um arquivo.
+  - RandomAccessFile: para entrada e saída baseada em bytes de e para um arquivo.
+
+2. ***Classes para entrada e saída baseada em caracteres***:
+  - FileReader: para entrada baseada em caracteres de um arquivo.
+  - FileWriter: para saída baseada em caracteres para um arquivo.
+
+- ***outra classe importante da API de entrada e saída (IO) do Java é o `File`***:
+  - representa um arquivo ou um diretório no sistema de arquivo nativo. 
+  - permite obter informações sobre o arquivo ou diretório, e não sobre o seu conteúdo (não abre o arquivo ou permite processamento de conteúdo).
+  - sua função é gerenciar o arquivo ou diretório, o seu caminho (path), verificar permissões, existência, criar, renomear etc.
+  - um objeto da classe File representa o arquivo/diretório, não quer dizer que o arquivo ou diretório exista de fato.
+  - principais métodos da classe File:
+
+<div align="center">
+
+Método | Descrição
+-------|--------------
+exists | Verifica se um arquivo ou diretório existe
+isDirectory | Verifica se é um diretório
+isFile | Verifica se é um arquivo
+canRead | Verifica se pode ser lido
+canWrite | Verifica se pode ser gravado
+mkdir | Cria um diretório
+renameTo | Renomeia um arquivo ou diretório
+length | Retorna o tamanho do arquivo
+delete | Deleta um arquivo ou diretório
+getPath | Retorna o caminho
+
+</div>
 
 
 
