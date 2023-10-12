@@ -922,12 +922,82 @@ public static void main(String[] args) {
 
 ## 2.2 Constantes
 
+- é comum usar modificadores public, static e final ao declarar uma constante no Java.
+- constantes podem ser:
+  - públicas (todos podem ter acesso), 
+  - estáticas (pois não existe necessidade de cada objeto ter sua própria constante) 
+  - e finais (para que o valor da constante nunca se altere).
+- por convenção, o nome de uma constante é sempre escrito em maiúsculo, com as palavras separadas por underline.
+- para acessar as constantes, utilizar o nome da classe.
 
+~~~java
+public class Constantes {
+	public static final String JANEIRO = "Janeiro";
+	public static final double TAXA_RETIRADA = 10;
+	public static final int NUMERO_DIAS_SEMANA = 7;
+	public static final Estado SAO_PAULO = new Estado("São Paulo","SP");
+}
 
+public static void main(String[] args) {
+		System.out.println(Constantes.JANEIRO);
+		System.out.println(Constantes.TAXA_RETIRADA);
+}
+~~~
 
+## 2.3 Interfaces
 
+- uma interface define um conjunto de requisitos para as classes implementá-las. Porém, `interface não é classe`.
+- interface é um contato entre a classe e o mundo externo.
+- quando uma classe implementa uma interface, está comprometida a fornecer todos os comportamentos definidos na interface.
+- uma interface em Java não pode ser instanciada; também pode ser composta de atributos e métodos, porém, como não é instanciada, não apresenta construtores.
+- a plataforma Java não permite herança múltipla: não é possível herdar duas classes diretamente. Porém, `uma classe Java pode implementar uma ou mais interfaces`, devendo definir todos os métodos publicados por todas as interfaces implementadas.
+- uma classe abstrata não é obrigada a implementar todos os métodos definidos na interface. Porém, em uma classe concreta, é obrigatório.
+- todos os atributos e métodos de uma interface são implicitamente públicos. Todo atributo em uma interface é implicitamente público, final e estático (Constante). Como esses qualificadores são fixos, não precisamos declará-los.
 
+~~~java
+public interface Autenticavel {
+    String MSG_LOGOUT = "Saindo";
 
+    boolean login(String usuario, String senha);
+
+    void logout();
+  }
+~~~
+
+~~~java
+public class Usuario implements Autenticavel {
+	
+	@Override
+	public boolean login(String usuario, String senha) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
+	public void logout() {
+		// TODO Auto-generated method stub
+	}
+}
+~~~
+
+- como a classe Usuario implementa a interface Autenticavel, ela deve implementar todos os métodos definidos pela interface, senão teremos um erro de compilação.
+- `se uma classe implementar mais de uma interface, devemos separá-las por vírgula`.
+- e se uma classe implementar uma ou mais interfaces e estender uma classe, primeiro precisamos definir a herança:
+
+~~~java
+public class Usuario extends Pessoa implements Autenticavel {
+  // Código...
+}
+~~~
+
+- ***sempre utilizar interfaces quando for preciso prover operações comuns a classes de hierarquia diferentes!!!***
+- utilizar interfaces permite o uso do polimorfismo. Por exemplo, duas classes que implementam uma mesma interface podem ser atribuídas a uma variável do tipo da Interface. Porém, a execução dependerá do tipo do objeto que essa variável armazena.
+- podemos ter métodos concretos em uma interface, utilizando o modificador default; esses métodos serão herdados por todas as classes que implementarem a interface, não sendo necessário implementá-la na classe (as classes que implementarem a interface já receberão o método, sem precisar implementá-lo).
+- Static é outro método que possui implementação em uma interface. 
+  - a diferença entre o método default e o método estático é que o estático pertence à interface e não pode ser sobrescrito (para executar o método estático, devemos referenciar a interface e não a classe ou oobjeto).
+  - um default method pode ser sobrescrito em uma classe e precisa de uma de suas instâncias para ser executada.
+- em uma interface, podemos definir todos os tipos de métodos em conjunto: abstratos (sem implementação, que deverá ser implementado na classe), métodos defaults e métodos estáticos.
+- podemos utilizar o operador `instance of` para verificar se um objeto é do tipo de uma interface ou de uma classe (herança). Esse operador retorna true se o objeto à esquerda do operador é do tipo da classe ou interface especificada à direita do operador.
 
 
 
