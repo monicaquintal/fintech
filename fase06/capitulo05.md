@@ -999,8 +999,36 @@ public class Usuario extends Pessoa implements Autenticavel {
 - em uma interface, podemos definir todos os tipos de métodos em conjunto: abstratos (sem implementação, que deverá ser implementado na classe), métodos defaults e métodos estáticos.
 - podemos utilizar o operador `instance of` para verificar se um objeto é do tipo de uma interface ou de uma classe (herança). Esse operador retorna true se o objeto à esquerda do operador é do tipo da classe ou interface especificada à direita do operador.
 
+---
 
+## FAST TEST
 
+### 1. Sobre a exceção NullPointerException, selecione a alternativa correta que representa o cenário em que ela pode acontecer.
+> Ocorre quando se tenta acessar, em tempo de execução, o conteúdo de uma variável ou a propriedade de objeto que ainda não tenha sido instanciado na memória.
+
+### 2. Em Java, uma exceção pode ser classificada como:
+> Checked, Unchecked e Error.
+
+### 3. Respectivamente, qual é a função esperada de um Output stream e um Input stream:
+> Realiza a gravação de um arquivo e realiza a leitura de um arquivo.
+
+### 4. Uma exceção polimórfica do tipo Unchecked pode ser classificada como:
+> Pode ser tratada pelo desenvolvedor ou relançada para o fluxo de execução.
+
+### 5. Através do polimorfismo é possível estender classes e reaproveitar funcionalidades já implementadas. Dentro desse conceito, qual alternativa a seguir descreve a função de uma classe abstrata na linguagem Java.
+> A classe abstrata não pode ser instanciada diretamente, ou seja, não pode ser utilizada para a criação de novos objetos na memória.
+
+### 6. Em relação aos famosos blocos try-catch e try-catch-finally, no ambiente de desenvolvimento Java, podemos afirmar, verdadeiramente, que:
+> São estruturas de captura e tratamento das exceções de tipo Checked e Unchecked.
+
+### 7. A exceção IOException é lançada pela JVM em qual momento da execução do código-fonte?
+> É uma exceção lançada, normalmente, quando se está lendo ou gravando dados em um arquivo.
+
+### 8. Escolha a alternativa que representa a principal diferença entre uma classe e uma interface no ambiente Java.
+> A interface é um contrato estabelecido com o objetivo de definir requisitos às classes que forem implementá-lo.
+
+### 9. Selecione a alternativa que representa o fluxo convencional de captura de uma exceção no ambiente de desenvolvimento utilizando a linguagem Java.
+> Exceção lançada, exceção capturada e tratamento realizado.
 
 --- 
 
