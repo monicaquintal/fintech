@@ -727,7 +727,200 @@ public static void main(String[] args) {
   - pode possuir métodos abstratos.
 - o propósito de uma classe abstrata é atuar como uma superclasse (existe para ser herdada, será a base para as outras classes que serão desenvolvidas).
 - exemplo: a classe Conta é perfeita para ser abstrata, pois será a base para todas as outras contas em nosso sistema, como contas corrente, poupança, investimento, etc (não instanciamos uma classe Conta, não existe uma "conta genérica").
+- uma classe abstrata pode conter métodos abstratos (não possui implementação, define somente a assinatura do método). A sua subclasse, obrigatoriamente, precisará implementar o método, caso esta seja concreta.
+- em uma classe concreta, não é permitido definir métodos abstratos.
+- é possível ter uma herança com várias classes abstratas, porém a primeira classe concreta da hierarquia será obrigada a implementar todos os métodos abstratos definidos pelas suas superclasses (é igual a sobrescrever, devemos definir um método com o mesmo nome e parâmetros (assinatura) na subclasse e implementá-la). 
 
+~~~java
+public abstract class Conta {
+	protected double saldo;
+
+	public void sacar(double valor) throws SaldoInsuficienteException {
+		if (valor > saldo) {
+			throw new SaldoInsuficienteException();
+		}
+		saldo = saldo - valor;
+	}
+public abstract double verificarSaldo();
+}
+~~~
+
+- o nome da classe abstrata e o método abstrato ficam em itálico. 
+- as classes concretas e os métodos implementados são exibidos sem nenhuma formatação diferente.
+- para definir uma classe ou um método abstrato, adicionar o modificador abstract.
+- no exemplo, definir a classe Conta como abstrata e adicionar o método “depositar” como abstrato:
+
+~~~java
+public abstract class Conta {
+	protected double saldo;
+
+	public void sacar (double valor) throws SaldoInsuficienteException {
+		if (valor > saldo){
+			throw new SaldoInsuficienteException();
+		}
+		saldo = saldo - valor;
+	}
+public abstract double verificarSaldo();
+}
+~~~
+
+- o método verificarSaldo é abstrato (não há implementação), então a assinatura do método termina com ponto e vírgula (;).
+- a subclasse ContaCorrente está com erro de compilação devido à adição do método abstrato na classe Conta; portanto, implementar o método verificarSaldo na classe ContaCorrente:
+
+~~~java
+public class ContaCorrente extends Conta{
+
+	private double limite;
+
+	@Override
+	public void sacar(double valor) throws SaldoInsuficienteException {
+		if (valor > saldo + limite){
+			throw new SaldoInsuficienteException();
+		}
+		saldo = saldo - valor;
+	}
+
+	@Override
+	public double verificarSaldo() {
+		return saldo + limite;
+	}
+
+//Gets e Sets
+}
+~~~
+- implementar a classe ContaPoupanca:
+
+~~~java
+public class ContaPoupanca extends Conta {
+	@Override
+	public double verificarSaldo() {
+		return saldo;
+	}
+}
+~~~
+
+- a classe ContaPoupanca é obrigada a implementar o método verificarSaldo, pois ela é concreta. 
+- porém, ela não foi obrigada a implementar o método sacar, pois esse método não é abstrato e está implementado na superclasse Conta! 
+- dessa forma, a classe ContaPoupanca possui o mesmo método sacar da classe Conta e implementa um comportamento específico no método verificarSaldo.
+
+---
+
+<div align="center">
+<h2>2. MODIFICADOR FINAL</h2>
+</div>
+
+- trabalha de forma contrária em relação ao modificador abstract.
+- uma classe Java marcada como final não pode ser estendida.
+- exemplo: classe ContaPoupanca não pode possuir nenhuma subclasse.
+
+~~~java
+public final class ContaPoupanca extends Conta {
+		@Override
+		public double verificarSaldo() {
+			return saldo;
+		}
+}
+~~~
+
+- além das classes, também podemos utilizar a palavra-chave final em atributos, e seu valor será imutável (ou seja, não podemos alterar o valor do atributo durante o ciclo de vida do objeto).
+- atributos declarados como final são chamados de atributos constantes e sua inicialização deve ser feita no momento da declaração!
+
+~~~java
+public class Circulo {
+		private final double NUMERO_PI = 3.1416;
+}
+~~~
+
+- por convenção, `atributos constantes` devem ser criados com todas as letras em maiúsculas, e caso o nome seja composto por mais de uma palavra, separa-las pelo caractere underline.
+
+- além de classes e atributos, podemos utilizar o modificador final também `em métodos` (não poderá ser sobrescrito).
+
+~~~java
+public final double calcularArea(){
+		return NUMERO_PI*raio*raio;
+}
+~~~
+
+- o modificador final é importante quando queremos que nenhum outro desenvolvedor estenda a nossa classe ou modifique o comportamento de um método em uma classe filha.
+- é utilizado também para criar valores constantes.
+- principais características da palavra-chave final, dependendo de onde está sendo utilizada:
+
+<div align="center">
+
+Elemento | Comportamento
+-----------|------------
+Classe | A classe não poderá ser estendida, ou seja, não possuirá subclasses.<br>A classe String, por exemplo, é final. 
+Método | O método não poderá ser sobrescrito.
+Atributo | O valor do atributo definido na sua declaração não poderá ser alterado.
+
+</div>
+
+## 2.1 Modificador static
+
+- pode ser aplicado aos membros de uma classe: métodos e atributos.
+- é compartilhado por todas as instâncias de uma determinada classe. 
+- quando um atributo é declarado como estático, ele passa a se referir à Classe e não mais à instância da Classe, ou seja, o atributo será igual para todos os objetos, independentemente dos respectivos números de instâncias.
+- por isso, se um objeto mudar o valor do atributo estático, todos os outros objetos terão acesso ao novo valor.
+- um método marcado como estático não depende das características de cada objeto. Podem ser invocados sem precisar de uma instância da classe e são utilizados para realizar uma tarefa comum para todos os objetos:
+
+~~~java
+public static void main(String[] args) {
+  // ...
+}
+~~~
+
+- um método estático utiliza apenas informações contidas em seus parâmetros e nos atributos estáticos, ou seja, pode acessar somente atributos estáticos. Porém, o contrário é possível: pode-se acessar um atributo estático dentro de um método não estático.
+
+~~~java
+public class AcessoCatraca {
+	private static int totalAcesso;
+
+	private String nome;
+
+	public void entrar(String nome){
+		this.nome = nome;
+		totalAcesso = totalAcesso + 1;
+	}
+
+	public static int recuperarTotal(){
+		return totalAcesso;
+	}
+}
+~~~
+
+- um exemplo de utilização de métodos estáticos é a classe ***java.lang.Math***, que possui vários métodos estáticos que auxiliam o dev nas operações matemáticas.
+- para utilizar um método estático não é preciso de uma instância da classe:
+
+~~~java
+public static void main(String[] args) {
+		int total = AcessoCatraca.recuperarTotal();
+		System.out.println("Total " + total);
+
+		long numero = Math.round(2.9);
+		System.out.println("Número arredondado: " + numero);
+}
+~~~
+
+- o exemplo acima acessa o método estático recuperarTotal, da classe AcessoCatraca, e utiliza um método de arredondamento da classe Math.Em ambos os casos, não foi preciso instanciar suas respectivas classes.
+- para acessar o método entrar, da classe AcessoCatraca, será preciso criar o objeto:
+
+~~~java
+public static void main(String[] args) {
+		AcessoCatraca a1 = new AcessoCatraca();
+		a1.entrar("Thiago");
+
+		AcessoCatraca a2 = new AcessoCatraca();
+		a2.entrar("Leandro");
+
+		int total = AcessoCatraca.recuperarTotal();
+		System.out.println("Total " + total);
+}
+~~~
+
+- Qual será o resultado da execução acima? O método entrar incrementa o valor do atributo estático totalAcesso (um atributo estático se refere à classe e não ao objeto, então compartilharãoo mesmo valor).
+- como o método foi chamado duas vezes, independentemente do objeto, no final da execução o valor total será 2.
+
+## 2.2 Constantes
 
 
 
