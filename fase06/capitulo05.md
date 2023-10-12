@@ -589,6 +589,151 @@ getPath | Retorna o caminho
 
 </div>
 
+~~~java
+public static void main(String[] args) {
+  File arquivo = new File("arquivo.txt");
+  // Verifica se o arquivo existe
+  if (arquivo.exists()) {
+    System.out.println("O arquivo existe!"+
+      "\nPode ser lido: "+ arquivo.canRead() +
+      "\nPodeser gravado: "+ arquivo.canWrite() +
+      "\nTamanho: "+ arquivo.length() +
+      "\nCaminho: "+ arquivo.getPath());
+  } else {
+    // Cria o arquivo
+    try {
+      if(arquivo.createNewFile())
+        System.out.println("Arquivo criado!");
+      else
+        System.out.println("Arquivo não criado!");
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+  }
+}
+~~~
+
+- podemos também utilizar o objeto File para verificar se um diretório  existe, ou então para criá-lo:
+
+~~~java
+public static void main(String[] args) {
+  File diretorio = new File("fiap");
+  if(diretorio.exists()) {
+    System.out.println("Diretório existe!");
+  } else {
+    if(diretorio.mkdir())
+      System.out.println("Diretório criado!");
+    else
+      System.out.println("Diretório não criado.");
+  }
+}
+~~~
+
+- após criar um diretório, podemos criar um arquivo dentro dele, conforme:
+
+~~~java
+public static void main(String[] args) {
+  File diretorio = new File("fiap");
+  if (diretorio.exists()) {
+    System.out.println("Diretório existe!");
+  } else {
+    if (diretorio.mkdir())
+      System.out.println("Diretório criado!");
+    else
+      System.out.println("Diretório não criado.");
+  }
+  File arquivo = new File (diretorio,"file.txt");
+  try {
+    if(arquivo.createNewFile())
+      System.out.println("Arquivo criado!");
+    else
+      System.out.println("Arquivo não criado!");
+  } catch(IOException e) {
+    e.printStackTrace();
+  }
+}
+~~~
+
+- primeiro verificamos se o diretório existe e, caso necessário, o criamos. Depois, instanciamos uma classe File passando o nome do arquivo e o objeto File que representa o diretório.
+- com esse novo objeto File, tentamos criar o arquivo dentro do diretório.
+- a classe File pode ser utilizada em conjunto com as outras classes de manipulação do conteúdo do arquivo, basta utilizar o objeto File no momento de criar um FileWriter ou FileReader:
+
+~~~java
+try {
+  //Abre o arquivo para escrita
+  FileWriter writer = new FileWriter(arquivo);
+  //Abre o arquivo para leitura
+  FileReader reader = new FileReader(arquivo);
+  //Código...
+} catch(IOException e) {
+  e.printStackTrace();
+}
+~~~
+
+- depois, basta instanciar a classe PrintWriter para escrever no arquivo ou um BufferedReader para ler.
+
+## 1.8 Polimorfismo
+
+- significa: "qualidade ou estado de ser capaz de assumir diferentes formas".
+- na programação orientada a objetos, polimorfismo significa ter múltiplos comportamentos. 
+- um método polimórfico resulta em diferentes ações, dependendo do objeto que está sendo referenciado.
+- a capacidade polimórfica decorre diretamente da herança, pois permite que uma variável de referência e o objeto sejam diferentes.
+- exemplo:
+  - podemos definir uma variável do tipo Conta, e armazenar um objeto de ContaCorrente, se este herdar da classe Conta.
+  - portanto, o tipo da variável de referência pode ser uma superclasse para o tipo do objeto real.
+  - qualquer objeto de uma classe que herde o tipo declarado da variável pode ser atribuído a ela!
+- ***a utilização mais importante do polimorfismo se dá nas ocasiões em que dois objetos, sendo um da superclasse e outro da subclasse, executam ações diferentes quando o mesmo método é invocado***, o que é possível por meio da `sobrescrita de métodos` (quando a subclasse sobrescreve o método implementado na superclasse).
+
+~~~java
+public class Conta { //superclasse conta
+  protected double saldo;
+  public void sacar(double valor) throws SaldoInsuficienteException {
+    if(valor > saldo) {
+      throw new SaldoInsuficienteException();
+    }
+    saldo = saldo - valor;
+  }
+}
+
+public class ContaCorrente extends Conta { // subclasse cc
+  private double limite;
+  @Override
+  public void sacar(double valor) throws SaldoInsuficienteException {
+    if(valor > saldo + limite) {
+      throw new SaldoInsuficienteException();
+    }
+    saldo = saldo-valor;
+  }
+}
+
+public static void main(String[] args) {
+  Conta cc = new ContaCorrente();
+  try {
+    cc.sacar(20);
+  } catch(SaldoInsuficienteException e) {
+    e.printStackTrace();
+  }
+}
+// O método do objeto armazenado na variável será executado,
+// ou seja, o método definido na ContaCorrente.
+~~~
+
+- a execução sempre acontece com o objeto armazenado e não com o tipo da variável!
+
+## 1.9 Classe abstrata
+
+- a classe abstrata possui algumas características:
+  - não pode ser instanciada (não podemos utilizar o operador new).
+  - pode possuir métodos abstratos.
+- o propósito de uma classe abstrata é atuar como uma superclasse (existe para ser herdada, será a base para as outras classes que serão desenvolvidas).
+- exemplo: a classe Conta é perfeita para ser abstrata, pois será a base para todas as outras contas em nosso sistema, como contas corrente, poupança, investimento, etc (não instanciamos uma classe Conta, não existe uma "conta genérica").
+
+
+
+
+
+
+
 
 
 
