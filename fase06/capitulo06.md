@@ -116,7 +116,7 @@ Regras de Negócio:
 INSERT INTO T_SIP_DEPARTAMENTO VALUES (1,'FINANCEIRO');
  
 INSERT INTO T_SIP_DEPARTAMENTO 
-	(cd_depto, nm_depto) VALUES (2, ‘MARKETING');
+	(cd_depto, nm_depto) VALUES (2, 'MARKETING');
 ~~~
 
 - podemos realizar a inserção informando ou não as colunas.
