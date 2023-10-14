@@ -461,6 +461,292 @@ FROM T_SIP_FUNCIONARIO;
 
 ## 1.10 Pseudocoluna ROWNUM
 
+- todas as tabelas possuem a pseudocoluna ROWNUN, utilizada quando precisamos limitar a quantidade de linhas retornadas por meio de um comando SELECT.
+- podemos usá-la, por exemplo, para recuperar certo número de linhas por vez para auxiliar a paginação em uma página WEB.
+- exemplo: retornar as quatro primeiras linhas da tabela T_SIP_FUNCIONARIO.
+
+~~~sql
+-- Exemplo pseudocoluna ROWNUM
+SELECT NR_MATRICULA,
+       CD_DEPTO,
+       DT_ADMISSAO,
+       VL_SALARIO,
+       (VL_SALARIO * 12) "SALÁRIO ANUAL"
+  FROM T_SIP_FUNCIONARIO
+  WHERE ROWNUM < 4;
+~~~
+
+- análise top-n (): análise que permite montar um ranking, de forma crescente ou decrescente.
+
+~~~sql
+  SELECT ROWNUM as RANK, 
+         NM_FUNCIONARIO,
+         VL_SALRIO
+  FROM
+    (
+      SELECT NM_FUNCIONARIO,
+             VL_SALARIO
+        FROM T_SIP_FUNCIONARIO
+      ORDER BY VL_SALARIO DESC
+    ) 
+  WHERE ROWNUM <= 3;
+~~~
+
+## 1.11 Pesquisa em múltiplas tabelas
+
+### 1.11.1 NATURAL JOIN –Junção interna
+
+- segue a padronização ANSI, e implica criar a junção interna entre duas tabelas.
+- a junção é feita por meio de colunas com o mesmo nome nas duas tabelas.
+- esse tipo de junção surgiu a partir da padronização ANSI 99.
+- caso as colunas tenhamo mesmo nome, mas tipos de dados diferentes, será retornado um erro. 
+- é ilustrada por meio da intersecção entre dois conjuntos.
+- exemplo: recuperar todos os funcionários e respectivos departamentos nos quais trabalham.
+
+~~~sql
+--EXEMPLO - NATURAL JOIN
+SELECT F.NR_MATRICULA "MATRICULA",
+       CD_DEPTO "COD. DEPTO" ,
+       D.NM_DEPTO "DEPARTAMENTO", 
+       F.NM_FUNCIONARIO "FUNCIONARIO"
+  FROM T_SIP_DEPARTAMENTO D 
+  NATURAL JOIN T_SIP_FUNCIONARIO F;
+~~~
+
+> **NOTA**: não aplicar o qualificador na coluna “CD_DEPTO”, pois acarretará um erro. Quando utilizamos NATURAL JOIN, não podemos usar qualificadores para as colunas Chaves Primária/Estrangeira.
+
+- há situações em que tabelas possuem campos com nomes iguais, mas conteúdos diferentes.
+- nesses casos, podemos modificar a NATURAL JOIN adicionando a ***cláusula USING*** para especificar as colunas que devem ser usadas em uma junção.
+- exemplo:
+
+~~~sql
+--EXEMPLO - NATURAL JOIN e cláusula USING
+SELECT F.NR_MATRICULA "MATRICULA",
+       CD_DEPTO "COD. DEPTO" ,
+       D.NM_DEPTO "DEPARTAMENTO", 
+       F.NM_FUNCIONARIO "FUNCIONARIO"
+  FROM T_SIP_DEPARTAMENTO D 
+  NATURAL JOIN T_SIP_FUNCIONARIO F
+  USING (CD_DEPTO);
+~~~
+
+### 1.11.2 INNER JOIN – Junção interna
+
+- segue o padrão ANSI e, na união de duas tabelas, serão exibidos todos os dados para os quais exista correspondência entre a Chave Primária e Chave Estrangeira.
+- ou seja, INNER JOIN pode ser representado pela intersecção entre duas (ou mais) tabelas.
+- exemplo: exibir funcionários e respectivos departamentos. 
+  - a condição de junção é estabelecida na cláusula ON, em que comparamos a Chave Primária à Chave Estrangeira, com o objetivo de recuperar a intersecção entre as tabelas.
+
+~~~sql
+-- EXEMPLO - INNER JOIN – Padrão SQL/99
+SELECT F.NR_MATRICULA "MATRICULA",
+       F.CD_DEPTO "COD. DEPTO",
+       D.NM_DEPTO "DEPARTAMENTO", 
+       F.NM_FUNCIONARIO "FUNCIONARIO"
+  FROM T_SIP_DEPARTAMENTO D INNER JOIN
+    T_SIP_FUNCIONARIO F 
+  ON ( D.CD_DEPTO = F.CD_DEPTO )
+  ORDER BY D.NM_DEPTO;
+~~~
+
+- o mesmo exemplo pode ser reescrito de acordo com o padrão Oracle para equijunções (era utilizado antes da sua adequação ao SQL/99).
+- a condição de junção é feita na cláusula WHERE, em que comparamos a Chave Primária à Estrangeira, para obter a intersecção entre as tabelas.
+
+~~~sql
+-- EXEMPLO - INNER JOIN – Padrão ORACLE
+SELECT F.NR_MATRICULA "MATRICULA",
+       F.CD_DEPTO "COD. DEPTO",
+       D.NM_DEPTO "DEPARTAMENTO", 
+       F.NM_FUNCIONARIO "FUNCIONARIO"
+  FROM T_SIP_DEPARTAMENTO D,
+    T_SIP_FUNCIONARIO F 
+  WHERE D.CD_DEPTO = F.CD_DEPTO
+  ORDER BY D.NM_DEPTO;
+~~~
+
+- a instrução INNER JOIN pode ser modificada, adicionando-se a ela a cláusula USING para especificar as colunas que devem ser usadas em uma junção.
+
+~~~sql
+SELECT F.NR_MATRICULA "MATRICULA",
+       F.CD_DEPTO "COD. DEPTO",
+       D.NM_DEPTO "DEPARTAMENTO", 
+       F.NM_FUNCIONARIO "FUNCIONARIO"
+  FROM T_SIP_DEPARTAMENTO D INNER JOIN
+    T_SIP_FUNCIONARIO F 
+  USING CD_DEPTO
+  ORDER BY NM_DEPTO;
+~~~
+
+> NOTA: não utilizar apelido ou nome de tabelas nas colunas em que a referência for feita (Chave Primária/Chave Estrangeira)!!!
+
+### 1.11.3 INNER JOIN com duas ou mais tabelas – Junção interna
+
+- podemos combinar duas ou mais tabelas.
+- a condição de junção é estabelecida na cláusula ON, em que comparamos a Chave Primária à Estrangeira, com o objetivo de recuperar a intersecção entre as tabelas (comparação aos pares).
+- exemplo: serão recuperados todos os funcionários associados aos projetos que estão atuando (implantando) e ordenados por nome do funcionário.
+
+~~~sql
+-- EXEMPLO - INNER JOIN – Padrão SQL/99
+  SELECT F.NR_MATRICULA "MATRICULA",
+        F.NM_FUNCIONARIO "FUNCIONARIO",
+        P.NM_PROJETO "PROJETO",
+        I.DT_ENTRADA "ENTRADA",
+        I.DT_SAIDA "SAIDA"
+  FROM T_SIP_PROJETO P INNER JOIN 
+        T_SIP_IMPLANTACAO I
+        ON ( P.CD_PROJETO = I.CD_PROJETO )
+        INNER JOIN T_SIP_FUNCIONARIO F 
+        ON ( F.NR_MATRICULA = I.NR_MATRICULA )
+  ORDER BY F.NM_FUNCIONARIO ;
+~~~
+
+- exemplo da sintaxe, utilizando a cláusula USING, para tabelas que possuem colunas com o mesmo nome:
+
+~~~sql
+-- EXEMPLO COM INNER JOIN - PADRÃO SQL/99
+-- CLÁUSULA USING
+SELECT NR_MATRICULA "MATRICULA",
+       F.NM_FUNCIONARIO "FUNCIONARIO",
+       P.NM_PROJETO "PROJETO",
+       I.DT_ENTRADA "ENTRADA",
+       I.DT_SAIDA "SAIDA"
+  FROM T_SIP_PROJETO P INNER JOIN 
+       T_SIP_IMPLANTACAO I
+    USING ( CD_PROJETO )
+    INNER JOIN T_SIP_FUNCIONARIO F 
+    USING ( NR_MATRICULA )
+ORDER BY F.NM_FUNCIONARIO ;
+~~~
+
+> NOTA: não aplicar o qualificador na coluna “NR_MATRICULA”, acarretará um erro. Quando utilizamos INNER JOIN com a cláusula USING, não podemos usar qualificadores para as colunas Chaves Primária/Estrangeira.
+
+- exemplo anterior reescrito com o padrão Oracle:
+
+~~~sql
+-- EXEMPLO COM INNER JOIN - PADRÃO ORACLE (ANTES SQL/99)
+SELECT F.NR_MATRICULA "MATRICULA",
+       F.NM_FUNCIONARIO "FUNCIONARIO",
+       P.NM_PROJETO "PROJETO",
+       I.DT_ENTRADA "ENTRADA",
+       I.DT_SAIDA "SAIDA"
+  FROM T_SIP_PROJETO P,
+       T_SIP_FUNCIONARIO F ,
+       T_SIP_IMPLANTACAO I
+  WHERE P.CD_PROJETO = I.CD_PROJETO AND
+        F.NR_MATRICULA = I.NR_MATRICULA
+ORDER BY F.NM_FUNCIONARIO ;
+~~~
+
+> DICA: no padrão SQL, a ordem em que colocamos as tabelas na cláusula FROM determina quais tabelas serão pesquisadas primeiro. Logo, se colocarmos as tabelas menores primeiro, a busca ficará mais rápida.Portanto, deixe as tabelas maiores, sempre que possível, para o final da cláusula!!!
+
+### 1.11.4 Junções externas
+
+- utilizada para recuperar as linhas de um EQUIJOIN, podendo, em alguma das tabelas, não existir linhas/registros correspondentes.
+- a junção externa pode ser ***esquerda, direita ou completa***.
+- junção externa é aquela que inclui linhas no resultado da busca, mesmo que não haja relação entre as duas tabelas que estão sendo combinadas.
+- onde não houver informação, será recuperado NULL.
+- há três formas de realizar uma junção externa:
+  - `Left Outer Join`: 
+    - junção externa à esquerda.
+    - recupera todas as linhas do EQUIJOIN, além das que não possuem correspondentes na tabela à esquerda da operação.
+  - `Right Outer Join`:
+    - junção externa à direita.
+    - recupera todas as linhas do EQUIJOIN, além das que não possuem correspondentes na tabela à direita da operação.
+  - `Full Outer Join`:
+    - junção completa.
+    - recupera todas as linhas do EQUIJOIN, além das que não possuem correspondentes na tabela à direita e à esquerda da operação.
+
+### 1.11.5 Left outer join
+
+- todas as linhas da tabela à esquerda serão recuperadas, independentemente da existência de ocorrências relacionadas na tabela da direita, ou seja, entre a Chave Primária e a Chave Estrangeira.
+- preserva as linhas se correspondência da primeira tabela (esquerda), juntando-as com uma linha nula na forma da segunda tabela (direita).
+- a condição de junção é estabelecida na cláusula ON, onde comparamos a Chave Primária à Chave Estrangeira, com o objetivo de recuperar a intersecção ou não entre as tabelas.
+- as linhas/registros recuperados são aqueles que atendem à intersecção dos conjuntos ou não.
+- exemplo: nos projetos em que não há funcionários atuando em implantações, no momento da recuperação, os dados serão preenchidos com NULL.
+
+~~~sql
+-- EXEMPLO LEFT OUTER JOIN - PADRÃO SQL/99
+SELECT P.CD_PROJETO "CÓDIGO" ,
+       P.NM_PROJETO "PROJETO" ,
+       P.DT_INICIO "DATA INÍCIO" ,
+       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO" ,
+       I.DT_ENTRADA "ENTRADA" 
+  FROM T_SIP_PROJETO P LEFT OUTER JOIN
+      T_SIP_IMPLANTACAO I
+    ON ( P.CD_PROJETO = I.CD_PROJETO );
+~~~
+
+- podemos recuperar somente os projetos que não possuem funcionários atuando em implantações.
+
+~~~sql
+-- EXEMPLO COM LEFT OUTER JOIN - PADRÃO SQL/99 -
+-- COM VALIDAÇÃO DOS RESULTADOS NULOS
+SELECT P.CD_PROJETO "CÓDIGO" ,
+       P.NM_PROJETO "PROJETO" ,
+       P.DT_INICIO "DATA INÍCIO" ,
+       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO" ,
+       I.DT_ENTRADA "ENTRADA" 
+  FROM T_SIP_PROJETO P LEFT OUTER JOIN
+      T_SIP_IMPLANTACAO I
+    ON ( P.CD_PROJETO = I.CD_PROJETO )
+    WHERE I.CD_PROJETO IS NULL;
+~~~
+
+- exemplo da sintaxe, utilizando a cláusula USING, quando as colunas possuem o mesmo nome.
+
+~~~sql
+-- EXEMPLO COM LEFT OUTER JOIN - PADRÃO SQL/99 -
+-- CLÁUSULA USING
+SELECT P.CD_PROJETO "CÓDIGO" ,
+       P.NM_PROJETO "PROJETO" ,
+       P.DT_INICIO "DATA INÍCIO" ,
+       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO" ,
+       I.DT_ENTRADA "ENTRADA" 
+  FROM T_SIP_PROJETO P LEFT OUTER JOIN
+      T_SIP_IMPLANTACAO I
+    USING ( CD_PROJETO );
+~~~
+
+> NOTA: Não aplicar o qualificador na coluna “CD_PROJETO”, acarretará um erro. Quando utilizamos LEFT OUTER JOIN com a cláusula USING, não podemos usar qualificadores para colunas Chaves Primária/Estrangeira.
+
+- exemplo da sintaxe aceita pelo Oracle:
+
+~~~sql
+-- EXEMPLO COM LEFT OUTER JOIN - PADRÃO ORACLE
+-- OPERADOR ( + )
+SELECT P.CD_PROJETO "CÓDIGO" ,
+       P.NM_PROJETO "PROJETO" ,
+       P.DT_INICIO "DATA INÍCIO" ,
+       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO" ,
+       I.DT_ENTRADA "ENTRADA" 
+  FROM T_SIP_PROJETO P,
+      T_SIP_IMPLANTACAO I
+    WHERE P.CD_PROJETO = I.CD_PROJETO (+);
+~~~
+
+> NOTA: o operador (+) deve ser inserido ao lado da coluna que poderá ter o valor nulo. Este operador só poderá ser colocado em um dos lados. Caso se coloque nos dois lados, será gerado um erro!
+
+- podemos recuperar somente projetos que não possuem funcionários atuando em implantações. Para isso,deverá ser inserida a validação do NULO, na cláusula WHERE, nesta sintaxe:
+
+~~~sql
+-- EXEMPLO COM LEFT OUTER JOIN - PADRÃO ORACLE
+-- OPERADOR ( + )
+SELECT P.CD_PROJETO "CÓDIGO" ,
+       P.NM_PROJETO "PROJETO" ,
+       P.DT_INICIO "DATA INÍCIO" ,
+       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO" ,
+       I.DT_ENTRADA "ENTRADA" 
+  FROM T_SIP_PROJETO P,
+      T_SIP_IMPLANTACAO I
+    WHERE P.CD_PROJETO = I.CD_PROJETO (+)
+          AND I.CD_PROJETO IS NULL;
+~~~
+
+### 1.11.6 RIGHT OUTER JOIN – Junções externas
+
+
+
+
 
 
 
