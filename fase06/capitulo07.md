@@ -1307,24 +1307,650 @@ SELECT SYSDATE FROM DUAL;
 
 ### 1.12.5.2 ADD_MONTHS()
 
+- permite recuperar uma data incrementada de n meses.
+- podemos subtrair ou somar meses a uma data.
+- exemplos:
+  - ADD_MONTHS(SYSDATE, 1): será recuperada a data do sistema incrementada de um mês (adicionado um mês à data informada).
+  - ADD_MONTHS(SYSDATE, -1): será recuperada a data do sistema incrementada de um mês negativo, ou seja, será subtraído um mês à data informada.
 
+~~~sql
+-- EXEMPLO – FUNÇÕES DE DATA – ADD_MONTHS()
+SELECT SYSDATE "DATA ATUAL",
+  ADD_MONTHS(SYSDATE, 1) "PRÓXIMO MÊS",
+  ADD_MONTHS(SYSDATE, -1) "MÊS ANTERIOR"
+  FROM DUAL;
+~~~
 
+- no exemplo ADD_MONTHS(DT_ADMISSAO, 1), será recuperada a data de admissão do funcionário incrementada de um mês.
 
+~~~sql
+-- EXEMPLO – FUNÇÕES DE DATA – ADD_MONTHS()
+SELECT DT_ADMISSAO ,
+       ADD_MONTHS(DT_ADMISSAO, 1) 
+  FROM T_SIP_FUNCIONARIO;
+~~~
 
+### 1.12.5.3 LAST_DAY()
 
+- permite recuperar o último dia do mês a partir da data informada.
+- exemplo:
 
+~~~sql
+-- EXEMPLO – FUNÇÕES DE DATA – LAST_DAY()
+SELECT SYSDATE "DATA ATUAL",
+    LAST_DAY(SYSDATE) "DATA COM ÚLTIMO DIA DO MÊS"
+  FROM DUAL;
+~~~
 
+- No exemplo LAST_DAY(DT_ADMISSAO), será recuperada a data do último dia do mês referente à data de admissão do funcionário.
 
+~~~sql
+-- EXEMPLO – FUNÇÕES DE DATA – LAST_DAY()
+SELECT DT_ADMISSAO,
+  LAST_DAY(DT_ADMISSAO) 
+  FROM T_SIP_FUNCIONARIO;
+~~~
 
+### 1.12.5.4 MONTHS_BETWEEN ()
 
+- permite recuperar o número de meses entre duas datas.
+- exemplos:
+  - MONTHS_BETWEEN(SYSDATE, DT_ADMISSAO): será recuperada a diferença,em número de meses, entre a data do sistema e a data de admissão do funcionário.
+  - TRUNC(MONTHS_BETWEEN(SYSDATE, DT_ADMISSAO))|| 'MESES': será recuperada a diferença, em número de meses, entre a data do sistema e a data de admissão do funcionário. A função TRUNC irá truncar (cortar) o resultado obtido na parte inteira do número. O operador de concatenação “||” irá concatenar a palavra “meses” ao resultado.
 
+~~~sql
+-- EXEMPLO – FUNÇÕES DE DATA – MONTHS_BETWEEN()
+SELECT DT_ADMISSAO,
+       SYSDATE, 
+       MONTHS_BETWEEN(SYSDATE, DT_ADMISSAO),
+       TRUNC(MONTHS_BETWEEN(SYSDATE, DT_ADMISSAO)) || ' MESES'
+  FROM T_SIP_FUNCIONARIO;
+~~~
 
+### 1.12.5.5 NEXT_DAY ()
 
+- permite recuperar o próximo dia da semana, a partir da data informada.
+- exemplo: retornará a próxima data referente ao dia da semana informado. Valores de 1 a 7 representam os dias da semana de domingo a sábado.
 
+~~~sql
+-- EXEMPLO – FUNÇÕES DE DATA – NEXT_DAY()
+SELECT SYSDATE ,
+       NEXT_DAY(SYSDATE, 1) "PRÓXIMO DOMINGO",
+       NEXT_DAY(SYSDATE, 2) "PRÓXIMA SEGUNDA",
+       NEXT_DAY(SYSDATE, 3) "PRÓXIMA TERÇA",
+       NEXT_DAY(SYSDATE, 4) "PRÓXIMA QUARTA",
+       NEXT_DAY(SYSDATE, 5) "PRÓXIMA QUINTA",
+       NEXT_DAY(SYSDATE, 6) "PRÓXIMA SEXTA",
+       NEXT_DAY(SYSDATE, 7) "PRÓXIMO SÁBADO" 
+       FROM DUAL;
+~~~
 
+## 1.12.6 Exemplos adicionais envolvendo datas
 
+### 1.12.6.1 Função SQL – Exemplo: TO_CHAR ()
 
+- o comando SELECT será recuperado, respectivamente:
+  - no exemplo TO_CHAR(DT_ADMISSAO, 'YYYY'): será recuperado o ano da data de admissão do funcionário. 
+  - no exemplo TO_CHAR(DT_ADMISSAO, 'MM/YYYY'): serão recuperados mês e ano da data de admissão.
+  - no exemplo TO_CHAR(DT_ADMISSAO, 'DD/MM'): serão recuperados dia e mês da data de admissão.
+  - no exemplo TO_CHAR(DT_ADMISSAO, 'DD " de " fmMONTH" de " YYYY', 'NLS_DATE_LANGUAGE=PORTUGUESE'): será recuperada a data por extenso referente à data de admissão do funcionário.
+    - fmMONTH é um modelo de formato disponível na linguagem SQL-ORACLE.
+    - NLS_DATE_FORMAT: permite especificar o formato de data-padrão para ser usado com as funções TO_CHAR() e TO_DATE().
 
+~~~sql
+-- EXEMPLO – FUNÇÕES DE DATA 
+SELECT DT_ADMISSAO,
+       TO_CHAR(DT_ADMISSAO, 'YYYY') "ANO CONTRATAÇÃO",
+       TO_CHAR(DT_ADMISSAO, 'MM/YYYY') "MÊS E ANO CONTRATAÇÃO",
+       TO_CHAR(DT_ADMISSAO, 'DD/MM') "DIA E MÊS DA CONTRATAÇÃO",
+       TO_CHAR(DT_ADMISSAO, 'DD " de " fmMONTH " de " YYYY', 'NLS_DATE_LANGUAGE=PORTUGUESE') "DATA POR EXTENSO"
+       FROM T_SIP_FUNCIONARIO;
+~~~
+
+### 1.12.6.2 Função SQL – Exemplo: TO_DATE ()
+
+- exemplos:
+  - TO_DATE(DT_ADMISSAO , 'DD/MM/YYYY') - 5: será recuperada a data de admissão do funcionário, subtraída de 5 dias.
+  - TO_DATE(SYSDATE, 'DD/MM/YYYY') – TO_DATE(DT_ADMISSAO, 'DD/MM/YYYY'): será recuperada a diferença entre as duas datas. O resultado é apresentado em número de dias.
+
+~~~sql
+-- EXEMPLO – FUNÇÕES DE DATA 
+SELECT DT_ADMISSAO ,
+       TO_DATE(DT_ADMISSAO , 'DD/MM/YYYY') - 5,
+       TO_DATE(SYSDATE, 'DD/MM/YYYY') – TO_DATE(DT_ADMISSAO, 'DD/MM/YYYY')
+  FROM T_SIP_FUNCIONARIO;
+~~~
+
+> Para executar os comandos, alterar a formatação de saída para: ALTER SESSION SET NLS_DATE_FORMAT ='DD/MM/YYYY'.
+
+- exemplo TO_DATE(DT_ADMISSAO,'DD/MM/YYYY HH:MI:SS') + 6/24: será recuperada a data de admissão do funcionário, somadas 6 horas (6/24 = 6 horas das 24 horas do dia).
+
+~~~sql
+-- EXEMPLO – FUNÇÕES DE DATA 
+SELECT DT_ADMISSAO ,
+      TO_DATE(DT_ADMISSAO,'DD/MM/YYYY HH:MI:SS') + 6/24
+FROM T_SIP_FUNCIONARIO;
+~~~
+
+<div align="center">
+<h2>1.13 Linguagem SQL: funções de grupos</h2>
+</div>
+
+- na linguagem SQL, há instruções que permitem recuperar dados agrupados.
+- agrupamento representa a união de um ou mais registros em um único resultado.
+- podem envolver todas as linhas de uma tabela ou conjuntos de linhas definidos por critérios preestabelecidos.
+- funções de grupo esperam como argumento o nome de uma coluna: FUNÇÃO (coluna).
+
+<div align="center">
+
+Função do grupo | Descrição
+---------------|---------------------
+COUNT() | Retorna o número de linhas afetadas pelo comando.
+SUM() | Retorna a somatória do valor das colunas especificadas.
+AVG() | Retorna a média aritmética dos valores das colunas.
+MIN() | Retorna o menor valor da coluna.
+MAX() | Retorna o maior valor da coluna de um grupo de linhas.
+STDDEV() | Retorna o desvio-padrão da coluna.
+VARIANCE() | Retorna a variância da coluna.
+
+</div>
+
+- sintaxe:
+
+~~~sql
+SELECT [ coluna, ] funçao_de_grupo (coluna)
+       FROM tabela
+[ WHERE condição ]
+[ GROUP BY coluna ] -- GROUP BY deve vir antes do ORDER BY e após WHERE
+[ HAVING condiçao ] -- aplicado somente a agrupamentos
+[ ORDER BY coluna [, coluna, ...]]
+~~~
+
+## 1.13.1 Função de grupo: COUNT()
+
+- retorna o número de linhas afetadas, envolvidas na execução do SELECT.
+- pode ser utilizada de duas maneiras: 
+  - COUNT(*): eetorna o número de linhas/registros de uma tabela,inclusive linhas duplicadas e linhas contendo nulos em alguma coluna.
+  - COUNT(coluna): retorna o número de linhas não nulas da coluna, identificadas por coluna.
+
+~~~sql
+-- EXEMPLO – FUNÇÃO COUNT (*)
+SELECT COUNT(*) FROM T_SIP_DEPARTAMENTO;
+
+-- EXEMPLO – FUNÇÃO COUNT (coluna)
+SELECT COUNT(DT_TERMINO) FROM T_SIP_PROJETO;
+~~~
+
+- podemos acrescentar a validação IS NULL ou IS NOT NULL para restringir o conjunto de linhas consideradas.
+- exemplo:
+
+~~~sql
+-- EXEMPLO – FUNÇÃO COUNT (*) e validação de NULO
+SELECT COUNT(*)
+  FROM T_SIP_PROJETO
+  WHERE DT_TERMINO IS NOT NULL ;
+~~~
+
+- o comando SELECT, por meio da função COUNT(coluna), retornará a quantidade total de linhas/registros da coluna especificada com o conteúdo diferente de nulo. A cláusula DISTINCT ainda recuperará os valores da coluna de forma distinta, sem repetição.
+
+~~~sql
+-- EXEMPLO – FUNÇÃO COUNT (coluna) e cláusula DISTINCT
+SELECT COUNT(DISTINCT CD_PROJETO)
+  FROM T_SIP_IMPLANTACAO ;
+~~~
+
+## 1.13.2 Função de grupo: SUM()
+
+- retorna a somatória dos valores das linhas/registros da coluna especificada, com o conteúdo diferente. 
+- exemplo: recuperar a somatória de salários.
+
+~~~sql
+-- EXEMPLO – FUNÇÃO SUM (coluna) 
+SELECT SUM(VL_SALARIO) FROM T_SIP_FUNCIONARIO;
+~~~
+
+- é possível limitar o conjunto de linhas que será considerado para o retorno da função, adicionando-se a cláusula WHERE à instrução
+- exemplo: considerar apenas os salários maiores do que R$ 1.000,00.
+
+~~~sql
+-- EXEMPLO – FUNÇÃO SUM (coluna) 
+SELECT SUM(VL_SALARIO) FROM T_SIP_FUNCIONARIO
+WHERE VL_SALARIO > 1000;
+~~~
+
+## 1.13.3 Função de grupo: AVG()
+
+- retorna a média aritmética dos valores da coluna especificada com o conteúdo diferente de nulo.
+- exemplo: média de salários de todos os funcionários.
+
+~~~sql
+-- EXEMPLO – FUNÇÃO AVG (coluna) 
+SELECT AVG(VL_SALARIO) FROM T_SIP_FUNCIONARIO;
+~~~
+
+- exemplo: será recuperada a média de salários de todos os funcionários que recebem um salário maior do que R$ 1.000,00.
+
+~~~sql
+-- EXEMPLO – FUNÇÃO AVG (coluna) 
+SELECT AVG(VL_SALARIO) FROM T_SIP_FUNCIONARIO
+  WHERE VL_SALARIO > 1000; 
+~~~
+
+## 1.13.4 Função de grupo: MIN()
+
+- retorna o menor valor da coluna especificada com o conteúdo diferente de nulo. 
+- exemplo: recuperado o menor salário, avaliando todos os funcionários de uma empresa.
+
+~~~sql
+-- EXEMPLO – FUNÇÃO MIN (coluna) 
+SELECT MIN(VL_SALARIO) FROM T_SIP_FUNCIONARIO;
+~~~
+
+## 1.13.5 Função de grupo: MAX()
+
+- retorna o maior valor da coluna especificada com o conteúdo diferente de nulo.
+- exemplo: recuperado o maior salário, avaliando todos os funcionários de uma empresa.
+
+~~~sql
+-- EXEMPLO – FUNÇÃO MAX (coluna) 
+SELECT MAX(VL_SALARIO) FROM T_SIP_FUNCIONARIO;
+~~~
+
+## 1.13.6 Função de grupo: STDDEV()
+
+- retorna o desvio-padrão referente aos valores da coluna especificada com o conteúdo diferente de nulo. 
+
+> NOTA: em probabilidade e estatística, desvio-padrão é a medida mais comum de dispersão estatística, e define-se como a raiz quadrada da variância (que indica quão longe seus valores se encontram do valor esperado).
+
+- exemplo: será recuperado o desvio-padrão referente aos salários, avaliando todos os funcionários de uma empresa.
+
+~~~sql
+-- EXEMPLO – FUNÇÃO STDDEV (coluna) 
+SELECT STDDEV(VL_SALARIO) FROM T_SIP_FUNCIONARIO;
+~~~
+
+## 1.13.7 Função de grupo: VARIANCE()
+
+- retorna a variância referente aos valores da coluna especificada com o conteúdo diferente de nulo. 
+
+~~~sql
+-- EXEMPLO – FUNÇÃO VARIANCE (coluna) 
+SELECT VARIANCE(VL_SALARIO) FROM T_SIP_FUNCIONARIO;
+~~~
+
+<div align="center">
+<h2>1.14 Criando agrupamentos</h2>
+</div>
+
+- podemos agrupar um conjunto de linhas/registros a partir de colunas e aplicar funções de grupo a esses conjuntos de dados.
+- a `cláusula GROUP BY` permite que criemos grupos de dados.
+- para limitar o resultado de linhas que será envolvido, utilizar a cláusula WHERE e, em seguida, a cláusula GROUP BY:
+  - todas as colunas individuais envolvidas na consulta, isto é, que não estão participando de funções de grupo, devem ser incluídas na cláusula GROUP BY.
+  - a função de grupo não deve estar no GROUP BY.
+  - a coluna GROUP BY não precisa estar na cláusula SELECT.
+  - pode-se usar a função de grupo na cláusula ORDER BY.
+- exemplo: recuperada a quantidade de dependentes para cada funcionário
+  - a função COUNT(CD_DEPENDENTE) realiza a contagem de ocorrências agrupadas pelo número de matrícula do funcionário em GROUP BY NR_MATRICULA.
+  - a operação COUNT(CD_DEPENDENTE) recebeu um alias ou apelido, o que facilita a legibilidade do resultado.
+
+~~~sql
+-- EXEMPLO – GROUP BY 
+SELECT NR_MATRICULA, 
+  COUNT(CD_DEPENDENTE) "QTDE. FILHOS"
+  FROM T_SIP_DEPENDENTE
+  GROUP BY NR_MATRICULA;
+~~~
+
+- é possível aplicar o agrupamento às colunas que não tenham sido listadas pelo SELECT.
+- exemplo: cálculo da média salarial dos funcionários e agrupamento por departamento. Como saída, apresentada uma linha para cada departamento, porém, não será possível sabermos de que departamento é uma determinada média.
+
+~~~sql
+-- EXEMPLO – GROUP BY COM FUNÇÃO DE GRUPO
+  SELECT AVG(VL_SALARIO)
+  FROM T_SIP_FUNCIONARIO
+GROUP BY CD_DEPTO;
+~~~
+
+## 1.14.1 Criando um agrupamento de dados com várias tabelas
+
+- exemplo: 
+  - a combinação das tabelas “FUNCIONARIO” e “DEPENDENTE” permitirá recuperação do nome do funcionário e não apenas o número de matrícula.
+  - a partir do agrupamento, será recuperada a quantidade de dependentes por funcionário.
+  - como temos além da função de grupo as colunas “nm_funcionario” e “nr_matricula”, é necessário que essas colunas estejam na cláusula GROUP BY, caso contrário, ocorrerá erro.
+
+~~~sql
+-- EXEMPLO – GROUP BY COM VÁRIAS TABELAS
+SELECT F.NM_FUNCIONARIO "FUNCIONÁRIO",
+       D.NR_MATRICULA "MATRÍCULA", 
+       COUNT(D.NR_MATRICULA) "QTDE. FILHOS"
+       FROM T_SIP_FUNCIONARIO F INNER JOIN T_SIP_DEPENDENTE D
+       ON (F.NR_MATRICULA = D.NR_MATRICULA)
+       GROUP BY F.NM_FUNCIONARIO, D.NR_MATRICULA;
+~~~
+
+## 1.14.2 Cláusula HAVING
+
+- permite aplicar uma condição de seleção sobre as linhas agrupadas (utilizada para realizar restrições ao agrupamento com a cláusula GROUP BY). 
+
+> IMPORTANTE: a cláusula HAVING só pode ser utilizada com funções de grupo, como AVG, COUNT, MIN, MAX e SUM. Ela avalia o resultado do agrupamento. Lembre-se de que a cláusula WHERE avalia as linhas antes do agrupamento.
+
+- exemplo: serão recuperadas as médias salarias agrupadas por departamento, porém, serão apresentados apenas os agrupamentos com resultado maior do que R$ 2.000,00, como estabelecido na cláusula HAVING.
+
+~~~sql
+-- EXEMPLO – GROUP BY COM HAVING
+SELECT CD_DEPTO , 
+       AVG(VL_SALARIO) "MÉDIA SALÁRIOS"
+  FROM T_SIP_FUNCIONARIO
+  GROUP BY CD_DEPTO
+    HAVING AVG(VL_SALARIO) > 2000
+    ORDER BY AVG(VL_SALARIO) DESC;
+~~~
+
+- podemos combinar a utilização das cláusulas WHERE e HAVING.
+- alterado o exemplo anterior para que sejam calculadas as médias salariais de todos os funcionários com salário maior que R$ 1.000,00, agrupados por departamento, e apresentar apenas os departamentos que tenham as médias salariais maiores do que R$ 2.000,00.
+
+~~~sql
+-- EXEMPLO – GROUP BY COM HAVING
+  SELECT CD_DEPTO , 
+        AVG(VL_SALARIO) "MÉDIA SALÁRIOS"
+  FROM T_SIP_FUNCIONARIO
+WHERE VL_SALARIO > 1000
+GROUP BY CD_DEPTO
+  HAVING AVG(VL_SALARIO) > 2000
+  ORDER BY AVG(VL_SALARIO) DESC;
+~~~
+
+- ***importante***:
+  - não é possível usar a cláusula WHERE para restringir grupos.
+  - use a cláusula HAVING para restringir grupos.
+  - não é possível usar funções de grupo na cláusula WHERE.
+  - filtros de agrupamento só podem ser feitos utilizando a cláusula HAVING.
+
+<div align="center">
+<h2>1.15 Linguagem SQL, subconsultas</h2>
+</div>
+
+- subconsultas são utilizadas para recuperação de dados que serão utilizados em outras consultas ou, ainda, para instruções DML (INSERT, UPDATE e DELETE).
+- podem retornar UMA ou MAIS LINHAS, e a consulta ou instrução DML que utiliza este retorno precisa estar preparada para isso. 
+- há `três tipos de subconsultas`:
+  - `subconsulta de uma única linha`: consultas que retornam somente uma linha da instrução SELECT interna.
+  - `subconsulta de várias linhas`: retornam mais de uma linha de instrução SELECT interna.
+  - `subconsulta de várias colunas`: retornam mais de uma coluna da instrução SELECT interna.
+
+- ao utilizar subconsultas, atentar-se aos pontos:
+  - a condição envolve uma operação de comparação entre uma coluna e o resultado que será retornado pela subconsulta.
+  - a subconsulta pode ser construída de acordo com o problema apontado e incluir condições, funções de grupo, várias colunas etc.
+  - a subconsulta (consulta interna) é executada antes da consulta principal.
+  - a subconsulta pode ser incluída nas instruções WHERE, HAVING ou FROM.
+  - o operador deve ser adequado ao tipo de retorno da subconsulta, uma vez que o retorno pode ser de uma única linha ou de várias linhas.
+
+## 1.15.1 Subconsulta de uma única linha
+
+- podem recuperar apenas uma linha para a consulta principal. 
+- os operadores a seguir podem ser utilizados nas expressões de comparação.
+
+<div align="center">
+
+Operador | Significado
+----------|------------
+= | Igual a
+&lt; | Menor que 
+&lt;= | Menor ou igual a
+&gt; | Maior que 
+&gt;= | Maior ou igual a 
+&lt;&gt; ou != | Diferente de
+
+</div>
+
+- no processamento de uma instrução que contenha subconsultas, elas serão realizadas primeiro, pois seu valor será utilizado pela consulta principal ou pelo comando DML.
+- o ***uso de parênteses*** indica a precedência de execução.
+- exemplo: recupera todos os nomes de funcionários e respectivos salários de todos os funcionários que possuem salário maior do que o do funcionário “JOSÉ MARIA”.
+
+~~~sql
+-- EXEMPLO – SUBCONSULTA DE UMA ÚNICA LINHA
+SELECT F.NM_FUNCIONARIO,
+       F.VL_SALARIO
+  FROM T_SIP_FUNCIONARIO F
+  WHERE F.VL_SALARIO > (
+          SELECT F.VL_SALARIO
+          FROM T_SIP_FUNCIONARIO F
+          WHERE F.NM_FUNCIONARIO = 'JOSÉ MARIA' 
+        );
+~~~
+
+- considere os pontos a seguir quando for construir uma subconsulta:
+  - coloque as subconsultas entre parênteses.
+  - coloque as subconsultas no lado direito da condição de comparação.•
+  - a cláusula ORDER BY na subconsulta não é necessária, a menos que você esteja executando a análise Top-N.
+  - use operadores de uma única linha com subconsultas de uma única linha e use operadores de várias linhas com subconsultas de várias linhas.
+
+## 1.15.2 Subconsulta de uma única linha e funções de grupo
+
+- exemplo: recuperará a média aritmética de todos os salários armazenados na tabela “FUNCIONARIO”. O resultado obtido nessa subconsulta será aplicado à consulta principal. Assim, a consulta principal recuperará os funcionários com salário superior à média salarial obtida na subconsulta.
+
+~~~sql
+-- EXEMPLO – SUBCONSULTA DE UMA ÚNICA LINHA,
+-- COM FUNÇÕES DE GRUPO
+SELECT F.NM_FUNCIONARIO,
+       F.VL_SALARIO
+    FROM T_SIP_FUNCIONARIO F
+    WHERE F.VL_SALARIO > (
+      SELECT AVG(F.VL_SALARIO)
+      FROM T_SIP_FUNCIONARIO F
+    );
+~~~
+
+## 1.15.3 Subconsulta de uma única linha, utilizando agrupamentos e HAVING
+
+- exemplo: subconsulta entre parênteses recuperará o menor salário dos funcionários que trabalham no departamento de código 3. O resultado obtido será aplicado à consulta principal, que recuperará os grupos (departamentos) com o menor salário que seja superior ao obtido na subconsulta.
+
+~~~sql
+-- EXEMPLO – SUBCONSULTA DE UMA ÚNICA LINHA,
+-- COM AGRUPAMENTO, FUNÇÕES DE GRUPO E HAVING
+  SELECT F.CD_DEPTO,
+        MIN(F.VL_SALARIO)
+  FROM T_SIP_FUNCIONARIO F
+  GROUP BY F.CD_DEPTO
+    HAVING MIN(F.VL_SALARIO) > (
+      SELECT MIN(F.VL_SALARIO)
+      FROM T_SIP_FUNCIONARIO F
+      WHERE F.CD_DEPTO = 3 
+    );
+~~~
+
+## 1.15.4 Subconsulta na cláusula FROM
+
+- podemos utilizar uma subconsulta na cláusula FROM de uma consulta externa. 
+- chamada `VIEW INLINE`.
+- exemplo: 
+  - subconsulta entre parênteses recuperará o número de vezes que um funcionário foi alocado em um projeto, total obtido por meio do agrupamento por funcionário.
+  - a consulta principal recuperará esse valor, número de matrícula e nome do funcionário.
+  - a cláusula WHERE é necessária devido à junção (união regular) feita entre a tabela “FUNCIONARIO” e o resultado obtido na subconsulta que,uma vez na cláusula FROM, funciona como uma outra tabela, nomeada “RESFUNC”:
+
+~~~sql
+-- EXEMPLO – SUBCONSULTA DE UMA ÚNICA LINHA,
+-- COM CLÁUSULA FROM
+SELECT F.NR_MATRICULA, 
+      F.DT_ADMISSAO, 
+      RESFUNC.QTDEFUNC
+FROM T_SIP_FUNCIONARIO F, 
+    (
+      SELECT I.NR_MATRICULA , 
+        COUNT (I.NR_MATRICULA) QTDEFUNC
+        FROM T_SIP_IMPLANTACAO I 
+      GROUP BY I.NR_MATRICULA
+    ) RESFUNC
+WHERE F.NR_MATRICULA = RESFUNC.NR_MATRICULA ;
+~~~
+
+## 1.15.5 Criando uma tabela a partir de uma subconsulta
+
+- podemos utilizar uma subconsulta no comando CREATE TABLE, o que permite criar uma tabela já populada, com registros que atendem às condições estabelecidas.
+- exemplo: asubconsulta recuperará todas as colunas e linhas da tabela “IMPLANTACAO”. Como a subconsulta é utilizada durante a criação de uma tabela, a tabela “T_TESTE_AULA_ON” será criada a partir de todas as colunas e linhas resultantes da subconsulta. Funciona como uma cópia da estrutura e dados de uma tabela para outra!
+
+~~~sql
+-- EXEMPLO – SUBCONSULTA PARA CRIAR TABELAS
+CREATE TABLE T_TESTE_AULA_ON AS 
+  SELECT * FROM T_SIP_IMPLANTACAO;
+~~~
+
+## 1.15.6 Subconsulta com várias linhas
+
+- o resultado de uma subconsulta de várias linhas pode ser utilizado pela consulta principal, com operadores apropriados, para realizar as comparações.
+
+<div align="center">
+
+Operador | Significado
+----------|--------------
+IN | Compara se o valor é igual a qualquer membro da linha.
+NOT IN | Compara se o valor não é igual a qualquer membro da linha.
+ANY | Compara o valor, a cada valor retornado pela subconsulta.
+ALL | Compara o valor, a todo valor retornado pela subconsulta.
+
+</div>
+
+### a) OPERADOR IN:
+
+- exemplo: a subconsulta entre parênteses recuperará os projetos iniciados no mês 12 (dezembro), do ano de 2012, da tabela “PROJETO”. O resultado obtido será aplicado à consulta principal, que recuperará todas as implantações, ou seja, todos os funcionários que implantam projetos iniciados em 12/2012.
+
+~~~sql
+-- EXEMPLO – SUBCONSULTA COM VÁRIAS LINHAS,
+-- COM OPERADOR IN
+SELECT I.CD_IMPLANTACAO,
+       I.CD_PROJETO, 
+       I.NR_MATRICULA "FUNCIONÁRIO"
+  FROM T_SIP_IMPLANTACAO I
+  WHERE I.CD_PROJETO IN
+    (
+      SELECT P.CD_PROJETO
+      FROM T_SIP_PROJETO P
+        WHERE TO_CHAR(P.DT_INICIO,'MM/YYYY') = '12/2012'
+            );
+~~~
+
+### b) OPERADOR NOT IN:
+
+- a subconsulta a seguir, entre parênteses, recuperará os projetos iniciados no mês 12 do ano de 2012, da tabela “PROJETO”. O resultado será aplicado à consulta principal, que recuperará todas as implantações, ou seja, todos os funcionários que NÃO implantam projetos iniciados em 12/2012.
+
+~~~sql
+-- EXEMPLO – SUBCONSULTA COM VÁRIAS LINHAS,
+-- COM OPERADOR NOT IN
+SELECT I.CD_IMPLANTACAO,
+       I.CD_PROJETO, 
+       I.NR_MATRICULA "FUNCI0NÁRIO"
+  FROM T_SIP_IMPLANTACAO I
+  WHERE I.CD_PROJETO NOT IN
+    (
+      SELECT P.CD_PROJETO
+      FROM T_SIP_PROJETO P
+        WHERE TO_CHAR(P.DT_INICIO,'MM/YYYY') = '12/2012'
+            );
+~~~
+
+### c) OPERADOR ANY:
+
+- usado para comparar um valor com qualquer valor presente em uma lista.
+- para isso, colocar um operador =, <>, <, >, <= ou >= antes de ANY na instrução SQL.
+- exemplo: a subconsulta entre parênteses recuperará a média salarial por departamento. O resultado obtido na subconsulta será aplicado à consulta principal, que recuperará todos os funcionários com salário menor a qualquer valor resultante da subconsulta.
+
+~~~sql
+-- EXEMPLO – SUBCONSULTA COM VÁRIAS LINHAS,
+-- COM OPERADOR ANY
+SELECT FU.NR_MATRICULA, 
+       FU.NM_FUNCIONARIO, 
+       FU.VL_SALARIO
+  FROM T_SIP_FUNCIONARIO FU
+  WHERE FU.VL_SALARIO < ANY 
+    (
+      SELECT AVG(F.VL_SALARIO)
+      FROM T_SIP_FUNCIONARIO F
+    GROUP BY F.CD_DEPTO
+    );
+~~~
+
+### d) OPERADOR ALL:
+
+- usado para comparar um valor com todos os valores presentes em uma lista.
+- devemos colocar um operador =, <>, <, >, <= ou >= antes de ALL na instrução SQL.
+- exemplo: a subconsulta entre parênteses recuperará a média salarial por departamento. O resultado obtido na subconsulta será aplicado à consulta principal, que recuperará todos os funcionários com salário maior a todos os valores resultantes da subconsulta.
+
+~~~sql
+-- EXEMPLO – SUBCONSULTA COM VÁRIAS LINHAS,
+-- COM OPERADOR ALL
+SELECT FU.NR_MATRICULA, 
+       FU.NM_FUNCIONARIO, 
+       FU.VL_SALARIO
+  FROM T_SIP_FUNCIONARIO FU
+  WHERE FU.VL_SALARIO > ALL 
+    (
+      SELECT AVG(F.VL_SALARIO)
+      FROM T_SIP_FUNCIONARIO F
+    GROUP BY F.CD_DEPTO
+    );
+~~~
+
+## 1.15.7 Subconsultas correlacionadas
+
+- é uma subconsulta que referencia uma ou mais colunas na instrução SQL externa (utilizam as mesmas colunas). 
+- podemos usar EXISTS e NOT EXISTS em uma subconsulta correlacionada. 
+- funções:
+  - `EXISTS`: verifica a existência de linhas retornadas por uma subconsulta.
+  - `NOT EXISTS`: verifica se não existem linhas nos resultados retornados por uma subconsulta.
+
+### a) Função EXISTS:
+
+- exemplo: o resultado obtido será aplicado à consulta principal, que recuperará todos os funcionários que participam de implantações:
+
+~~~sql
+-- EXEMPLO – SUBCONSULTA CORRELACIONADA,
+-- COM EXISTS
+SELECT F.NR_MATRICULA,
+       F.NM_FUNCIONARIO
+  FROM T_SIP_FUNCIONARIO F
+  WHERE EXISTS
+    (
+      SELECT I.NR_MATRICULA
+        FROM T_SIP_IMPLANTACAO I
+        WHERE F.NR_MATRICULA=I.NR_MATRICULA
+    );
+~~~
+
+### b) Função NOT EXISTS:
+
+- exemplo: o resultado obtido na subconsulta será aplicado à consulta principal, que recuperará todos os funcionários que NÃO participam de implantações.
+
+~~~sql
+-- EXEMPLO – SUBCONSULTA CORRELACIONADA,
+-- COM NOT EXISTS
+SELECT F.NR_MATRICULA,
+       F.NM_FUNCIONARIO
+  FROM T_SIP_FUNCIONARIO F
+  WHERE NOT EXISTS
+    (
+      SELECT I.NR_MATRICULA
+        FROM T_SIP_IMPLANTACAO I
+        WHERE F.NR_MATRICULA=I.NR_MATRICULA
+    );
+~~~
+
+---
+
+## FAST TEST
+
+### 1. Qual é o tipo de Join mais comum e eficiente?
+> INNER JOIN.
+
+### 2. Para filtrar funcionários do Departamento 4 com salários menores ou iguais a 1000, podemos utilizar:
+> WHERE departamento = 4 AND salario <= 1000.
+
+### 3. Como simplificar o filtro: WHERE sal >= 100 AND sal <= 200?
+> WHERE sal BETWEEN 100 AND 200.
+
+### 4. Qual a melhor forma de passar uma lista de valores para um filtro?
+> Utilizando o operador IN.
+
+### 5. Qual é a melhor definição para a cláusula WHERE?
+> Filtros aplicados à consulta antes de qualquer agregação.
 
 --- 
 
