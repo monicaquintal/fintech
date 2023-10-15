@@ -666,10 +666,10 @@ ORDER BY F.NM_FUNCIONARIO ;
 
 ~~~sql
 -- EXEMPLO LEFT OUTER JOIN - PADRÃO SQL/99
-SELECT P.CD_PROJETO "CÓDIGO" ,
-       P.NM_PROJETO "PROJETO" ,
-       P.DT_INICIO "DATA INÍCIO" ,
-       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO" ,
+SELECT P.CD_PROJETO "CÓDIGO",
+       P.NM_PROJETO "PROJETO",
+       P.DT_INICIO "DATA INÍCIO",
+       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO",
        I.DT_ENTRADA "ENTRADA" 
   FROM T_SIP_PROJETO P LEFT OUTER JOIN
       T_SIP_IMPLANTACAO I
@@ -681,10 +681,10 @@ SELECT P.CD_PROJETO "CÓDIGO" ,
 ~~~sql
 -- EXEMPLO COM LEFT OUTER JOIN - PADRÃO SQL/99 -
 -- COM VALIDAÇÃO DOS RESULTADOS NULOS
-SELECT P.CD_PROJETO "CÓDIGO" ,
-       P.NM_PROJETO "PROJETO" ,
-       P.DT_INICIO "DATA INÍCIO" ,
-       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO" ,
+SELECT P.CD_PROJETO "CÓDIGO",
+       P.NM_PROJETO "PROJETO",
+       P.DT_INICIO "DATA INÍCIO",
+       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO",
        I.DT_ENTRADA "ENTRADA" 
   FROM T_SIP_PROJETO P LEFT OUTER JOIN
       T_SIP_IMPLANTACAO I
@@ -697,10 +697,10 @@ SELECT P.CD_PROJETO "CÓDIGO" ,
 ~~~sql
 -- EXEMPLO COM LEFT OUTER JOIN - PADRÃO SQL/99 -
 -- CLÁUSULA USING
-SELECT P.CD_PROJETO "CÓDIGO" ,
-       P.NM_PROJETO "PROJETO" ,
-       P.DT_INICIO "DATA INÍCIO" ,
-       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO" ,
+SELECT P.CD_PROJETO "CÓDIGO",
+       P.NM_PROJETO "PROJETO",
+       P.DT_INICIO "DATA INÍCIO",
+       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO",
        I.DT_ENTRADA "ENTRADA" 
   FROM T_SIP_PROJETO P LEFT OUTER JOIN
       T_SIP_IMPLANTACAO I
@@ -714,10 +714,10 @@ SELECT P.CD_PROJETO "CÓDIGO" ,
 ~~~sql
 -- EXEMPLO COM LEFT OUTER JOIN - PADRÃO ORACLE
 -- OPERADOR ( + )
-SELECT P.CD_PROJETO "CÓDIGO" ,
-       P.NM_PROJETO "PROJETO" ,
-       P.DT_INICIO "DATA INÍCIO" ,
-       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO" ,
+SELECT P.CD_PROJETO "CÓDIGO",
+       P.NM_PROJETO "PROJETO",
+       P.DT_INICIO "DATA INÍCIO",
+       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO",
        I.DT_ENTRADA "ENTRADA" 
   FROM T_SIP_PROJETO P,
       T_SIP_IMPLANTACAO I
@@ -731,10 +731,10 @@ SELECT P.CD_PROJETO "CÓDIGO" ,
 ~~~sql
 -- EXEMPLO COM LEFT OUTER JOIN - PADRÃO ORACLE
 -- OPERADOR ( + )
-SELECT P.CD_PROJETO "CÓDIGO" ,
-       P.NM_PROJETO "PROJETO" ,
-       P.DT_INICIO "DATA INÍCIO" ,
-       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO" ,
+SELECT P.CD_PROJETO "CÓDIGO",
+       P.NM_PROJETO "PROJETO",
+       P.DT_INICIO "DATA INÍCIO",
+       I.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO",
        I.DT_ENTRADA "ENTRADA" 
   FROM T_SIP_PROJETO P,
       T_SIP_IMPLANTACAO I
@@ -744,10 +744,86 @@ SELECT P.CD_PROJETO "CÓDIGO" ,
 
 ### 1.11.6 RIGHT OUTER JOIN – Junções externas
 
+- segue a padronização ANSI (surgiu a partir da ANSI 99).
+- implica em criar a junção externa entre duas tabelas, e todas as linhas da tabela à direitaserão recuperadas, independentemente da existência de ocorrências relacionadas na tabela da esquerda, ou seja, correspondência entre as Chaves Primária e Estrangeira.
+- preserva as linhas sem correspondência da primeira tabela (direita), juntando-as com uma linha nula na forma da segunda tabela (esquerda).
+- a condição de junção é estabelecida na cláusula ON, em que comparamos a Chave Primária à Chave Estrangeira, com o objetivo de recuperar a intersecção ou não entre as tabelas.
 
+~~~sql
+-- EXEMPLO RIGHT OUTER JOIN - PADRÃO SQL/99
+SELECT F.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO",
+        I.CD_PROJETO "CÓDIGO PROJETO",
+        I.DT_ENTRADA "DATA ENTRADA",
+        I.DT_SAIDA "DATA SAÍDA"
+      FROM T_SIP_IMPLANTACAO I RIGHT OUTER JOIN
+            T_SIP_FUNCIONARIO F
+      ON ( F.NR_MATRICULA = I.NR_MATRICULA );
+~~~
 
+- exemplo: recuperar somente os funcionários que não atuam em implantações .Para isso, utilizaríamos o comando “SELECT” com RIGHT OUTER JOIN e a condição, em que serão recuperadas apenas as combinações que resultaram em NULOS.
 
+~~~sql
+-- EXEMPLO COM RIGHT OUTER JOIN - PADRÃO SQL/99 -  
+-- COM VALIDAÇÃO DOS RESULTADOS NULOS
+SELECT F.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO",
+       I.CD_PROJETO "CÓDIGO PROJETO",
+       I.DT_ENTRADA "DATA ENTRADA",
+       I.DT_SAIDA "DATA SAÍDA"
+       FROM T_SIP_IMPLANTACAO I RIGHT OUTER JOIN
+            T_SIP_FUNCIONARIO F
+        ON ( F.NR_MATRICULA = I.NR_MATRICULA )
+       WHERE I.NR_MATRICULA IS NULL ;
+~~~
 
+- exemplo da sintaxe, utilizando a cláusula USING, quando as colunas possuem o mesmo nome.
+
+~~~sql
+-- EXEMPLO RIGHT OUTER JOIN - PADRÃO SQL/99 
+-- CLÁUSULA USING
+
+SELECT NR_MATRICULA "MATRÍCULA FUNCIONÁRIO",
+       I.CD_PROJETO "CÓDIGO PROJETO",
+       I.DT_ENTRADA "DATA ENTRADA",
+       I.DT_SAIDA "DATA SAÍDA"
+    FROM T_SIP_IMPLANTACAO I RIGHT OUTER JOIN
+         T_SIP_FUNCIONARIO F
+    USING ( NR_MATRICULA );
+~~~
+
+> NOTA: não aplicar qualificador na coluna “NR_MATRICULA” (acarretará um erro). Quando utilizamos RIGHT OUTERJOIN com a cláusula USING, não podemos usar qualificadores para as colunas Chaves Primária/Estrangeira.
+
+- exemplo da sintaxe aceita pelo Oracle, anterior ao padrão SQL/99.
+
+~~~sql
+-- EXEMPLO RIGHT OUTER JOIN - PADRÃO ORACLE 
+-- OPERADOR ( + )
+SELECT F.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO",
+       I.CD_PROJETO "CÓDIGO PROJETO",
+       I.DT_ENTRADA "DATA ENTRADA",
+       I.DT_SAIDA "DATA SAÍDA"
+    FROM T_SIP_IMPLANTACAO I , 
+         T_SIP_FUNCIONARIO F
+    WHERE I.NR_MATRICULA (+) = F.NR_MATRICULA;
+~~~
+
+> NOTA: operador (+) deverá ser inserido ao lado da coluna que poderá ter o valor nulo. Este operador só poderá ser colocado em um dos lados. Caso seja colocadonos dois lados, será gerado erro.
+
+- exemplo: recuperar somente os funcionários que não atuam em implantações, inserindo a validação do NULO, na cláusula WHERE.
+
+~~~sql
+-- EXEMPLO RIGHT OUTER JOIN - PADRÃO ORACLE 
+-- OPERADOR ( + )
+SELECT F.NR_MATRICULA "MATRÍCULA FUNCIONÁRIO",
+       I.CD_PROJETO "CÓDIGO PROJETO",
+       I.DT_ENTRADA "DATA ENTRADA",
+       I.DT_SAIDA "DATA SAÍDA"
+    FROM T_SIP_IMPLANTACAO I, 
+         T_SIP_FUNCIONARIO F
+    WHERE I.NR_MATRICULA (+) = F.NR_MATRICULA 
+          AND I.NR_MATRICULA IS NULL ;
+~~~
+
+### 1.11.7 FULL OUTER JOIN – Junções externas
 
 
 
