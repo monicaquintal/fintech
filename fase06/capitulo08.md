@@ -1350,16 +1350,155 @@ import java.util.List;
 
 - indicado quando é preciso suportar vários bancos de dados, pois permite criar implementações de DAOs para cada banco e prover o DAO correto, conforme a necessidade.
 - a implementação desse padrão de projetos ***começa pelos DAOs*** (se a aplicação precisa suportar o Oracle e o SQL Server, por exemplo, é necessário criar uma interface e implementá-la em duas classes: uma específica, que acessa BD Oracle, e outra que acessa o banco de dados SQL Server.), ***e em seguida, devemos implementar a Fábrica de DAOs***, uma classe abstrata (não pode ser instanciada), e que deve possuir um método estático que retorna uma instância da Fábrica de DAO de acordo com o Banco de dados escolhido.
-- 
+- após definirmos as interfaces do DAO (ColaboradorDAO e CargoDAO), devemos implementar a classe que acessa o banco de dados Oracle e outro para o SQL. Assim, teremos as classes OracleColaboradorDAO e SQLColaboradorDAO para a interface ColaboradorDAO, OracleCargoDAO e SQLCargoDAO para a interface CargoDAO.
+- agora, precisamos desenvolver o AbstractDAOFactory que será responsável por fornecer a instânciada fábrica de DAO, de acordo com o banco escolhido:
 
+~~~java
+package br.com.fiap.factory;
+  
+  import br.com.fiap.dao.CargoDAO;
+  import br.com.fiap.dao.ColaboradorDAO;
+  
+  public abstract class DAOFactory {
+  
+    //Constanstes que definem os tipos de Data Source suportados
+    public static final int SQL_SERVER = 1;
+    public static final int ORACLE = 2;
+    
+    //Atributos que armazenam as instancias de cada Fábrica
+    private static DAOFactory oracleDAOFactory;
+    private static DAOFactory sqlDAOFactory;
+    
+    //Método que retorna a instancia de uma fábrica de acordo com o banco
+    public static DAOFactory getDAOFactory(int banco){
+      switch (banco) {
+      case SQL_SERVER:
+        if (sqlDAOFactory == null)
+          sqlDAOFactory = new SQLDAOFactory();
+        return sqlDAOFactory;
+      case ORACLE:
+        if (oracleDAOFactory == null)
+          oracleDAOFactory = new OracleDAOFactory();
+        return oracleDAOFactory;
+      default:
+        return null;
+      }
+    }
+    
+    //Assinaturas de métodos que retornam a instancia do DAO
+    public abstract CargoDAO getCargoDAO();
+    public abstract ColaboradorDAO getColaboradorDAO();
+    
+  }
+~~~
 
+- foram definidas duas constantes, uma para cada banco de dados suportado pela aplicação. 
+- o método getDAOFactory() recebe o valor de uma das constantes que representam o banco de dados para devolver a instância da fábrica correta.
+- após a criação da classe abstrata, é preciso criar duas classes para estender a DAO Factory, uma para cada tipo de fábrica: SQLDAOFactory e OracleDAOFactory. 
+- nessas classes, implementamos os métodos que retornam as instâncias dos DAOs, de acordo com seu banco de dados.
+- para utilizar o DAO Factory, basta invocar o método que recupera a instância da fábrica, informando o banco de dados escolhido. 
 
+~~~java
+package br.com.fiap.teste;
+  
+  import java.util.List;
+  
+  import br.com.fiap.bean.Colaborador;
+  import br.com.fiap.dao.ColaboradorDAO;
+  import br.com.fiap.factory.DAOFactory;
+  
+  public class TesteDAOFactory {
+  
+    public static void main(String[] args) {
+      ColaboradorDAO dao = DAOFactory.getDAOFactory(DAOFactory.ORACLE).getColaboradorDAO();
+      List<Colaborador> lista = dao.listar();
+    }
+  }
+~~~
 
+## 2.4 Singleton
 
+- objetivo: gerar somente uma instância da classe. 
+- esse padrão oferece um ponto de acesso global, no qual todos podem acessar a instância da classe por meio desse ponto de acesso.
+- a classe Singleton ndeve gerenciar a própria instância e evitar que qualquer outra classe crie uma instância dela.
+- a Singleton deve possuir um construtor privado (private) a fim de evitar que outras classes a instanciem. 
+- também deve possuir um método estático que devolve a instância da própria classe Singleton. 
+- esse método deve validar se já existe uma instância da classe. Caso não exista, ela deve criar uma nova; caso contrário, deve retornar à instância existente. Para determinar se existe ou não a instância da classe, é preciso criar um atributo estático para armazená-la.
 
+~~~java
+package br.com.fiap.singleton;
+  
+  import java.sql.Connection;
+  
+  public class ConnectionManager {
+  
+    //Atributo que armazena a única instancia de ConnectionManager
+    private static ConnectionManager instance;
+    
+    //Construtor privado
+    private ConnectionManager(){}
+    
+    public static ConnectionManager getInstance(){
+      if (instance == null){
+        instance = new ConnectionManager();
+      }
+      return instance;
+    }
+    
+    public Connection getConnection(){
+      //Implementação
+    }
+  }
+~~~
 
+- a classe ConnectionManager possui uma variável privada e estática que referencia a si mesma, e esse atributo que armazenará a única instância da classe ConnectionManager.
+- o construtor possui o modificador de acesso private e, dessa forma, nenhuma outra classe tem acesso ao construtor, não permitindo a sua instanciação.
+- para acessar a instância da classe ConnectionManager,é preciso utilizar o método getInstance(), que gerencia a existência da única instância de ConnectionManager, valida se o atributo instance está vazio e, caso esteja, é criada a instância de ConnectionManager,atribuída à variável instance, retornado em seguida. Caso o atributo instance já possua um objeto, o método retorna o próprio objeto existente
+- para utilizar a classe ConnectionManager, utilizar o método getInstance():
 
+~~~java
+public class OracleColaboradorDAO implements ColaboradorDAO {
+    
+      public List<Colaborador> listar(){
+        Connection conexao = ConnectionManager.getInstance().getConnection();
+        //Implementação
+      }
+      
+      public void cadastrar(Colaborador colaborador){
+        Connection conexao = ConnectionManager.getInstance().getConnection();
+        //Implementação
+      }
+      
+    }
+~~~
 
+---
+
+## FAST TEST
+
+### 1. Por meio de um Statement em Java, é possível executar o método executeQuery(). A execução deste método irá retornar uma instância de qual classe?
+> ResultSet, responsável pelo conjunto de registros retornados.
+
+### 2. Bancos de dados transacionais, uma vez utilizando essa funcionalidade de consistência, fornecem métodos específicos relacionados a esse tipo de operação. Entre os mais comuns, estão o COMMIT e o ROLLBACK. Qual alternativa representa, respectivamente, o conceito destas duas operações?
+> Efetiva as operações da transação em vigor. Não efetiva as operações da transação em vigor.
+
+### 3. Uma instância da classe CallableStatement possui uma grande diferença de utilização para o uso comum da classe PreparedStatement. Qual é essa diferença?
+> A CallableStatement é de uso exclusivo para invocação de Stored Procedures e Functions.
+
+### 4. Uma DESIGN PATTERN amplamente utilizada em muitas linguagens modernas de programação são as Singletons. Qual das alternativas define o conceito e uso de uma Singleton?
+> Uma Singleton é responsável por ser a representante única como uma instância ativa de sua classe em toda a execução do script ou aplicação.
+
+### 5. Transações garantem consistência quando realizamos operações de gravação e leitura dentro de uma base de dados. Isso também pode ocorrer quando desenvolvemos utilizando o Java. Com esse conceito em mente, ao que remete a sigla ACID?
+> Atomicidade, consistência, isolamento e durabilidade.
+
+### 6. Quando utilizamos conexões com banco de dados no ambiente Java, é comum termos contato com diferentes tipos de classes Statement, cada qual com sua particularidade. Qual das alternativas representa alguns tipos de objetos Statement?
+> Statement, Prepared Statement e Callable Statement.
+
+### 7. O conceito de DAOs (Data Access Objects) não é exclusivo da linguagem Java, mas, sim, uma DESIGN PATTERN muito utilizada nesse meio. Das alternativas, qual representa a verdadeira vantagem deste padrão de codificação?
+> Abstraem e separam a lógica de acesso à manipulação de dados da aplicação.
+
+### 8. Dos diferentes tipos de Statements, qual é a vantagem em utilizar um PreparedStatement?
+> A classe PreparedStatement possibilita que sejam passados parâmetros para o comando SQL de forma performática.
 
 --- 
 
