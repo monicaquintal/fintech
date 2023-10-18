@@ -832,6 +832,526 @@ package br.com.fiap.teste;
 <h2>2. CONTROLE TRANSACIONAL</h2>
 </div>
 
+- toda comunicação com banco de dados requer cuidados com acessos paralelos e integridade dos dados.
+- todo SGBD e as linguagensde programação possuem tratamento específico para permitir a segurança e integridade dos dados, assim como no JDBC.
+
+## 2.1 Transação
+
+- é uma unidade que preserva a consistência de informações no banco de dados.
+- são unidades atômicas de operações; em ciência da computação, uma transação atômica é uma operação, ou conjunto de operações, em uma base de dados, ou em qualquer outro sistema computacional, que deve ser executada completamente em caso de sucesso, ou ser abortada completamente em caso de erro.
+- uma transação pode ser representada pela ***sigla ACID***:
+  - `Atomicidade` (Atomicity): atômico, tudo (commit) ou nada (rollback). 
+  - `Consistência` (Consistency): toda transação executada deve seguir as regras de integridade do banco de dados, mantendo a consistência da base de dados. 
+  - `Isolamento` (Isolation): garante que nenhuma transação seja interferida por outra até que a primeira seja completada. 
+  - `Durabilidade` (Durability): garante que as informações gravadas no banco de dados durem de forma imutável até que outra transação de atualização ou remoção asafetem.
+- as ***operações possíveis*** para o controle transacional são: 
+  - `Commit`: todas as operações envolvidas em uma unidade de processo executam com sucesso, efetivando assim as alterações na base de dados.
+  - `Rollback`: todas as operações envolvidas em uma unidade de processo não executam corretamente, não efetuando assim as operações das transações na base de dados.
+
+> Por padrão, toda conexão com JDBC está configurada para realizar o COMMIT automaticamente, após a execução de um comando SQL. Para desabilitar essa configuração, utilizamos o `método setAutoCommit(false)`, da interface Connection.
+
+~~~java
+try {
+    //Desabilita o autocommit
+    conexao.setAutoCommit(false);
+    
+    //Primeira transação - Atualiza o salário
+    PreparedStatement stmt = conexao.prepareStatement("UPDATE TAB_COLABORADOR SET SALARIO = ? WHERE CODIGO_COLABORADOR = ?");
+    stmt.setDouble(1, 5000);
+    stmt.setInt(2, 1);
+    stmt.executeUpdate();
+    
+    //Segunda transação - Atualiza o e-mail
+    PreparedStatement stmt2 = conexao.prepareStatement("UPDATE TAB_COLABORADOR SET EMAIL = ? WHERE CODIGO_COLABORADOR = ?");
+    stmt2.setString(1, "teste@teste.com.br");
+    stmt2.setInt(2, 1);
+    stmt2.executeUpdate();
+    
+    //Efetiva as duas transações
+    conexao.commit();
+  
+  } catch (SQLException se) {
+    //Não efetiva as duas transações
+    conexao.rollback();
+}
+~~~
+
+- no código acima, se ocorrer algum erro, o comando conexao.rollback()será executado para desfazer as transações e, assim, não modificar as informações do BD.
+
+## 2.2 Design patterns (Padrão de Projeto de Software)
+
+- descreve uma solução geral reutilizável para um problema recorrente no desenvolvimento de sistemas. 
+- não é um código final, é uma descrição ou modelo de como resolver o problema que ocorre em vários sistemas de diferentes áreas de atuação ou plataforma de desenvolvimento.
+- livro "Design Patterns: Elements of Resuable Object-Oriented Software".
+- ***vantagens***:
+  - `Facilidade de comunicação`: os padrões possuem nomes, os quais descrevem uma solução que deve ser de conhecimento comum entre os desenvolvedores. 
+  - `Credibilidade`: padrões de projetos são utilizados constantemente nas implementações de sistemas; são amplamente testadas e aprovadas. 
+  - `Facilidade de manutenção`: Padrões de projetos tendem a reduzir o acoplamento entre os componentes, o que facilita a manutenção de um sistema.
+- **principais Design Patterns para implementação do backendde um sistema:**
+
+### 2.2.1 Data Access Object (DAO)
+
+- esse padrão de projeto abstrai e encapsula todo o acesso à base de dados.
+- a ideia é criar uma classe Java que separa totalmente a lógica de acesso e manipulação de dados da aplicação.
+- é a camada que separa a aplicação do banco de dados: possui todo o código de acesso ao banco de dados, tornando mais fáceis os testes e a manutenção.
+- OU SEJA, devemos desenvolver uma classe DAO para cada entidade, a fim de separar a responsabilidade do acesso à base de dados da entidade a seus respectivos DAOs.
+- exemplo:
+
+~~~java
+package br.com.fiap.dao;
+  
+  import java.sql.Connection;
+  import java.sql.PreparedStatement;
+  import java.sql.ResultSet;
+  import java.sql.SQLException;
+  import java.util.ArrayList;
+  import java.util.Calendar;
+  import java.util.List;
+  
+  import br.com.fiap.bean.Colaborador;
+  import br.com.fiap.jdbc.EmpresaDBManager;
+  
+  public class ColaboradorDAO {
+  
+  private Connection conexao;
+  
+  public void cadastrar(Colaborador colaborador) {
+    PreparedStatement stmt = null;
+  
+    try {
+      conexao = EmpresaDBManager.obterConexao();
+      String sql = "INSERT INTO TAB_COLABORADOR(CODIGO_COLABORADOR, NOME, EMAIL, SALARIO, DATA_CONTRATACAO) VALUES (SQ_COLABORADOR.NEXTVAL, ?, ?, ?, ?)";
+      stmt = conexao.prepareStatement(sql);
+      stmt.setString(1, colaborador.getNome());
+      stmt.setString(2, colaborador.getEmail());
+      stmt.setDouble(3, colaborador.getSalario());
+      java.sql.Date data = new java.sql.Date(colaborador.getDataContratacao().getTimeInMillis());
+      stmt.setDate(4, data);
+  
+      stmt.executeUpdate();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        stmt.close();
+        conexao.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+  } 
+  
+  public List<Colaborador> listar() {
+    //Cria uma lista de colaboradores
+    List<Colaborador> lista = new ArrayList<Colaborador>();
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    try {
+      conexao = EmpresaDBManager.obterConexao();
+      stmt = conexao.prepareStatement("SELECT * FROM TAB_COLABORADOR");
+      rs = stmt.executeQuery();
+  
+      //Percorre todos os registros encontrados
+      while (rs.next()) {
+        int codigo = rs.getInt("CODIGO_COLABORADOR");
+        String nome = rs.getString("NOME");
+        String email = rs.getString("EMAIL");
+        double salario = rs.getDouble("SALARIO");
+        java.sql.Date data = rs.getDate("DATA_CONTRATACAO");
+        Calendar dataContratacao = Calendar.getInstance();
+        dataContratacao.setTimeInMillis(data.getTime());
+        //Cria um objeto Colaborador com as informações encontradas
+        Colaborador colaborador = new Colaborador(codigo, nome, email, salario, dataContratacao);
+        //Adiciona o colaborador na lista
+        lista.add(colaborador);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }finally {
+      try {
+        stmt.close();
+        rs.close();
+        conexao.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+    return lista;
+  }
+  
+  public void atualizar(Colaborador colaborador){
+    PreparedStatement stmt = null;
+  
+    try {
+      conexao = EmpresaDBManager.obterConexao();
+      String sql = "UPDATE TAB_COLABORADOR SET NOME = ?, EMAIL = ?, SALARIO = ?, DATA_CONTRATACAO = ? WHERE CODIGO_COLABORADOR = ?";
+      stmt = conexao.prepareStatement(sql);
+      stmt.setString(1, colaborador.getNome());
+      stmt.setString(2, colaborador.getEmail());
+      stmt.setDouble(3, colaborador.getSalario());
+      java.sql.Date data = new java.sql.Date(colaborador.getDataContratacao().getTimeInMillis());
+      stmt.setDate(4, data);
+      stmt.setInt(5, colaborador.getCodigo());
+  
+      stmt.executeUpdate();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        stmt.close();
+        conexao.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+  
+  public void remover(int codigo){
+    PreparedStatement stmt = null;
+  
+    try {
+      conexao = EmpresaDBManager.obterConexao();
+      String sql = "DELETE FROM TAB_COLABORADOR WHERE CODIGO_COLABORADOR = ?";
+      stmt = conexao.prepareStatement(sql);
+      stmt.setInt(1, codigo);
+      stmt.executeUpdate();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        stmt.close();
+        conexao.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+  
+  public Colaborador buscarPorId(int codigoBusca){
+    Colaborador colaborador = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    try {
+      conexao = EmpresaDBManager.obterConexao();
+      stmt = conexao.prepareStatement("SELECT * FROM TAB_COLABORADOR WHERE CODIGO_COLABORADOR = ?");
+      stmt.setInt(1, codigoBusca);
+      rs = stmt.executeQuery();
+  
+      if (rs.next()){
+        int codigo = rs.getInt("CODIGO_COLABORADOR");
+        String nome = rs.getString("NOME");
+        String email = rs.getString("EMAIL");
+        double salario = rs.getDouble("SALARIO");
+        java.sql.Date data = rs.getDate("DATA_CONTRATACAO");
+        Calendar dataContratacao = Calendar.getInstance();
+        dataContratacao.setTimeInMillis(data.getTime());
+        colaborador = new Colaborador(codigo, nome, email, salario, dataContratacao);
+      }
+      
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }finally {
+      try {
+        stmt.close();
+        rs.close();
+        conexao.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+    return colaborador;
+  }
+}
+~~~
+
+- para utilizar o DAO, basta instanciar a classe e invocar os seus métodos:
+
+~~~java
+public static void main(String[] args) {
+  ColaboradorDAO dao = new ColaboradorDAO();
+  List<Colaborador> lista = dao.listar();
+}
+~~~
+
+- outra ***boa prática na implementação do padrão de projeto DAO*** é a utilização de ***interfaces***: a aplicação pode referenciar a interface em vez da classe, diminuindo acoplamento. 
+- utilizar interface permite a criação de diferentes implementações que podem ser trocadas sem a necessidade de grandes alterações no código da camada de negócio ou apresentação.
+- exemplo da implementação do ColaboradorDAO, utilizando uma interface e a implementação para o banco de dados Oracle:
+
+~~~java
+// Interface que define as funcionalidades do DAO:
+
+package br.com.fiap.dao;
+  
+  import java.util.List;
+  import br.com.fiap.bean.Colaborador;
+  
+  public interface ColaboradorDAO {
+  
+    public void cadastrar(Colaborador colaborador);
+    public List<Colaborador> listar();
+    public void atualizar(Colaborador colaborador);
+    public void remover(int codigo);
+    public Colaborador buscarPorId(int codigoBusca);
+}
+~~~
+
+~~~java
+// Classe que implementa as funcionalidades definidas na interface:
+
+package br.com.fiap.dao;
+  
+  import java.sql.Connection;
+  import java.sql.PreparedStatement;
+  import java.sql.ResultSet;
+  import java.sql.SQLException;
+  import java.util.ArrayList;
+  import java.util.Calendar;
+  import java.util.List;
+  import br.com.fiap.bean.Colaborador;
+  import br.com.fiap.jdbc.EmpresaDBManager;
+  
+  public class OracleColaboradorDAO implements ColaboradorDAO {
+  
+    private Connection conexao;
+  
+    public void cadastrar(Colaborador colaborador) {
+      PreparedStatement stmt = null;
+  
+      try {
+        conexao = EmpresaDBManager.obterConexao();
+        String sql = "INSERT INTO TAB_COLABORADOR(CODIGO_COLABORADOR, NOME, EMAIL, SALARIO, DATA_CONTRATACAO) VALUES (SQ_COLABORADOR.NEXTVAL, ?, ?, ?, ?)";
+        stmt = conexao.prepareStatement(sql);
+        stmt.setString(1, colaborador.getNome());
+        stmt.setString(2, colaborador.getEmail());
+        stmt.setDouble(3, colaborador.getSalario());
+        java.sql.Date data = new java.sql.Date(colaborador.getDataContratacao().getTimeInMillis());
+        stmt.setDate(4, data);
+  
+        stmt.executeUpdate();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      } finally {
+        try {
+          stmt.close();
+          conexao.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+    } 
+  
+    public List&lt;Colaborador> listar() {
+      //Cria uma lista de colaboradores
+      List&lt;Colaborador> lista = new ArrayList&lt;Colaborador>();
+      PreparedStatement stmt = null;
+      ResultSet rs = null;
+      try {
+        conexao = EmpresaDBManager.obterConexao();
+        stmt = conexao.prepareStatement("SELECT * FROM TAB_COLABORADOR");
+        rs = stmt.executeQuery();
+  
+        //Percorre todos os registros encontrados
+        while (rs.next()) {
+          int codigo = rs.getInt("CODIGO_COLABORADOR");
+          String nome = rs.getString("NOME");
+          String email = rs.getString("EMAIL");
+          double salario = rs.getDouble("SALARIO");
+          java.sql.Date data = rs.getDate("DATA_CONTRATACAO");
+          Calendar dataContratacao = Calendar.getInstance();
+          dataContratacao.setTimeInMillis(data.getTime());
+          //Cria um objeto Colaborador com as informações encontradas
+          Colaborador colaborador = new Colaborador(codigo, nome, email, salario, dataContratacao);
+          //Adiciona o colaborador na lista
+          lista.add(colaborador);
+        }
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }finally {
+        try {
+          stmt.close();
+          rs.close();
+          conexao.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+      return lista;
+    }
+  
+    public void atualizar(Colaborador colaborador){
+      PreparedStatement stmt = null;
+  
+      try {
+        conexao = EmpresaDBManager.obterConexao();
+        String sql = "UPDATE TAB_COLABORADOR SET NOME = ?, EMAIL = ?, SALARIO = ?, DATA_CONTRATACAO = ? WHERE CODIGO_COLABORADOR = ?";
+        stmt = conexao.prepareStatement(sql);
+        stmt.setString(1, colaborador.getNome());
+        stmt.setString(2, colaborador.getEmail());
+        stmt.setDouble(3, colaborador.getSalario());
+        java.sql.Date data = new java.sql.Date(colaborador.getDataContratacao().getTimeInMillis());
+        stmt.setDate(4, data);
+        stmt.setInt(5, colaborador.getCodigo());
+  
+        stmt.executeUpdate();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      } finally {
+        try {
+          stmt.close();
+          conexao.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  
+    public void remover(int codigo){
+      PreparedStatement stmt = null;
+  
+      try {
+        conexao = EmpresaDBManager.obterConexao();
+        String sql = "DELETE FROM TAB_COLABORADOR WHERE CODIGO_COLABORADOR = ?";
+        stmt = conexao.prepareStatement(sql);
+        stmt.setInt(1, codigo);
+        stmt.executeUpdate();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      } finally {
+        try {
+          stmt.close();
+          conexao.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  
+    public Colaborador buscarPorId(int codigoBusca){
+      Colaborador colaborador = null;
+      PreparedStatement stmt = null;
+      ResultSet rs = null;
+      try {
+        conexao = EmpresaDBManager.obterConexao();
+        stmt = conexao.prepareStatement("SELECT * FROM TAB_COLABORADOR WHERE CODIGO_COLABORADOR = ?");
+        stmt.setInt(1, codigoBusca);
+        rs = stmt.executeQuery();
+  
+        if (rs.next()){
+          int codigo = rs.getInt("CODIGO_COLABORADOR");
+          String nome = rs.getString("NOME");
+          String email = rs.getString("EMAIL");
+          double salario = rs.getDouble("SALARIO");
+          java.sql.Date data = rs.getDate("DATA_CONTRATACAO");
+          Calendar dataContratacao = Calendar.getInstance();
+          dataContratacao.setTimeInMillis(data.getTime());
+          colaborador = new Colaborador(codigo, nome, email, salario, dataContratacao);
+        }
+        
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }finally {
+        try {
+          stmt.close();
+          rs.close();
+          conexao.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+      return colaborador;
+    }
+    
+}
+~~~
+
+### 2.3 DAO Factory
+
+- "fábrica de DAOs" para um tipo específico de banco de dados.
+- esse padrão de projetos é recomendado quando não há previsão de mudar o banco de dados da aplicação (exemplo: se o sistema utiliza o banco de dados MySQL e não há previsão de trocar o banco). 
+- a ideia do DAO Factory é centralizar a criação dos objetos DAOs: se a aplicação precisar de um objeto ColaboradorDAO, o DAO Factory irá provê-lo por meio de um método estático. 
+- exemplo de implementação do DAO Factory, que está em uma aplicação que possui dois DAOs. Primeiro, vamos implementar os DAOs do Colaborador e do Cargo:
+
+~~~java
+public interface CargoDAO {
+  public List<Cargo> listar();
+  public void cadastrar(Cargo cargo);
+}
+    
+public class OracleCargoDAO implements CargoDAO {}
+  @Override
+  public List<Cargo> listar() {
+    //Implementação
+  }
+
+  @Override
+  public void cadastrar(Cargo cargo) {
+    //Implementação
+    
+  }
+~~~
+
+- Interface ColaboradorDAO e classe OracleColaboradorDAO, que implementa a interface:
+
+~~~java
+public interface ColaboradorDAO {
+  public List<Colaborador> listar();
+  public void cadastrar(Colaborador colaborador);
+  }
+
+  public class OracleColaboradorDAO implements ColaboradorDAO {
+    public List<Colaborador> listar(){
+      //Implementação
+    }
+    public void cadastrar(Colaborador colaborador){
+      //Implementação
+    }
+  }
+~~~
+
+- Aagora vamos implementar o DAO Factory, a fábrica que fornece as instâncias dos DAO:
+
+~~~java
+package br.com.fiap.factory;
+  
+  import br.com.fiap.dao.CargoDAO;
+  import br.com.fiap.dao.ColaboradorDAO;
+  import br.com.fiap.dao.OracleCargoDAO;
+  import br.com.fiap.dao.OracleColaboradorDAO;
+  
+  public abstract class DAOFactory {
+    public static CargoDAO getCargoDAO(){
+      return new OracleCargoDAO();
+    }
+    
+    public static ColaboradorDAO getColaboradorDAO(){
+      return new OracleColaboradorDAO();
+    } 
+  }
+~~~
+
+- a classe acima possui dois métodos estáticos que fornecem as instâncias dos DAOs. Para sua utilização, basta invocar esses métodos:
+
+~~~java
+import java.util.List;
+  
+  import br.com.fiap.bean.Colaborador;
+  import br.com.fiap.dao.ColaboradorDAO;
+  import br.com.fiap.factory.DAOFactory;
+  
+  public class TesteDAOFactory {
+    public static void main(String[] args) {
+      ColaboradorDAO dao = DAOFactory.getColaboradorDAO();
+      List<Colaborador> lista = dao.listar();
+    }
+  }
+~~~
+
+### 2.3.1 Abstract Factory
+
+- indicado quando é preciso suportar vários bancos de dados, pois permite criar implementações de DAOs para cada banco e prover o DAO correto, conforme a necessidade.
+- a implementação desse padrão de projetos ***começa pelos DAOs*** (se a aplicação precisa suportar o Oracle e o SQL Server, por exemplo, é necessário criar uma interface e implementá-la em duas classes: uma específica, que acessa BD Oracle, e outra que acessa o banco de dados SQL Server.), ***e em seguida, devemos implementar a Fábrica de DAOs***, uma classe abstrata (não pode ser instanciada), e que deve possuir um método estático que retorna uma instância da Fábrica de DAO de acordo com o Banco de dados escolhido.
+- 
+
 
 
 
