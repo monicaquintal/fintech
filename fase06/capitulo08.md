@@ -721,7 +721,116 @@ package br.com.fiap.teste;
 }
 ~~~
 
-## 9. Implementar o método patra buscar por código, para posteriormente implementar o método de atualização.
+## 9. Implementar o método para buscar por código, para posteriormente implementar o método de atualização.
+
+- para finalizar o CRUD, implementar o método de atualização. P
+- porém, antes desenvolver o método buscar por código, para recuperar colaborador que será atualizado.
+- na classe ColaboradorDAO, adicionar o método buscarPorId, que recebe o código do colaborador.
+
+~~~java
+Colaborador colaborador = null;
+  PreparedStatement stmt = null;
+  ResultSet rs = null;
+  try {
+    conexao = EmpresaDBManager.obterConexao();
+    stmt = conexao.prepareStatement("SELECT * FROM TAB_COLABORADOR WHERE CODIGO_COLABORADOR = ?");
+    stmt.setInt(1, codigoBusca);
+    rs = stmt.executeQuery();
+  
+    if (rs.next()){
+      int codigo = rs.getInt("CODIGO_COLABORADOR");
+      String nome = rs.getString("NOME");
+      String email = rs.getString("EMAIL");
+      double salario = rs.getDouble("SALARIO");
+      java.sql.Date data = rs.getDate("DATA_CONTRATACAO");
+      Calendar dataContratacao = Calendar.getInstance();
+      dataContratacao.setTimeInMillis(data.getTime());
+      colaborador = new Colaborador(codigo, nome, email, salario, dataContratacao);
+    }
+    
+  } catch (SQLException e) {
+    e.printStackTrace();
+  }finally {
+    try {
+      stmt.close();
+      rs.close();
+      conexao.close();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+  return colaborador;
+~~~
+
+- após a execução da query, é acionado o método next() do ResultSetpara verificar se existe algum registro.
+- em caso positivo, são recuperados todos os valores do registro e instanciado um Colaborador para armazenar essas informações.
+
+### 10. Implementando método de atualização
+
+~~~java
+public void atualizar(Colaborador colaborador){
+    PreparedStatement stmt = null;
+  
+    try {
+      conexao = EmpresaDBManager.obterConexao();
+      String sql = "UPDATE TAB_COLABORADOR SET NOME = ?, EMAIL = ?, SALARIO = ?, DATA_CONTRATACAO = ? WHERE CODIGO_COLABORADOR = ?";
+      stmt = conexao.prepareStatement(sql);
+      stmt.setString(1, colaborador.getNome());
+      stmt.setString(2, colaborador.getEmail());
+      stmt.setDouble(3, colaborador.getSalario());
+      java.sql.Date data = new java.sql.Date(colaborador.getDataContratacao().getTimeInMillis());
+      stmt.setDate(4, data);
+      stmt.setInt(5, colaborador.getCodigo());
+  
+      stmt.executeUpdate();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        stmt.close();
+        conexao.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+~~~
+
+- para realizar a atualização dos dados de um colaborador, primeiro a classe de teste deve recuperar o registro, utilizando o método buscarPorId, depois os valores dos dados que serão alterados devem ser informados e, por último, o método atualizar deve ser invocado.
+
+~~~java
+package br.com.fiap.teste;
+  
+  import br.com.fiap.bean.Colaborador;
+  import br.com.fiap.dao.ColaboradorDAO;
+  
+  public class TesteAlteracao {
+  
+    public static void main(String[] args) {
+  
+      ColaboradorDAO dao = new ColaboradorDAO();
+      //Recupera o colaborador com código 1
+      Colaborador colaborador = dao.buscarPorId(1);
+      //Imprime os valores do colaborador
+      System.out.println(colaborador.getCodigo() + " "
+          + colaborador.getNome() + " " + colaborador.getEmail() + " "
+          + colaborador.getSalario() + " "
+          + colaborador.getDataContratacao().getTime());
+      //Altera os valores de alguns atributos do colaborador
+      colaborador.setSalario(1500);
+      colaborador.setEmail("teste@fiap.com.br");
+      //Atualiza no banco de dados
+      dao.atualizar(colaborador);
+    }
+  
+  }
+~~~
+
+---
+
+<div align="center">
+<h2>2. CONTROLE TRANSACIONAL</h2>
+</div>
 
 
 
