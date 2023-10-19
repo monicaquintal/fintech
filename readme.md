@@ -150,7 +150,7 @@
 [Capítulo 04: ... e as estruturas do banco são finalmente criadas!](./fase06/capitulo04.md)<br>
 [Capítulo 06: Armazenando e manipulando informações no banco.](./fase06/capitulo06.md)<br>
 [Capítulo 07: Consulte o oráculo.](./fase06/capitulo07.md)<br>
-[Capítulo 09: ]()<br>
+[Capítulo 09: Chatbot com IBM Watson Assistant.](./fase06/capitulo09.md)<br>
 [Capítulo 10: ]()<br>
 
 </details>
