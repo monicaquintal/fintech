@@ -78,6 +78,26 @@ e) ***Enterprise with data isolation***:
 
 ### 1.2.2 Criação de uma nova instância de Watson Assistant
 
+- `provisionar um serviço`: ação que faz com que você tenha uma “cópia” do serviço em sua conta e é com esta ação que permite que você possa configurar para atender a sua necessidade.
+
+> Um exemplo que utilizaremos é com o serviço do Watson Assistant. Você provisionará uma instância, e criará um novo chatbot com uma base de treinamento próprio.
+
+- para acessar o catálogo: 
+  - a primeira opção é clicar no botão de “Catalog” no menu superior.
+  - a segunda opção é clicar no botão azul de “Create resource”, no canto superior direito da tela e próximo da foto do seu perfil.
+- na página de catálogo, buscar pelo serviço “Watson Assistant” na barra de pesquisa, abaixo da palavra “Catalog”. A
+  - é possível filtrar pela categoria “AI / Machine Learning”.
+  - clicar em cima do retângulo do serviço para ver mais detalhes do serviço e para provisionar na sua conta.
+- na página de detalhes e provisionamento do serviço, neste caso, não há necessidade de mudar nenhuma informação, pois será provisionada uma instância na região de Dallas (us-south), plano gratuito e não fará modificação de nome da instância ou tags. 
+- clicar no botão azul de “Create” para provisionar uma nova instância do serviço na sua conta.
+- na página de detalhes da instância do serviço do Watson Assistant, você tem acesso a plataforma de treinamento do chatbot, a credencial (chave de API para realizar o acesso via API ou SDK), a visão do plano atual e documentação de como começar e das APIs disponíveis no serviço. Além disso, você consegue, no menu canto esquerdo, criar mais credenciais ou trocar o plano da sua instância. Para realizar a criação de um chatbot e treiná-lo, é necessário entrar na plataforma de treinamento. Para isso, clique no botão azul de “Launch Watson Assistant”.
+- você cairá na página de “Welcome” e será induzido a criar um assistente (assistant), que utiliza funcionalidades que são provenientes da nova experiência do Watson Assistant. 
+- o passo a passo desta aula será focado na experiência clássica, a mais utilizada pelas empresas. Para mudar para a experiência clássica, clicar no ícone do usuário, no canto superior direito, e clicar na opção “Switch to classic experience”. A plataforma vai solicitar confirmação da mudança e você clicará no botão azul de “Switch”. Você pode mudar para a nova experiência a qualquer momento, apenas realizando o mesmo procedimento e clicando na opção “Switch to new experience".
+- dentro da ferramenta de treinamento, você consegue enxergar dois itens no menu na lateral esquerda: Skills e Assistants.
+  - `Skills`: base de conhecimento do seu chatbot; a Skill será o local onde realizará o treinamento do chatbot, incluindo frases para ensiná-lo a entender a mensagem dos usuários e também onde você configurará as respostas dele. 
+
+
+
 
 
 
