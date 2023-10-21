@@ -94,8 +94,10 @@ e) ***Enterprise with data isolation***:
 - você cairá na página de “Welcome” e será induzido a criar um assistente (assistant), que utiliza funcionalidades que são provenientes da nova experiência do Watson Assistant. 
 - o passo a passo desta aula será focado na experiência clássica, a mais utilizada pelas empresas. Para mudar para a experiência clássica, clicar no ícone do usuário, no canto superior direito, e clicar na opção “Switch to classic experience”. A plataforma vai solicitar confirmação da mudança e você clicará no botão azul de “Switch”. Você pode mudar para a nova experiência a qualquer momento, apenas realizando o mesmo procedimento e clicando na opção “Switch to new experience".
 - dentro da ferramenta de treinamento, você consegue enxergar dois itens no menu na lateral esquerda: Skills e Assistants.
-  - `Skills`: base de conhecimento do seu chatbot; a Skill será o local onde realizará o treinamento do chatbot, incluindo frases para ensiná-lo a entender a mensagem dos usuários e também onde você configurará as respostas dele. 
+  - `Skills`: base de conhecimento do seu chatbot; a Skill será o local onde realizará o treinamento do chatbot, incluindo frases para ensiná-lo a entender a mensagem dos usuários e também onde configurará as respostas dele. 
+  - `Assistants`: conjunto de Skills, no qual você agrupa as bases de conhecimento em um único assistente. Você dá ao assistente virtual uma ou mais habilidades para poder lidar com os diversos cenários do seu cliente.
 
+> Skill é o local de treinamento do chatbot, e o Assistant é a forma de unir as Skills e integrar nos canais de comunicação — e isso inclui a página Web tanto na opção de um pronto para colocar no HTML do seu site como a opção de ter um link de um chat para compartilhar com seus conhecidos para testar o conteúdo publicamente.
 
 
 
