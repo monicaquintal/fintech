@@ -151,7 +151,7 @@
 [Capítulo 06: Armazenando e manipulando informações no banco.](./fase06/capitulo06.md)<br>
 [Capítulo 07: Consulte o oráculo.](./fase06/capitulo07.md)<br>
 [Capítulo 09: Chatbot com IBM Watson Assistant.](./fase06/capitulo09.md)<br>
-[Capítulo 10: ]()<br>
+[Capítulo 10: Análise de Métricas.](./fase06/capitulo10.md)<br>
 
 </details>
 
