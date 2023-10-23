@@ -8,7 +8,7 @@
 
 <div align="justify">
 
-<h2>📚 FASE 1 - DEVELOPMENT ENVIRONMENT (de 15/02 até 21/03)</h2>
+<h2>📚 FASE 1: DEVELOPMENT ENVIRONMENT (de 15/02 até 21/03)</h2>
 
 <details>
 <summary>AGILE SOFTWARE DESIGN</summary>
@@ -27,7 +27,7 @@
 </details>
 <br>
 
-<h2>📚 FASE 2 - PROTOTYPING (de 22/03 até 25/04)</h2>
+<h2>📚 FASE 2: PROTOTYPING (de 22/03 até 25/04)</h2>
 
 <details>
 <summary>COMPUTATIONAL THINKING USING PYTHON</summary>
@@ -54,7 +54,7 @@
 </details>
 <br>
 
-<h2>📚 FASE 3 - MODELING (de 26/04 até 30/05)</h2>
+<h2>📚 FASE 3: MODELING (de 26/04 até 30/05)</h2>
 
 <details>
 <summary>BUILDING RELATIONAL DATABASE</summary>
@@ -98,7 +98,7 @@
 </details>
 <br>
 
-<h2>📚 FASE 5 - OOP (de 02/08 até 12/09)</h2>
+<h2>📚 FASE 5: OOP (de 02/08 até 12/09)</h2>
 
 <details>
 <summary>AGILE SOFTWARE DESIGN</summary>
