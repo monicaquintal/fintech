@@ -158,7 +158,7 @@
 <details>
 <summary>FORMAÇÃO SOCIAL E SUSTENTABILIDADE</summary>
 
-[Capítulo 11: ]()<br>
+[Capítulo 11: Mercado e Tecnologia.](./fase06/capitulo11.md)<br>
 
 </details>
 <br>
