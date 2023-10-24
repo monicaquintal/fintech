@@ -237,4 +237,127 @@
 
 --- 
 
+## QUIZ - FASE 06 - MODEL
+
+### 1. Assinale a alternativa que completa corretamente a frase a seguir: “Desenhar um chatbot é um processo de design, centrado _____________ e envolve muito mais do que o simples processo de construção de um produto digital.”.
+> No ser humano.
+
+### 2. Supondo que a tabela VEICULOS exista, assinale a alternativa correta em relação ao código SQL abaixo:
+~~~sql
+1   UPDATE INTO VEICULOS SET VEICULO = 'Automovel' WHERE ID = 1;
+~~~
+> O código em questão executará somente se o atributo INTO for removido da sintaxe.
+
+### 3. Assinale a alternativa que corretamente descreve o comando SQL LIKE '%A_'.
+> Todas as palavras que tenha a letra A na penúltima posição e a última posição seja qualquer outro caractere.
+
+### 4. Supondo que a tabela VEICULOS exista e que o campo ID seja chave primária desta tabela, assinale a alternativa correta em relação ao código SQL abaixo:
+~~~sql
+1   UPDATE VEICULOS SET ID = 3 WHERE ID = 1;
+~~~
+> O código executa com sucesso alterando o campo ID do registro, caso não haja outro registro com ID igual a 3.
+
+### 5. Em relação às chaves, assinale a alternativa correta:
+> Chaves estrangeiras podem apresentar valores repetidos entre diferentes registros.
+
+### 6. Supondo que a tabela VEICULOS exista, assinale a alternativa correta em relação ao código SQL abaixo:
+~~~sql
+1   DELETE FROM VEICULOS;
+~~~
+> O código executa com sucesso.
+
+### 7. A Declaração do Rio sobre o Meio Ambiente e o Desenvolvimento é uma proposição das Nações Unidas (ONU) para promover o desenvolvimento sustentável que contém uma série de princípios. Um deste princípios afirma que quando houver “[...] ameaças de danos graves ou irreversíveis ao meio ambiente e à saúde humana, a ausência de certeza científica absoluta não será utilizada como razão para o adiamento de medidas efetivas eficazes e economicamente viáveis para prevenir a degradação ambiental.”. Que princípio é este?
+> Princípio da precaução.
+
+### 8. As métricas fundamentadas em quantidade visam trazer informações com base no volume de mensagens que os usuários trocam com o chatbot. Neste contexto, a primeira métrica que pode ser utilizada é o:
+> Número de interações.
+
+### 9. Em relação aos vetores, considere as seguintes afirmações:
+- I – Vetor é uma variável composta homogênea unidimensional, isto é, um conjunto de variáveis do mesmo tipo de dado, que possuem o mesmo identificador (nome) e são alocadas sequencialmente na memória.
+- II – Como as variáveis do tipo vetor tem o mesmo nome, o que as distingue é um índice que faz referência à sua localização dentro da estrutura.
+- III – Em Java, todo vetor possui o atributo length que retorna o tamanho do vetor, isto é, o número de elementos do vetor.
+Sobre as afirmações acima, assinale a alternativa correta:
+> Todas as afirmações estão corretas.
+
+### 10. Considerando-se que exista a tabela LIVROS e que exista a tabela USUARIOS e supondo um relacionamento entre elas de tal forma que o campo EMPRESTOU_ID da tabela LIVROS representa o valor do campo ID da tabela USUARIOS, armazenando o ID do usuário que emprestou o livro da biblioteca ou o valor NULL no caso de o livro estar disponível na biblioteca. Qual é a melhor forma de se construir um SELECT de união entre estas duas tabelas para trazer os dados de todos os livros e de todos os usuários, independente dos livros estarem emprestados ou não?
+> SELECT * FROM LIVROS FULL JOIN USUARIOS ON LIVROS.EMPRESTOU_ID = USUARIOS.ID.
+
+### 11. Em alguns casos, não é possível entender o que o usuário quer dizer. Isso acontece porque o chatbot não possui o conhecimento necessário para responder à pergunta feita pelo usuário. Este tipo de cenário é classificado como:
+> Cauda longa.
+
+### 12. Em geral, erros de programação geram qual tipo de exceção:
+> RunTimeException.
+
+### 13. Na execução de um programa, se, por engano, houver uma tentativa de se armazenar um elemento fora do intervalo de elementos definido para o vetor, ocorrerá uma exceção de qual tipo?
+> ArrayIndexOutOfBoundsException.
+
+### 14. Qual cláusula é utilizada para classificar as linhas retornadas por uma consulta?
+> ORDER BY.
+
+### 15. A descrição “É uma coleção de dados binários armazenados como uma única entidade, até mesmo código binário executável pode ser armazenado por este tipo de dado.”, refere-se a qual tipo de dado?
+> BLOB.
+
+### 16. Para um dado do tipo _____________, que armazene um valor de apenas 4 posições (por exemplo, “FIAP”), as outras 6 posições serão ocupadas com _____________, consumindo o mesmo espaço em disco e em memória para todos os valores armazenados (10 bytes). Se este mesmo dado for definido como sendo do tipo _____________ e armazenar um valor com as mesmas 4 posições, apenas as 4 posições serão preenchidas e, consequentemente, o espaço utilizado em disco e em memória será menor.
+> CHAR(10) / brancos (“ ”) / VARCHAR(10).
+
+### 17. A frase: “Possibilita a interação humana falada com chatbots, usando o reconhecimento de fala para entender comandos falados e responder a perguntas.”, refere-se a um(a):
+> Interface de Usuário de Voz.
+
+### 18. No IBM Watson Assistant é possível utilizar entidades predefinidas pela IBM, chamadas:
+> System entities.
+
+### 19. A linguagem DTL (Data Transaction Language) é responsável por:
+> Gerenciar conjuntos de operações sobre os dados.
+
+### 20. Utilizado por empresas – como Bradesco (com a BIA) e Magazine Luiza (com a Lu) – o IBM Watson Assistant desempenha um papel fundamental no avanço da tecnologia de chatbots, valendo-se de tecnologias como:
+> Machine learning e natural language process.
+
+### 21. Sobre vetores e matrizes, considere as seguintes afirmações:
+- I – Um vetor também pode ser criado a partir de uma lista de valores entre {} e separados por vírgula. Por exemplo: int [] numerosPrimos = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31 }.
+- II – Se um vetor tem N elementos, os índices de seus elementos vão variar entre 0 e N-1.
+- III – Para obter as dimensões de uma matriz M[][] pode-se utilizar os atributos M.length e M[].length.
+Sobre as afirmações acima, assinale a alternativa correta:
+> Todas as afirmações estão corretas.
+
+### 22. Nos dias atuais, a geração de valor almejada pelas empresas, vai muito além da obtenção de lucro nos negócios e do cumprimento de legislações e práticas regulatórias. As empresas esperam que seus executivos tomem decisões com base na consciência socioambiental. Qual é a norma ISO relacionada à Responsabilidade Social?
+> ISO 26000.
+
+### 23. Em geral, um vetor pode ser indexado com qualquer expressão, cujo valor de retorno seja um número inteiro. Neste contexto, considere as afirmações abaixo:
+- I – O tamanho de um vetor pode ser uma constante ou uma variável.
+- II – O tamanho de um vetor pode ser uma expressão contendo operadores aritméticos, constantes e variáveis.
+- III – Um vetor não precisa ter seu tamanho previamente definido pelo desenvolvedor, o tamanho de um vetor pode ser calculado pelo programa em tempo de execução.
+Sobre as afirmações acima, assinale a alternativa correta:
+> Apenas as afirmações I e II estão corretas.
+
+### 24. Assinale a alternativa que apresenta o padrão de projeto que abstrai e encapsula todo o acesso à base de dados.
+> Data Access Object (DAO).
+
+### 25. “_____________ é a propriedade da transação que garante que as mudanças aplicadas ao banco de dados pela transação confirmada persistam no banco de dados, isto é, que as mudanças não sejam perdidas por causa de alguma falha.”
+> Durabilidade. 
+
+### 26. A linguagem DCL (Data Control Language) é responsável por:
+> Gerenciar o acesso aos dados.
+
+### 27. A descrição “A TI verde representada por iniciativas que utilizam os equipamentos e a infraestrutura de TI já existentes, visando à redução dos impactos ambientais.”, refere-se a:
+> TI verde tática.
+
+### 28. Considerando-se o modelo transacional, assinale a alternativa que apresenta corretamente o significado das propriedades ACID.
+> Isolamento (I) são técnicas que procuram evitar que transações paralelas interfiram umas nas outras, permitindo que o resultado de várias transações, executadas em paralelo, seja consistente, sendo equivalente à execução destas mesmas transações de forma sequencial.
+
+### 29. Sobre SQL (Structured Query Language), considere as afirmações a seguir:
+- I – É uma linguagem de consulta estruturada.
+- II – É uma linguagem para definição, manipulação e controle de banco de dados.
+- III – É uma linguagem declarativa que detalha a forma do resultado.
+Sobre as afirmações acima, assinale a alternativa correta:
+> Apenas as afirmações I e II estão corretas.
+
+### 30. Em relação aos arquivos, considere as seguintes afirmações:
+- I – Os arquivos são utilizados para persistência de dados, isto é, o armazenamento mesmo após o término da execução do programa.
+- II – A classe File fornece meios de associar um objeto a um arquivo físico, ou seja, criar um caminho abstrato entre o programa e o arquivo.
+- III – Em Java, é possível trabalhar com arquivos sem considerar os aspectos referentes ao sistema operacional, isto é, abstraindo-se as características do sistema operacional.
+Sobre as afirmações acima, assinale a alternativa correta:
+> Todas as afirmações estão corretas.
+
+---
+
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
