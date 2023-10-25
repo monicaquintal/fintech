@@ -1500,6 +1500,44 @@ public class OracleColaboradorDAO implements ColaboradorDAO {
 ### 8. Dos diferentes tipos de Statements, qual é a vantagem em utilizar um PreparedStatement?
 > A classe PreparedStatement possibilita que sejam passados parâmetros para o comando SQL de forma performática.
 
+---
+
+## Tarefa Cap 8 - Quando o café javanês consulta o oráculo: Exibir e cadastrar informações de uma listagem do Fintech, agora com banco de dados!
+
+<p><em>
+"Muito bem, você acaba de saber como o Java faz para acessar o banco de dados Oracle. Vamos aplicar, imediatamente, esse conhecimento tão importante, afinal, seus sistemas computacionais acabam de ganhar um novo grau de complexidade.
+<br>
+Pré-requisitos técnicos:
+
+- Linguagem de Programação: utilize na Java 17 (IDE Eclipse).
+- Banco de dados: utilize Oracle.
+- Modelagem do banco de dados: baseie-se na modelagem previamente criada.
+- Manipulação de tipos de dados no Java: familiarize-se com a manipulação de dados em Java.
+
+No Capítulo 2 desta mesma Fase, você pode aprender como lidar com vários dados em Java, manipulando listas de objetos.
+<br>
+Agora vamos dar o próximo passo: faça a classe DAO que você criou acessar o banco de dados, de fato. Crie um método getAll() que deve acessar o banco de dados, realizar um SELECT e receber a consulta, armazenando em uma coleção de dados como vimos no capítulo 2.
+<br>
+Como os vários passos do acesso ao banco de dados podem ter problemas, tais como o banco estar fora do ar, a tabela ter sido apagada, entre outros, é indispensável realizar o tratamento de exceções.
+<br>
+Crie também um método insert() na classe do tipo DAO que realize um INSERT e registre uma nova informação. Como você precisa testar o getAll() solicitado acima, utilize seu comando insert() para cadastrar pelo menos cinco novos registros. Use a própria classe Teste, método main(), para inserir os registros e chamar a consulta.
+<br>
+Requisitos do sistema:
+
+- Classe DAO: Criar a classe DAO responsável por acessar o banco de dados Oracle para a continuação do sistema FINTECH.
+- Consulta de dados: Implementar o método getAll na classe DAO. Este método deverá recuperar todos os dados no banco através de um comando SELECT.
+- Tratamento de Exceções: Implementar tratamento de exceções para lidar com possíveis problemas durante o acesso ao banco de dados, como indisponibilidade do banco ou tabela inexistente.
+- Cadastrar dados: Adicionar o método insert na classe DAO que permita registrar informações no banco de dados.
+
+Instruções para testes:
+
+- Teste de cadastro: Utilizar o método insert para cadastrar pelo menos 5 (cinco) novos registros no banco de dados.
+- Teste de consulta: Testar o método getAll após a inserção dos registros, garantindo que ele recupere e apresente corretamente as informações recuperadas.
+- Adaptação para Outras Entidades: Replicar o desenvolvimento feito até agora para outras entidades do sistema, com exceção da entidade Usuário. Isso ajudará a avançar na Fase Final do projeto.
+
+Fez com uma entidade? Faça com as demais, exceto Usuário. Assim, você alivia um pouco o número de atividades da Fase Final (na qual você terá muito a fazer!). Depois que a interação com o banco de dados de uma entidade funcionar, ficará mais fácil fazer as demais."
+</p></em>
+
 --- 
 
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
