@@ -359,5 +359,5 @@ Sobre as afirmações acima, assinale a alternativa correta:
 > Todas as afirmações estão corretas.
 
 ---
-
+ 
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
