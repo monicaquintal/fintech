@@ -162,3 +162,30 @@
 
 </details>
 <br>
+
+<h2>📚 FASE 7: INTEGRATION (de 25/10 até 24/11)</h2>
+
+<details>
+<summary>RESPONSIVE WEB DEVELOPMENT</summary>
+
+[Capítulo 01: Juntando tudo!](./fase07/capitulo01.md)<br>
+[Capítulo 02: ]()<br>
+[Capítulo 03: ]()<br>
+[Capítulo 04: ]()<br>
+[Capítulo 05: ]()<br>
+[Capítulo 06: ]()<br>
+
+</details>
+
+<details>
+<summary>AI & CHATBOT</summary>
+
+[Capítulo 07: ]()<br>
+[Capítulo 08: ]()<br>
+[Capítulo 09: ]()<br>
+[Capítulo 10: ]()<br>
+[Capítulo 11: ]()
+
+</details>
+
+<br>
