@@ -25,7 +25,9 @@
 
 ## 1.4 Ciclo de vida de uma servlet
 
-
+- as servlets são instanciadas pelo container, na primeira vez que são acessadas.
+- após iniciadas, as servlets podem atender a requisições.
+- o container decide a hora de destruir as servlets(chamando o método destroy()).
 
 
 
