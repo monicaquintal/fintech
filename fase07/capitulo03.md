@@ -342,6 +342,98 @@
 
 ## 2.1.3 Objeto session
 
+- deriva da classe HttpSession e é criado a partir do primeiro request do cliente para o servidor. 
+- possui um ciclo de vida maior do que o request, permitindo adicionar atributos que permanecerão enquanto o cliente estiver conectado ao sistema.
+- as duas formas de terminar uma sessão do usuário são por `timeout` (por tempo de inatividade do usuário no sistema), e por um `método do próprio objeto de sessão`, que pode ser utilizado na funcionalidade de logout, por exemplo.
+- o objeto session é muito utilizado nos sistemas para identificar o usuário na aplicação.
+- exemplo: páginas login.jsp, index.jsp e servicos.jsp.
+	- no login, colocar o nome do usuário na sessão e replicar esse atributo pelas páginas, capturando-o em cada uma delas.
+
+~~~html
+<!-- Página login.jsp com o objeto session sendo criado -->
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Exemplo Sessão</title>
+</head>
+<body>
+	<%
+	   if(request.getParameter("nomeUsuario") != null)
+		session.setAttribute("attrUsuario", request.getParameter("nomeUsuario"));
+	%>
+	<form method="post" action="login.jsp">
+		<fieldset>
+			<legend>Login</legend>
+			<div>
+				<label>Nome de Usuário</label><br/>
+				<input type="text" name="nomeUsuario">
+			</div>
+			<div>
+				<label>Senha</label><br/>
+				<input type="password" name="senha">
+			</div>
+			<div>
+				<input type="submit" value="LOGIN">
+			</div>
+		</fieldset>
+	</form>
+	
+	<p><a href="servicos.jsp">SERVIÇOS</a></p>
+	<p><a href="index.jsp">INÍCIO</a></p>
+	
+</body>
+</html>
+~~~ 
+
+~~~html
+<!-- Página index.jsp recebendo o atributo que foi criado na sessão -->
+
+<h2>Bem vindo usuário [<%=session.getAttribute("attrUsuario")%>] 
+	a página Inicial do Sistema!</h2>
+<p><a href="servicos.jsp">SERVIÇOS</a></p>
+<p><a href="login.jsp">LOGIN</a></p>
+~~~
+
+~~~html
+<!-- Página serviços.jsp recebendo o atributo que foi criado na sessão -->
+
+<h2>Bem vindo usuário [<%=session.getAttribute("attrUsuario")%>] 
+	a página de Serviços do Sistema!</h2>
+	
+<p><a href="index.jsp">INÍCIO</a></p>
+<p><a href="login.jsp">LOGIN</a></p>
+~~~
+
+## 2.2 Objeto application
+
+- criado assim que o servidor é inicializado e removido logo que o servidor é finalizado.
+- um atributo no objeto application fica disponível para todas as páginas e usuários da aplicação web.
+- exemplo: contador de visitas. 
+	- utilizar:
+		- método application.setAttribute(String Key, Object Value); para definir um atributo no objeto application;
+		- método application.getAttribute(String Key); para recuperar esse valor que foi armazenado.
+	- primeiro recupera o valor do atributo armazenado no objeto application e depois valida se está vazio ou com o valor 0. Caso esteja vazio ou zero, o contador é inicializado com o valor 1, caso contrário, o contador é incrementado em 1. Depois o valor é adicionado novamente na application e, finalmente, é apresentado na página por meio da expression.
+
+~~~jsp
+<%
+	Integer hitsCount = (Integer)application.getAttribute("hitCounter");
+	if( hitsCount ==null || hitsCount == 0 ) {
+			/* First visit */
+			out.println("Welcome to my website!");
+			hitsCount = 1;
+	} else {
+			/* return visit */
+			out.println("Welcome to my website!");
+			hitsCount += 1;
+	}
+	application.setAttribute("hitCounter", hitsCount);
+%>
+<p>Total number of visits: <%= hitsCount%></p>
+~~~
 
 
 
