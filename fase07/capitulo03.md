@@ -638,6 +638,12 @@
 ### 1. Qual é o objeto implícito responsável pela transmissão de parâmetros, atributos e redirecionamentos? 
 > Objeto request.
 
+### 2. O que são as Diretivas Page?
+> São responsáveis por definir propriedades da página, tais como a linguagem que será utilizada, o tipo de texto que será formatado, o charset para a codificação da página.
+
+### 3. Identifique qual expressão está incorreta em relação ao funcionamento do processamento de um JSP:
+> O serviudor de aplicação recebe a resposta HTML para o cliente.
+
 --- 
 
 [Voltar ao início!](https://github.com/monicaquintal/fintech)
