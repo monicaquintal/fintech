@@ -344,10 +344,30 @@ package br.com.fiap.ead;
   - Impl: taglibs-standard-impl-1.2.5.jar (pgp, sha512)
   - Spec: taglibs-standard-spec-1.2.5.jar (pgp, sha512)
 - armazená-los em: WebContent > WEB-INF > lib.
+  - não é preciso adicionar os jars no build path, pois como é uma aplicação web, existe essa pasta específica para adicionar as bibliotecas.
+  - caso copie os jars em qualquer outra pasta e adicione no build path, o projeto pode até compilar, porém, quando executar, o servidor não será capaz de encontrar as bibliotecas e o erro ClassNotFoundException vai acontecer.
 
+~~~jsp
+<!-- Diretiva taglib com o import para a biblioteca core -->
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+~~~
 
+- sobre o exemplo:
+  - taglib: nome da diretiva.
+  - prefix: propriedade que permite criar um token (identificador da tag na página JSP). Ex: &lt;c:if test=””&gt;&lt;/c:if&gt;. Existe uma convenção que pede o uso da letra “c”, por estar trabalhando com a biblioteca “core”.
+  - uri: caminho relativo da api (biblioteca local). O servidor de aplicação usa esse caminho relativo para carregar o conjunto de tags específicas para o token selecionado em prefix.
+- há quatro grupos de bibliotecas nos quais podemos classificar as TagLibs: Core tags, Formatting tags, SQL tags e XML tags.
 
+## 1.6 TagLibs – Core
 
+- resume, em seu interior, as principais instruções da linguagem Java no formato de tag. 
+
+<div align="center">
+
+Tag | Descrição
+----|-----------------------------------
+
+</div>
 
 
 
