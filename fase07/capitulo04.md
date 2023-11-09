@@ -279,9 +279,76 @@ package br.com.fiap.ead;
     public void setIdade(int idade) {
       this.idade = idade;
     }
-    
   }
 ~~~
+
+- a regra para que funcione é que tenha os **métodos get e set**, a EL internamente realiza acesso aos atributos por meio desses métodos.
+- portanto, para recuperar a informação o JavaBean precisa do método get, já para adicionar uma informação, será preciso o método set.Entretanto, na EL sempre referenciamos o nome do atributo, já que existe um padrão de nomenclatura para os métodos get e set.
+
+~~~xml
+<h2>${cli.nome}</h2>	
+<h2>${cli.idade}</h2>
+~~~
+
+## 1.4 JSTL (JavaServer Pages Standard Tag Library), TagLibrary ou TagLibs
+
+- é uma coleção de tags que possuem funções da linguagem Java.
+- assim, podemos utilizarum laço for, uma estrutura de decisão do tipo if/else ou switch-case diretamente no JSP por meio de tags. 
+- facilita desenvolvimento 4 manutenção das páginas em JSP.
+- exemplo:
+
+~~~jsp
+<!-- Página JSP exemplo1.jsp com Scriptlets -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo JSP / Scriptlets</title>
+</head>
+<body>
+  <%
+    String msg = "Alô mundo!";
+  %>
+  <p>Mensagem :<%=msg%></p>
+</body>
+</html>
+~~~
+
+~~~jsp
+<!-- Página JSP exemplo1.jsp com TagLibs -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<metacharset="UTF-8">
+<metaname="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo JSP / Scriptlets</title>
+</head>
+<body>
+  <c:setvar="msg" value="Alô mundo!"/>
+  <p>Mensagem :${msg}</p>
+</body>
+</html>
+~~~ 
+
+## 1.5 Utilização
+
+- é fácil utilizar as TagLibs dentro das páginas JSP. 
+- para começar, precisamos das bibliotecas, dos jars das TagLibs - assim como utilizamos jars externos para conectar no banco de dados oracle (jdbc), precisaremos de outros jars, porque as TagLibs são um projeto da Apache do grupo Jakarta.
+- para fazer o download dos jars, [acesse aqui](http://tomcat.apache.org/taglibs/index.html).
+  - Impl: taglibs-standard-impl-1.2.5.jar (pgp, sha512)
+  - Spec: taglibs-standard-spec-1.2.5.jar (pgp, sha512)
+- armazená-los em: WebContent > WEB-INF > lib.
+
+
+
+
+
 
 
 
