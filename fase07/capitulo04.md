@@ -433,6 +433,225 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 - é muito parecido com o foreach do Java.
 - a primeira linha da tabela não precisa estar dentro do foreach, pois ela define a coluna de cabeçalho da tabela. 
 
+### 1.6.2 &lt;c:if&gt;
+
+- tag que realiza uma estrutura de seleção (if).
+- o atributo test recebe uma EL que realiza uma comparação e resulta em um boolean.
+- não temos a tag else do if. 
+- exemplos:
+
+~~~jsp
+<c:if test="${numero > 100}">
+  <p>Valor Maior que 100</p>
+</c:if>
+<c:if test="${not empty lista }">
+  <!-- Tabela -->
+</c:if>
+<c:if test="${usuario == 'admin' }">
+  <p>Ola Administrador!</p>
+</c:if>
+~~~
+
+### 1.6.3 &lt;c:choose&gt; &lt;c:when&gt; &lt;c:otherwise&gt;
+
+- muito parecido com o switch-case do Java.
+- permite testar várias condições, somente um bloco é executado.
+- como não existe a tag else, podemos utilizar essas tags para ter esse comportamento, já que é possível realizar o teste com o &lt;c:when&gt; e adicionar a tag &lt;c:otherwise&gt; para funcionar como o else.
+- exemplo:
+
+~~~jsp
+<c:choose>
+  <c:when test="${numero > 100 }">
+    <p>Valor Maior que 100</p>
+  </c:when>
+  <c:when test="${numero < 50}">
+    <p>Valor Menor que 50</p>
+  </c:when>
+  <c:otherwise>
+    <p>Valor entre 50 e 100</p>
+  </c:otherwise>
+</c:choose>
+~~~
+
+### 1.6.4 &lt;c:out&gt;
+
+- utilizado para exibir informações na página.
+- exemplo:
+
+~~~jsp
+<c:out value="${numero}"/>
+~~~
+
+### 1.6.5 &lt;c:url&gt;
+
+- permite criar links com parâmetros (o código fica mais fácil de ser entendido, já que não é necessário criar uma String com concatenações). 
+- podemos adicionar a quantidade de parâmetros que forem necessários. 
+- exemplo:
+
+~~~jsp
+<c:url value="editarCliente" var="link">
+  <c:param name="nome" value="${cli.nome}"/>
+</c:url>
+<a href="${link}">Cliente</a>
+
+<!-- resultado: -->
+<a href="editarCliente?nome=Alexandre">Cliente</a>
+~~~
+
+### 1.6.6 &lt;c:import&gt;
+
+- permite importar páginas web do mesmo contexto web (aplicação), de contextos diferentes e até mesmo de máquinas diferentes.
+
+<div align="center">
+
+Atributo | Descrição | Requerido? | Padrão
+----------|---------|--------------|--------------
+url | URL a ser importada | Sim | Nenhum
+context | "/" seguido de nome da aplicação web local | Não | Contexto corrente
+var | Nome do atributo onde será armazenado o conteúdo da página importada | Não | Nenhum
+scope | Escopo do atributo onde será armazenado o conteúdo da página importada. Pode ser page, request, session, application. | Não | Page
+
+</div>
+
+~~~jsp
+<c:import url="exemplo2.jsp" scope="session"/>
+~~~
+
+## 1.7 TagLibs – Formatting
+
+- tags de formatação JSTL são usadas para formatar e exibir texto, data, hora e números para sites internacionalizados. 
+- assim como a taglib core, precisamos adicionar a taglib de formatting nas páginas que irão utilizar a formatação:
+
+~~~jsp
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+~~~
+
+- lista de todas as tags da biblioteca:
+
+<div align="center">
+
+Tag | Descrição
+-----|--------------
+&lt;fmt:formatNumber&gt; | Para renderizar valores numéricos com precisão ou formato específico.
+&lt;fmt:parseNumber&gt; | Analisa a representação de uma sequência de caracteres de um número, moeda ou porcentagem.
+&lt;fmt:formatDate&gt; | FOrmata uma data e/ou uma hora usando os estilos e padrões fornecidos.
+&lt;fmt:parseDate&gt; | Analisa a representação de sequência de uma data e/ou tempo.
+&lt;fmt:bundle&gt; | Carrega um pacote de recursos para ser usado plo seu corpo de tag.
+&lt;fmt:setLocale&gt; | Armazena a localidade fornecida na variável de configuração de localidade.
+&lt;fmt:setBundle&gt; | Carrega um bundle de recursos e o armazena na variável de escopo nomeada ou na variável de configuração do bundle.
+&lt;fmt:timeZone&gt; | Especifica o fuso horário para qualquer formataçãod e tempo ou parsing de ações aninhadas em seu conteúdo.
+&lt;fmt:setTimeZone&gt; | Armazena o determinado fuso horário na variável de configuraçãod e fuso.
+&lt;fmt:message&gt; | Para exibir uma mensagem internacionalizada.
+
+</div>
+
+### 1.7.1 &lt;fmt:formatDate&gt;
+
+- formatador de data.
+- deve se passar um objeto de data (Date) e não uma String para a tag.
+- exemplos:
+
+~~~jsp
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<html>
+<head>
+  <title>JSTL Formatação de datas</title>
+</head>
+<body>
+<h3>Formatação de datas:</h3>
+<c:set var="data" value="<%=new java.util.Date()%>" />
+<p>Data Formatada (1): <fmt:formatDate type="time" value="${data}" /></p>
+<p>Data Formatada (2): <fmt:formatDate type="date" value="${data}" /></p>
+<p>Data Formatada (3): <fmt:formatDate type="both" value="${data}" /></p>
+<p>Data Formatada (4): <fmt:formatDate pattern="dd/MM/yyyy" value="${data}" /></p>
+</body>
+</html>
+~~~
+
+- o atributo type determina o tipo de dado que será exibido: a data, hora ou ambos.
+- o atributo value recebe o objeto Date, que representa a data e será formatado. 
+- podemos ainda utilizar o atributo pattern para determinar exatamente a forma como a data será exibida, como na tabela:
+
+<div align="center">
+
+Código | Descrição | Exemplo
+-------|-----------|------------
+G | The area designator | AD
+Y | The year | 2023
+M | The month | Aprin & 04
+d | The day of the month | 20
+h | The hour (12-hour time) | 12
+H | The hour (24-hour time) | 0
+m | The minute | 45
+s | The second | 52
+S | The millisecond | 970
+E | The day of the week | Tuesday
+D | The day of the year | 180
+F | The day of the week in the month | 2(end we in month)
+w | The week in the year | 27
+W | The week in the month | 2
+a | The a.m./p.m. indicator | PM
+k | The hour (12-hour time) | 24
+K | The hour (24-hour time) | 0
+z | The time zone | Central Stantard Time
+' | - | The escape for text
+" | - | The single quote
+
+</div>
+
+### 1.7.2 &lt;fmt:formatNumber&ht;
+
+- podemos formatar números no formato de moedas e porcentagem, e utilizar a localização do usuário para mostrar o valor da moeda local.
+  - o atributo value recebe o número que será formatado.
+  - o atributo type recebe o tipo de formatação, como number para número, currency para valores monetários e percent para porcentagens.
+- é possível utilizar o atributo pattern para definir detalhadamente o tipo de formatação.
+- exemplos:
+
+~~~jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+  pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<html>
+<head>
+<title>JSTL Formatação de Números</title>
+</head>
+<body>
+  <h3>Formatar Números:</h3>
+  <c:set var="valor" value="999.888" />
+  <p>
+    Número Formatado (1):
+    <fmt:formatNumber value="${valor}" type="currency" />
+  </p>
+  <p>
+    Número Formatado (2):
+    <fmt:formatNumber type="number" maxIntegerDigits="3"
+      value="${valor}" />
+  </p>
+  <p>
+    Número Formatado (3):
+    <fmt:formatNumber type="number" maxFractionDigits="3"
+      value="${valor}" />
+  </p>	
+  <p>
+    Número Formatado (4):
+    <fmt:formatNumber type="percent" value="${valor}" />
+  </p>
+  <p>
+    Número Formatado (5):
+    <fmt:formatNumber type="number" pattern="###.###E0" value="${valor" />
+  </p>	
+</body>
+</html>
+~~~
+
+<div align="center">
+<h2>2. PRÁTICA!</h2>
+</div>
+
+
+
 
 
 
