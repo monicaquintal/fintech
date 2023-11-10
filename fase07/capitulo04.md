@@ -366,8 +366,77 @@ package br.com.fiap.ead;
 
 Tag | Descrição
 ----|-----------------------------------
+&lt;c:out&gt; | &lt;% = ...&gt; nas expressões.
+&lt;c:set&gt; | Define o resultado de uma avaliação de expressão de um 'escopo', você pode definir uma espécie de variável no escopo em que você estiver trabalhando.
+&lt;c:remove&gt; | Remove uma variável de escopo (de um escopo espefícifo, se especificando).
+&lt;c:catch&gt; | Captura qualquer Throwwable (Exception) que ocorrer no body e, se você quiser, pode optar por expor o resultado, é opcional.
+&lt;c:if&gt; | Tag condicional simples que avalia seu body se a condição fornecida for verdadeira. O mesmo que o if, mas sem o else.
+&lt;c:choose&gt; | Tag condicional simples que estabelece um contexto para operações condicionais mutuamente exclusivas, marcadas por &lt;when&gt; e &lt;otherwise&gt;. O mesmo que switch-case, que pode ser utilizado como if/else.
+&lt;c:when&gt; | Subtag de &lt;choose&gt; que inclui seu body se sua condição foi alternada para 'true'.
+&lt;c:otherwise&gt; | Subtag de &lt;choose&gt; que segue &lt;when&gt;, marca e executa somente se todas as condições anteriores forem avaliadas como "falso".
+&lt;c:import&gt; | Recupera uma URL absoluta ou relativa e carrega o seu conteúdo para a páginaonde se está utilizando. Muito utilizado para modularização.
+&lt;c:forEach&gt; | A tag de iteração básica, aceitando muitos tipos de colections e subconjuntos de suporte e outras funcionalidades. O mesmo que foreach.
+&lt;c:forTokens&gt; | Iterates dobre tokens, separados por delimitadores fornecidos.
+&lt;c:param&gt; | Adiciona um parâmetro a uma URL contendo a tag 'import'.
+&lt;c:redirect&gt; | Redireciona para um novo URL.
+&lt;c:url&gt; | Cria uma URL com parâmetros de consulta opcionais.
 
 </div>
+
+### 1.6.1 $lt;c:forEach$gt;
+
+- permite iterar uma lista de elementos.
+- ótima para montar tabelas e selects (combobox).
+- exemplo: exibir uma tabela para o usuário. Para isso, implementar uma Servlet que envia um objeto de Collections (Lista) para a página JSP.
+
+~~~java
+protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+  throws ServletException, IOException {
+  ArrayList<String> nomes = new ArrayList<String>();
+  nomes.add("Alexandre");
+  nomes.add("Carlos");
+  req.setAttribute("lista", nomes);
+  }
+~~~
+
+- o nome do atributo inserido no request foi “lista”, e será utilizado para recuperar as informações na página JSP.
+- em relação à página JSP, que recupera esse atributo e utiliza a tag &lt;c:forEach&gt; para montar a tabela:
+
+~~~jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo JSP / TagLibs</title>
+  </head>
+  <body>
+  <table border="1">
+    <tr>
+      <th>Nome</th>
+    </tr>
+    <c:forEach var="n" items="${lista}">
+      <tr>
+        <td>${n}</td>
+      </tr>
+    </c:forEach>
+  </table>
+  </body>
+  </html>
+~~~
+
+- a tag &lt;c:forEach&gt; possui dois atributos principais:
+  - `var`: define o nome da variável que vai receber cada um dos itens da coleção.
+  - `items`: define a coleção que será utilizada para a iteração.
+- é muito parecido com o foreach do Java.
+- a primeira linha da tabela não precisa estar dentro do foreach, pois ela define a coluna de cabeçalho da tabela. 
+
+
+
+
+
 
 
 
