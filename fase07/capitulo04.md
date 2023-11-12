@@ -650,13 +650,188 @@ z | The time zone | Central Stantard Time
 <h2>2. PRÁTICA!</h2>
 </div>
 
+- exemplo que utilizará tudo que vimos até agora: JSP, Servlets, JSTL e EL.
+- desenvolver as funcionalidades de cadastro e listagem de produtos.
 
+1. Criar um novo projeto Java web. No eclipse, utilize a opção: File > New > Dynamic Web Project. Dê um nome ao projeto e configure o servidor Tomcat7. Clique em Next e clique novamente em Next até chegar à última tela, marque para criar o web.xml e finalize o processo.
 
+2. Para deixar a aplicação com layout profissional, utilizar o bootstrap. Para isso, configure o projeto como o que fizemos no capítulo anterior. Crie um diretório chamado resources dentro de WebContent, copie os arquivos de css e javascript do bootstrap e jquery. Vamos utilizar os arquivos JSPs para realizar o include do header, footer e menu.
 
+3. Criar a tela com um formulário de cadastro de produto. O formulário será parecido com o desenvolvido no capítulo de Servlets, porém utilizaremos um arquivo JSP em vez de HTML e vamos utilizar o bootstrap para dar estilo ao formulário. Criar cadastro-produto.jsp.
 
+~~~jsp
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Cadastro de Produto</title>
+<%@ include file="header.jsp" %>
+</head>
+<body>
+<%@ include file="menu.jsp" %>
+  <div class="container">
+    <h1>Cadastro de Produto</h1>
+  
+    <form action="produto" method="post">
+      <div class="form-group">
+        <label for="id-nome">Nome</label>
+        <input type="text" name="nome" id="id-nome" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="id-qtd">Quantidade</label>
+        <input type="text" name="quantidade" id="id-qtd" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="id-valor">Valor</label>
+        <input type="text" name="valor" id="id-valor" class="form-control">
+      </div>
+      <input type="submit" value="Salvar" class="btn btn-primary">
+    </form>
+  </div>
+<%@ include file="footer.jsp" %>
+</body>
+</html>
+~~~
 
+4. Criar a Servlet que receberá os dados do formulário. Clique com o botão direito do mouse na pasta src e escolha New > Servlet, sendo “br.com.fiap.controller” para o pacote e “ProdutoServlet” para a classe.
 
+5. Para agrupar as informações do produto, precisamos de uma classe Java Bean. Dessa forma, criar uma classe “Produto”. Clique com o botão direito do mouse na pasta src e escolha “New” > "Class". Para deixar o projeto bem estruturado, criaremos um novo pacote para a classe Produto, para isso, renomeie o packagepara “br.com.fiap.bean”. Depois de dar o nome à classe, finalize o processo.
 
+~~~java
+package br.com.fiap.bean;
+  public class Produto {
+    private String nome;
+    private int quantidade;
+    private double valor;
+
+    public Produto() {
+      super();
+    }
+
+    public Produto(String nome, int quantidade, double valor) {
+      super();
+      this.nome = nome;
+      this.quantidade = quantidade;
+      this.valor = valor;
+    }
+
+    public String getNome() {
+      return nome;
+    }
+
+    public void setNome(String nome) {
+      this.nome = nome;
+    }
+
+    public int getQuantidade() {
+      return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+      this.quantidade = quantidade;
+    }
+
+    public double getValor() {
+      return valor;
+    }
+
+    public void setValor(double valor) {
+      this.valor = valor;
+    } 
+  }
+~~~
+
+6. Agora estamos prontos para implementar a Servlet. Essa classe tem a responsabilidade de recuperar os dados enviados pelo usuário, enviar esses dados para outra parte da aplicação, responsável pelas regras de negócio ou persistência de dados e, por fim, devolver uma informação para o usuário. Essas são as principais responsabilidades de um controlador (Controller), uma camada da aplicação da arquitetura MVC (Model, View e Controller). 
+
+~~~java
+package br.com.fiap.controller;
+  import java.io.IOException;
+  import java.util.ArrayList;
+  import java.util.List;
+  import javax.servlet.ServletException;
+  import javax.servlet.annotation.WebServlet;
+  import javax.servlet.http.HttpServlet;
+  import javax.servlet.http.HttpServletRequest;
+  import javax.servlet.http.HttpServletResponse;
+  import br.com.fiap.bean.Produto;
+  @WebServlet("/produto")
+  public class ProdutoServlet extends HttpServlet {
+    private static List<Produto> lista = new ArrayList<Produto>();
+    private static final long serialVersionUID = 1L;
+     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      	//Recupera os par?metros do formul?rio
+      	String nome = request.getParameter("nome");
+      	int qtd = Integer.parseInt(request.getParameter("quantidade"));
+      	double valor = Double.parseDouble(request.getParameter("valor"));	
+      	//Cria um objeto do tipo Produtp
+      	Produto produto = new Produto(nome, qtd, valor);
+      	//Adiciona o produto na lista
+      	lista.add(produto);
+      	//Mensagem de sucesso
+      	request.setAttribute("msg","Produto cadastrado!");
+      	request.getRequestDispatcher("cadastro-produto.jsp").forward(request, response);
+    }
+  }
+~~~
+
+7. Como ainda não vamos utilizar o banco de dados, vamos utilizar uma coleção (List) de Produtos para gravar as informações. Essa lista deve ser estática, pois deve pertencer à classe e não à instância dessa classe. Assim, todos os objetos dessa Servlet compartilham a mesma lista, ou seja, todos possuem a mesma informação.
+
+8. Dentro do método doPost, recuperamos todas as informações do formulário por meio da request e o método getParameter(“campo”), lembre-se de que o valor do parâmetro do método deve ser o mesmo do nome do campo do formulário do qualvocê quer recuperar o valor. Depois de recuperar os valores, instanciamos uma classe Produto, passando os valores em seu construtor. Com isso, podemos adicionar esse objeto na lista para “salvar no banco de dados”. 
+
+9. Por fim, devemos dar um feedback para o usuário. Vamos adicionar uma mensagem como um atributo do request e depois encaminhar para o usuário uma página, que nesse caso será a mesma página de cadastro de produto.
+
+10. O último detalhe é ajustar a página JSP para exibir essa mensagem, mas antes vamos adicionar as bibliotecas JSTL na nossa aplicação. Copie e cole os dois jars dentro do diretório WebContent > WEB-INF > lib.
+
+11. Agora podemos utilizar a tagJSTL &lt;c:if&gt; para testar se existe uma mensagem no request para exibir a caixa de mensagem.
+
+~~~jsp
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+      pageEncoding="ISO-8859-1"%>
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>Cadastro de Produto</title>
+  <%@ include file="header.jsp" %>
+  </head>
+  <body>
+  <%@ include file="menu.jsp" %>
+    <div class="container">
+      <h1>Cadastro de Produto</h1>
+      
+      <c:if test="${not empty msg }">
+        <div class="alert alert-success">
+          ${msg}
+        </div>
+      </c:if>	
+    
+      <form action="produto" method="post">
+        <div class="form-group">
+          <label for="id-nome">Nome</label>
+          <input type="text" name="nome" id="id-nome" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="id-qtd">Quantidade</label>
+          <input type="text" name="quantidade" id="id-qtd" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="id-valor">Valor</label>
+          <input type="text" name="valor" id="id-valor" class="form-control">
+        </div>
+        <input type="submit" value="Salvar" class="btn btn-primary">
+      </form>
+    </div>
+  <%@ include file="footer.jsp" %>
+  </body>
+  </html>
+~~~
+
+12. Desenvolver a funcionalidade de listagem de produtos. O  primeiro  passo  é  ajustar  a Servlet,  vamos  utilizar  a  mesma  classe, ProdutoServlet. Implementaremoso método doGet, pois a Servletserá acionada por meio de um link e não de um formulário.A Servletprecisa enviar a lista para a tela JSP e depois encaminhar o usuário para a página de listagem. São duas linhas de código! Observe o Código-fonte“Ajuste na Servletpara a funcionalidade de listagem”
+
+pag 55
 
 
 
