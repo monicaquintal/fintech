@@ -829,15 +829,96 @@ package br.com.fiap.controller;
   </html>
 ~~~
 
-12. Desenvolver a funcionalidade de listagem de produtos. O  primeiro  passo  é  ajustar  a Servlet,  vamos  utilizar  a  mesma  classe, ProdutoServlet. Implementaremoso método doGet, pois a Servletserá acionada por meio de um link e não de um formulário.A Servletprecisa enviar a lista para a tela JSP e depois encaminhar o usuário para a página de listagem. São duas linhas de código! Observe o Código-fonte“Ajuste na Servletpara a funcionalidade de listagem”
+12. Desenvolver a funcionalidade de listagem de produtos. O primeiro passo é ajustar a Servlet, utilizando a classe ProdutoServlet. Implementaremos o método doGet, pois a Servlet será acionada por meio de um link e não de um formulário. A Servlet precisa enviar a lista para a tela JSP e depois encaminhar o usuário para a página de listagem. São duas linhas de código! 
 
-pag 55
+~~~java
+@Override
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    request.setAttribute("produtos", lista);
+    request.getRequestDispatcher("lista-produto.jsp").forward(request, response);
+  }
+~~~
 
+13. A página JSP deve se chamar “lista-produtos.jsp” e o nome do atributo com a lista é “produtos”. Agora, criar a página JSP dentro do diretório Web Content.
+    - utilizamos o include para adicionar o menu, css e scripts na página. 
+    - criamos uma tabela HTML com uma classe do bootstrap, para dar estilo à tabela. 
+    - para exibir todos os itens cadastrados, utilizamos a taglib &lt;c:forEach&gt;, que recebe a lista no atributo itens, por isso utilizamos a EL com o nome do atributo que foi adicionado na Servlet (produtos). O atributo var define o nome da variável que irá receber cada item da lista.
 
+~~~jsp
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+      pageEncoding="ISO-8859-1"%>
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>Cadastro de Produto</title>
+  <%@ include file="header.jsp" %>
+  </head>
+  <body>
+  <%@ include file="menu.jsp" %>
+    <div class="container">
+      <h1>Produtos</h1>
+      <table class="table table-striped">
+        <tr>
+          <th>Nome</th>
+          <th>Quantidade</th>
+          <th>Valor</th>				
+        </tr>
+        <c:forEach items="${produtos }" var="p">
+          <tr>
+            <td>${p.nome}</td>
+            <td>${p.quantidade}</td>
+            <td>${p.valor}</td>
+          </tr>
+        </c:forEach>
+      </table>
+    </div>
+  <%@ include file="footer.jsp" %>
+  </body>
+  </html>
+~~~
 
+14. Para finalizar, não podemos simplesmente executar a página como fizemos com o cadastro. Precisamos primeiro executar a Servlet, pois é ela que envia os produtos cadastrados para a página JSP exibir. Assim, podemos testar a funcionalidade de listagem executando o projeto e ajustando a URL com o endereço http://localhost:8080/JSTL/produto. Dessa forma, o browser envia uma requisição com o método GET para a nossa Servlet, que devolve a página JSP junto com a lista de produtos. Para que não seja preciso sempre modificar a URL para acessar a página, vamos arrumar os links da barra de navegação. 
 
+~~~jsp
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.jsp">FIAP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="cadastro-produto.jsp">Cadastro</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="produto">Produtos</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+~~~
 
+- o link para a página de cadastro é o próprio nome da página JSP, porém, para a página de listagem, é o valor configurado na Servlet, no @WebServlet(“/produto”).
+- agora é só testar! Cadastre alguns produtos e teste a listagem.
 
+--- 
+
+## FAST TEST
+
+### 1. Qual é o objeto implícito para EL responsável por solicitar parâmetros como sequência de caracteres?
+> Param.
+
+### 2. Identifique qual tag não faz parte da biblioteca formatting:
+> &lt;fmt:lib&gt;
+
+### 3. Identifique qual expressão está incorreta em relação a Expression Language (EL):
+> A EL dificulta a leitura e o acesso aos JavaBeans.
 
 --- 
 
