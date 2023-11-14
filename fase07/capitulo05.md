@@ -33,11 +33,56 @@
   
 > O React utiliza o NodeJS para gerar códigos que o browser entende.
 
-- junto à instalação do NodeJS, há outro programa, chamado `npm` (node package manager), que gerencia bibliotecas de códigos JavaScript. Com npm, é possível fazer downloads automaticamente de bases de dados de código públicas para usar em qualquer projeto, o React está cadastrado no npm. 
+- junto à instalação do NodeJS, há outro programa, chamado `npm` (node package manager), que gerencia bibliotecas de códigos JavaScript. 
+- com npm, é possível fazer downloads automaticamente de bases de dados de código públicas para usar em qualquer projeto, o React está cadastrado no npm. 
+- o NodeJS pode ser baixado [aqui](https://nodejs.org/en/).
+  - assim que instalado, abrir um “prompt de comando” (windows + r) e digitar “cmd”. Clique em “OK” e um terminal será apresentado.
+  - digite “node -v” e pressione a tecla enter no terminal. A versão do Node deve ser, no mínimo, v16.17.1.
 
+## 1.5 Visual Studio Code
 
+- é um IDE (Integrated Development Environment), ambiente de desenvolvimento integrado muito utilizado para programação WEB.
+- um IDE integra diversas ferramentas que tornam o desenvolvimento muito mais ágil e prático, como: terminal integrado, substituição de palavras em múltiplos arquivos, formatação de códigos-fonte, etc. 
+- para a instalação, basta [acessar o site](https://code.visualstudio.com/) e fazer o download da aplicação. 
+  - para criar um projeto no VS Code, criar uma pasta nova e abri-la pelo menu File → Open Folder.
 
+### 1.5.1 Explorer
 
+- é um módulo do VS Code capaz de exibir os arquivos e as pastas do seu projeto. 
+
+### 1.5.2 Terminal integrado
+
+- útil para executar comandos de sistema, como mkdir (criação de pastas), del (deletar arquivos e/ou pastas), node (executar o node), npm (instalar pacotes no node), entre outros. 
+
+### 1.5.3 Controle de versionamento
+
+- é possível utilizar diversos sistemas de versionamento, contudo o GIT apresenta a melhor integração.
+
+### 1.5.4 Gerenciamento de extensões
+
+- extensões são módulos adicionais que trazem novas ferramentas ao VS Code. 
+- neste capítulo, usaremos o plug-in “ES7 React/Redux/GraphQL/React-Native snippets”.
+
+## 1.6 Preparando o ambiente
+
+- para manter os arquivos organizados, este capítulo manterá todos os códigos dentro da pasta local C:\CodigosReact.
+- logo, a primeira coisa a fazer é criar essa pasta em sua máquina!
+
+## 1.7 Sua primeira aplicação React
+
+- para a criação de uma aplicação React, utilizaremos uma ferramenta de auxílio chamada “Create ReactApp”, que pode ser instalada e executada por meio do npx (executor de comandos npm) em um terminal aberto por meio do método da Seção “Erro! Fonte de referência não encontrada.”, ou pelo método da Seção “Erro! Fonte de referência não encontrada.”
+- o primeiro passo é abrir o Visual Studio Code. Acesse um novo terminal e digite: 
+
+~~~
+cd C:\CodigosReact\npx 
+create-react-app primeiro_app
+~~~
+
+- o primeiro comando altera a pasta de trabalho do terminal para a nossa pasta de códigos. O segundo comando executa um módulo do node para a criação de uma aplicação padrão React. 
+- após a execução, uma árvore de pastas e arquivos é criada em uma pasta chamada primeiro_app.
+- o próximo passo é abrir o projeto primeiro_appno VS Code. Clique no menu File → Open Folder... e selecione a pasta C:\primeiro_app. Agora, abra um novo terminal e digite `npm start`. Espere até que um browser seja aberto e apareça uma tela.
+
+## 1.8 Principais conceitos
 
 
 
