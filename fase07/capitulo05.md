@@ -84,6 +84,63 @@ create-react-app primeiro_app
 
 ## 1.8 Principais conceitos
 
+- o React é baseado em componentes.
+- cada componente apresenta uma representação em HTML (para ser renderizado) e comportamentos programados em JavaScript (para interações com o usuário ou o próprio sistema).
+- há três pastas: 
+  - `node_modules`: contém os pacotes (instalados com o npm) que são necessários para a utilização do React.
+  - `public`: contém entre seus arquivos o index.html, a página principal do site. É um arquivo muito simples e, se você o abrir diretamente em seu navegador, verá apenas uma página em branco.
+  - `src`: contém diversos arquivos JavaScript, CSS, entre outros. Aqui está a parte mais importante da aplicação.
+- arquivo index.js que está na pasta src:
+
+~~~javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
+~~~
+
+- a primeira observação sobre esse código é a `instrução import`, interpretada pelo NodeJS para inserir códigos-fonte que estão em outros arquivos, permitindo a modularização (separação) de códigos-fonte. 
+- outra parte interessante do código é a `tag <App />`, um componente que foi importado anteriormente (na linha 4 do código). Usamos um componente da mesma forma como se fôssemos escrever um código HTML – por meio de tags.
+- exemplo: trocar o conteúdo a seguir
+
+~~~javascript
+const root =
+ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+~~~
+
+- por:
+
+~~~javascript
+const root =
+ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+   <div>Teste</div>
+  </React.StrictMode>
+);
+~~~
+
+
+
+
+
+
+
+
+
 
 
 
