@@ -173,18 +173,18 @@
 [Capítulo 03: JSP, a interface do usuario em Java.](./fase07/capitulo03.md)<br>
 [Capítulo 04: Frameworks em Java!](./fase07/capitulo04.md)<br>
 [Capítulo 05: A alternativa do Facebook.](./fase07/capitulo05.md)<br>
-[Capítulo 06: ]()<br>
+[Capítulo 06: Este estudo de caso pode te ajudar!]()<br>
 
 </details>
 
 <details>
 <summary>AI & CHATBOT</summary>
 
-[Capítulo 07: ]()<br>
-[Capítulo 08: ]()<br>
-[Capítulo 09: ]()<br>
-[Capítulo 10: ]()<br>
-[Capítulo 11: ]()
+[Capítulo 07: Orquestração com Node-RED]()<br>
+[Capítulo 08: Chatbot e Integração]()<br>
+[Capítulo 09: IA Generativa]()<br>
+[Capítulo 10: Governança ambiental, social e coorporativa ESG]()<br>
+[Capítulo 11: Grand Finale]()
 
 </details>
 
