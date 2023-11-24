@@ -187,5 +187,3 @@
 [Capítulo 11: Grand Finale]()
 
 </details>
-
-<br>
