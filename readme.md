@@ -180,10 +180,10 @@
 <details>
 <summary>AI & CHATBOT</summary>
 
-[Capítulo 07: Orquestração com Node-RED]()<br>
-[Capítulo 08: Chatbot e Integração]()<br>
-[Capítulo 09: IA Generativa]()<br>
-[Capítulo 10: Governança ambiental, social e coorporativa ESG]()<br>
-[Capítulo 11: Grand Finale]()
+[Capítulo 07: Orquestração com Node-RED.]()<br>
+[Capítulo 08: Chatbot e Integração.]()<br>
+[Capítulo 09: IA Generativa.]()<br>
+[Capítulo 10: Governança ambiental, social e coorporativa ESG.]()<br>
+[Capítulo 11: Grand Finale!]()
 
 </details>
